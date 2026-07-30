@@ -1,0 +1,82 @@
+export type Product = {
+  name: string;
+  cat: string;
+  catLabel: string;
+  desc: string;
+  img: string;
+};
+
+export const categories: { id: string; label: string }[] = [
+  { id: "all", label: "Tudo" },
+  { id: "etiquetas-industrial", label: "Etiquetas – Industrial" },
+  { id: "etiquetas-entrada", label: "Etiquetas – Entrada" },
+  { id: "coletores", label: "Coletores de Dados" },
+  { id: "leitores", label: "Leitores de Códigos de Barras" },
+  { id: "cupom", label: "Impressora de Cupom" },
+  { id: "a4", label: "Impressora Portátil A4" },
+  { id: "pulseiras", label: "Impressora de Pulseiras" },
+  { id: "cartao", label: "Impressora de Cartão" },
+];
+
+const U = "https://hprtbrasil.com.br/wp-content/uploads";
+
+export const products: Product[] = [
+  { name: "Neo", cat: "etiquetas-industrial", catLabel: "Etiquetas · Industrial", desc: "Operação contínua de alto volume.", img: `${U}/2026/01/64-e1783344463114.png` },
+  { name: "Grand", cat: "etiquetas-industrial", catLabel: "Etiquetas · Industrial", desc: "Robustez para centros de distribuição.", img: `${U}/2026/01/1-1-e1783344570445.png` },
+  { name: "Gala", cat: "etiquetas-industrial", catLabel: "Etiquetas · Industrial", desc: "Precisão de leitura de código de barras.", img: `${U}/2026/01/43-e1783344591470.png` },
+  { name: "HT500", cat: "etiquetas-entrada", catLabel: "Etiquetas · Entrada", desc: "Entrada para pequenas e médias operações.", img: `${U}/2026/03/74-e1783344139409.png` },
+  { name: "Ares", cat: "etiquetas-entrada", catLabel: "Etiquetas · Entrada", desc: "Compacta, para varejo e PDV.", img: `${U}/2026/01/30-e1783344629464.png` },
+  { name: "Apollo", cat: "etiquetas-entrada", catLabel: "Etiquetas · Entrada", desc: "Etiquetagem essencial, baixo custo.", img: `${U}/2026/01/26-e1783344651149.png` },
+  { name: "M4 Plus", cat: "coletores", catLabel: "Coletores de Dados", desc: "Robusto para logística e campo.", img: `${U}/2026/01/14-e1783344505492.png` },
+  { name: "M3-H", cat: "coletores", catLabel: "Coletores de Dados", desc: "Equilíbrio entre performance e porte.", img: `${U}/2026/01/9-e1783344527267.png` },
+  { name: "M2 Plus", cat: "coletores", catLabel: "Coletores de Dados", desc: "Entrada em coleta Android.", img: `${U}/2026/01/4-e1783344551137.png` },
+  { name: "P300", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Alto desempenho, alto giro.", img: `${U}/2026/03/82-e1783344093291.png` },
+  { name: "M300C", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Leitura versátil, médio porte.", img: `${U}/2026/03/78-e1783344114193.png` },
+  { name: "N180", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Confiável no dia a dia do varejo.", img: `${U}/2026/02/61-e1783344256595.png` },
+  { name: "N130 BT Plus", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Bluetooth, operação sem fio no PDV.", img: `${U}/2026/02/53-e1783344334739.png` },
+  { name: "N80", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Modelo compacto e essencial.", img: `${U}/2026/02/47-e1783344394455.png` },
+  { name: "TP80K", cat: "cupom", catLabel: "Impressora de Cupom", desc: "Cupom fiscal para PDV.", img: `${U}/2026/02/TP80K.png` },
+  { name: "MT800", cat: "a4", catLabel: "Impressora Portátil A4", desc: "Térmica, sem tinta, direto do bolso.", img: `${U}/2026/02/MT800.png` },
+  { name: "MT810", cat: "a4", catLabel: "Impressora Portátil A4", desc: "Mobilidade para times externos.", img: `${U}/2026/01/72-e1783344485881.png` },
+  { name: "Gamma", cat: "pulseiras", catLabel: "Impressora de Pulseiras", desc: "Eventos e ambientes hospitalares.", img: `${U}/2026/02/21-e1783344195304.png` },
+  { name: "NYX-H", cat: "pulseiras", catLabel: "Impressora de Pulseiras", desc: "Controle de acesso.", img: `${U}/2026/02/Design-sem-nome-e1783344217571.png` },
+  { name: "CP-D80", cat: "cartao", catLabel: "Impressora de Cartão", desc: "Cartões PVC para credenciamento.", img: `${U}/2026/02/34-e1783344238765.png` },
+];
+
+export const heroGallery = [
+  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592051824492.jpg",
+  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592059863971.jpg",
+  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592065422969.jpg",
+  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592074487712.jpg",
+  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592081867068.jpg",
+];
+
+export const comparison = [
+  {
+    criterion: "Fabricação",
+    hprt: "Fabricante direto — 56 linhas de produção próprias",
+    other: "Fabricação terceirizada em parte do portfólio",
+  },
+  {
+    criterion: "Cobertura de portfólio",
+    hprt: "Impressão térmica, mobile, scanners, RFID e têxtil digital",
+    other: "Foco em mobile computing e impressão industrial",
+  },
+  {
+    criterion: "Custo de propriedade",
+    hprt: "Consumíveis e peças com custo-benefício superior",
+    other: "Ecossistema fechado, custo de manutenção mais alto",
+  },
+  {
+    criterion: "Suporte no Brasil",
+    hprt: "Distribuição própria em São Paulo, com a Cogra",
+    other: "Suporte via rede de distribuidores terceiros",
+  },
+];
+
+export const solutions = [
+  { num: "01", title: "Varejo", desc: "Etiquetagem, PDV e gestão de estoque com leitura rápida de código de barras." },
+  { num: "02", title: "Logística", desc: "Coleta de dados em campo e etiquetagem de alto volume em centros de distribuição." },
+  { num: "03", title: "Saúde", desc: "Identificação de pacientes e rastreabilidade de materiais com pulseiras e etiquetas." },
+  { num: "04", title: "Alimentação", desc: "Impressão de cupom e etiquetagem para food service e delivery." },
+];
