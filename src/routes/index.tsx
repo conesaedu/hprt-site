@@ -3,7 +3,7 @@ import { CtaStrip, Products, Solutions, Trust } from "@/components/hprt/Catalog"
 import { Footer } from "@/components/hprt/Footer";
 import { Hero } from "@/components/hprt/Hero";
 import { Nav } from "@/components/hprt/Nav";
-import { GlobalTrust, Stats } from "@/components/hprt/Sections";
+import { GlobalTrust, Positioning, Stats } from "@/components/hprt/Sections";
 
 const title = "HPRT Brasil — Impressão térmica e captura de dados";
 const description =
@@ -50,6 +50,7 @@ function Index() {
       <main>
         <Hero />
         <Stats />
+        <Positioning />
         <GlobalTrust />
         <Products />
         <Solutions />
