@@ -29,13 +29,13 @@ export function Hero() {
         <div>
           <Eyebrow className="mb-6">Fabricante global · Distribuição no Brasil</Eyebrow>
           <h1 className="mb-6 text-[2.375rem] leading-[1.08] md:text-[3.125rem]">
-            A escala de uma potência industrial chinesa, com a{" "}
-            <span className="text-signal">agilidade</span> que o mercado brasileiro precisa.
+            Você não precisa pagar o <span className="text-signal">prêmio de marca</span> para ter
+            o mesmo padrão de operação.
           </h1>
           <p className="mb-9 max-w-[30rem] text-[1.0625rem] text-muted-foreground">
-            Impressoras térmicas, coletores de dados, leitores de código de barras e etiquetas — o
-            mesmo portfólio que a HPRT exporta para 80 países, com estoque, suporte e preço pensados
-            para o Brasil.
+            Por trás de cada impressora térmica e coletor de dados está uma das maiores fabricantes
+            de tecnologia térmica do mundo: 400+ engenheiros em P&D, 900+ patentes e 56 linhas de
+            produção — com estoque, suporte e preço pensados para o Brasil.
           </p>
           <div className="mb-14 flex flex-wrap gap-3.5">
             <Btn href="#products">Ver o portfólio completo</Btn>
