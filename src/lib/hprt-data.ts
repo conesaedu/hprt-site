@@ -16,6 +16,8 @@ export const categories: { id: string; label: string }[] = [
   { id: "a4", label: "Impressora Portátil A4" },
   { id: "pulseiras", label: "Impressora de Pulseiras" },
   { id: "cartao", label: "Impressora de Cartão" },
+  { id: "fotos", label: "Impressora de Fotos" },
+  { id: "embaladora", label: "Embaladora Automática" },
 ];
 
 const U = "https://hprtbrasil.com.br/wp-content/uploads";
@@ -33,6 +35,7 @@ export const products: Product[] = [
   { name: "P300", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Alto desempenho, alto giro.", img: `${U}/2026/03/82-e1783344093291.png` },
   { name: "M300C", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Leitura versátil, médio porte.", img: `${U}/2026/03/78-e1783344114193.png` },
   { name: "N180", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Confiável no dia a dia do varejo.", img: `${U}/2026/02/61-e1783344256595.png` },
+  { name: "N130 BT Plus H", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Versão hospitalar, resistente a desinfetantes.", img: `${U}/2026/02/60-e1783344279337.png` },
   { name: "N130 BT Plus", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Bluetooth, operação sem fio no PDV.", img: `${U}/2026/02/53-e1783344334739.png` },
   { name: "N80", cat: "leitores", catLabel: "Leitores de Códigos de Barras", desc: "Modelo compacto e essencial.", img: `${U}/2026/02/47-e1783344394455.png` },
   { name: "TP80K", cat: "cupom", catLabel: "Impressora de Cupom", desc: "Cupom fiscal para PDV.", img: `${U}/2026/02/TP80K.png` },
@@ -40,7 +43,10 @@ export const products: Product[] = [
   { name: "MT810", cat: "a4", catLabel: "Impressora Portátil A4", desc: "Mobilidade para times externos.", img: `${U}/2026/01/72-e1783344485881.png` },
   { name: "Gamma", cat: "pulseiras", catLabel: "Impressora de Pulseiras", desc: "Eventos e ambientes hospitalares.", img: `${U}/2026/02/21-e1783344195304.png` },
   { name: "NYX-H", cat: "pulseiras", catLabel: "Impressora de Pulseiras", desc: "Controle de acesso.", img: `${U}/2026/02/Design-sem-nome-e1783344217571.png` },
+  { name: "NYX", cat: "pulseiras", catLabel: "Impressora de Pulseiras", desc: "Pulseiras térmicas para eventos e clínicas.", img: `${U}/2026/01/68-e1783344441979.png` },
   { name: "CP-D80", cat: "cartao", catLabel: "Impressora de Cartão", desc: "Cartões PVC para credenciamento.", img: `${U}/2026/02/34-e1783344238765.png` },
+  { name: "CP4100", cat: "fotos", catLabel: "Impressora de Fotos", desc: "Sublimação térmica para fotos instantâneas.", img: `${U}/2026/01/73-e1783344612255.png` },
+  { name: "EP-50A", cat: "embaladora", catLabel: "Embaladora Automática", desc: "Embalagem all-in-one para e-commerce.", img: `${U}/2026/03/All-in-One-E-commerce-Packaging-Machine-2-e1783345462569.png` },
 ];
 
 export const heroGallery = [
