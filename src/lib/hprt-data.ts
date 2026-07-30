@@ -57,28 +57,6 @@ export const heroGallery = [
   "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592081867068.jpg",
 ];
 
-export const comparison = [
-  {
-    criterion: "Fabricação",
-    hprt: "Fabricante direto — 56 linhas de produção próprias",
-    other: "Fabricação terceirizada em parte do portfólio",
-  },
-  {
-    criterion: "Cobertura de portfólio",
-    hprt: "Impressão térmica, mobile, scanners, RFID e têxtil digital",
-    other: "Foco em mobile computing e impressão industrial",
-  },
-  {
-    criterion: "Custo de propriedade",
-    hprt: "Consumíveis e peças com custo-benefício superior",
-    other: "Ecossistema fechado, custo de manutenção mais alto",
-  },
-  {
-    criterion: "Suporte no Brasil",
-    hprt: "Distribuição própria em São Paulo, com a Cogra",
-    other: "Suporte via rede de distribuidores terceiros",
-  },
-];
 
 export const solutions = [
   { num: "01", title: "Varejo", desc: "Etiquetagem, PDV e gestão de estoque com leitura rápida de código de barras." },

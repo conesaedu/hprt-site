@@ -1,5 +1,4 @@
 import { useCountUp, useReveal } from "@/hooks/use-reveal";
-import { comparison } from "@/lib/hprt-data";
 import { SectionHead } from "./ui";
 
 function Stat({ value, suffix, label }: { value: number; suffix: string; label: string }) {
@@ -28,65 +27,6 @@ export function Stats() {
           <span className="font-mono text-xs uppercase tracking-[0.06em] text-faint">
             Estoque e suporte local
           </span>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function Positioning() {
-  const reveal = useReveal<HTMLDivElement>();
-
-  return (
-    <section id="positioning" className="py-30">
-      <div className="wrap">
-        <SectionHead
-          eyebrow="Posicionamento"
-          title="Você não precisa pagar o prêmio de marca para ter o mesmo padrão de operação."
-        >
-          Quem domina essa categoria cobra o preço de dominar. A HPRT entrega a mesma cobertura de
-          casos de uso, com a estrutura de uma das maiores fabricantes térmicas do mundo por trás.
-        </SectionHead>
-
-        <div
-          ref={reveal.ref}
-          className={`${reveal.className} overflow-hidden rounded-lg border border-border`}
-        >
-          <table className="w-full border-collapse text-left text-sm">
-            <thead>
-              <tr className="bg-surface font-mono text-xs uppercase tracking-[0.06em] text-muted-foreground">
-                <th className="border-b border-border px-6 py-5 font-normal">Critério</th>
-                <th className="border-b border-border px-6 py-5 font-normal text-foreground">
-                  HPRT
-                </th>
-                <th className="border-b border-border px-6 py-5 font-normal">
-                  Alternativa premium
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparison.map((row, i) => (
-                <tr key={row.criterion}>
-                  <td
-                    className={`px-6 py-5 font-semibold text-foreground ${i < comparison.length - 1 ? "border-b border-border" : ""}`}
-                  >
-                    {row.criterion}
-                  </td>
-                  <td
-                    className={`px-6 py-5 text-foreground ${i < comparison.length - 1 ? "border-b border-border" : ""}`}
-                  >
-                    <span className="mr-2 font-bold text-signal">✓</span>
-                    {row.hprt}
-                  </td>
-                  <td
-                    className={`px-6 py-5 text-faint ${i < comparison.length - 1 ? "border-b border-border" : ""}`}
-                  >
-                    {row.other}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
     </section>
