@@ -1,5 +1,4 @@
 import { useCountUp, useReveal } from "@/hooks/use-reveal";
-import { comparison } from "@/lib/hprt-data";
 import { SectionHead } from "./ui";
 
 function Stat({ value, suffix, label }: { value: number; suffix: string; label: string }) {
@@ -34,59 +33,70 @@ export function Stats() {
   );
 }
 
+const pillars = [
+  {
+    num: "01",
+    label: "Escala fabril",
+    title: "Fabricação própria em massa",
+    desc: "56 linhas de produção, milhares de colaboradores e uma cadeia verticalizada que controla a tecnologia da matéria-prima ao produto final.",
+  },
+  {
+    num: "02",
+    label: "Engenharia interna",
+    title: "Tecnologia de origem",
+    desc: "Cabeças de impressão, mecanismos térmicos, RFID e firmware desenvolvidos internamente — não licenciados, não adaptados.",
+  },
+  {
+    num: "03",
+    label: "Portfólio completo",
+    title: "Uma só fabricante, toda a cadeia",
+    desc: "Etiquetas industriais, cupom fiscal, leitores, coletores, pulseiras, A4 portátil e cartão. Tudo integrado sob a mesma engenharia.",
+  },
+  {
+    num: "04",
+    label: "Brasil",
+    title: "Suporte e estoque local",
+    desc: "Distribuição própria em São Paulo, com a Cogra. Peças, consumíveis e atendimento técnico no mesmo país da sua operação.",
+  },
+];
+
 export function Positioning() {
   const reveal = useReveal<HTMLDivElement>();
 
   return (
-    <section id="positioning" className="py-30">
+    <section id="positioning" className="bg-surface py-30">
       <div className="wrap">
         <SectionHead
           eyebrow="Posicionamento"
-          title="Você não precisa pagar o prêmio de marca para ter o mesmo padrão de operação."
+          title="A autoridade térmica global, com suporte e estoque no Brasil."
         >
-          Quem domina essa categoria cobra o preço de dominar. A HPRT entrega a mesma cobertura de
-          casos de uso, com a estrutura de uma das maiores fabricantes térmicas do mundo por trás.
+          A HPRT Brasil traz a escala de uma das maiores fabricantes de tecnologia de impressão do
+          mundo — e aproxima essa robustez da sua operação, com distribuição, peças e atendimento em
+          São Paulo.
         </SectionHead>
 
         <div
           ref={reveal.ref}
-          className={`${reveal.className} overflow-hidden rounded-lg border border-border`}
+          className={`${reveal.className} grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-4`}
         >
-          <table className="w-full border-collapse text-left text-sm">
-            <thead>
-              <tr className="bg-surface font-mono text-xs uppercase tracking-[0.06em] text-muted-foreground">
-                <th className="border-b border-border px-6 py-5 font-normal">Critério</th>
-                <th className="border-b border-border px-6 py-5 font-normal text-foreground">
-                  HPRT
-                </th>
-                <th className="border-b border-border px-6 py-5 font-normal">
-                  Alternativa premium
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparison.map((row, i) => (
-                <tr key={row.criterion}>
-                  <td
-                    className={`px-6 py-5 font-semibold text-foreground ${i < comparison.length - 1 ? "border-b border-border" : ""}`}
-                  >
-                    {row.criterion}
-                  </td>
-                  <td
-                    className={`px-6 py-5 text-foreground ${i < comparison.length - 1 ? "border-b border-border" : ""}`}
-                  >
-                    <span className="mr-2 font-bold text-signal">✓</span>
-                    {row.hprt}
-                  </td>
-                  <td
-                    className={`px-6 py-5 text-faint ${i < comparison.length - 1 ? "border-b border-border" : ""}`}
-                  >
-                    {row.other}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          {pillars.map((p) => (
+            <div
+              key={p.num}
+              className="flex flex-col justify-between bg-background p-8 transition-colors duration-200 hover:bg-surface"
+            >
+              <div>
+                <div className="mb-6 flex items-center justify-between">
+                  <span className="font-display text-3xl font-bold text-foreground">{p.num}</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-faint">
+                    {p.label}
+                  </span>
+                </div>
+                <h3 className="mb-3 text-[1.25rem] leading-tight">{p.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+              </div>
+              <div className="mt-8 h-1 w-8 bg-signal" />
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -119,3 +129,4 @@ export function GlobalTrust() {
     </section>
   );
 }
+
