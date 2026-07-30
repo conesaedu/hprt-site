@@ -40,7 +40,7 @@ export function Hero() {
           <div className="mb-14 flex flex-wrap gap-3.5">
             <Btn href="#products">Ver o portfólio completo</Btn>
             <Btn href="#positioning" variant="ghost">
-              Comparar com sua solução atual
+              Nosso posicionamento
             </Btn>
           </div>
           <dl className="flex flex-wrap gap-9 font-mono text-[0.78rem] text-faint">
