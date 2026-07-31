@@ -29,8 +29,8 @@ export function Hero() {
         <div>
           <Eyebrow className="mb-6">Fabricante global · Distribuição no Brasil</Eyebrow>
           <h1 className="mb-6 text-[2.375rem] leading-[1.08] md:text-[3.125rem]">
-            A escala de uma potência industrial chinesa, com a{" "}
-            <span className="text-signal">agilidade</span> que o mercado brasileiro precisa.
+            Tecnologia de impressão e identificação na{" "}
+            <span className="text-signal">escala do seu negócio</span>.
           </h1>
           <p className="mb-9 max-w-[30rem] text-[1.0625rem] text-muted-foreground">
             Impressoras térmicas, coletores de dados, leitores de código de barras e etiquetas — o
