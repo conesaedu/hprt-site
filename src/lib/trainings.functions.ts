@@ -8,15 +8,15 @@ const trainingSchema = z.object({
   title: z.string().min(1),
   type: z.enum(["técnico", "comercial"]),
   audience: z.string().min(1),
-  date: z.string().datetime(),
+  date: z.string().datetime({ offset: true }),
   format: z.enum(["presencial", "online", "híbrido"]),
   location: z.string().min(1),
   seats: z.number().int().positive(),
   spots: z.number().int().min(0),
   description: z.string().min(1),
   is_active: z.boolean(),
-  created_at: z.string().datetime(),
-  updated_at: z.string().datetime(),
+  created_at: z.string().datetime({ offset: true }),
+  updated_at: z.string().datetime({ offset: true }),
 });
 
 export type Training = z.infer<typeof trainingSchema>;
