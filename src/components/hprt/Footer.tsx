@@ -1,20 +1,31 @@
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/hprt-logo.png.asset.json";
 
 const cols = [
   {
     title: "Produtos",
-    links: ["Etiquetas", "Coletores de dados", "Leitores de código de barras", "Impressão de cupom"],
-    href: "#products",
+    links: [
+      { label: "Etiquetas", href: "#products" },
+      { label: "Coletores de dados", href: "#products" },
+      { label: "Leitores de código de barras", href: "#products" },
+      { label: "Impressão de cupom", href: "#products" },
+    ],
   },
   {
     title: "Empresa",
-    links: ["Por que HPRT", "Soluções por setor", "Onde comprar"],
-    href: "#positioning",
+    links: [
+      { label: "Por que HPRT", href: "#positioning" },
+      { label: "Soluções por setor", href: "#solutions" },
+      { label: "Treinamentos", href: "/treinamentos" },
+      { label: "Onde comprar", href: "#trust" },
+    ],
   },
   {
     title: "Contato",
-    links: ["Falar com um especialista", "Suporte técnico"],
-    href: "#trust",
+    links: [
+      { label: "Falar com um especialista", href: "#trust" },
+      { label: "Suporte técnico", href: "#trust" },
+    ],
   },
 ];
 
@@ -37,13 +48,22 @@ export function Footer() {
               </h2>
               <ul>
                 {col.links.map((l) => (
-                  <li key={l} className="mb-2.5">
-                    <a
-                      href={col.href}
-                      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      {l}
-                    </a>
+                  <li key={l.label} className="mb-2.5">
+                    {l.href.startsWith("/") ? (
+                      <Link
+                        to={l.href}
+                        className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={l.href}
+                        className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        {l.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
