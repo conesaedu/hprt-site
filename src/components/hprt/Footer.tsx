@@ -25,6 +25,7 @@ const cols = [
     links: [
       { label: "Falar com um especialista", href: "#trust" },
       { label: "Suporte técnico", href: "#trust" },
+      { label: "Downloads e drivers", href: "/downloads" },
     ],
   },
 ];
