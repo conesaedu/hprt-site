@@ -68,11 +68,10 @@ export function Positioning() {
       <div className="wrap">
         <SectionHead
           eyebrow="Posicionamento"
-          title="A autoridade térmica global, com suporte e estoque no Brasil."
+          title="Uma das maiores fabricantes de impressão do mundo, agora ao lado do seu negócio."
         >
-          A HPRT Brasil traz a escala de uma das maiores fabricantes de tecnologia de impressão do
-          mundo — e aproxima essa robustez da sua operação, com distribuição, peças e atendimento em
-          São Paulo.
+          Não intermediamos. A HPRT Brasil conecta a operação global da Hanin à sua operação local,
+          com estoque, peças e atendimento técnico em São Paulo.
         </SectionHead>
 
         <div
