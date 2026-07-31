@@ -8,7 +8,7 @@ const cols = [
   },
   {
     title: "Empresa",
-    links: ["Por que HPRT", "Soluções por setor", "Onde comprar"],
+    links: ["Por que HPRT", "Soluções por setor", "Treinamentos", "Onde comprar"],
     href: "#positioning",
   },
   {
