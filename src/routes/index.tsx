@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { CtaStrip, Products, Solutions, Trust } from "@/components/hprt/Catalog";
 import { Footer } from "@/components/hprt/Footer";
 import { Hero } from "@/components/hprt/Hero";
@@ -60,6 +60,10 @@ function Index() {
         <TrainingCta />
       </main>
       <Footer />
+    </div>
+  );
+}
+
 function TrainingCta() {
   return (
     <section className="border-y border-border bg-surface py-24">
@@ -79,4 +83,3 @@ function TrainingCta() {
     </section>
   );
 }
-
