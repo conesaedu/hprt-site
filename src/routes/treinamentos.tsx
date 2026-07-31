@@ -362,8 +362,6 @@ function RegistrationModal({
   );
 }
 
-import { useServerFn } from "@tanstack/react-start";
-
 function Faq() {
   const items = [
     {
