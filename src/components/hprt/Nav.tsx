@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/hprt-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 import { Btn } from "./ui";
