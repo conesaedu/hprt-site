@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
-import { z } from "zod";
 import { listTrainings, registerForTraining, type Training } from "@/lib/trainings.functions";
 import { Nav } from "@/components/hprt/Nav";
 import { Footer } from "@/components/hprt/Footer";
