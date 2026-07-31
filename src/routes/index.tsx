@@ -56,6 +56,7 @@ function Index() {
         <Solutions />
         <Trust />
         <CtaStrip />
+        <TrainingCta />
       </main>
       <Footer />
     </div>
