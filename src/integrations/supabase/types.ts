@@ -14,7 +14,101 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      training_registrations: {
+        Row: {
+          company: string
+          created_at: string
+          email: string
+          id: string
+          is_client: boolean
+          name: string
+          phone: string | null
+          status: string
+          training_id: string
+          updated_at: string
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          email: string
+          id?: string
+          is_client?: boolean
+          name: string
+          phone?: string | null
+          status?: string
+          training_id: string
+          updated_at?: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          email?: string
+          id?: string
+          is_client?: boolean
+          name?: string
+          phone?: string | null
+          status?: string
+          training_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "training_registrations_training_id_fkey"
+            columns: ["training_id"]
+            isOneToOne: false
+            referencedRelation: "trainings"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      trainings: {
+        Row: {
+          audience: string
+          created_at: string
+          date: string
+          description: string
+          format: string
+          id: string
+          is_active: boolean
+          location: string
+          seats: number
+          spots: number
+          title: string
+          type: string
+          updated_at: string
+        }
+        Insert: {
+          audience: string
+          created_at?: string
+          date: string
+          description: string
+          format: string
+          id?: string
+          is_active?: boolean
+          location: string
+          seats: number
+          spots: number
+          title: string
+          type: string
+          updated_at?: string
+        }
+        Update: {
+          audience?: string
+          created_at?: string
+          date?: string
+          description?: string
+          format?: string
+          id?: string
+          is_active?: boolean
+          location?: string
+          seats?: number
+          spots?: number
+          title?: string
+          type?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
