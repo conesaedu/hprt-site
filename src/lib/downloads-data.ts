@@ -1,3 +1,10 @@
+import seagullDriver from "@/assets/downloads/HPRT_12.0.exe.asset.json";
+import printerUtility from "@/assets/downloads/HPRTPrinterUtility_V1.0.0.32.rar.asset.json";
+import bartender from "@/assets/downloads/HPRT-Label-Designer-BT2016_R6_3141_UL.zip.asset.json";
+import cpd80Utility from "@/assets/downloads/cpd80-utility.zip.asset.json";
+import posDriver from "@/assets/downloads/HPRT_POS_Printer_Driver_v2.7.4.10.zip.asset.json";
+import posUtility from "@/assets/downloads/HPRTUtilityForPOSSetup_V1.2.4.26.Test09.exe.7z.asset.json";
+
 export type DownloadCategory = "Etiquetas e pulseiras" | "Cartões" | "Cupom / PDV";
 
 export type DownloadKind = "Driver" | "Utilitário" | "Software" | "Firmware";
@@ -44,7 +51,7 @@ export const downloads: DownloadItem[] = [
     kind: "Driver",
     os: "Windows",
     models: labelModels,
-    file: "https://hprtbrasil.com.br/downloads/HPRT_12.0.exe",
+    file: seagullDriver.url,
     format: "EXE",
     version: "12.0",
   },
@@ -57,7 +64,7 @@ export const downloads: DownloadItem[] = [
     kind: "Utilitário",
     os: "Windows",
     models: labelModels,
-    file: "https://hprtbrasil.com.br/downloads/HPRTPrinterUtility%20V1.0.0.32.rar",
+    file: printerUtility.url,
     format: "RAR",
     version: "1.0.0.32",
   },
@@ -70,7 +77,7 @@ export const downloads: DownloadItem[] = [
     kind: "Software",
     os: "Windows",
     models: labelModels,
-    file: "https://hprtbrasil.com.br/downloads/HPRT-Label-Designer-BT2016_R6_3141_UL.zip",
+    file: bartender.url,
     format: "ZIP",
     version: "BT2016_R6_3141_UL",
   },
@@ -95,7 +102,7 @@ export const downloads: DownloadItem[] = [
     kind: "Utilitário",
     os: "Windows",
     models: ["CP-D80"],
-    file: "https://hprtbrasil.com.br/downloads/Utilit%C3%A1rio%20para%20Configura%C3%A7%C3%A3o%20CP-D80.zip",
+    file: cpd80Utility.url,
     format: "ZIP",
   },
   {
@@ -107,7 +114,7 @@ export const downloads: DownloadItem[] = [
     kind: "Driver",
     os: "Windows",
     models: ["TP80K"],
-    file: "https://hprtbrasil.com.br/downloads/HPRT+POS+Printer+Driver+v2.7.4.10.zip",
+    file: posDriver.url,
     format: "ZIP",
     version: "2.7.4.10",
   },
@@ -120,7 +127,7 @@ export const downloads: DownloadItem[] = [
     kind: "Utilitário",
     os: "Windows",
     models: ["TP80K"],
-    file: "https://hprtbrasil.com.br/downloads/HPRTUtilityForPOSSetup%20V1.2.4.26.Test09.exe.7z",
+    file: posUtility.url,
     format: "7Z",
     version: "1.2.4.26",
   },
