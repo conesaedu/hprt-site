@@ -7,6 +7,7 @@ const links = [
   { href: "#products", label: "Produtos" },
   { href: "#positioning", label: "Por que HPRT" },
   { href: "#solutions", label: "Soluções" },
+  { href: "/treinamentos", label: "Treinamentos" },
   { href: "#trust", label: "Onde comprar" },
 ];
 
