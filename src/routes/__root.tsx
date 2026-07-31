@@ -82,6 +82,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "HPRT Brasil" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "HPRT Brasil" },
+      { name: "twitter:title", content: "HPRT Brasil" },
+      { property: "og:description", content: "Alta tecnologia de impressão e captura de dados." },
+      { name: "twitter:description", content: "Alta tecnologia de impressão e captura de dados." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2cd85732-a675-4d73-a0a7-3eb29c372c46/id-preview-455acba0--5ddcf49a-2ef9-430a-b1f2-47efe0e29994.lovable.app-1785518421163.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2cd85732-a675-4d73-a0a7-3eb29c372c46/id-preview-455acba0--5ddcf49a-2ef9-430a-b1f2-47efe0e29994.lovable.app-1785518421163.png" },
     ],
     links: [
       {
