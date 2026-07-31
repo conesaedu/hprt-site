@@ -36,15 +36,26 @@ export function Nav() {
           <img src={logo.url} alt="HPRT Brasil" className="h-[26px] w-auto" />
         </a>
         <nav className="hidden gap-9 md:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.href.startsWith("/") ? (
+              <Link
+                key={l.href}
+                to={l.href}
+                activeProps={{ className: "text-foreground" }}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </a>
+            ),
+          )}
         </nav>
         <div className="flex items-center">
           <Btn href="#trust" variant="ghost">
