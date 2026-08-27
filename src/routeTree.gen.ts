@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as OndeComprarRouteImport } from './routes/onde-comprar'
 import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as TreinamentosRouteImport } from './routes/treinamentos'
 import { Route as ProdutosIndexRouteImport } from './routes/produtos.index'
@@ -36,6 +37,11 @@ const OndeComprarRoute = OndeComprarRouteImport.update({
 const PorQueHprtRoute = PorQueHprtRouteImport.update({
   id: '/por-que-hprt',
   path: '/por-que-hprt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolucoesRoute = SolucoesRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/downloads': typeof DownloadsRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/downloads': typeof DownloadsRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/downloads': typeof DownloadsRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
     | '/produtos/$slug'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
     | '/produtos/$slug'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
     | '/produtos/$slug'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   DownloadsRoute: typeof DownloadsRoute
   OndeComprarRoute: typeof OndeComprarRoute
   PorQueHprtRoute: typeof PorQueHprtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolucoesRoute: typeof SolucoesRoute
   TreinamentosRoute: typeof TreinamentosRoute
   ProdutosSlugRoute: typeof ProdutosSlugRoute
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/por-que-hprt'
       fullPath: '/por-que-hprt'
       preLoaderRoute: typeof PorQueHprtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solucoes': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadsRoute: DownloadsRoute,
   OndeComprarRoute: OndeComprarRoute,
   PorQueHprtRoute: PorQueHprtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolucoesRoute: SolucoesRoute,
   TreinamentosRoute: TreinamentosRoute,
   ProdutosSlugRoute: ProdutosSlugRoute,

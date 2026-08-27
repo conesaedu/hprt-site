@@ -1,32 +1,20 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/hprt-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 import { Btn } from "./ui";
 
 const links = [
   { href: "/produtos", label: "Produtos" },
-  { href: "#positioning", label: "Por que HPRT" },
-  { href: "#solutions", label: "Soluções" },
+  { href: "/por-que-hprt", label: "Por que HPRT" },
+  { href: "/solucoes", label: "Soluções" },
   { href: "/treinamentos", label: "Treinamentos" },
   { href: "/downloads", label: "Downloads" },
-  { href: "#trust", label: "Onde comprar" },
+  { href: "/onde-comprar", label: "Onde comprar" },
 ];
 
 export function Nav({ onDark = false }: { onDark?: boolean } = {}) {
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
-
-  const goToHash = (e: React.MouseEvent, hash: string) => {
-    e.preventDefault();
-    const id = hash.replace("#", "");
-    if (pathname === "/") {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-    navigate({ to: "/", hash: id });
-  };
 
 
   useEffect(() => {
@@ -52,42 +40,25 @@ export function Nav({ onDark = false }: { onDark?: boolean } = {}) {
           <img src={logo.url} alt="HPRT Brasil" className="h-[26px] w-auto" />
         </Link>
         <nav className="hidden gap-9 md:flex">
-          {links.map((l) =>
-            l.href.startsWith("/") ? (
-              <Link
-                key={l.href}
-                to={l.href}
-                activeProps={{ className: "text-foreground" }}
-                className={cn(
-                  "text-sm font-medium transition-colors",
-                  light
-                    ? "text-on-ink-muted hover:text-on-ink"
-                    : "text-muted-foreground hover:text-foreground",
-                )}
-              >
-                {l.label}
-              </Link>
-            ) : (
-              <a
-                key={l.href}
-                href={`/${l.href}`}
-                onClick={(e) => goToHash(e, l.href)}
-
-                className={cn(
-                  "text-sm font-medium transition-colors",
-                  light
-                    ? "text-on-ink-muted hover:text-on-ink"
-                    : "text-muted-foreground hover:text-foreground",
-                )}
-              >
-                {l.label}
-              </a>
-            ),
-          )}
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              to={l.href}
+              activeProps={{ className: "text-foreground" }}
+              className={cn(
+                "text-sm font-medium transition-colors",
+                light
+                  ? "text-on-ink-muted hover:text-on-ink"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              {l.label}
+            </Link>
+          ))}
         </nav>
         <div className="flex items-center">
           <Btn
-            href="/#trust"
+            href="/onde-comprar"
             variant="ghost"
             className={light ? "border-on-ink/30 text-on-ink hover:border-on-ink" : undefined}
           >
