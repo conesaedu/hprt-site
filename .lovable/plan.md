@@ -1,86 +1,35 @@
-# Plano: Agenda de Treinamentos HPRT Brasil
+# Página individual para cada produto
 
-## O que vamos construir
+Sim — consegui varrer o site atual: as 25 páginas de produto de `hprtbrasil.com.br/produto/...` já estão extraídas (descrição, diferenciais, aplicações por segmento, tabela de especificações e galeria de imagens de cada modelo). Inclusive a **Delta**, que faltava no catálogo.
 
-Uma página dedicada `/treinamentos` para divulgar a agenda de treinamentos técnicos e comerciais da HPRT Brasil, com inscrição direta no site. O diferencial será destacado: **treinamentos sem custo para clientes que compram com a HPRT Brasil**.
+## O que será construído
 
-## Decisões já confirmadas
-- Formato: **página dedicada** (não apenas seção na home).
-- Conteúdo: treinamentos **técnicos e comerciais**.
-- Inscrição: **formulário no site** (nome, e-mail, empresa, telefone opcional).
+**Uma página por produto** em `/produtos/{modelo}` (ex.: `/produtos/neo`, `/produtos/cp-d80`), com:
 
-## Backend: Lovable Cloud
+- Cabeçalho com categoria, nome do modelo e resumo comercial
+- Galeria das fotos oficiais do produto
+- Bloco "Principais diferenciais" (4 a 5 pontos por modelo)
+- "Aplicações por segmento" (varejo, logística, saúde, manufatura, transporte…)
+- Tabela completa de especificações técnicas
+- Downloads relacionados ao modelo (driver/utilitário já hospedados)
+- CTA de orçamento/suporte e link para treinamentos
+- Produtos relacionados da mesma categoria
 
-O projeto agora usa Lovable Cloud. Precisamos de duas tabelas para armazenar os treinamentos e as inscrições.
+**Índice `/produtos`** com filtro por categoria (mesma linguagem visual do catálogo da home).
 
-### 1. Migration de banco
-Criar tabelas:
+**Catálogo da home** passa a linkar cada card para a página do produto, em vez de só filtrar.
 
-- `public.trainings` — treinamentos disponíveis:
-  - `title` (título do treinamento)
-  - `type` (técnico ou comercial)
-  - `audience` (público-alvo)
-  - `date` (data e hora)
-  - `format` (presencial, online, híbrido)
-  - `location` (local/link)
-  - `seats` (vagas totais)
-  - `spots` (vagas restantes)
-  - `description` (resumo)
-  - `is_active` (se está aberto para inscrição)
+**SEO**: title, description e og tags próprios por modelo, H1 único, JSON-LD de Produto, imagem oficial como og:image.
 
-- `public.training_registrations` — inscrições:
-  - `training_id` (qual treinamento)
-  - `name`, `email`, `company`, `phone`
-  - `is_client` (se é cliente HPRT)
-  - `status` (pending, confirmed, cancelled)
+## Detalhes técnicos
 
-Aplicar GRANTs e RLS:
-- `trainings`: leitura pública (anon) para visitantes verem a agenda; gerenciamento por `service_role`.
-- `training_registrations`: inserção pública (anon) para permitir inscrição sem login; leitura apenas por `service_role`.
+- Conteúdo em `src/lib/products/` como dados tipados (um arquivo de dados por categoria ou um índice único com `slug`, `specs`, `highlights`, `applications`, `gallery`).
+- Rotas TanStack: `src/routes/produtos.index.tsx` e `src/routes/produtos.$slug.tsx` (404 para slug inexistente).
+- Imagens continuam servidas das URLs oficiais do site atual (sem duplicar binários no projeto).
+- Textos serão revisados/enxugados: o site atual repete o mesmo bloco duas vezes ("Principais Diferenciais" + "Resumo do Produto"); vou manter uma versão limpa.
+- Nada de backend novo — conteúdo estático, rápido e indexável.
 
-### 2. Server functions
-- `listTrainings()`: retorna treinamentos ativos ordenados por data.
-- `registerForTraining(data)`: valida com Zod e insere inscrição no banco.
+## Escopo em duas etapas
 
-## Frontend
-
-### 3. Página `/treinamentos`
-Criar `src/routes/treinamentos.tsx` com:
-- Head SEO específico (título, descrição, OG).
-- Nav e Footer reutilizados.
-- Hero da página com headline forte sobre capacitação e o benefício "grátis para clientes".
-- Lista de treinamentos em cards, mostrando:
-  - data/horário,
-  - tipo (técnico/comercial),
-  - formato,
-  - vagas restantes,
-  - botão "Inscrever-se".
-- Modal/formulário de inscrição ao clicar no botão.
-- Seção de FAQ rápido: "É necessário ser cliente?", "Como recebo o link?", "Há certificado?".
-
-### 4. Navegação
-- Adicionar "Treinamentos" no menu do `Nav.tsx`.
-- Adicionar link no `Footer.tsx`.
-- Adicionar um CTA curto na home (`src/routes/index.tsx`) após o catálogo, convidando para a agenda.
-
-### 5. Seed inicial
-Inserir 3 treinamentos de exemplo na migration para a página já nascer populada:
-- Instalação e configuração de impressoras de etiquetas (técnico)
-- Operacionalização de coletores de dados (técnico)
-- Venda consultiva de soluções de identificação (comercial)
-
-## Texto sugerido para aprovação
-
-Vou manter o tom arrojado e direto que usamos no posicionamento:
-
-- **H1 da página:** "Capacite sua equipe direto com quem entende de impressão e identificação."
-- **Subhead:** "Treinamentos técnicos e comerciais com a engenharia HPRT. Gratuitos para clientes que compram conosco."
-- **Benefício em destaque:** "Sem custo para clientes HPRT Brasil."
-
-## Critério de conclusão
-- Página `/treinamentos` acessível e renderizando os treinamentos do banco.
-- Formulário de inscrição validando campos e salvando no banco.
-- Menu e footer atualizados.
-- Typecheck e build passando.
-
-Se quiser, posso ajustar o texto da página, a quantidade de treinamentos iniciais ou os campos do formulário antes de começar.
+1. Estrutura + as 25 páginas com dados já extraídos.
+2. Ajustes de copy modelo a modelo, se você quiser refinar depois.
