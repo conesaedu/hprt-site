@@ -135,6 +135,16 @@ function Intro({ product }: { product: Product }) {
 /* ---------------------------------------------------------- highlights */
 
 function Highlights({ product }: { product: Product }) {
+  /* Cada diferencial só recebe foto quando a imagem realmente mostra o que o
+     texto afirma (curadoria em catalog.ts). O resto vira bloco tipográfico. */
+  const hasPhoto = (h: (typeof product.highlights)[number]) =>
+    typeof h.image === "number" && Boolean(product.gallery[h.image]);
+  const withImage = product.highlights.filter(hasPhoto);
+  const textOnly = product.highlights.filter((h) => !hasPhoto(h));
+  /* Numeração segue a ordem de leitura da página, não a ordem do dado. */
+  const numberOf = (h: (typeof product.highlights)[number]) =>
+    hasPhoto(h) ? withImage.indexOf(h) + 1 : withImage.length + textOnly.indexOf(h) + 1;
+
   return (
     <section className="border-b border-border bg-surface py-20 md:py-24">
       <div className="wrap">
@@ -145,18 +155,35 @@ function Highlights({ product }: { product: Product }) {
           </h2>
         </div>
 
-        <div className="flex flex-col gap-px bg-border">
-          {product.highlights.map((h, i) => (
-            <HighlightBand
-              key={h.title}
-              index={i}
-              title={h.title}
-              desc={h.desc}
-              image={product.gallery[(i + 1) % Math.max(1, product.gallery.length)]}
-              name={product.name}
-            />
-          ))}
-        </div>
+        {withImage.length > 0 ? (
+          <div className="flex flex-col gap-px bg-border">
+            {withImage.map((h, pos) => (
+              <HighlightBand
+                key={h.title}
+                index={numberOf(h) - 1}
+                position={pos}
+                title={h.title}
+                desc={h.desc}
+                image={product.gallery[h.image as number]}
+                name={product.name}
+              />
+            ))}
+          </div>
+        ) : null}
+
+        {textOnly.length > 0 ? (
+          <div
+            className={cn(
+              "grid gap-px bg-border",
+              withImage.length > 0 && "mt-px",
+              textOnly.length >= 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2",
+            )}
+          >
+            {textOnly.map((h) => (
+              <HighlightNote key={h.title} index={numberOf(h) - 1} title={h.title} desc={h.desc} />
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   );
@@ -164,19 +191,21 @@ function Highlights({ product }: { product: Product }) {
 
 function HighlightBand({
   index,
+  position,
   title,
   desc,
   image,
   name,
 }: {
   index: number;
+  position: number;
   title: string;
   desc: string;
-  image?: string;
+  image: string;
   name: string;
 }) {
   const reveal = useReveal<HTMLDivElement>();
-  const flip = index % 2 === 1;
+  const flip = position % 2 === 1;
 
   return (
     <div
@@ -190,22 +219,46 @@ function HighlightBand({
         <h3 className="mb-3 max-w-[26rem] text-[1.4375rem] leading-tight">{title}</h3>
         {desc ? <p className="max-w-[30rem] text-[0.95rem] leading-relaxed text-muted-foreground">{desc}</p> : null}
       </div>
-      {image ? (
-        <div
-          className={cn(
-            "flex items-center justify-center rounded-lg bg-surface-2 p-8",
-            flip && "md:order-1",
-          )}
-        >
-          <img
-            src={image}
-            alt={`Detalhe da HPRT ${name}`}
-            loading="lazy"
-            width={520}
-            height={380}
-            className="max-h-[15rem] w-auto object-contain mix-blend-multiply"
-          />
-        </div>
+      <div
+        className={cn(
+          "flex items-center justify-center rounded-lg bg-surface-2 p-8",
+          flip && "md:order-1",
+        )}
+      >
+        <img
+          src={image}
+          alt={`Detalhe da HPRT ${name}`}
+          loading="lazy"
+          width={520}
+          height={380}
+          className="max-h-[15rem] w-auto object-contain"
+        />
+      </div>
+    </div>
+  );
+}
+
+function HighlightNote({ index, title, desc }: { index: number; title: string; desc: string }) {
+  const reveal = useReveal<HTMLDivElement>();
+
+  return (
+    <div
+      ref={reveal.ref}
+      className={cn(
+        reveal.className,
+        "group relative flex flex-col overflow-hidden bg-background p-8 transition-colors hover:bg-surface-2",
+      )}
+    >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute right-6 top-4 font-display text-[3.5rem] font-bold leading-none text-border/70 transition-colors group-hover:text-signal/25"
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <span className="mb-5 block h-px w-10 bg-signal" aria-hidden />
+      <h3 className="relative mb-3 max-w-[22rem] text-[1.1875rem] leading-tight">{title}</h3>
+      {desc ? (
+        <p className="text-[0.9rem] leading-relaxed text-muted-foreground">{desc}</p>
       ) : null}
     </div>
   );
@@ -214,6 +267,14 @@ function HighlightBand({
 /* -------------------------------------------------------- applications */
 
 function Applications({ product }: { product: Product }) {
+  /* Sem células de preenchimento: a última aplicação estica para fechar a
+     linha, tanto em 3 colunas (desktop) quanto em 2 (tablet). */
+  const total = product.applications.length;
+  const lgCols = total % 3 === 0 || total > 4 ? 3 : 2;
+  const lgRest = total % lgCols;
+  const lgSpan = lgRest === 0 ? 1 : lgCols - lgRest + 1;
+  const smSpan = total % 2 === 0 ? 1 : 2;
+
   return (
     <section className="border-b border-border py-20 md:py-24">
       <div className="wrap">
@@ -221,22 +282,33 @@ function Applications({ product }: { product: Product }) {
           <Eyebrow className="mb-4">Onde ela trabalha</Eyebrow>
           <h2 className="text-[2.125rem] leading-[1.1]">Aplicações por segmento.</h2>
         </div>
-        <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {product.applications.map((a, i) => (
-            <article
-              key={a.title}
-              className="group bg-background p-7 transition-colors hover:bg-surface"
-            >
-              <span className="mb-5 block font-mono text-[0.68rem] tracking-[0.12em] text-faint transition-colors group-hover:text-signal">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mb-2.5 text-[1.125rem] leading-tight">{a.title}</h3>
-              <p className="text-[0.9rem] leading-relaxed text-muted-foreground">{a.desc}</p>
-            </article>
-          ))}
-          {Array.from({ length: (3 - (product.applications.length % 3)) % 3 }).map((_, i) => (
-            <div key={`filler-${i}`} className="hidden bg-background lg:block" aria-hidden />
-          ))}
+        <div
+          className={cn(
+            "grid gap-px border border-border bg-border sm:grid-cols-2",
+            lgCols === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2",
+          )}
+        >
+          {product.applications.map((a, i) => {
+            const last = i === total - 1;
+            return (
+              <article
+                key={a.title}
+                className={cn(
+                  "group bg-background p-7 transition-colors hover:bg-surface",
+                  last && smSpan === 2 && "sm:col-span-2",
+                  last && lgSpan === 2 && "lg:col-span-2",
+                  last && lgSpan === 3 && "lg:col-span-3",
+                  last && lgSpan === 1 && "lg:col-span-1",
+                )}
+              >
+                <span className="mb-5 block font-mono text-[0.68rem] tracking-[0.12em] text-faint transition-colors group-hover:text-signal">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mb-2.5 text-[1.125rem] leading-tight">{a.title}</h3>
+                <p className="text-[0.9rem] leading-relaxed text-muted-foreground">{a.desc}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -497,7 +569,7 @@ export function ProductCard({ product }: { product: Product }) {
           loading="lazy"
           width={420}
           height={315}
-          className="max-h-[11rem] w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:-translate-y-1.5 group-hover:scale-[1.03]"
+          className="max-h-[11rem] w-auto object-contain transition-transform duration-500 group-hover:-translate-y-1.5 group-hover:scale-[1.03]"
         />
       </div>
       <span className="mb-2 font-mono text-[0.65rem] uppercase tracking-[0.08em] text-faint">
