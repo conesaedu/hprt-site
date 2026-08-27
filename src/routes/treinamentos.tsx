@@ -19,22 +19,71 @@ const trainingsQueryOptions = queryOptions({
   staleTime: 1000 * 60 * 5,
 });
 
+const SITE = "https://hprtbrasil.lovable.app";
+
 export const Route = createFileRoute("/treinamentos")({
   component: TrainingsPage,
   loader: ({ context }) => context.queryClient.ensureQueryData(trainingsQueryOptions),
-  head: () => ({
+  head: ({ loaderData }) => ({
     meta: [
       { title },
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/treinamentos" },
+      { property: "og:url", content: `${SITE}/treinamentos` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/treinamentos" }],
+    links: [{ rel: "canonical", href: `${SITE}/treinamentos` }],
+    scripts: (loaderData ?? []).length
+      ? [
+          {
+            type: "application/ld+json",
+            children: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              name: "Agenda de treinamentos HPRT Brasil",
+              itemListElement: (loaderData ?? []).map((t, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                item: {
+                  "@type": "EducationEvent",
+                  name: t.title,
+                  description: t.description,
+                  startDate: t.date,
+                  url: `${SITE}/treinamentos`,
+                  inLanguage: "pt-BR",
+                  eventStatus: "https://schema.org/EventScheduled",
+                  eventAttendanceMode:
+                    t.format === "online"
+                      ? "https://schema.org/OnlineEventAttendanceMode"
+                      : t.format === "híbrido"
+                        ? "https://schema.org/MixedEventAttendanceMode"
+                        : "https://schema.org/OfflineEventAttendanceMode",
+                  location:
+                    t.format === "online"
+                      ? { "@type": "VirtualLocation", url: `${SITE}/treinamentos` }
+                      : { "@type": "Place", name: t.location, address: t.location },
+                  organizer: { "@type": "Organization", name: "HPRT Brasil", url: SITE },
+                  offers: {
+                    "@type": "Offer",
+                    price: "0",
+                    priceCurrency: "BRL",
+                    availability:
+                      t.spots > 0
+                        ? "https://schema.org/InStock"
+                        : "https://schema.org/SoldOut",
+                    url: `${SITE}/treinamentos`,
+                  },
+                },
+              })),
+            }),
+          },
+        ]
+      : undefined,
   }),
 });
+
 
 function TrainingsPage() {
   const { data: trainings } = useSuspenseQuery(trainingsQueryOptions);
