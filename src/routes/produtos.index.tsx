@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/hprt/Nav";
 import { Footer } from "@/components/hprt/Footer";
 import { ProductCard } from "@/components/hprt/ProductDetail";
@@ -13,6 +12,9 @@ const DESCRIPTION =
   "Impressoras de etiquetas, cupom, cartões, pulseiras, coletores e leitores HPRT. Especificações completas, drivers e suporte técnico no Brasil.";
 
 export const Route = createFileRoute("/produtos/")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    linha: typeof search.linha === "string" && search.linha ? search.linha : "all",
+  }),
   head: () => ({
     meta: [
       { title: TITLE },
@@ -29,7 +31,8 @@ export const Route = createFileRoute("/produtos/")({
 });
 
 function ProductIndex() {
-  const [active, setActive] = useState("all");
+  const { linha } = Route.useSearch();
+  const active = productCategories.some((c) => c.id === linha) ? linha : "all";
   const visible = products.filter((p) => active === "all" || p.category === active);
   const cats = productCategories.filter(
     (c) => c.id === "all" || products.some((p) => p.category === c.id),
@@ -67,10 +70,10 @@ function ProductIndex() {
 
             <div className="mb-10 flex flex-wrap gap-2.5">
               {cats.map((c) => (
-                <button
+                <Link
                   key={c.id}
-                  type="button"
-                  onClick={() => setActive(c.id)}
+                  to="/produtos"
+                  search={c.id === "all" ? { linha: "all" } : { linha: c.id }}
                   className={cn(
                     "rounded-full border bg-background px-4 py-2 font-mono text-[0.78rem] transition-colors",
                     active === c.id
@@ -79,7 +82,7 @@ function ProductIndex() {
                   )}
                 >
                   {c.label}
-                </button>
+                </Link>
               ))}
             </div>
 
