@@ -343,7 +343,7 @@ function Gallery({ product }: { product: Product }) {
           <div className="pointer-events-none absolute inset-0 stage-glow" aria-hidden />
           <img
             src={product.gallery[active]}
-            alt={`HPRT ${product.name} — imagem ${active + 1}`}
+            alt={`Impressora HPRT ${product.name} — vista ${active + 1} de ${product.gallery.length} (${product.categoryLabel})`}
             loading="lazy"
             width={1200}
             height={800}
@@ -364,9 +364,15 @@ function Gallery({ product }: { product: Product }) {
                 i === active ? "border-signal" : "border-on-ink/15 hover:border-on-ink/50",
               )}
             >
-              <img src={g} alt="" loading="lazy" className="size-full object-contain" />
+              <img
+                src={g}
+                alt={`Miniatura ${i + 1}: HPRT ${product.name} (${product.categoryLabel})`}
+                loading="lazy"
+                className="size-full object-contain"
+              />
             </button>
           ))}
+
         </div>
       </div>
     </section>
