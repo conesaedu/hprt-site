@@ -2,7 +2,7 @@
 // Editar aqui é seguro: este arquivo é a fonte de conteúdo das páginas de produto.
 import type { Product } from "./types";
 
-export const productList: Product[] = [
+export const productList: Product[] =  [
   {
     "slug": "gala",
     "name": "GALA",
@@ -1217,7 +1217,7 @@ export const productList: Product[] = [
     "slug": "delta",
     "name": "DELTA",
     "category": "etiquetas-entrada",
-    "categoryLabel": "Impressoras térmicas",
+    "categoryLabel": "Etiquetas · Entrada",
     "tagline": "Impressora Industrial para Etiquetas Largas",
     "body": [
       "A DELTA é uma impressora industrial de etiquetas térmica direta e por transferência térmica, desenvolvida para aplicações que exigem impressão em grande formato, alta robustez e produtividade, como logística, manufatura, indústria química, transporte e agricultura. Construída com estrutura totalmente metálica, é ideal para ambientes industriais de alta demanda."
@@ -1687,7 +1687,7 @@ export const productList: Product[] = [
     "slug": "m2-plus",
     "name": "M2 Plus",
     "category": "coletores",
-    "categoryLabel": "Coletores de Dados",
+    "categoryLabel": "Coletores de dados",
     "tagline": "Terminal Coletor de Dados Android",
     "body": [
       "O M2 PLUS é um terminal coletor de dados Android desenvolvido para aplicações que exigem alto desempenho, robustez e confiabilidade, como logística, indústria, varejo, saúde, transporte e governo. Com processador Octa-Core, Android 12, leitor biométrico integrado e leitor de códigos 1D/2D, é ideal para operações críticas que não podem parar.",
@@ -1932,7 +1932,7 @@ export const productList: Product[] = [
     "slug": "m3h",
     "name": "M3-H",
     "category": "coletores",
-    "categoryLabel": "Coletores de Dados",
+    "categoryLabel": "Coletores de dados",
     "tagline": "Terminal Coletor de Dados Android",
     "body": [
       "O M3-H é um terminal coletor de dados Android desenvolvido para aplicações que exigem mobilidade, robustez e alta precisão, como saúde, logística, varejo, manufatura e transporte. Leve, resistente e fácil de operar, é ideal para coleta de dados, leitura de códigos e integração com sistemas corporativos.",
@@ -2181,7 +2181,7 @@ export const productList: Product[] = [
     "slug": "m4-plus",
     "name": "M4 Plus",
     "category": "coletores",
-    "categoryLabel": "Coletores de Dados",
+    "categoryLabel": "Coletores de dados",
     "tagline": "Terminal Coletor de Dados Android",
     "body": [
       "O M4 PLUS é um terminal coletor de dados Android desenvolvido para aplicações que exigem robustez, produtividade e mobilidade, como logística, indústria, varejo, saúde e governo. Com teclado físico retroiluminado, leitor de códigos 1D/2D integrado e bateria removível de longa duração, é ideal para operações intensivas em campo."
@@ -2403,7 +2403,7 @@ export const productList: Product[] = [
     "slug": "m300c",
     "name": "M300C",
     "category": "leitores",
-    "categoryLabel": "Leitores de Códigos de Barras",
+    "categoryLabel": "Leitores de código de barras",
     "tagline": "Scanner Bluetooth Portátil",
     "body": [
       "O HS-M300 / HS-M300C é um scanner portátil Bluetooth compacto e de alto desempenho, projetado para aplicações móveis que exigem agilidade e mobilidade na captura de dados. Compatível com códigos de barras 1D e 2D, oferece leitura rápida com tecnologia de escaneamento inteligente de até 500 leituras por segundo. Sua conectividade Bluetooth 4.2 BLE, aliada ao suporte aos protocolos HID e GATT, permite integração fácil com smartphones, tablets e computadores. Com bateria de longa duração, capacidade para até 20.000 leituras por carga e recursos de feedback por LED, vibração e buzzer, é ideal para operações de varejo, logística, manufatura e hospitalidade que necessitam de mobilidade, eficiência e confiabilidade na leitura de códigos de barras."
@@ -2585,7 +2585,7 @@ export const productList: Product[] = [
     "slug": "n130-bt-plus",
     "name": "N130 BT Plus",
     "category": "leitores",
-    "categoryLabel": "Leitores de Códigos de Barras",
+    "categoryLabel": "Leitores de código de barras",
     "tagline": "Leitor de Códigos de Barras Sem Fio de Alta Performance",
     "body": [
       "O N130 BT PLUS é um leitor de códigos de barras sem fio de alta performance, desenvolvido para aplicações que exigem mobilidade, rapidez e confiabilidade na captura de dados. Compatível com códigos 1D e 2D, realiza leituras omnidirecionais com excelente precisão."
@@ -2696,7 +2696,7 @@ export const productList: Product[] = [
     "slug": "n130-bt-plus-h",
     "name": "N130 BT Plus H",
     "category": "leitores",
-    "categoryLabel": "Leitores de Códigos de Barras",
+    "categoryLabel": "Leitores de código de barras",
     "tagline": "Leitor de Códigos de Barras Sem Fio com Estrutura Reforçada",
     "body": [
       "O N130 BT PLUS H é um leitor de códigos de barras sem fio com estrutura reforçada, desenvolvido para aplicações que exigem mobilidade, resistência e alta confiabilidade na captura de dados. Compatível com códigos 1D e 2D, realiza leituras omnidirecionais com excelente precisão."
@@ -2805,7 +2805,7 @@ export const productList: Product[] = [
     "slug": "n180",
     "name": "N180",
     "category": "leitores",
-    "categoryLabel": "Leitores de Códigos de Barras",
+    "categoryLabel": "Leitores de código de barras",
     "tagline": "Leitor de Códigos de Barras Avançado de Alta Performance",
     "body": [
       "O N180 é um leitor de códigos de barras avançado com desempenho superior para alto volume, desenvolvido para operações de maior demanda, como linhas de produção, expedição, recebimento de mercadorias e conferência em grande escala."
@@ -2914,7 +2914,7 @@ export const productList: Product[] = [
     "slug": "n80",
     "name": "N80",
     "category": "leitores",
-    "categoryLabel": "Leitores de Códigos de Barras",
+    "categoryLabel": "Leitores de código de barras",
     "tagline": "Leitor de Códigos de Barras Compacto de Alta Performance",
     "body": [
       "O N80 é um leitor de códigos de barras compacto e de alta performance, desenvolvido para aplicações que exigem rapidez, precisão e confiabilidade na captura de dados em ambientes comerciais e corporativos. Compatível com códigos 1D e 2D, realiza leituras omnidirecionais com excelente desempenho."
@@ -3026,7 +3026,7 @@ export const productList: Product[] = [
     "slug": "p300",
     "name": "P300",
     "category": "leitores",
-    "categoryLabel": "Leitores de Códigos de Barras",
+    "categoryLabel": "Leitores de código de barras",
     "tagline": "Leitor de Códigos de Barras Fixo Imager",
     "body": [
       "O HPRT P300 é um leitor de códigos de barras fixo do tipo imager 2D, desenvolvido para operações que exigem leitura rápida, precisa e contínua em balcões de atendimento, caixas de varejo e totens de autoatendimento. Equipado com sensor de alta sensibilidade e ampla janela de leitura, ele captura códigos 1D e 2D tanto em etiquetas impressas quanto em telas de smartphones, sem necessidade de alinhamento preciso."
@@ -3102,7 +3102,7 @@ export const productList: Product[] = [
     "slug": "tp80k",
     "name": "TP80K",
     "category": "cupom",
-    "categoryLabel": "Impressora de Cupom",
+    "categoryLabel": "Cupom / PDV",
     "tagline": "Impressora térmica de cupons compacta e eficiente",
     "body": [
       "Impressora térmica de cupons compacta e eficiente.",
@@ -3218,7 +3218,7 @@ export const productList: Product[] = [
     "slug": "mt800",
     "name": "MT800",
     "category": "a4",
-    "categoryLabel": "Impressora Portátil A4",
+    "categoryLabel": "Portátil A4",
     "tagline": "Impressora portátil A4 compacta para documentos e recibos",
     "body": [
       "Impressora portátil A4 compacta para documentos e recibos.",
@@ -3336,7 +3336,7 @@ export const productList: Product[] = [
     "slug": "mt810",
     "name": "MT810",
     "category": "a4",
-    "categoryLabel": "Impressora Portátil A4",
+    "categoryLabel": "Portátil A4",
     "tagline": "Impressora Térmica A4 Portátil",
     "body": [
       "A MT810 é uma impressora térmica A4 portátil desenvolvida para aplicações que exigem mobilidade, praticidade e economia, como logística, saúde, governo, serviços de campo e educação. Compacta e fácil de usar, permite a impressão de documentos A4 completos diretamente em campo."
@@ -3538,7 +3538,7 @@ export const productList: Product[] = [
     "slug": "gamma",
     "name": "GAMMA",
     "category": "pulseiras",
-    "categoryLabel": "Impressora de Pulseiras",
+    "categoryLabel": "Pulseiras",
     "tagline": "Impressora térmica direta para pulseiras de identificação",
     "body": [
       "Impressora térmica direta para pulseiras de identificação."
@@ -3588,7 +3588,7 @@ export const productList: Product[] = [
     "slug": "nyx",
     "name": "NYX",
     "category": "pulseiras",
-    "categoryLabel": "Impressora de Pulseiras",
+    "categoryLabel": "Pulseiras",
     "tagline": "Impressora de Pulseiras e Etiquetas",
     "body": [
       "A NYX é uma impressora térmica direta de alta performance, desenvolvida para aplicações que exigem agilidade, confiabilidade e precisão, como hospitais, laboratórios, clínicas, eventos, indústria e logística. Compacta, robusta e fácil de operar, ela é ideal para a impressão de pulseiras de identificação e etiquetas com excelente qualidade."
@@ -3807,7 +3807,7 @@ export const productList: Product[] = [
     "slug": "nyx-h",
     "name": "NYX-H",
     "category": "pulseiras",
-    "categoryLabel": "Impressora de Pulseiras",
+    "categoryLabel": "Pulseiras",
     "tagline": "Impressora térmica para pulseiras hospitalares de alta durabilidade",
     "body": [
       "Impressora térmica para pulseiras hospitalares de alta durabilidade.",
@@ -3922,7 +3922,7 @@ export const productList: Product[] = [
     "slug": "cp-d80",
     "name": "CP-D80",
     "category": "cartao",
-    "categoryLabel": "Impressora de Cartão",
+    "categoryLabel": "Cartões",
     "tagline": "Impressora de cartões confiável e acessível para impressões PVC",
     "body": [
       "Impressora de cartões confiável e acessível para impressões PVC."
@@ -3979,7 +3979,7 @@ export const productList: Product[] = [
     "slug": "cp4100",
     "name": "CP4100",
     "category": "fotos",
-    "categoryLabel": "Impressora de Fotos",
+    "categoryLabel": "Fotos",
     "tagline": "Impressora Fotográfica 10×15 Wireless",
     "body": [
       "A CP4100 é uma impressora fotográfica 10×15 wireless desenvolvida para aplicações que exigem qualidade profissional, praticidade e rapidez, como hotelaria, eventos, turismo, corporativo e uso residencial. Compacta e elegante, imprime fotos com cores vivas e acabamento durável em poucos segundos.",
@@ -4148,7 +4148,7 @@ export const productList: Product[] = [
     "slug": "ep-50a",
     "name": "EP-50A",
     "category": "embaladora",
-    "categoryLabel": "Embaladora, seladora e etiquetadora automática",
+    "categoryLabel": "Embaladora",
     "tagline": "Embaladora, Seladora e Etiquetadora Automática",
     "body": [
       "A HPRT EP-50A é uma solução automática desenvolvida para embalar, selar e etiquetar pacotes em um único processo, ideal para operações logísticas e centros de distribuição que buscam aumentar produtividade e padronizar processos de envio. Com impressora industrial de etiquetas integrada, computador com tela de 21,5” e sistema automático de selagem, o equipamento pode processar até 1.400 pacotes por hora, garantindo eficiência e organização nas operações de expedição. Sua estrutura robusta e integração com sistemas modernos tornam a EP-50A uma solução completa para e-commerce, logística e operações industriais de alto volume."
