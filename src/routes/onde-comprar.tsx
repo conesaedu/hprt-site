@@ -55,7 +55,7 @@ function WhereToBuyPage() {
           A operação brasileira da HPRT é conduzida em parceria com a Cogra: estoque físico, suporte
           técnico e time comercial no país — não apenas um catálogo traduzido.
         </PageHero>
-        <Trust />
+        <Trust hideHead />
         <CtaStrip />
       </main>
       <Footer />

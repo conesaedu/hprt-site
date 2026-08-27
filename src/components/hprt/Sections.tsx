@@ -73,13 +73,14 @@ const pillars = [
   },
 ];
 
-export function Positioning({ preview = false }: { preview?: boolean } = {}) {
+export function Positioning({ preview = false, hideHead = false }: { preview?: boolean; hideHead?: boolean } = {}) {
   const reveal = useReveal<HTMLDivElement>();
   const visible = preview ? pillars.slice(0, 3) : pillars;
 
   return (
     <section id="positioning" className="bg-surface py-30">
       <div className="wrap">
+        {hideHead ? null : (
         <SectionHead
           eyebrow="Por que HPRT?"
           title="Tecnologia para entrar na sua operação. Estrutura para permanecer nela."
@@ -89,6 +90,7 @@ export function Positioning({ preview = false }: { preview?: boolean } = {}) {
           também fazem parte da decisão. A HPRT combina escala industrial global com uma estrutura
           construída no Brasil para sustentar seus projetos.
         </SectionHead>
+        )}
 
         <div
           ref={reveal.ref}

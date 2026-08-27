@@ -50,7 +50,7 @@ function SolutionsPage() {
           Do chão de fábrica ao balcão do PDV, o portfólio HPRT cobre etiquetagem, identificação,
           coleta de dados e impressão de cupom dentro do mesmo ecossistema de fabricante.
         </PageHero>
-        <Solutions />
+        <Solutions hideHead />
         <Products limit={8} />
         <CtaStrip />
       </main>

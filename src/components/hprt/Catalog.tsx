@@ -79,14 +79,16 @@ export function Products({ limit }: { limit?: number } = {}) {
   );
 }
 
-export function Solutions({ preview = false }: { preview?: boolean } = {}) {
+export function Solutions({ preview = false, hideHead = false }: { preview?: boolean; hideHead?: boolean } = {}) {
   return (
     <section id="solutions" className="py-30">
       <div className="wrap">
-        <SectionHead
-          eyebrow="Soluções por setor"
-          title="A mesma marca resolve operações muito diferentes."
-        />
+        {hideHead ? null : (
+          <SectionHead
+            eyebrow="Soluções por setor"
+            title="A mesma marca resolve operações muito diferentes."
+          />
+        )}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {solutions.map((s) => (
             <article
@@ -109,17 +111,21 @@ export function Solutions({ preview = false }: { preview?: boolean } = {}) {
   );
 }
 
-export function Trust({ compact = false }: { compact?: boolean } = {}) {
+export function Trust({ compact = false, hideHead = false }: { compact?: boolean; hideHead?: boolean } = {}) {
   const reveal = useReveal<HTMLDivElement>();
 
   return (
     <section id="trust" className="border-b border-border bg-surface py-28">
       <div ref={reveal.ref} className={`${reveal.className} wrap grid items-center gap-16 lg:grid-cols-2`}>
         <div>
-          <Eyebrow className="mb-4">Presença local</Eyebrow>
-          <h2 className="mb-5 text-[2rem] leading-tight">
-            Fabricado com escala global, entregue com presença local.
-          </h2>
+          {hideHead ? null : (
+            <>
+              <Eyebrow className="mb-4">Presença local</Eyebrow>
+              <h2 className="mb-5 text-[2rem] leading-tight">
+                Fabricado com escala global, entregue com presença local.
+              </h2>
+            </>
+          )}
           <p className="mb-7 text-[0.97rem] text-muted-foreground">
             A operação brasileira da HPRT é conduzida em parceria com a Cogra, distribuidora B2B com
             25 anos de mercado — o que significa estoque físico, suporte técnico e um time comercial

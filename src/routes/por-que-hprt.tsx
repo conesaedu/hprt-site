@@ -55,7 +55,7 @@ function WhyPage() {
           decisão.
         </PageHero>
         <Stats />
-        <Positioning />
+        <Positioning hideHead />
         <GlobalTrust />
         <CtaStrip />
       </main>
