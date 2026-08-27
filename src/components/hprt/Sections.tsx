@@ -1,5 +1,6 @@
 import { useCountUp, useReveal } from "@/hooks/use-reveal";
-import { SectionHead } from "./ui";
+import { MoreLink, SectionHead } from "./ui";
+
 
 function Stat({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   const { ref, text } = useCountUp(value, suffix);
