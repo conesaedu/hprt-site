@@ -34,23 +34,28 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Desempenho industrial para altos volumes de impressão",
-        "desc": "A HPRT GALA foi desenvolvida para ambientes que exigem impressão contínua em grande escala, oferecendo alta velocidade, precisão e confiabilidade mesmo em operações intensivas."
+        "desc": "A HPRT GALA foi desenvolvida para ambientes que exigem impressão contínua em grande escala, oferecendo alta velocidade, precisão e confiabilidade mesmo em operações intensivas.",
+        "image": 1
       },
       {
         "title": "Estrutura robusta para ambientes industriais",
-        "desc": "Sua estrutura reforçada foi projetada para suportar a rotina de centros de distribuição, linhas de produção e operações logísticas, garantindo durabilidade, estabilidade e menor índice de paradas."
+        "desc": "Sua estrutura reforçada foi projetada para suportar a rotina de centros de distribuição, linhas de produção e operações logísticas, garantindo durabilidade, estabilidade e menor índice de paradas.",
+        "image": null
       },
       {
         "title": "Alta velocidade com múltiplas opções de resolução",
-        "desc": "A GALA alcança até 14 ips em 203 dpi, com opções de 300 dpi e 600 dpi, permitindo adequar velocidade e qualidade conforme a aplicação, sem comprometer a produtividade."
+        "desc": "A GALA alcança até 14 ips em 203 dpi, com opções de 300 dpi e 600 dpi, permitindo adequar velocidade e qualidade conforme a aplicação, sem comprometer a produtividade.",
+        "image": null
       },
       {
         "title": "Grande autonomia de mídia e ribbon",
-        "desc": "Compatível com rolos de etiquetas de grande diâmetro e ribbons de até 600 metros, a GALA reduz significativamente as trocas de insumos, mantendo a operação contínua e eficiente."
+        "desc": "Compatível com rolos de etiquetas de grande diâmetro e ribbons de até 600 metros, a GALA reduz significativamente as trocas de insumos, mantendo a operação contínua e eficiente.",
+        "image": 3
       },
       {
         "title": "Integração total com sistemas industriais",
-        "desc": "Com suporte às linguagens ZPL, EPL, DPL e TSPL, além de múltiplas interfaces de comunicação, a GALA se integra facilmente aos principais sistemas corporativos, logísticos e industriais."
+        "desc": "Com suporte às linguagens ZPL, EPL, DPL e TSPL, além de múltiplas interfaces de comunicação, a GALA se integra facilmente aos principais sistemas corporativos, logísticos e industriais.",
+        "image": 2
       }
     ],
     "applications": [
@@ -245,27 +250,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Desenvolvida para operação contínua 24/7",
-        "desc": "A HPRT GRAND foi projetada para ambientes industriais que exigem funcionamento ininterrupto, alta confiabilidade mecânica e desempenho constante. Sua construção metálica reforçada garante estabilidade mesmo em ciclos contínuos e operações críticas."
+        "desc": "A HPRT GRAND foi projetada para ambientes industriais que exigem funcionamento ininterrupto, alta confiabilidade mecânica e desempenho constante. Sua construção metálica reforçada garante estabilidade mesmo em ciclos contínuos e operações críticas.",
+        "image": 1
       },
       {
         "title": "Alta velocidade com precisão absoluta",
-        "desc": "Com velocidade de até 14 ips (35,56 cm/s) e mecanismo de alta precisão, a GRAND mantém qualidade de impressão consistente mesmo em altas velocidades, assegurando textos nítidos e códigos de barras precisos."
+        "desc": "Com velocidade de até 14 ips (35,56 cm/s) e mecanismo de alta precisão, a GRAND mantém qualidade de impressão consistente mesmo em altas velocidades, assegurando textos nítidos e códigos de barras precisos.",
+        "image": null
       },
       {
         "title": "Sistema mecânico avançado para estabilidade",
-        "desc": "O exclusivo sistema de eixo com mola proporciona compensação automática e estabilidade durante a impressão em alta velocidade, reduzindo vibrações, falhas e desgaste de componentes."
+        "desc": "O exclusivo sistema de eixo com mola proporciona compensação automática e estabilidade durante a impressão em alta velocidade, reduzindo vibrações, falhas e desgaste de componentes.",
+        "image": null
       },
       {
         "title": "Grande autonomia de mídia e ribbon",
-        "desc": "Compatível com ribbons de até 450 metros e rolos de etiquetas industriais, a GRAND reduz significativamente trocas de insumos, mantendo a operação contínua e aumentando a produtividade."
+        "desc": "Compatível com ribbons de até 450 metros e rolos de etiquetas industriais, a GRAND reduz significativamente trocas de insumos, mantendo a operação contínua e aumentando a produtividade.",
+        "image": null
       },
       {
         "title": "Conectividade industrial avançada",
-        "desc": "Equipada com Bluetooth de série, além de USB, Ethernet e múltiplas opções de expansão, permite integração direta com coletores de dados, tablets e smartphones, tornando os processos mais ágeis e flexíveis."
+        "desc": "Equipada com Bluetooth de série, além de USB, Ethernet e múltiplas opções de expansão, permite integração direta com coletores de dados, tablets e smartphones, tornando os processos mais ágeis e flexíveis.",
+        "image": null
       },
       {
         "title": "Interface moderna com touchscreen de 5”",
-        "desc": "Seu display colorido sensível ao toque facilita configurações, monitoramento e operação, mesmo em ambientes industriais exigentes."
+        "desc": "Seu display colorido sensível ao toque facilita configurações, monitoramento e operação, mesmo em ambientes industriais exigentes.",
+        "image": 2
       }
     ],
     "applications": [
@@ -495,23 +506,28 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Alta velocidade para a categoria industrial de entrada",
-        "desc": "A HPRT NEO se destaca por oferecer velocidade de impressão de até 10 ips (25,4 cm/s), uma das maiores da categoria industrial de entrada. Isso garante maior agilidade na operação e alto rendimento mesmo em ambientes com grande volume de etiquetas."
+        "desc": "A HPRT NEO se destaca por oferecer velocidade de impressão de até 10 ips (25,4 cm/s), uma das maiores da categoria industrial de entrada. Isso garante maior agilidade na operação e alto rendimento mesmo em ambientes com grande volume de etiquetas.",
+        "image": null
       },
       {
         "title": "Design compacto com robustez industrial",
-        "desc": "Projetada para redefinir o segmento de impressoras industriais econômicas, a NEO combina estrutura metálica robusta com um design compacto, facilitando a instalação em diferentes ambientes sem abrir mão da durabilidade exigida em operações industriais."
+        "desc": "Projetada para redefinir o segmento de impressoras industriais econômicas, a NEO combina estrutura metálica robusta com um design compacto, facilitando a instalação em diferentes ambientes sem abrir mão da durabilidade exigida em operações industriais.",
+        "image": 3
       },
       {
         "title": "Painel inteligente com operação simplificada",
-        "desc": "Equipada com display colorido TFT e teclas de navegação intuitivas, a NEO permite ajustes rápidos de temperatura, velocidade, tipo de etiqueta e calibração automática. Essa interface torna a operação simples e acessível, inclusive para usuários sem experiência prévia com equipamentos industriais."
+        "desc": "Equipada com display colorido TFT e teclas de navegação intuitivas, a NEO permite ajustes rápidos de temperatura, velocidade, tipo de etiqueta e calibração automática. Essa interface torna a operação simples e acessível, inclusive para usuários sem experiência prévia com equipamentos industriais.",
+        "image": 2
       },
       {
         "title": "Compatibilidade total com sistemas de mercado",
-        "desc": "Com emulações nativas ZPL, ZPL-II, TSPL, DPL, EPL e EPL2, a NEO garante integração facilitada com ERPs, WMS e sistemas de automação já existentes, reduzindo tempo de implantação e evitando retrabalho."
+        "desc": "Com emulações nativas ZPL, ZPL-II, TSPL, DPL, EPL e EPL2, a NEO garante integração facilitada com ERPs, WMS e sistemas de automação já existentes, reduzindo tempo de implantação e evitando retrabalho.",
+        "image": null
       },
       {
         "title": "Conectividade avançada",
-        "desc": "Além de USB, Serial, Ethernet e Bluetooth 5.0 de série, a NEO oferece Wi-Fi opcional compatível com Wi-Fi 6, atendendo ambientes modernos que exigem conectividade robusta e flexível."
+        "desc": "Além de USB, Serial, Ethernet e Bluetooth 5.0 de série, a NEO oferece Wi-Fi opcional compatível com Wi-Fi 6, atendendo ambientes modernos que exigem conectividade robusta e flexível.",
+        "image": 1
       }
     ],
     "applications": [
@@ -746,19 +762,23 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Compatibilidade exclusiva com ribbon de 300 metros para máxima autonomia",
-        "desc": "A HPRT APOLLO trabalha exclusivamente com ribbons de 300 metros e tubete de 1 polegada, permitindo longos ciclos de impressão com menos trocas de insumo. Isso reduz paradas operacionais, diminui o desgaste dos componentes e gera menor custo por etiqueta impressa, sendo ideal para operações contínuas."
+        "desc": "A HPRT APOLLO trabalha exclusivamente com ribbons de 300 metros e tubete de 1 polegada, permitindo longos ciclos de impressão com menos trocas de insumo. Isso reduz paradas operacionais, diminui o desgaste dos componentes e gera menor custo por etiqueta impressa, sendo ideal para operações contínuas.",
+        "image": null
       },
       {
         "title": "Alta performance com excelente custo-benefício",
-        "desc": "Projetada para projetos de entrada, a APOLLO entrega desempenho consistente com investimento reduzido. É a escolha ideal para empresas que buscam produtividade sem comprometer o orçamento."
+        "desc": "Projetada para projetos de entrada, a APOLLO entrega desempenho consistente com investimento reduzido. É a escolha ideal para empresas que buscam produtividade sem comprometer o orçamento.",
+        "image": 1
       },
       {
         "title": "Integração total com sistemas de mercado",
-        "desc": "Com emulações ZPL, EPL, DPL e TSPL, a APOLLO se integra facilmente aos principais ERPs, sistemas de automação comercial e plataformas logísticas, dispensando customizações complexas e reduzindo o tempo de implantação."
+        "desc": "Com emulações ZPL, EPL, DPL e TSPL, a APOLLO se integra facilmente aos principais ERPs, sistemas de automação comercial e plataformas logísticas, dispensando customizações complexas e reduzindo o tempo de implantação.",
+        "image": 3
       },
       {
         "title": "Estrutura robusta para uso contínuo",
-        "desc": "Mesmo sendo uma impressora de entrada, a APOLLO conta com estrutura reforçada, processador ARM9 de alta performance e memória generosa, garantindo estabilidade, confiabilidade e operação contínua mesmo em volumes elevados de impressão."
+        "desc": "Mesmo sendo uma impressora de entrada, a APOLLO conta com estrutura reforçada, processador ARM9 de alta performance e memória generosa, garantindo estabilidade, confiabilidade e operação contínua mesmo em volumes elevados de impressão.",
+        "image": 2
       }
     ],
     "applications": [
@@ -989,19 +1009,23 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Excelente custo-benefício para projetos de entrada",
-        "desc": "A HPRT ARES foi desenvolvida para viabilizar projetos que exigem qualidade e desempenho com investimento reduzido. Com preço até 40% inferior às principais marcas concorrentes, ela permite ampliar a adoção de automação sem comprometer o orçamento, tornando-se ideal para operações em crescimento."
+        "desc": "A HPRT ARES foi desenvolvida para viabilizar projetos que exigem qualidade e desempenho com investimento reduzido. Com preço até 40% inferior às principais marcas concorrentes, ela permite ampliar a adoção de automação sem comprometer o orçamento, tornando-se ideal para operações em crescimento.",
+        "image": 1
       },
       {
         "title": "Alta velocidade de impressão para maior produtividade",
-        "desc": "Com velocidade de até 8 IPS (20,32 cm/s) — a maior da sua categoria — a ARES é capaz de concluir trabalhos em até metade do tempo de impressoras concorrentes. Isso impacta diretamente a produtividade, reduz filas operacionais e melhora o fluxo de trabalho em ambientes de varejo, logística e manufatura."
+        "desc": "Com velocidade de até 8 IPS (20,32 cm/s) — a maior da sua categoria — a ARES é capaz de concluir trabalhos em até metade do tempo de impressoras concorrentes. Isso impacta diretamente a produtividade, reduz filas operacionais e melhora o fluxo de trabalho em ambientes de varejo, logística e manufatura.",
+        "image": null
       },
       {
         "title": "Conectividade USB, Serial e Ethernet para fácil integração",
-        "desc": "A ARES já sai de fábrica equipada com USB, Serial e porta de rede Ethernet, facilitando a integração com sistemas existentes e permitindo o compartilhamento do equipamento em rede. Essa flexibilidade é essencial para ambientes corporativos, industriais e logísticos com múltiplos usuários."
+        "desc": "A ARES já sai de fábrica equipada com USB, Serial e porta de rede Ethernet, facilitando a integração com sistemas existentes e permitindo o compartilhamento do equipamento em rede. Essa flexibilidade é essencial para ambientes corporativos, industriais e logísticos com múltiplos usuários.",
+        "image": 3
       },
       {
         "title": "Estrutura robusta para operação contínua",
-        "desc": "Mesmo sendo uma impressora de entrada, a ARES possui estrutura sólida e componentes projetados para uso contínuo, garantindo estabilidade, menor índice de falhas e maior vida útil do equipamento, o que reduz custos de manutenção ao longo do tempo."
+        "desc": "Mesmo sendo uma impressora de entrada, a ARES possui estrutura sólida e componentes projetados para uso contínuo, garantindo estabilidade, menor índice de falhas e maior vida útil do equipamento, o que reduz custos de manutenção ao longo do tempo.",
+        "image": 2
       }
     ],
     "applications": [
@@ -1244,23 +1268,28 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Impressão de etiquetas largas de até 175 mm",
-        "desc": "O principal diferencial da HPRT DELTA é a capacidade de imprimir etiquetas largas de até 175 mm, ideal para aplicações que exigem informações mais visíveis e etiquetas de destaque, como tambores químicos, sacas, paletes, caixas de grande porte e produtos industriais."
+        "desc": "O principal diferencial da HPRT DELTA é a capacidade de imprimir etiquetas largas de até 175 mm, ideal para aplicações que exigem informações mais visíveis e etiquetas de destaque, como tambores químicos, sacas, paletes, caixas de grande porte e produtos industriais.",
+        "image": null
       },
       {
         "title": "Alta produtividade com qualidade constante",
-        "desc": "Com velocidade de impressão de até 12 ips, a DELTA garante elevada produtividade sem comprometer a qualidade, mesmo em ambientes de alta demanda e grandes volumes de impressão."
+        "desc": "Com velocidade de impressão de até 12 ips, a DELTA garante elevada produtividade sem comprometer a qualidade, mesmo em ambientes de alta demanda e grandes volumes de impressão.",
+        "image": 1
       },
       {
         "title": "Estrutura totalmente metálica para uso intensivo",
-        "desc": "Projetada para operações industriais exigentes, a DELTA conta com estrutura 100% metálica e componentes industriais, oferecendo robustez, estabilidade e longa vida útil em aplicações contínuas."
+        "desc": "Projetada para operações industriais exigentes, a DELTA conta com estrutura 100% metálica e componentes industriais, oferecendo robustez, estabilidade e longa vida útil em aplicações contínuas.",
+        "image": 3
       },
       {
         "title": "Versatilidade de mídias e ribbons",
-        "desc": "Compatível com diversos tipos de mídia — papéis térmicos, sintéticos, PP, PET, BOPP, tecidos e fibras sintéticas — e ribbons de cera, resina ou misto, a DELTA atende uma ampla gama de aplicações industriais."
+        "desc": "Compatível com diversos tipos de mídia — papéis térmicos, sintéticos, PP, PET, BOPP, tecidos e fibras sintéticas — e ribbons de cera, resina ou misto, a DELTA atende uma ampla gama de aplicações industriais.",
+        "image": null
       },
       {
         "title": "Conectividade completa e interface intuitiva",
-        "desc": "Equipada com USB, Ethernet, Serial RS-232, múltiplas portas USB Host e Wi-Fi opcional, a DELTA se integra facilmente a qualquer sistema. Seu display touchscreen colorido de 3,5” torna a operação e a manutenção simples e intuitivas."
+        "desc": "Equipada com USB, Ethernet, Serial RS-232, múltiplas portas USB Host e Wi-Fi opcional, a DELTA se integra facilmente a qualquer sistema. Seu display touchscreen colorido de 3,5” torna a operação e a manutenção simples e intuitivas.",
+        "image": 2
       }
     ],
     "applications": [
@@ -1472,27 +1501,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Desempenho e confiabilidade para operações profissionais",
-        "desc": "A HPRT HT500 foi projetada para oferecer alta performance e durabilidade na impressão de etiquetas, combinando velocidade, robustez e excelente custo-benefício para aplicações comerciais e industriais."
+        "desc": "A HPRT HT500 foi projetada para oferecer alta performance e durabilidade na impressão de etiquetas, combinando velocidade, robustez e excelente custo-benefício para aplicações comerciais e industriais.",
+        "image": 1
       },
       {
         "title": "Versatilidade no uso de ribbons",
-        "desc": "Um dos grandes diferenciais da HT500 é a compatibilidade com ribbons de 74, 91 e até 300 metros, com tubetes de 0,5” ou 1”, sem necessidade de troca de suportes ou ajustes adicionais, proporcionando maior flexibilidade e redução de custos operacionais."
+        "desc": "Um dos grandes diferenciais da HT500 é a compatibilidade com ribbons de 74, 91 e até 300 metros, com tubetes de 0,5” ou 1”, sem necessidade de troca de suportes ou ajustes adicionais, proporcionando maior flexibilidade e redução de custos operacionais.",
+        "image": null
       },
       {
         "title": "Alta velocidade de impressão",
-        "desc": "Com velocidade de até 152 mm/s (6 ips), a impressora garante produtividade elevada para ambientes com grande volume de etiquetas."
+        "desc": "Com velocidade de até 152 mm/s (6 ips), a impressora garante produtividade elevada para ambientes com grande volume de etiquetas.",
+        "image": null
       },
       {
         "title": "Integração simples com diversos sistemas",
-        "desc": "Compatível com emulações ZPL, ZPL-II, DPL e TSPL, facilitando a substituição de impressoras de outras marcas e integração com sistemas já existentes."
+        "desc": "Compatível com emulações ZPL, ZPL-II, DPL e TSPL, facilitando a substituição de impressoras de outras marcas e integração com sistemas já existentes.",
+        "image": null
       },
       {
         "title": "Conectividade moderna e flexível",
-        "desc": "Conta com USB e Ethernet padrão, além de opções de Bluetooth 5.0 e Wi-Fi, permitindo fácil integração com diferentes ambientes de TI."
+        "desc": "Conta com USB e Ethernet padrão, além de opções de Bluetooth 5.0 e Wi-Fi, permitindo fácil integração com diferentes ambientes de TI.",
+        "image": null
       },
       {
         "title": "Projetada para diversos segmentos",
-        "desc": "Ideal para aplicações em varejo, logística, saúde, manufatura e transporte, oferecendo confiabilidade na identificação de produtos, documentos e processos."
+        "desc": "Ideal para aplicações em varejo, logística, saúde, manufatura e transporte, oferecendo confiabilidade na identificação de produtos, documentos e processos.",
+        "image": 3
       }
     ],
     "applications": [],
@@ -1711,27 +1746,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Alto desempenho para operações críticas",
-        "desc": "O HPRT M2 PLUS foi desenvolvido para operações que exigem desempenho elevado, resistência e durabilidade, entregando alta performance mesmo em ambientes exigentes como logística, indústria, varejo, saúde, transporte e governo."
+        "desc": "O HPRT M2 PLUS foi desenvolvido para operações que exigem desempenho elevado, resistência e durabilidade, entregando alta performance mesmo em ambientes exigentes como logística, indústria, varejo, saúde, transporte e governo.",
+        "image": 4
       },
       {
         "title": "Processador Octa-Core e Android 12",
-        "desc": "Equipado com processador MediaTek MTK6762 Octa-Core e sistema operacional Android 12, o M2 PLUS garante fluidez, estabilidade e ampla compatibilidade com aplicativos corporativos de inventário, rastreabilidade e automação de campo."
+        "desc": "Equipado com processador MediaTek MTK6762 Octa-Core e sistema operacional Android 12, o M2 PLUS garante fluidez, estabilidade e ampla compatibilidade com aplicativos corporativos de inventário, rastreabilidade e automação de campo.",
+        "image": 1
       },
       {
         "title": "Memória superior à média da categoria",
-        "desc": "Com 4 GB de memória RAM e 64 GB de memória Flash, o M2 PLUS se destaca por oferecer maior capacidade de processamento e armazenamento, sendo ideal para aplicações intensivas e multitarefa."
+        "desc": "Com 4 GB de memória RAM e 64 GB de memória Flash, o M2 PLUS se destaca por oferecer maior capacidade de processamento e armazenamento, sendo ideal para aplicações intensivas e multitarefa.",
+        "image": null
       },
       {
         "title": "Leitor biométrico integrado para mais segurança e agilidade",
-        "desc": "O equipamento conta com leitor biométrico integrado na parte traseira, permitindo desbloqueio rápido e seguro por impressão digital. Isso elimina o uso de senhas longas e cartões, acelerando o acesso ao dispositivo e aumentando a produtividade."
+        "desc": "O equipamento conta com leitor biométrico integrado na parte traseira, permitindo desbloqueio rápido e seguro por impressão digital. Isso elimina o uso de senhas longas e cartões, acelerando o acesso ao dispositivo e aumentando a produtividade.",
+        "image": null
       },
       {
         "title": "Robustez certificada para uso intensivo",
-        "desc": "Com grau de proteção IP67, resistência à poeira e à água, e suporte a quedas de até 1,2 metro, o M2 PLUS foi projetado para operar com confiabilidade em ambientes operacionais severos."
+        "desc": "Com grau de proteção IP67, resistência à poeira e à água, e suporte a quedas de até 1,2 metro, o M2 PLUS foi projetado para operar com confiabilidade em ambientes operacionais severos.",
+        "image": 2
       },
       {
         "title": "Conectividade completa para mobilidade corporativa",
-        "desc": "Compatível com Wi-Fi dual band, Bluetooth 5.1, redes celulares 4G, GPS completo e NFC, o M2 PLUS se integra facilmente aos sistemas corporativos e operações em campo."
+        "desc": "Compatível com Wi-Fi dual band, Bluetooth 5.1, redes celulares 4G, GPS completo e NFC, o M2 PLUS se integra facilmente aos sistemas corporativos e operações em campo.",
+        "image": null
       }
     ],
     "applications": [
@@ -1960,27 +2001,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Estrutura antimicrobiana ideal para ambientes hospitalares",
-        "desc": "O HPRT M3-H conta com estrutura antimicrobiana, tornando-o especialmente indicado para hospitais, clínicas, laboratórios e ambientes que exigem alto nível de higiene e segurança."
+        "desc": "O HPRT M3-H conta com estrutura antimicrobiana, tornando-o especialmente indicado para hospitais, clínicas, laboratórios e ambientes que exigem alto nível de higiene e segurança.",
+        "image": 1
       },
       {
         "title": "Alto desempenho com processador Octa-Core",
-        "desc": "Equipado com processador Qualcomm Octa-Core de até 2.0 GHz, o M3-H oferece desempenho rápido e confiável para aplicações críticas, garantindo fluidez no uso de sistemas corporativos, ERPs e aplicativos de coleta de dados."
+        "desc": "Equipado com processador Qualcomm Octa-Core de até 2.0 GHz, o M3-H oferece desempenho rápido e confiável para aplicações críticas, garantindo fluidez no uso de sistemas corporativos, ERPs e aplicativos de coleta de dados.",
+        "image": null
       },
       {
         "title": "Leitor 1D/2D avançado com suporte a DPM e OCR",
-        "desc": "O coletor possui leitor de códigos 1D e 2D de alta precisão, com capacidade de leitura de DPM (Direct Part Marking) e OCR, ampliando o uso em aplicações industriais, hospitalares e logísticas."
+        "desc": "O coletor possui leitor de códigos 1D e 2D de alta precisão, com capacidade de leitura de DPM (Direct Part Marking) e OCR, ampliando o uso em aplicações industriais, hospitalares e logísticas.",
+        "image": 3
       },
       {
         "title": "Robustez certificada para uso intensivo",
-        "desc": "Com certificação IP67, resistência a quedas de até 1,5 metro e proteção contra poeira, água e descargas eletrostáticas, o M3-H foi projetado para operar de forma confiável em ambientes exigentes."
+        "desc": "Com certificação IP67, resistência a quedas de até 1,5 metro e proteção contra poeira, água e descargas eletrostáticas, o M3-H foi projetado para operar de forma confiável em ambientes exigentes.",
+        "image": 2
       },
       {
         "title": "Mobilidade com longa autonomia",
-        "desc": "A bateria de 5000 mAh garante longas jornadas de trabalho sem interrupções, enquanto o peso reduzido (aprox. 260 g) proporciona conforto no uso contínuo."
+        "desc": "A bateria de 5000 mAh garante longas jornadas de trabalho sem interrupções, enquanto o peso reduzido (aprox. 260 g) proporciona conforto no uso contínuo.",
+        "image": 4
       },
       {
         "title": "Tela de alta qualidade e usabilidade avançada",
-        "desc": "Display Full HD de 5,5”, com vidro Corning® Gorilla Glass 3, operação com luvas ou mãos molhadas e excelente visibilidade em diferentes condições de uso."
+        "desc": "Display Full HD de 5,5”, com vidro Corning® Gorilla Glass 3, operação com luvas ou mãos molhadas e excelente visibilidade em diferentes condições de uso.",
+        "image": null
       }
     ],
     "applications": [
@@ -2200,27 +2247,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Robustez profissional com excelente custo-benefício",
-        "desc": "O HPRT M4 PLUS foi projetado para resistir a ambientes exigentes, contando com proteção IP65 e resistência a quedas de até 1,5 metro, sendo ideal para operações intensivas em logística, indústria, varejo, saúde e governo."
+        "desc": "O HPRT M4 PLUS foi projetado para resistir a ambientes exigentes, contando com proteção IP65 e resistência a quedas de até 1,5 metro, sendo ideal para operações intensivas em logística, indústria, varejo, saúde e governo.",
+        "image": null
       },
       {
         "title": "Produtividade garantida mesmo em baixa iluminação",
-        "desc": "Equipado com teclado físico alfanumérico com teclas retroiluminadas, o M4 PLUS permite operação eficiente em ambientes com pouca luz, garantindo agilidade e precisão nas rotinas de coleta de dados."
+        "desc": "Equipado com teclado físico alfanumérico com teclas retroiluminadas, o M4 PLUS permite operação eficiente em ambientes com pouca luz, garantindo agilidade e precisão nas rotinas de coleta de dados.",
+        "image": null
       },
       {
         "title": "Alto desempenho com processador Octa-Core",
-        "desc": "Com processador MediaTek Octa-Core de até 2.0 GHz, o M4 PLUS oferece respostas rápidas, baixo consumo de energia e compatibilidade total com aplicações Android corporativas."
+        "desc": "Com processador MediaTek Octa-Core de até 2.0 GHz, o M4 PLUS oferece respostas rápidas, baixo consumo de energia e compatibilidade total com aplicações Android corporativas.",
+        "image": null
       },
       {
         "title": "Leitor de códigos 1D/2D integrado de alto desempenho",
-        "desc": "O módulo de leitura 2D integrado assegura captura rápida e precisa de códigos 1D e 2D, atendendo aplicações de rastreabilidade, inventário e controle operacional."
+        "desc": "O módulo de leitura 2D integrado assegura captura rápida e precisa de códigos 1D e 2D, atendendo aplicações de rastreabilidade, inventário e controle operacional.",
+        "image": 1
       },
       {
         "title": "Bateria removível de longa duração",
-        "desc": "A bateria de 5000 mAh garante autonomia para longos turnos de trabalho, reduzindo interrupções e aumentando a produtividade em operações de campo."
+        "desc": "A bateria de 5000 mAh garante autonomia para longos turnos de trabalho, reduzindo interrupções e aumentando a produtividade em operações de campo.",
+        "image": null
       },
       {
         "title": "Conectividade completa para mobilidade corporativa",
-        "desc": "Com suporte a Wi-Fi dual band, Bluetooth 5.0, redes celulares 4G, GPS e NFC (opcional), o M4 PLUS se integra facilmente aos sistemas corporativos e aplicações móveis."
+        "desc": "Com suporte a Wi-Fi dual band, Bluetooth 5.0, redes celulares 4G, GPS e NFC (opcional), o M4 PLUS se integra facilmente aos sistemas corporativos e aplicações móveis.",
+        "image": 2
       }
     ],
     "applications": [
@@ -2422,27 +2475,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Leitura rápida e precisa de códigos 1D e 2D",
-        "desc": "Equipado com sensor CMOS de alto desempenho, o HS-M300/M300C permite a leitura ágil de códigos de barras tradicionais e códigos 2D como QR Code, garantindo eficiência em ambientes de varejo, logística e manufatura."
+        "desc": "Equipado com sensor CMOS de alto desempenho, o HS-M300/M300C permite a leitura ágil de códigos de barras tradicionais e códigos 2D como QR Code, garantindo eficiência em ambientes de varejo, logística e manufatura.",
+        "image": 3
       },
       {
         "title": "Conectividade Bluetooth para máxima mobilidade",
-        "desc": "Com Bluetooth 4.2 BLE e suporte aos protocolos HID e GATT, o scanner se conecta facilmente a computadores, tablets e smartphones, proporcionando maior liberdade de operação sem cabos."
+        "desc": "Com Bluetooth 4.2 BLE e suporte aos protocolos HID e GATT, o scanner se conecta facilmente a computadores, tablets e smartphones, proporcionando maior liberdade de operação sem cabos.",
+        "image": 1
       },
       {
         "title": "Alta velocidade de escaneamento",
-        "desc": "Tecnologia de leitura inteligente com frequência de até 500 leituras por segundo, ideal para operações com grande volume de leitura."
+        "desc": "Tecnologia de leitura inteligente com frequência de até 500 leituras por segundo, ideal para operações com grande volume de leitura.",
+        "image": null
       },
       {
         "title": "Bateria de longa duração",
-        "desc": "Capaz de realizar até 20.000 leituras por carga, com carregamento rápido em aproximadamente 3 horas e até 30 dias em modo standby, garantindo alta produtividade durante o uso."
+        "desc": "Capaz de realizar até 20.000 leituras por carga, com carregamento rápido em aproximadamente 3 horas e até 30 dias em modo standby, garantindo alta produtividade durante o uso.",
+        "image": 2
       },
       {
         "title": "Confirmação de leitura por múltiplos sinais",
-        "desc": "Equipado com LED duplo, vibração e buzzer, oferecendo feedback imediato ao operador em diferentes ambientes de trabalho."
+        "desc": "Equipado com LED duplo, vibração e buzzer, oferecendo feedback imediato ao operador em diferentes ambientes de trabalho.",
+        "image": null
       },
       {
         "title": "SDK para desenvolvimento de aplicações",
-        "desc": "Compatível com Android e iOS, com SDK disponível para facilitar o desenvolvimento e integração em sistemas personalizados."
+        "desc": "Compatível com Android e iOS, com SDK disponível para facilitar o desenvolvimento e integração em sistemas personalizados.",
+        "image": null
       }
     ],
     "applications": [],
@@ -2608,19 +2667,23 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Leitura omnidirecional de códigos 1D e 2D com alto desempenho",
-        "desc": "O HPRT N130 BT PLUS realiza leitura rápida e precisa de códigos 1D e 2D, garantindo excelente desempenho mesmo em códigos danificados, mal impressos ou exibidos em telas digitais."
+        "desc": "O HPRT N130 BT PLUS realiza leitura rápida e precisa de códigos 1D e 2D, garantindo excelente desempenho mesmo em códigos danificados, mal impressos ou exibidos em telas digitais.",
+        "image": 2
       },
       {
         "title": "Conectividade sem fio para maior mobilidade operacional",
-        "desc": "Com tecnologia Bluetooth integrada, o N130 BT PLUS permite operações sem cabos, oferecendo mais liberdade de movimentação em balcões, estoques, centros de distribuição e áreas de atendimento."
+        "desc": "Com tecnologia Bluetooth integrada, o N130 BT PLUS permite operações sem cabos, oferecendo mais liberdade de movimentação em balcões, estoques, centros de distribuição e áreas de atendimento.",
+        "image": 3
       },
       {
         "title": "Bateria interna de longa duração para uso contínuo",
-        "desc": "Projetado para rotinas intensas, o equipamento conta com bateria recarregável de alta autonomia, reduzindo paradas para recarga e aumentando a produtividade diária."
+        "desc": "Projetado para rotinas intensas, o equipamento conta com bateria recarregável de alta autonomia, reduzindo paradas para recarga e aumentando a produtividade diária.",
+        "image": 4
       },
       {
         "title": "Design ergonômico e estrutura robusta",
-        "desc": "Seu formato confortável e construção resistente garantem operação estável, mesmo em ambientes de alto fluxo, proporcionando conforto ao operador e maior durabilidade do equipamento."
+        "desc": "Seu formato confortável e construção resistente garantem operação estável, mesmo em ambientes de alto fluxo, proporcionando conforto ao operador e maior durabilidade do equipamento.",
+        "image": 1
       }
     ],
     "applications": [
@@ -2719,19 +2782,23 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Leitura omnidirecional de códigos 1D e 2D com alta confiabilidade",
-        "desc": "O HPRT N130 BT PLUS H realiza leitura rápida e precisa de códigos 1D e 2D, garantindo excelente desempenho mesmo em códigos danificados, mal impressos ou exibidos em telas digitais."
+        "desc": "O HPRT N130 BT PLUS H realiza leitura rápida e precisa de códigos 1D e 2D, garantindo excelente desempenho mesmo em códigos danificados, mal impressos ou exibidos em telas digitais.",
+        "image": 2
       },
       {
         "title": "Conectividade Bluetooth para mobilidade total nas operações",
-        "desc": "Equipado com tecnologia Bluetooth integrada, o N130 BT PLUS H permite operações sem cabos, oferecendo maior liberdade de movimentação em ambientes comerciais, logísticos e industriais."
+        "desc": "Equipado com tecnologia Bluetooth integrada, o N130 BT PLUS H permite operações sem cabos, oferecendo maior liberdade de movimentação em ambientes comerciais, logísticos e industriais.",
+        "image": 1
       },
       {
         "title": "Bateria interna de longa duração para rotinas intensas",
-        "desc": "Desenvolvido para uso contínuo, conta com bateria recarregável de alta autonomia, reduzindo paradas para recarga e aumentando a produtividade diária."
+        "desc": "Desenvolvido para uso contínuo, conta com bateria recarregável de alta autonomia, reduzindo paradas para recarga e aumentando a produtividade diária.",
+        "image": null
       },
       {
         "title": "Estrutura robusta para ambientes mais exigentes",
-        "desc": "A versão H possui construção reforçada, proporcionando maior resistência a impactos e maior durabilidade em operações de alto fluxo e uso constante."
+        "desc": "A versão H possui construção reforçada, proporcionando maior resistência a impactos e maior durabilidade em operações de alto fluxo e uso constante.",
+        "image": null
       }
     ],
     "applications": [
@@ -2828,19 +2895,23 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Leitor avançado com desempenho superior para alto volume",
-        "desc": ""
+        "desc": "",
+        "image": 1
       },
       {
         "title": "Projetado para leitura intensiva em ambientes operacionais",
-        "desc": "Projetado para leitura intensiva de códigos em linhas de produção e expedição."
+        "desc": "Projetado para leitura intensiva de códigos em linhas de produção e expedição.",
+        "image": null
       },
       {
         "title": "Conectividade versátil para integração industrial",
-        "desc": "USB, RS232 ou outras interfaces industriais (conforme versão)."
+        "desc": "USB, RS232 ou outras interfaces industriais (conforme versão).",
+        "image": null
       },
       {
         "title": "Processamento contínuo para grandes volumes de leitura",
-        "desc": "Memória para processamento contínuo de grande quantidade de leituras."
+        "desc": "Memória para processamento contínuo de grande quantidade de leituras.",
+        "image": 2
       }
     ],
     "applications": [
@@ -2937,19 +3008,23 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Leitura omnidirecional de códigos 1D e 2D com alta precisão",
-        "desc": "O HPRT N80 realiza leitura omnidirecional de códigos 1D e 2D, permitindo capturas rápidas e confiáveis mesmo em códigos mal impressos, danificados ou exibidos em telas digitais."
+        "desc": "O HPRT N80 realiza leitura omnidirecional de códigos 1D e 2D, permitindo capturas rápidas e confiáveis mesmo em códigos mal impressos, danificados ou exibidos em telas digitais.",
+        "image": 3
       },
       {
         "title": "Desempenho rápido para aplicações de alto fluxo",
-        "desc": "Projetado para operações que exigem agilidade, o N80 entrega leitura ágil e precisa, reduzindo filas, erros de digitação e aumentando a produtividade nos pontos de atendimento."
+        "desc": "Projetado para operações que exigem agilidade, o N80 entrega leitura ágil e precisa, reduzindo filas, erros de digitação e aumentando a produtividade nos pontos de atendimento.",
+        "image": 4
       },
       {
         "title": "Compacto e fácil de integrar a diferentes ambientes",
-        "desc": "Com design compacto e interface USB padrão, o N80 se adapta facilmente a balcões, caixas, estações de trabalho e sistemas de automação comercial."
+        "desc": "Com design compacto e interface USB padrão, o N80 se adapta facilmente a balcões, caixas, estações de trabalho e sistemas de automação comercial.",
+        "image": 1
       },
       {
         "title": "Processamento eficiente com buffer interno dedicado",
-        "desc": "O leitor conta com buffer interno para processamento das leituras, garantindo estabilidade, rapidez na transmissão dos dados e operação contínua sem travamentos."
+        "desc": "O leitor conta com buffer interno para processamento das leituras, garantindo estabilidade, rapidez na transmissão dos dados e operação contínua sem travamentos.",
+        "image": null
       }
     ],
     "applications": [
@@ -3040,27 +3115,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Leitura automática com ampla janela de captura",
-        "desc": "O HPRT P300 possui uma janela de leitura ampla com detecção automática de imagem, permitindo a captura de códigos de barras sem necessidade de alinhamento preciso ou foco manual. Isso torna a operação mais rápida e intuitiva para o operador."
+        "desc": "O HPRT P300 possui uma janela de leitura ampla com detecção automática de imagem, permitindo a captura de códigos de barras sem necessidade de alinhamento preciso ou foco manual. Isso torna a operação mais rápida e intuitiva para o operador.",
+        "image": 1
       },
       {
         "title": "Sensor de visão com grande alcance de leitura",
-        "desc": "Equipado com sensor de visão avançado e amplo campo de visão, o P300 garante alta eficiência na captura de códigos, mesmo quando apresentados em diferentes posições ou distâncias."
+        "desc": "Equipado com sensor de visão avançado e amplo campo de visão, o P300 garante alta eficiência na captura de códigos, mesmo quando apresentados em diferentes posições ou distâncias.",
+        "image": null
       },
       {
         "title": "Alta tolerância a movimento para leitura rápida",
-        "desc": "Com tolerância de movimento de até 2 metros por segundo, o equipamento permite leitura eficiente mesmo quando os códigos estão em movimento, ideal para ambientes de checkout e automação comercial."
+        "desc": "Com tolerância de movimento de até 2 metros por segundo, o equipamento permite leitura eficiente mesmo quando os códigos estão em movimento, ideal para ambientes de checkout e automação comercial.",
+        "image": null
       },
       {
         "title": "Leitura de códigos impressos e digitais em smartphones",
-        "desc": "O leitor suporta a captura de códigos exibidos em telas de celulares e dispositivos móveis, possibilitando leitura de QR Codes, cupons digitais e bilhetes eletrônicos sem necessidade de iluminação de fundo."
+        "desc": "O leitor suporta a captura de códigos exibidos em telas de celulares e dispositivos móveis, possibilitando leitura de QR Codes, cupons digitais e bilhetes eletrônicos sem necessidade de iluminação de fundo.",
+        "image": null
       },
       {
         "title": "Três modos de operação para diferentes cenários",
-        "desc": "O P300 oferece modos específicos de leitura para diferentes aplicações:"
+        "desc": "O P300 oferece modos específicos de leitura para diferentes aplicações:",
+        "image": null
       },
       {
         "title": "Design fixo ideal para balcões e totens de autoatendimento",
-        "desc": "Seu formato compacto e base estável tornam o P300 ideal para uso fixo em balcões de atendimento, caixas de varejo, quiosques de autoatendimento e sistemas de automação."
+        "desc": "Seu formato compacto e base estável tornam o P300 ideal para uso fixo em balcões de atendimento, caixas de varejo, quiosques de autoatendimento e sistemas de automação.",
+        "image": 3
       }
     ],
     "applications": [
@@ -3126,23 +3207,28 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Impressora térmica direta para cupons e recibos",
-        "desc": ""
+        "desc": "",
+        "image": 1
       },
       {
         "title": "Alta velocidade de impressão",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "USB para conexão direta ao sistema",
-        "desc": ""
+        "desc": "",
+        "image": 2
       },
       {
         "title": "Resolução padrão para textos e códigos de barras",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Memória interna para processamento contínuo",
-        "desc": ""
+        "desc": "",
+        "image": null
       }
     ],
     "applications": [
@@ -3242,27 +3328,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Impressora portátil A4 para documentos e recibos",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Bateria interna recarregável",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Conectividade sem fio via Bluetooth",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "USB para conexão direta ao computador",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Resolução adequada para textos e gráficos",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Memória interna para processamento de arquivos",
-        "desc": ""
+        "desc": "",
+        "image": null
       }
     ],
     "applications": [
@@ -3359,27 +3451,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Impressão A4 portátil com máxima mobilidade",
-        "desc": "A HPRT MT810 foi desenvolvida para levar a impressão A4 para qualquer lugar, permitindo a emissão de documentos, recibos, boletos, relatórios e formulários diretamente em campo, sem depender de impressoras fixas."
+        "desc": "A HPRT MT810 foi desenvolvida para levar a impressão A4 para qualquer lugar, permitindo a emissão de documentos, recibos, boletos, relatórios e formulários diretamente em campo, sem depender de impressoras fixas.",
+        "image": 1
       },
       {
         "title": "Tecnologia térmica direta sem tinta ou toner",
-        "desc": "Utiliza tecnologia térmica direta, eliminando a necessidade de tinta, cartuchos ou toner. Isso reduz custos operacionais, simplifica a manutenção e torna a operação mais econômica e sustentável."
+        "desc": "Utiliza tecnologia térmica direta, eliminando a necessidade de tinta, cartuchos ou toner. Isso reduz custos operacionais, simplifica a manutenção e torna a operação mais econômica e sustentável.",
+        "image": null
       },
       {
         "title": "Impressão direta do celular e dispositivos móveis",
-        "desc": "Compatível com Bluetooth 5.0 e com o aplicativo HerePrint (iOS e Android), a MT810 permite imprimir diretamente de smartphones e tablets, garantindo agilidade em operações externas e remotas."
+        "desc": "Compatível com Bluetooth 5.0 e com o aplicativo HerePrint (iOS e Android), a MT810 permite imprimir diretamente de smartphones e tablets, garantindo agilidade em operações externas e remotas.",
+        "image": null
       },
       {
         "title": "Qualidade superior para textos e códigos de barras",
-        "desc": "Com resolução de 300 dpi, a MT810 oferece excelente definição para textos, gráficos e códigos de barras, atendendo aplicações profissionais com alto nível de legibilidade."
+        "desc": "Com resolução de 300 dpi, a MT810 oferece excelente definição para textos, gráficos e códigos de barras, atendendo aplicações profissionais com alto nível de legibilidade.",
+        "image": null
       },
       {
         "title": "Baixo custo por página com papel térmico em rolo",
-        "desc": "Cada rolo de papel térmico permite a impressão de até 25 folhas A4, resultando em baixo custo por página quando comparado a soluções portáteis tradicionais."
+        "desc": "Cada rolo de papel térmico permite a impressão de até 25 folhas A4, resultando em baixo custo por página quando comparado a soluções portáteis tradicionais.",
+        "image": null
       },
       {
         "title": "Design compacto, leve e versátil",
-        "desc": "Com formato portátil e disponível em diferentes cores, a MT810 é fácil de transportar, armazenar e utilizar em diferentes cenários profissionais."
+        "desc": "Com formato portátil e disponível em diferentes cores, a MT810 é fácil de transportar, armazenar e utilizar em diferentes cenários profissionais.",
+        "image": 2
       }
     ],
     "applications": [
@@ -3552,23 +3650,28 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Impressora térmica direta para pulseiras",
-        "desc": ""
+        "desc": "",
+        "image": 1
       },
       {
         "title": "Alta resistência à água, álcool e abrasão",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "USB para conexão direta ao sistema",
-        "desc": ""
+        "desc": "",
+        "image": 3
       },
       {
         "title": "Resolução adequada para textos e códigos de barras",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Memória interna para processamento contínuo",
-        "desc": ""
+        "desc": "",
+        "image": null
       }
     ],
     "applications": [],
@@ -3615,19 +3718,23 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Design compacto e otimização de espaço",
-        "desc": "A HPRT NYX possui um tamanho compacto que facilita a instalação em balcões, recepções, postos de atendimento e ambientes com espaço reduzido. Esse formato é especialmente importante para clientes que precisam manter o ambiente organizado, funcional e com fácil acesso ao equipamento, sem comprometer o fluxo de trabalho."
+        "desc": "A HPRT NYX possui um tamanho compacto que facilita a instalação em balcões, recepções, postos de atendimento e ambientes com espaço reduzido. Esse formato é especialmente importante para clientes que precisam manter o ambiente organizado, funcional e com fácil acesso ao equipamento, sem comprometer o fluxo de trabalho.",
+        "image": 2
       },
       {
         "title": "Alta velocidade de impressão para operações ágeis",
-        "desc": "Com velocidade de impressão de até 8 ips, a NYX garante rapidez mesmo em ambientes com grande volume de atendimento. Isso é fundamental para reduzir filas, agilizar processos de identificação e aumentar a produtividade em hospitais, eventos e operações corporativas."
+        "desc": "Com velocidade de impressão de até 8 ips, a NYX garante rapidez mesmo em ambientes com grande volume de atendimento. Isso é fundamental para reduzir filas, agilizar processos de identificação e aumentar a produtividade em hospitais, eventos e operações corporativas.",
+        "image": null
       },
       {
         "title": "Conectividade USB e Rede Ethernet para fácil integração",
-        "desc": "A impressora conta com conexões USB e Ethernet, permitindo integração simples e rápida aos sistemas já existentes. A conexão em rede é um diferencial importante para ambientes corporativos e hospitalares, onde múltiplos usuários precisam acessar o equipamento de forma centralizada e confiável."
+        "desc": "A impressora conta com conexões USB e Ethernet, permitindo integração simples e rápida aos sistemas já existentes. A conexão em rede é um diferencial importante para ambientes corporativos e hospitalares, onde múltiplos usuários precisam acessar o equipamento de forma centralizada e confiável.",
+        "image": null
       },
       {
         "title": "Estrutura robusta e durável para uso contínuo",
-        "desc": "Projetada para operação intensiva, a NYX possui estrutura resistente e componentes de alta qualidade, garantindo durabilidade e estabilidade mesmo em uso contínuo. Isso reduz paradas inesperadas, custos de manutenção e aumenta a vida útil do equipamento, oferecendo maior segurança ao investimento do cliente."
+        "desc": "Projetada para operação intensiva, a NYX possui estrutura resistente e componentes de alta qualidade, garantindo durabilidade e estabilidade mesmo em uso contínuo. Isso reduz paradas inesperadas, custos de manutenção e aumenta a vida útil do equipamento, oferecendo maior segurança ao investimento do cliente.",
+        "image": 1
       }
     ],
     "applications": [
@@ -3831,23 +3938,28 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Impressora térmica direta para pulseiras hospitalares",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Alta resistência à água, álcool e abrasão",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "USB para conexão direta ao sistema",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Resolução adequada para textos e códigos de barras",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Memória interna para processamento contínuo",
-        "desc": ""
+        "desc": "",
+        "image": null
       }
     ],
     "applications": [
@@ -3936,23 +4048,28 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Cartões PVC coloridos",
-        "desc": ""
+        "desc": "",
+        "image": 3
       },
       {
         "title": "Impressão em cartões PVC com fitas YMCKO e monocromáticas",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "USB (e outras interfaces sob consulta)",
-        "desc": ""
+        "desc": "",
+        "image": 2
       },
       {
         "title": "Resolução típica de 300 dpi para cartões",
-        "desc": ""
+        "desc": "",
+        "image": null
       },
       {
         "title": "Memória interna para fila de cartões e processamento de imagens",
-        "desc": ""
+        "desc": "",
+        "image": null
       }
     ],
     "applications": [
@@ -4003,23 +4120,28 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Qualidade fotográfica profissional por sublimação térmica",
-        "desc": "A HPRT CP4100 utiliza tecnologia térmica por sublimação, garantindo fotos com cores vivas, excelente definição e acabamento profissional. Cada impressão recebe uma camada protetora transparente, aumentando a durabilidade e resistência das fotografias."
+        "desc": "A HPRT CP4100 utiliza tecnologia térmica por sublimação, garantindo fotos com cores vivas, excelente definição e acabamento profissional. Cada impressão recebe uma camada protetora transparente, aumentando a durabilidade e resistência das fotografias.",
+        "image": null
       },
       {
         "title": "Experiência instantânea para negócios e eventos",
-        "desc": "Com capacidade de imprimir 1 fotografia por minuto, a CP4100 é ideal para ambientes que demandam rapidez e impacto visual, como hotéis, resorts, eventos, parques temáticos e pontos turísticos."
+        "desc": "Com capacidade de imprimir 1 fotografia por minuto, a CP4100 é ideal para ambientes que demandam rapidez e impacto visual, como hotéis, resorts, eventos, parques temáticos e pontos turísticos.",
+        "image": null
       },
       {
         "title": "Conectividade wireless e uso simplificado",
-        "desc": "Compatível com Bluetooth 5.2 e Wi-Fi, a CP4100 imprime diretamente de smartphones por meio do aplicativo HeyPhoto, disponível para Android e iOS, facilitando a operação sem necessidade de computadores."
+        "desc": "Compatível com Bluetooth 5.2 e Wi-Fi, a CP4100 imprime diretamente de smartphones por meio do aplicativo HeyPhoto, disponível para Android e iOS, facilitando a operação sem necessidade de computadores.",
+        "image": null
       },
       {
         "title": "Design compacto e elegante",
-        "desc": "Seu formato compacto permite instalação em recepções, quiosques e estações de impressão, ocupando pouco espaço e oferecendo retorno rápido sobre o investimento."
+        "desc": "Seu formato compacto permite instalação em recepções, quiosques e estações de impressão, ocupando pouco espaço e oferecendo retorno rápido sobre o investimento.",
+        "image": null
       },
       {
         "title": "Cartucho inteligente com troca rápida e prática",
-        "desc": "O sistema de cartucho integrado (ribbon + papel) simplifica a reposição dos insumos, reduz erros operacionais e garante que a quantidade de fotos impressas seja exatamente igual ao número de mídias fornecidas."
+        "desc": "O sistema de cartucho integrado (ribbon + papel) simplifica a reposição dos insumos, reduz erros operacionais e garante que a quantidade de fotos impressas seja exatamente igual ao número de mídias fornecidas.",
+        "image": null
       }
     ],
     "applications": [
@@ -4163,27 +4285,33 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Solução tudo-em-um para embalagem e identificação",
-        "desc": "A EP-50A integra em um único equipamento as funções de empacotar, selar e etiquetar embalagens, otimizando processos logísticos e reduzindo etapas manuais na linha de expedição."
+        "desc": "A EP-50A integra em um único equipamento as funções de empacotar, selar e etiquetar embalagens, otimizando processos logísticos e reduzindo etapas manuais na linha de expedição.",
+        "image": 3
       },
       {
         "title": "Alta produtividade para operações de envio",
-        "desc": "Capaz de processar de 600 a 1.400 pacotes por hora, garantindo eficiência e velocidade em centros logísticos, e-commerce e operações de alto volume."
+        "desc": "Capaz de processar de 600 a 1.400 pacotes por hora, garantindo eficiência e velocidade em centros logísticos, e-commerce e operações de alto volume.",
+        "image": null
       },
       {
         "title": "Computador industrial integrado",
-        "desc": "Conta com PC industrial All-in-One com tela capacitiva de 21,5”, oferecendo interface intuitiva e maior controle das operações diretamente no equipamento."
+        "desc": "Conta com PC industrial All-in-One com tela capacitiva de 21,5”, oferecendo interface intuitiva e maior controle das operações diretamente no equipamento.",
+        "image": 2
       },
       {
         "title": "Impressora industrial de etiquetas integrada",
-        "desc": "Equipada com impressora térmica industrial HPRT, que realiza a impressão e aplicação automática das etiquetas nas embalagens durante o processo."
+        "desc": "Equipada com impressora térmica industrial HPRT, que realiza a impressão e aplicação automática das etiquetas nas embalagens durante o processo.",
+        "image": null
       },
       {
         "title": "Sistema automático de selagem e etiquetagem",
-        "desc": "Permite selagem automática ou acionamento por botão, com aplicação automática da etiqueta após o empacotamento."
+        "desc": "Permite selagem automática ou acionamento por botão, com aplicação automática da etiqueta após o empacotamento.",
+        "image": 1
       },
       {
         "title": "Robustez para ambientes industriais",
-        "desc": "Construída com estrutura metálica reforçada, esteira integrada e sistema de sensores de segurança, garantindo operação confiável e segura em ambientes industriais."
+        "desc": "Construída com estrutura metálica reforçada, esteira integrada e sistema de sensores de segurança, garantindo operação confiável e segura em ambientes industriais.",
+        "image": null
       }
     ],
     "applications": [],
