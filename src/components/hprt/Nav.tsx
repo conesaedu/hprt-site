@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import logo from "@/assets/hprt-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 import { Btn } from "./ui";
@@ -15,6 +15,19 @@ const links = [
 
 export function Nav({ onDark = false }: { onDark?: boolean } = {}) {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  const goToHash = (e: React.MouseEvent, hash: string) => {
+    e.preventDefault();
+    const id = hash.replace("#", "");
+    if (pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    navigate({ to: "/", hash: id });
+  };
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
