@@ -41,12 +41,12 @@ function ProductIndex() {
       <main>
         <section className="relative overflow-hidden bg-ink pb-16 pt-36 text-on-ink md:pt-40">
           <div className="pointer-events-none absolute inset-0 grid-rule opacity-60" aria-hidden />
-          <div className="wrap relative max-w-[52rem]">
+          <div className="wrap relative">
             <span className="mb-5 inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-on-ink-muted">
               <span className="inline-block size-[7px] rotate-45 rounded-[1px] bg-signal" />
               Portfólio · {products.length} modelos
             </span>
-            <h1 className="mb-6 text-[clamp(2.5rem,6vw,5rem)] leading-[0.92] text-on-ink">
+            <h1 className="mb-6 text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[0.95] text-on-ink">
               Toda a operação de impressão e identificação em uma única marca.
             </h1>
             <p className="text-[1.0625rem] leading-relaxed text-on-ink-muted">
