@@ -246,7 +246,7 @@ function HighlightNote({ index, title, desc }: { index: number; title: string; d
       ref={reveal.ref}
       className={cn(
         reveal.className,
-        "group relative flex flex-col bg-background p-8 transition-colors hover:bg-surface-2",
+        "group relative flex flex-col overflow-hidden bg-background p-8 transition-colors hover:bg-surface-2",
       )}
     >
       <span
