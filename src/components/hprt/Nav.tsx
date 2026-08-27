@@ -13,7 +13,7 @@ const links = [
   { href: "#trust", label: "Onde comprar" },
 ];
 
-export function Nav() {
+export function Nav({ onDark = false }: { onDark?: boolean } = {}) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,6 +22,8 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const light = onDark && !scrolled;
 
   return (
     <header
@@ -43,7 +45,12 @@ export function Nav() {
                 key={l.href}
                 to={l.href}
                 activeProps={{ className: "text-foreground" }}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  light
+                    ? "text-on-ink-muted hover:text-on-ink"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
               >
                 {l.label}
               </Link>
@@ -51,7 +58,12 @@ export function Nav() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  light
+                    ? "text-on-ink-muted hover:text-on-ink"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
               >
                 {l.label}
               </a>
@@ -59,7 +71,11 @@ export function Nav() {
           )}
         </nav>
         <div className="flex items-center">
-          <Btn href="#trust" variant="ghost">
+          <Btn
+            href="/#trust"
+            variant="ghost"
+            className={light ? "border-on-ink/30 text-on-ink hover:border-on-ink" : undefined}
+          >
             Fale com um especialista
           </Btn>
         </div>
