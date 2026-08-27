@@ -41,7 +41,7 @@ function ProductIndex() {
       <main>
         <section className="relative overflow-hidden bg-ink pb-16 pt-36 text-on-ink md:pt-40">
           <div className="pointer-events-none absolute inset-0 grid-rule opacity-60" aria-hidden />
-          <div className="wrap relative max-w-[52rem]">
+          <div className="wrap relative">
             <span className="mb-5 inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-on-ink-muted">
               <span className="inline-block size-[7px] rotate-45 rounded-[1px] bg-signal" />
               Portfólio · {products.length} modelos
