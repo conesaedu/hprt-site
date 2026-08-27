@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
@@ -57,5 +59,16 @@ export function SectionHead({
       <h2 className="mb-4 text-[2.375rem] leading-[1.1]">{title}</h2>
       {children ? <p className="text-base text-muted-foreground">{children}</p> : null}
     </div>
+  );
+}
+
+export function MoreLink({ to, children }: { to: string; children: ReactNode }) {
+  return (
+    <Link
+      to={to}
+      className="inline-flex items-center gap-2 font-mono text-[0.75rem] uppercase tracking-[0.1em] text-foreground transition-colors hover:text-signal"
+    >
+      {children} <ArrowUpRight className="size-3.5" />
+    </Link>
   );
 }
