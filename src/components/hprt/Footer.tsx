@@ -5,10 +5,10 @@ const cols = [
   {
     title: "Produtos",
     links: [
-      { label: "Etiquetas", href: "#products" },
-      { label: "Coletores de dados", href: "#products" },
-      { label: "Leitores de código de barras", href: "#products" },
-      { label: "Impressão de cupom", href: "#products" },
+      { label: "Etiquetas", href: "/produtos" },
+      { label: "Coletores de dados", href: "/produtos" },
+      { label: "Leitores de código de barras", href: "/produtos" },
+      { label: "Impressão de cupom", href: "/produtos" },
     ],
   },
   {
