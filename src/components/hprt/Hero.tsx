@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { getProduct } from "@/lib/products";
+import coletorImg from "@/assets/hero-coletor-logistica.jpg";
+import etiquetasImg from "@/assets/hero-etiquetas-varejo.jpg";
+import leitorImg from "@/assets/hero-leitor-pdv.jpg";
 import { cn } from "@/lib/utils";
 import { Btn, Eyebrow } from "./ui";
 
@@ -10,13 +12,28 @@ const meta = [
 ];
 
 const showcase = [
-  { slug: "m4-plus", name: "M4 Plus", tag: "Coletor Android" },
-  { slug: "apollo", name: "Apollo", tag: "Etiquetas" },
-  { slug: "n130-bt-plus", name: "N130 BT Plus", tag: "Leitor Bluetooth" },
-].map((item) => ({
-  ...item,
-  img: getProduct(item.slug)?.gallery?.[0] ?? "",
-}));
+  {
+    slug: "m4-plus",
+    name: "M4 Plus",
+    tag: "Coletor Android",
+    img: coletorImg,
+    alt: "Operador de centro de distribuição usando coletor de dados Android para ler etiqueta de caixa",
+  },
+  {
+    slug: "apollo",
+    name: "Apollo",
+    tag: "Etiquetas",
+    img: etiquetasImg,
+    alt: "Impressora térmica de etiquetas em bancada de retaguarda de loja imprimindo etiqueta de código de barras",
+  },
+  {
+    slug: "n130-bt-plus",
+    name: "N130 BT Plus",
+    tag: "Leitor Bluetooth",
+    img: leitorImg,
+    alt: "Operadora de loja lendo o código de barras de um produto com leitor sem fio no ponto de venda",
+  },
+];
 
 export function Hero() {
   const [idx, setIdx] = useState(0);
