@@ -266,6 +266,14 @@ function HighlightNote({ index, title, desc }: { index: number; title: string; d
 /* -------------------------------------------------------- applications */
 
 function Applications({ product }: { product: Product }) {
+  /* Sem células de preenchimento: a última aplicação estica para fechar a
+     linha, tanto em 3 colunas (desktop) quanto em 2 (tablet). */
+  const total = product.applications.length;
+  const lgCols = total % 3 === 0 || total > 4 ? 3 : 2;
+  const lgRest = total % lgCols;
+  const lgSpan = lgRest === 0 ? 1 : lgCols - lgRest + 1;
+  const smSpan = total % 2 === 0 ? 1 : 2;
+
   return (
     <section className="border-b border-border py-20 md:py-24">
       <div className="wrap">
@@ -276,23 +284,30 @@ function Applications({ product }: { product: Product }) {
         <div
           className={cn(
             "grid gap-px border border-border bg-border sm:grid-cols-2",
-            product.applications.length % 3 === 0 || product.applications.length > 4
-              ? "lg:grid-cols-3"
-              : "lg:grid-cols-2",
+            lgCols === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2",
           )}
         >
-          {product.applications.map((a, i) => (
-            <article
-              key={a.title}
-              className="group bg-background p-7 transition-colors hover:bg-surface"
-            >
-              <span className="mb-5 block font-mono text-[0.68rem] tracking-[0.12em] text-faint transition-colors group-hover:text-signal">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mb-2.5 text-[1.125rem] leading-tight">{a.title}</h3>
-              <p className="text-[0.9rem] leading-relaxed text-muted-foreground">{a.desc}</p>
-            </article>
-          ))}
+          {product.applications.map((a, i) => {
+            const last = i === total - 1;
+            return (
+              <article
+                key={a.title}
+                className={cn(
+                  "group bg-background p-7 transition-colors hover:bg-surface",
+                  last && smSpan === 2 && "sm:col-span-2",
+                  last && lgSpan === 2 && "lg:col-span-2",
+                  last && lgSpan === 3 && "lg:col-span-3",
+                  last && lgSpan === 1 && "lg:col-span-1",
+                )}
+              >
+                <span className="mb-5 block font-mono text-[0.68rem] tracking-[0.12em] text-faint transition-colors group-hover:text-signal">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mb-2.5 text-[1.125rem] leading-tight">{a.title}</h3>
+                <p className="text-[0.9rem] leading-relaxed text-muted-foreground">{a.desc}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
