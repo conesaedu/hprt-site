@@ -40,6 +40,10 @@
   --color-faint: var(--faint);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-on-ink: var(--on-ink);
+  --color-on-ink-muted: var(--on-ink-muted);
   --font-display: var(--font-display);
   --font-sans: var(--font-body);
   --font-mono: var(--font-mono);
@@ -55,6 +59,12 @@
 
   --surface: oklch(0.972 0.001 264);
   --surface-2: oklch(0.938 0.002 264);
+
+  /* Fundo industrial escuro usado nos heros de produto. */
+  --ink: oklch(0.185 0.007 264);
+  --ink-2: oklch(0.255 0.009 264);
+  --on-ink: oklch(0.982 0 0);
+  --on-ink-muted: oklch(0.746 0.008 264);
 
   --card: oklch(1 0 0);
   --card-foreground: var(--foreground);
@@ -140,4 +150,23 @@
     transform: none;
     transition: none;
   }
+}
+
+@utility stage-glow {
+  background:
+    radial-gradient(60% 70% at 50% 42%, color-mix(in oklab, var(--signal) 22%, transparent), transparent 70%),
+    radial-gradient(90% 90% at 50% 100%, color-mix(in oklab, var(--ink-2) 90%, transparent), transparent 75%);
+}
+
+@utility grid-rule {
+  background-image: linear-gradient(
+    to right,
+    color-mix(in oklab, var(--on-ink) 8%, transparent) 0 1px,
+    transparent 1px 100%
+  );
+  background-size: 25% 100%;
+}
+
+@utility product-shadow {
+  filter: drop-shadow(0 34px 42px color-mix(in oklab, black 55%, transparent));
 }

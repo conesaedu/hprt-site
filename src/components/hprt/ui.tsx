@@ -19,10 +19,12 @@ export function Btn({
   href,
   children,
   variant = "primary",
+  className,
 }: {
   href: string;
   children: ReactNode;
   variant?: "primary" | "ghost";
+  className?: string;
 }) {
   return (
     <a
@@ -32,6 +34,7 @@ export function Btn({
         variant === "primary"
           ? "border-transparent bg-signal text-primary-foreground hover:bg-signal-soft"
           : "border-border-strong text-foreground hover:border-foreground",
+        className,
       )}
     >
       {children}
