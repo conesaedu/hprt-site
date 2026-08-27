@@ -72,8 +72,9 @@ const pillars = [
   },
 ];
 
-export function Positioning() {
+export function Positioning({ preview = false }: { preview?: boolean } = {}) {
   const reveal = useReveal<HTMLDivElement>();
+  const visible = preview ? pillars.slice(0, 3) : pillars;
 
   return (
     <section id="positioning" className="bg-surface py-30">
@@ -92,7 +93,7 @@ export function Positioning() {
           ref={reveal.ref}
           className={`${reveal.className} grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-3`}
         >
-          {pillars.map((p) => (
+          {visible.map((p) => (
             <div
               key={p.num}
               className="flex flex-col justify-between bg-background p-8 transition-colors duration-200 hover:bg-surface"
@@ -112,17 +113,24 @@ export function Positioning() {
           ))}
         </div>
 
-        <div className="mt-12 border-l-2 border-signal pl-6">
-          <p className="font-display text-[1.5rem] leading-[1.25] font-semibold text-foreground md:text-[1.75rem]">
-            Tecnologia global para competir.
-            <br />
-            Estrutura local para permanecer.
-          </p>
-        </div>
+        {preview ? (
+          <div className="mt-9 flex justify-center">
+            <MoreLink to="/por-que-hprt">Ver os 6 pilares da estrutura HPRT</MoreLink>
+          </div>
+        ) : (
+          <div className="mt-12 border-l-2 border-signal pl-6">
+            <p className="font-display text-[1.5rem] leading-[1.25] font-semibold text-foreground md:text-[1.75rem]">
+              Tecnologia global para competir.
+              <br />
+              Estrutura local para permanecer.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
 }
+
 
 
 export function GlobalTrust() {
