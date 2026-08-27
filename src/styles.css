@@ -60,6 +60,12 @@
   --surface: oklch(0.972 0.001 264);
   --surface-2: oklch(0.938 0.002 264);
 
+  /* Fundo industrial escuro usado nos heros de produto. */
+  --ink: oklch(0.185 0.007 264);
+  --ink-2: oklch(0.255 0.009 264);
+  --on-ink: oklch(0.982 0 0);
+  --on-ink-muted: oklch(0.746 0.008 264);
+
   --card: oklch(1 0 0);
   --card-foreground: var(--foreground);
   --popover: oklch(1 0 0);
