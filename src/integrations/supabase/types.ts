@@ -14,6 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
+      contact_leads: {
+        Row: {
+          company: string
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          need: string | null
+          phone: string
+          role: string | null
+          segment: string | null
+          source: string
+          status: string
+          volume: string | null
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          need?: string | null
+          phone: string
+          role?: string | null
+          segment?: string | null
+          source?: string
+          status?: string
+          volume?: string | null
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          need?: string | null
+          phone?: string
+          role?: string | null
+          segment?: string | null
+          source?: string
+          status?: string
+          volume?: string | null
+        }
+        Relationships: []
+      }
       training_registrations: {
         Row: {
           company: string

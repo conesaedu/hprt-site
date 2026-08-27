@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/hprt/Nav";
 import { Footer } from "@/components/hprt/Footer";
 import { PageHero } from "@/components/hprt/PageHero";
-import { CtaStrip, Trust } from "@/components/hprt/Catalog";
+import { Trust } from "@/components/hprt/Catalog";
+import { ContactForm, WHATSAPP_LABEL, WHATSAPP_URL } from "@/components/hprt/ContactForm";
+
 
 const SITE = "https://hprtbrasil.lovable.app";
 const TITLE = "Onde comprar HPRT no Brasil — distribuição oficial Cogra";
@@ -56,9 +58,33 @@ function WhereToBuyPage() {
           técnico e time comercial no país — não apenas um catálogo traduzido.
         </PageHero>
         <Trust hideHead />
-        <CtaStrip />
+        <section className="border-b border-border py-16">
+          <div className="wrap flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <h2 className="max-w-[32rem] text-[1.75rem] leading-snug">
+              Dois caminhos para falar com o time: formulário ou WhatsApp.
+            </h2>
+            <div className="flex flex-wrap gap-3.5">
+              <a
+                href="#contato"
+                className="inline-flex items-center rounded-sm bg-signal px-6 py-3 text-sm font-semibold text-primary-foreground transition-[transform,background-color] hover:-translate-y-px hover:bg-signal-soft"
+              >
+                Preencher formulário
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center rounded-sm border border-border-strong px-6 py-3 text-sm font-semibold transition-colors hover:border-signal hover:text-signal"
+              >
+                WhatsApp {WHATSAPP_LABEL}
+              </a>
+            </div>
+          </div>
+        </section>
+        <ContactForm />
       </main>
       <Footer />
     </div>
   );
 }
+
