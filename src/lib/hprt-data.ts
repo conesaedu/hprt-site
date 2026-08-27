@@ -58,9 +58,58 @@ export const heroGallery = [
 ];
 
 
-export const solutions = [
-  { num: "01", title: "Varejo", desc: "Etiquetagem, PDV e gestão de estoque com leitura rápida de código de barras." },
-  { num: "02", title: "Logística", desc: "Coleta de dados em campo e etiquetagem de alto volume em centros de distribuição." },
-  { num: "03", title: "Saúde", desc: "Identificação de pacientes e rastreabilidade de materiais com pulseiras e etiquetas." },
-  { num: "04", title: "Alimentação", desc: "Impressão de cupom e etiquetagem para food service e delivery." },
+export type SolutionLine = { id: string; label: string };
+
+export type Solution = {
+  num: string;
+  title: string;
+  desc: string;
+  lines: SolutionLine[];
+};
+
+export const solutions: Solution[] = [
+  {
+    num: "01",
+    title: "Varejo",
+    desc:
+      "Etiquetagem de precificação, cupom fiscal no PDV e leitura rápida de código de barras no balcão. Do back-office ao checkout, a mesma marca entrega a operação completa de identificação e venda.",
+    lines: [
+      { id: "etiquetas-entrada", label: "Etiquetas · Entrada" },
+      { id: "cupom", label: "Cupom / PDV" },
+      { id: "leitores", label: "Leitores" },
+      { id: "cartao", label: "Cartões" },
+    ],
+  },
+  {
+    num: "02",
+    title: "Logística",
+    desc:
+      "Etiquetagem de alto volume em centros de distribuição, coleta de dados em campo e leitura de códigos em esteiras e docas. Rastreabilidade ponta a ponta com equipamentos robustos para o chão de operação.",
+    lines: [
+      { id: "etiquetas-industrial", label: "Etiquetas · Industrial" },
+      { id: "coletores", label: "Coletores" },
+      { id: "leitores", label: "Leitores" },
+    ],
+  },
+  {
+    num: "03",
+    title: "Saúde",
+    desc:
+      "Identificação de pacientes com pulseiras térmicas, rastreabilidade de materiais e etiquetas para amostras e prontuários. Equipamentos resistentes a desinfetantes para o ambiente hospitalar.",
+    lines: [
+      { id: "pulseiras", label: "Pulseiras" },
+      { id: "leitores", label: "Leitores" },
+      { id: "etiquetas-entrada", label: "Etiquetas · Entrada" },
+    ],
+  },
+  {
+    num: "04",
+    title: "Alimentação",
+    desc:
+      "Impressão de cupom para food service e delivery, etiquetagem de produtos e preparações com equipamentos térmicos compactos. Identificação de pedidos e embalagens em ritmo de alto giro.",
+    lines: [
+      { id: "cupom", label: "Cupom / PDV" },
+      { id: "etiquetas-entrada", label: "Etiquetas · Entrada" },
+    ],
+  },
 ];

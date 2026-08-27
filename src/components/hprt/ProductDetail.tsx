@@ -40,7 +40,7 @@ function ProductHero({ product }: { product: Product }) {
 
       <div className="wrap relative">
         <nav className="mb-10 flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-on-ink-muted">
-          <Link to="/produtos" className="transition-colors hover:text-on-ink">
+          <Link to="/produtos" search={{ linha: "all" }} className="transition-colors hover:text-on-ink">
             Produtos
           </Link>
           <span aria-hidden>/</span>
@@ -534,6 +534,7 @@ function Related({ product, related }: { product: Product; related: Product[] })
           </div>
           <Link
             to="/produtos"
+            search={{ linha: "all" }}
             className="inline-flex items-center gap-2 font-mono text-[0.75rem] uppercase tracking-[0.1em] text-foreground transition-colors hover:text-signal"
           >
             Portfólio completo <ArrowUpRight className="size-3.5" />
