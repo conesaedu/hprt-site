@@ -1,12 +1,18 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
-import { categories, products, solutions } from "@/lib/hprt-data";
+import { solutions } from "@/lib/hprt-data";
+import { products, productCategories } from "@/lib/products";
 import { cn } from "@/lib/utils";
 import { Btn, Eyebrow, SectionHead } from "./ui";
 
 export function Products() {
   const [active, setActive] = useState("all");
-  const visible = products.filter((p) => active === "all" || p.cat === active);
+  const visible = products.filter((p) => active === "all" || p.category === active);
+  const cats = productCategories.filter(
+    (c) => c.id === "all" || products.some((p) => p.category === c.id),
+  );
 
   return (
     <section id="products" className="border-y border-border bg-surface py-30">
@@ -17,7 +23,7 @@ export function Products() {
         </SectionHead>
 
         <div className="mb-11 flex flex-wrap gap-2.5">
-          {categories.map((c) => (
+          {cats.map((c) => (
             <button
               key={c.id}
               type="button"
@@ -36,25 +42,36 @@ export function Products() {
 
         <div className="grid grid-cols-2 gap-px border border-border bg-border md:grid-cols-3 lg:grid-cols-4">
           {visible.map((p) => (
-            <article
-              key={p.name}
-              className="flex flex-col items-center gap-2 bg-background px-5 pb-6 pt-5 text-center transition-shadow hover:shadow-[inset_0_0_0_1px_var(--foreground)]"
+            <Link
+              key={p.slug}
+              to="/produtos/$slug"
+              params={{ slug: p.slug }}
+              className="group flex flex-col items-center gap-2 bg-background px-5 pb-6 pt-5 text-center transition-shadow hover:shadow-[inset_0_0_0_1px_var(--foreground)]"
             >
               <div className="mb-1 flex aspect-square w-full items-center justify-center">
                 <img
-                  src={p.img}
+                  src={p.gallery[0]}
                   alt={`Produto HPRT ${p.name}`}
                   loading="lazy"
-                  className="max-h-[6.25rem] max-w-[85%] object-contain mix-blend-multiply"
+                  className="max-h-[6.25rem] max-w-[85%] object-contain mix-blend-multiply transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-[1.04]"
                 />
               </div>
               <span className="font-mono text-[0.625rem] uppercase tracking-[0.05em] text-faint">
-                {p.catLabel}
+                {p.categoryLabel}
               </span>
               <h3 className="font-display text-lg font-semibold">{p.name}</h3>
-              <p className="text-[0.78rem] text-muted-foreground">{p.desc}</p>
-            </article>
+              <p className="text-[0.78rem] text-muted-foreground">{p.tagline}</p>
+            </Link>
           ))}
+        </div>
+
+        <div className="mt-9 flex justify-center">
+          <Link
+            to="/produtos"
+            className="inline-flex items-center gap-2 font-mono text-[0.75rem] uppercase tracking-[0.1em] text-foreground transition-colors hover:text-signal"
+          >
+            Ver todos os {products.length} modelos <ArrowUpRight className="size-3.5" />
+          </Link>
         </div>
       </div>
     </section>
