@@ -481,7 +481,7 @@ export const productList: Product[] = [
     "keySpecs": [
       {
         "label": "Velocidade de Impressão",
-        "value": "203 dpi: até 10 ips (25"
+        "value": "203 dpi: até 10 ips"
       },
       {
         "label": "Resolução",
@@ -975,7 +975,7 @@ export const productList: Product[] = [
     "keySpecs": [
       {
         "label": "Velocidade de Impressão",
-        "value": "203 dpi: até 8 ips (20"
+        "value": "203 dpi: até 8 ips"
       },
       {
         "label": "Resolução",
