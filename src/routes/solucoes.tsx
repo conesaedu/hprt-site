@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/hprt/Nav";
 import { Footer } from "@/components/hprt/Footer";
 import { PageHero } from "@/components/hprt/PageHero";
-import { CtaStrip, Products, Solutions } from "@/components/hprt/Catalog";
+import { CtaStrip, Solutions } from "@/components/hprt/Catalog";
 
 const SITE = "https://hprtbrasil.lovable.app";
 const TITLE = "Soluções HPRT por setor — varejo, logística, saúde e food";
@@ -51,7 +51,6 @@ function SolutionsPage() {
           coleta de dados e impressão de cupom dentro do mesmo ecossistema de fabricante.
         </PageHero>
         <Solutions hideHead />
-        <Products limit={8} />
         <CtaStrip />
       </main>
       <Footer />
