@@ -10,7 +10,6 @@ export const productList: Product[] = [
       categoryLabel: "Etiquetas · Industrial",
       tagline: "Impressora Industrial de Etiquetas Intermediária",
       body: [
-        "(https://hprtbrasil.com.br/produto/gala/#)",
         "A GALA é uma impressora industrial de etiquetas térmica direta e por transferência térmica, desenvolvida para aplicações que exigem alto desempenho, robustez e confiabilidade, como logística, manufatura, transporte, varejo e saúde. Projetada para ambientes de alto volume, é ideal para a impressão de etiquetas de rastreabilidade, identificação e controle de processos com qualidade superior.",
       ],
       summary: [
@@ -222,7 +221,6 @@ export const productList: Product[] = [
       categoryLabel: "Etiquetas · Industrial",
       tagline: "Impressora Industrial de Etiquetas de Alta Performance 24/7",
       body: [
-        "(https://hprtbrasil.com.br/produto/grand/#)",
         "A GRAND é uma impressora industrial de etiquetas térmica direta e por transferência térmica, desenvolvida para aplicações que exigem operação contínua 24/7, alta velocidade e máxima robustez, como logística, manufatura, transporte, varejo e saúde. Construída com estrutura metálica reforçada, é ideal para ambientes industriais intensos e grandes volumes de impressão.",
       ],
       summary: [
@@ -473,7 +471,6 @@ export const productList: Product[] = [
       categoryLabel: "Etiquetas · Industrial",
       tagline: "Impressora Industrial de Etiquetas Econômica",
       body: [
-        "(https://hprtbrasil.com.br/produto/neo/#)",
         "A NEO é uma impressora industrial de etiquetas térmica direta e por transferência térmica, desenvolvida para aplicações que exigem alta velocidade, robustez e versatilidade, como logística, manufatura, transporte, varejo e saúde. Compacta, eficiente e fácil de operar, é ideal para quem busca produtividade industrial com excelente custo-benefício.",
       ],
       summary: [
@@ -725,7 +722,6 @@ export const productList: Product[] = [
       categoryLabel: "Etiquetas · Entrada",
       tagline: "Impressora de Etiquetas de Entrada Econômica",
       body: [
-        "(https://hprtbrasil.com.br/produto/apollo/#)",
         "A APOLLO é uma impressora de etiquetas térmica direta e por transferência térmica, desenvolvida para aplicações que exigem eficiência, confiabilidade e baixo custo operacional, como varejo, logística, saúde, manufatura e transporte. Robusta, estável e fácil de operar, é ideal para a impressão contínua de etiquetas de identificação, códigos de barras e rastreabilidade com alta qualidade.",
       ],
       summary: [
@@ -969,7 +965,6 @@ export const productList: Product[] = [
       categoryLabel: "Etiquetas · Entrada",
       tagline: "Impressora de Etiquetas de Entrada Econômica",
       body: [
-        "(https://hprtbrasil.com.br/produto/ares/#)",
         "A ARES é uma impressora de etiquetas térmica direta e por transferência térmica, desenvolvida para aplicações que exigem produtividade, confiabilidade e excelente custo-benefício, como varejo, logística, saúde, manufatura e transporte. Robusta, eficiente e fácil de operar, é ideal para a impressão de etiquetas de identificação, códigos de barras e rastreabilidade com alta qualidade.",
       ],
       summary: [
@@ -1225,7 +1220,6 @@ export const productList: Product[] = [
       categoryLabel: "Impressoras térmicas",
       tagline: "Impressora Industrial para Etiquetas Largas",
       body: [
-        "(https://hprtbrasil.com.br/produto/delta/#)",
         "A DELTA é uma impressora industrial de etiquetas térmica direta e por transferência térmica, desenvolvida para aplicações que exigem impressão em grande formato, alta robustez e produtividade, como logística, manufatura, indústria química, transporte e agricultura. Construída com estrutura totalmente metálica, é ideal para ambientes industriais de alta demanda.",
       ],
       summary: [
@@ -1458,7 +1452,6 @@ export const productList: Product[] = [
       categoryLabel: "Etiquetas · Entrada",
       tagline: "Impressora Térmica de Etiquetas de Entrada",
       body: [
-        "(https://hprtbrasil.com.br/produto/ht500/#)",
         "A HPRT HT500 é uma impressora térmica de etiquetas da categoria industrial de entrada, desenvolvida para empresas que precisam de alto desempenho, confiabilidade e baixo custo operacional. Com suporte a impressão por transferência térmica e térmica direta, velocidade de até 152 mm/s e ampla compatibilidade de mídias e ribbons, a HT500 oferece flexibilidade para diferentes aplicações. Seu design robusto, aliado a conectividade moderna e compatibilidade com múltiplas linguagens de impressão, torna o equipamento uma solução ideal para operações de identificação em varejo, logística, manufatura e saúde.",
       ],
       summary: [],
@@ -2191,7 +2184,6 @@ export const productList: Product[] = [
       categoryLabel: "Coletores de Dados",
       tagline: "Terminal Coletor de Dados Android",
       body: [
-        "(https://hprtbrasil.com.br/produto/m4-plus/#)",
         "O M4 PLUS é um terminal coletor de dados Android desenvolvido para aplicações que exigem robustez, produtividade e mobilidade, como logística, indústria, varejo, saúde e governo. Com teclado físico retroiluminado, leitor de códigos 1D/2D integrado e bateria removível de longa duração, é ideal para operações intensivas em campo.",
       ],
       summary: [
@@ -2596,7 +2588,6 @@ export const productList: Product[] = [
       categoryLabel: "Leitores de Códigos de Barras",
       tagline: "Leitor de Códigos de Barras Sem Fio de Alta Performance",
       body: [
-        "(https://hprtbrasil.com.br/produto/n130-bt-plus/#)",
         "O N130 BT PLUS é um leitor de códigos de barras sem fio de alta performance, desenvolvido para aplicações que exigem mobilidade, rapidez e confiabilidade na captura de dados. Compatível com códigos 1D e 2D, realiza leituras omnidirecionais com excelente precisão.",
       ],
       summary: [
@@ -2708,7 +2699,6 @@ export const productList: Product[] = [
       categoryLabel: "Leitores de Códigos de Barras",
       tagline: "Leitor de Códigos de Barras Sem Fio com Estrutura Reforçada",
       body: [
-        "(https://hprtbrasil.com.br/produto/n130-bt-plus-h/#)",
         "O N130 BT PLUS H é um leitor de códigos de barras sem fio com estrutura reforçada, desenvolvido para aplicações que exigem mobilidade, resistência e alta confiabilidade na captura de dados. Compatível com códigos 1D e 2D, realiza leituras omnidirecionais com excelente precisão.",
       ],
       summary: [
@@ -2818,7 +2808,6 @@ export const productList: Product[] = [
       categoryLabel: "Leitores de Códigos de Barras",
       tagline: "Leitor de Códigos de Barras Avançado de Alta Performance",
       body: [
-        "(https://hprtbrasil.com.br/produto/n180/#)",
         "O N180 é um leitor de códigos de barras avançado com desempenho superior para alto volume, desenvolvido para operações de maior demanda, como linhas de produção, expedição, recebimento de mercadorias e conferência em grande escala.",
       ],
       summary: [
@@ -2928,7 +2917,6 @@ export const productList: Product[] = [
       categoryLabel: "Leitores de Códigos de Barras",
       tagline: "Leitor de Códigos de Barras Compacto de Alta Performance",
       body: [
-        "(https://hprtbrasil.com.br/produto/n80/#)",
         "O N80 é um leitor de códigos de barras compacto e de alta performance, desenvolvido para aplicações que exigem rapidez, precisão e confiabilidade na captura de dados em ambientes comerciais e corporativos. Compatível com códigos 1D e 2D, realiza leituras omnidirecionais com excelente desempenho.",
       ],
       summary: [
@@ -3041,7 +3029,6 @@ export const productList: Product[] = [
       categoryLabel: "Leitores de Códigos de Barras",
       tagline: "Leitor de Códigos de Barras Fixo Imager",
       body: [
-        "(https://hprtbrasil.com.br/produto/p300-2/#)",
         "O HPRT P300 é um leitor de códigos de barras fixo do tipo imager 2D, desenvolvido para operações que exigem leitura rápida, precisa e contínua em balcões de atendimento, caixas de varejo e totens de autoatendimento. Equipado com sensor de alta sensibilidade e ampla janela de leitura, ele captura códigos 1D e 2D tanto em etiquetas impressas quanto em telas de smartphones, sem necessidade de alinhamento preciso.",
       ],
       summary: [
@@ -3352,7 +3339,6 @@ export const productList: Product[] = [
       categoryLabel: "Impressora Portátil A4",
       tagline: "Impressora Térmica A4 Portátil",
       body: [
-        "(https://hprtbrasil.com.br/produto/mt810/#)",
         "A MT810 é uma impressora térmica A4 portátil desenvolvida para aplicações que exigem mobilidade, praticidade e economia, como logística, saúde, governo, serviços de campo e educação. Compacta e fácil de usar, permite a impressão de documentos A4 completos diretamente em campo.",
       ],
       summary: [
@@ -3555,7 +3541,6 @@ export const productList: Product[] = [
       categoryLabel: "Impressora de Pulseiras",
       tagline: "Impressora térmica direta para pulseiras de identificação",
       body: [
-        "(https://hprtbrasil.com.br/produto/gamma/#)",
         "Impressora térmica direta para pulseiras de identificação.",
       ],
       summary: [
@@ -3606,7 +3591,6 @@ export const productList: Product[] = [
       categoryLabel: "Impressora de Pulseiras",
       tagline: "Impressora de Pulseiras e Etiquetas",
       body: [
-        "(https://hprtbrasil.com.br/produto/nyx/#)",
         "A NYX é uma impressora térmica direta de alta performance, desenvolvida para aplicações que exigem agilidade, confiabilidade e precisão, como hospitais, laboratórios, clínicas, eventos, indústria e logística. Compacta, robusta e fácil de operar, ela é ideal para a impressão de pulseiras de identificação e etiquetas com excelente qualidade.",
       ],
       summary: [
@@ -3941,7 +3925,6 @@ export const productList: Product[] = [
       categoryLabel: "Impressora de Cartão",
       tagline: "Impressora de cartões confiável e acessível para impressões PVC",
       body: [
-        "(https://hprtbrasil.com.br/produto/cp-d80/#)",
         "Impressora de cartões confiável e acessível para impressões PVC.",
       ],
       summary: [
@@ -4168,7 +4151,6 @@ export const productList: Product[] = [
       categoryLabel: "Embaladora, seladora e etiquetadora automática",
       tagline: "Embaladora, Seladora e Etiquetadora Automática",
       body: [
-        "(https://hprtbrasil.com.br/produto/ep-50a/#)",
         "A HPRT EP-50A é uma solução automática desenvolvida para embalar, selar e etiquetar pacotes em um único processo, ideal para operações logísticas e centros de distribuição que buscam aumentar produtividade e padronizar processos de envio. Com impressora industrial de etiquetas integrada, computador com tela de 21,5” e sistema automático de selagem, o equipamento pode processar até 1.400 pacotes por hora, garantindo eficiência e organização nas operações de expedição. Sua estrutura robusta e integração com sistemas modernos tornam a EP-50A uma solução completa para e-commerce, logística e operações industriais de alto volume.",
       ],
       summary: [],
