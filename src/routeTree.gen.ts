@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
+import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as TreinamentosRouteImport } from './routes/treinamentos'
 import { Route as ProdutosIndexRouteImport } from './routes/produtos.index'
 import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
@@ -29,6 +30,11 @@ const DownloadsRoute = DownloadsRouteImport.update({
 const PorQueHprtRoute = PorQueHprtRouteImport.update({
   id: '/por-que-hprt',
   path: '/por-que-hprt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucoesRoute = SolucoesRouteImport.update({
+  id: '/solucoes',
+  path: '/solucoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TreinamentosRoute = TreinamentosRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/downloads': typeof DownloadsRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos/': typeof ProdutosIndexRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/downloads': typeof DownloadsRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos': typeof ProdutosIndexRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/downloads': typeof DownloadsRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos/': typeof ProdutosIndexRoute
@@ -78,6 +87,7 @@ export interface FileRouteTypes {
     | '/'
     | '/downloads'
     | '/por-que-hprt'
+    | '/solucoes'
     | '/treinamentos'
     | '/produtos/$slug'
     | '/produtos/'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/downloads'
     | '/por-que-hprt'
+    | '/solucoes'
     | '/treinamentos'
     | '/produtos/$slug'
     | '/produtos'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/downloads'
     | '/por-que-hprt'
+    | '/solucoes'
     | '/treinamentos'
     | '/produtos/$slug'
     | '/produtos/'
@@ -103,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DownloadsRoute: typeof DownloadsRoute
   PorQueHprtRoute: typeof PorQueHprtRoute
+  SolucoesRoute: typeof SolucoesRoute
   TreinamentosRoute: typeof TreinamentosRoute
   ProdutosSlugRoute: typeof ProdutosSlugRoute
   ProdutosIndexRoute: typeof ProdutosIndexRoute
@@ -129,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/por-que-hprt'
       fullPath: '/por-que-hprt'
       preLoaderRoute: typeof PorQueHprtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solucoes': {
+      id: '/solucoes'
+      path: '/solucoes'
+      fullPath: '/solucoes'
+      preLoaderRoute: typeof SolucoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/treinamentos': {
@@ -159,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DownloadsRoute: DownloadsRoute,
   PorQueHprtRoute: PorQueHprtRoute,
+  SolucoesRoute: SolucoesRoute,
   TreinamentosRoute: TreinamentosRoute,
   ProdutosSlugRoute: ProdutosSlugRoute,
   ProdutosIndexRoute: ProdutosIndexRoute,
