@@ -64,7 +64,7 @@ function ProductHero({ product }: { product: Product }) {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="/#trust"
+                href="/onde-comprar"
                 className="inline-flex items-center gap-2 rounded-sm bg-signal px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-[transform,background-color] hover:-translate-y-px hover:bg-signal-soft"
               >
                 Solicitar orçamento
@@ -510,7 +510,7 @@ function Decision({
             </p>
           </div>
           <a
-            href="/#trust"
+            href="/onde-comprar"
             className="inline-flex w-fit items-center gap-2 rounded-sm bg-signal px-5 py-3 text-sm font-semibold text-primary-foreground transition-[transform,background-color] hover:-translate-y-px hover:bg-signal-soft"
           >
             Falar com um especialista <ArrowRight className="size-4" />
