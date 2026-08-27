@@ -137,24 +137,33 @@ export function Positioning({ preview = false, hideHead = false }: { preview?: b
 
 
 export function GlobalTrust() {
-  const brands = ["KFC", "Apple Retail", "7-Eleven", "Starbucks"];
+  const facts = [
+    { k: "56", l: "Linhas de produção", d: "Fabricação verticalizada de impressão e identificação." },
+    { k: "2.000+", l: "Colaboradores", d: "Estrutura industrial dedicada ao ecossistema Hanin | HPRT." },
+    { k: "400+", l: "Engenheiros em P&D", d: "Desenvolvimento próprio de mecanismos, firmware e software." },
+    { k: "120+", l: "Parceiros no mundo", d: "Distribuição e suporte em projetos de escala internacional." },
+  ];
   return (
     <section className="border-y border-border bg-surface py-[5.625rem]">
       <div className="wrap">
         <SectionHead
-          eyebrow="Escala global · não é case Brasil"
-          title="Marcas que confiam internacionalmente na Hanin | HPRT"
+          eyebrow="Escala global · estrutura de fabricante"
+          title="A escala industrial que sustenta cada projeto HPRT"
         >
-          Deployments internacionais da fabricante por trás da HPRT — não operações no Brasil.
-          Placeholder de texto até confirmação de autorização de uso de marca/logo com a Hanin.
+          Os números abaixo descrevem a estrutura de fabricação da Hanin | HPRT no mundo. No Brasil,
+          essa base é apoiada por estoque, peças e atendimento técnico em São Paulo, em parceria com
+          a Cogra.
         </SectionHead>
-        <div className="grid grid-cols-2 gap-px border border-border bg-border md:grid-cols-4">
-          {brands.map((b) => (
-            <div
-              key={b}
-              className="bg-background px-5 py-8 text-center font-display text-xl font-bold tracking-[-0.01em] text-faint"
-            >
-              {b}
+        <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 md:grid-cols-4">
+          {facts.map((f) => (
+            <div key={f.l} className="bg-background px-6 py-8">
+              <span className="block font-display text-[2.125rem] font-semibold leading-none text-foreground">
+                {f.k}
+              </span>
+              <span className="mt-2 block font-mono text-[10px] uppercase tracking-[0.14em] text-faint">
+                {f.l}
+              </span>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{f.d}</p>
             </div>
           ))}
         </div>
@@ -162,4 +171,5 @@ export function GlobalTrust() {
     </section>
   );
 }
+
 
