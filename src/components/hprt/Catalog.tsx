@@ -53,7 +53,7 @@ export function Products() {
                   src={p.gallery[0]}
                   alt={`Produto HPRT ${p.name}`}
                   loading="lazy"
-                  className="max-h-[6.25rem] max-w-[85%] object-contain mix-blend-multiply transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-[1.04]"
+                  className="max-h-[6.25rem] max-w-[85%] object-contain transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-[1.04]"
                 />
               </div>
               <span className="font-mono text-[0.625rem] uppercase tracking-[0.05em] text-faint">

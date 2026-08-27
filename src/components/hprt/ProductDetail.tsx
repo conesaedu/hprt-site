@@ -568,7 +568,7 @@ export function ProductCard({ product }: { product: Product }) {
           loading="lazy"
           width={420}
           height={315}
-          className="max-h-[11rem] w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:-translate-y-1.5 group-hover:scale-[1.03]"
+          className="max-h-[11rem] w-auto object-contain transition-transform duration-500 group-hover:-translate-y-1.5 group-hover:scale-[1.03]"
         />
       </div>
       <span className="mb-2 font-mono text-[0.65rem] uppercase tracking-[0.08em] text-faint">
