@@ -234,6 +234,9 @@ function Applications({ product }: { product: Product }) {
               <p className="text-[0.9rem] leading-relaxed text-muted-foreground">{a.desc}</p>
             </article>
           ))}
+          {Array.from({ length: (3 - (product.applications.length % 3)) % 3 }).map((_, i) => (
+            <div key={`filler-${i}`} className="hidden bg-background lg:block" aria-hidden />
+          ))}
         </div>
       </div>
     </section>
