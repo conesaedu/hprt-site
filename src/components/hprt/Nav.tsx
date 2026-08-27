@@ -70,7 +70,9 @@ export function Nav({ onDark = false }: { onDark?: boolean } = {}) {
             ) : (
               <a
                 key={l.href}
-                href={l.href}
+                href={`/${l.href}`}
+                onClick={(e) => goToHash(e, l.href)}
+
                 className={cn(
                   "text-sm font-medium transition-colors",
                   light
