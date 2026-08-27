@@ -1483,7 +1483,10 @@ export const productList: Product[] = [
     body: [
       "A HPRT HT500 é uma impressora térmica de etiquetas da categoria industrial de entrada, desenvolvida para empresas que precisam de alto desempenho, confiabilidade e baixo custo operacional. Com suporte a impressão por transferência térmica e térmica direta, velocidade de até 152 mm/s e ampla compatibilidade de mídias e ribbons, a HT500 oferece flexibilidade para diferentes aplicações. Seu design robusto, aliado a conectividade moderna e compatibilidade com múltiplas linguagens de impressão, torna o equipamento uma solução ideal para operações de identificação em varejo, logística, manufatura e saúde.",
     ],
-    summary: [],
+    summary: [
+      "Impressora de etiquetas de mesa para operações que precisam de volume constante sem custo de manutenção alto.",
+      "Transferência térmica e térmica direta, emulações compatíveis com os sistemas já instalados e drivers oficiais para Windows.",
+    ],
     keySpecs: [
       {
         label: "Velocidade Máxima de Impressão",
@@ -2484,7 +2487,10 @@ export const productList: Product[] = [
     body: [
       "O HS-M300 / HS-M300C é um scanner portátil Bluetooth compacto e de alto desempenho, projetado para aplicações móveis que exigem agilidade e mobilidade na captura de dados. Compatível com códigos de barras 1D e 2D, oferece leitura rápida com tecnologia de escaneamento inteligente de até 500 leituras por segundo. Sua conectividade Bluetooth 4.2 BLE, aliada ao suporte aos protocolos HID e GATT, permite integração fácil com smartphones, tablets e computadores. Com bateria de longa duração, capacidade para até 20.000 leituras por carga e recursos de feedback por LED, vibração e buzzer, é ideal para operações de varejo, logística, manufatura e hospitalidade que necessitam de mobilidade, eficiência e confiabilidade na leitura de códigos de barras.",
     ],
-    summary: [],
+    summary: [
+      "Leitor de códigos de bolso com Bluetooth, para trabalhar em par com o smartphone que a equipe já usa.",
+      "Até 500 leituras por segundo, 20.000 leituras por carga e memória interna para 256 registros quando a operação fica offline.",
+    ],
     keySpecs: [
       {
         label: "Velocidade de leitura",
@@ -4709,7 +4715,10 @@ export const productList: Product[] = [
     body: [
       "A HPRT EP-50A é uma solução automática desenvolvida para embalar, selar e etiquetar pacotes em um único processo, ideal para operações logísticas e centros de distribuição que buscam aumentar produtividade e padronizar processos de envio. Com impressora industrial de etiquetas integrada, computador com tela de 21,5” e sistema automático de selagem, o equipamento pode processar até 1.400 pacotes por hora, garantindo eficiência e organização nas operações de expedição. Sua estrutura robusta e integração com sistemas modernos tornam a EP-50A uma solução completa para e-commerce, logística e operações industriais de alto volume.",
     ],
-    summary: [],
+    summary: [
+      "Sistema automático de embalagem e etiquetagem para expedição de alto volume.",
+      "De 600 a 1.400 pacotes por hora, com impressora HPRT GALA integrada, leitor P300 e PC industrial de 21,5 polegadas.",
+    ],
     keySpecs: [
       {
         label: "Produtividade",
