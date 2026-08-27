@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Btn } from "./ui";
 
 const links = [
-  { href: "#products", label: "Produtos" },
+  { href: "/produtos", label: "Produtos" },
   { href: "#positioning", label: "Por que HPRT" },
   { href: "#solutions", label: "Soluções" },
   { href: "/treinamentos", label: "Treinamentos" },
