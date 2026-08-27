@@ -49,7 +49,7 @@ function WhyPage() {
     <div className="min-h-screen bg-background">
       <Nav onDark />
       <main>
-        <PageHero eyebrow="Por que HPRT?" title="Tecnologia global para competir. Estrutura local para permanecer.">
+        <PageHero eyebrow="Por que HPRT?" title="Por que colocar HPRT dentro da sua operação.">
           Adotar uma nova tecnologia em uma operação crítica exige mais do que comparar
           especificações. Disponibilidade, suporte, peças e continuidade também fazem parte da
           decisão.
