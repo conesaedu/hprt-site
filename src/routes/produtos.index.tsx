@@ -46,7 +46,7 @@ function ProductIndex() {
               <span className="inline-block size-[7px] rotate-45 rounded-[1px] bg-signal" />
               Portfólio · {products.length} modelos
             </span>
-            <h1 className="mb-6 text-[clamp(2.5rem,6vw,5rem)] leading-[0.92] text-on-ink">
+            <h1 className="mb-6 text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[0.95] text-on-ink">
               Toda a operação de impressão e identificação em uma única marca.
             </h1>
             <p className="text-[1.0625rem] leading-relaxed text-on-ink-muted">
