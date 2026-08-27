@@ -36,27 +36,39 @@ export function Stats() {
 const pillars = [
   {
     num: "01",
-    label: "Escala fabril",
-    title: "Fabricação própria em massa",
-    desc: "56 linhas de produção, milhares de colaboradores e uma cadeia verticalizada que controla a tecnologia da matéria-prima ao produto final.",
+    label: "Tecnologia própria",
+    title: "Engenharia de quem fabrica",
+    desc: "Tecnologias essenciais de impressão, captura e identificação desenvolvidas dentro do próprio ecossistema Hanin | HPRT, proporcionando maior controle sobre produto, evolução e compatibilidade.",
   },
   {
     num: "02",
-    label: "Engenharia interna",
-    title: "Tecnologia de origem",
-    desc: "Cabeças de impressão, mecanismos térmicos, RFID e firmware desenvolvidos internamente — não licenciados, não adaptados.",
+    label: "Escala global",
+    title: "Estrutura para grandes operações",
+    desc: "56 linhas de produção, fabricação verticalizada e presença internacional para suportar desde projetos pontuais até grandes implantações.",
   },
   {
     num: "03",
-    label: "Portfólio completo",
-    title: "Uma só fabricante, toda a cadeia",
-    desc: "Etiquetas industriais, cupom fiscal, leitores, coletores, pulseiras, A4 portátil e cartão. Tudo integrado sob a mesma engenharia.",
+    label: "Estrutura no Brasil",
+    title: "Sua operação está aqui. Nosso suporte também.",
+    desc: "A operação brasileira é conduzida em parceria com a Cogra, distribuidora B2B com 25 anos de mercado, estrutura comercial, estoque e atendimento técnico em São Paulo.",
   },
   {
     num: "04",
-    label: "Brasil",
-    title: "Suporte e estoque local",
-    desc: "Distribuição própria em São Paulo, com a Cogra. Peças, consumíveis e atendimento técnico no mesmo país da sua operação.",
+    label: "Peças e continuidade",
+    title: "Operações críticas precisam de resposta rápida.",
+    desc: "Peças e componentes essenciais das principais linhas HPRT são mantidos no Brasil para proporcionar maior agilidade ao suporte e reduzir impactos de eventuais paradas.",
+  },
+  {
+    num: "05",
+    label: "Suporte ao projeto",
+    title: "Antes, durante e depois da implantação.",
+    desc: "Apoio comercial e técnico para especificação, homologação, implantação e continuidade dos projetos.",
+  },
+  {
+    num: "06",
+    label: "Portfólio completo",
+    title: "Mais padronização. Menos complexidade.",
+    desc: "Impressoras industriais, desktop, PDV, coletores, leitores e soluções de identificação dentro do mesmo ecossistema de fabricante.",
   },
 ];
 
@@ -67,16 +79,18 @@ export function Positioning() {
     <section id="positioning" className="bg-surface py-30">
       <div className="wrap">
         <SectionHead
-          eyebrow="Posicionamento"
-          title="Uma das maiores fabricantes de impressão do mundo, agora ao lado do seu negócio."
+          eyebrow="Por que HPRT?"
+          title="Tecnologia para entrar na sua operação. Estrutura para permanecer nela."
         >
-          Não intermediamos. A HPRT Brasil conecta a operação global da Hanin à sua operação local,
-          com estoque, peças e atendimento técnico em São Paulo.
+          Adotar uma nova tecnologia em uma operação crítica exige mais do que comparar
+          especificações. Disponibilidade, suporte, peças, capacidade de atendimento e continuidade
+          também fazem parte da decisão. A HPRT combina escala industrial global com uma estrutura
+          construída no Brasil para sustentar seus projetos.
         </SectionHead>
 
         <div
           ref={reveal.ref}
-          className={`${reveal.className} grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-4`}
+          className={`${reveal.className} grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-3`}
         >
           {pillars.map((p) => (
             <div
@@ -84,7 +98,7 @@ export function Positioning() {
               className="flex flex-col justify-between bg-background p-8 transition-colors duration-200 hover:bg-surface"
             >
               <div>
-                <div className="mb-6 flex items-center justify-between">
+                <div className="mb-6 flex items-center justify-between gap-4">
                   <span className="font-display text-3xl font-bold text-foreground">{p.num}</span>
                   <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-faint">
                     {p.label}
@@ -97,10 +111,19 @@ export function Positioning() {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 border-l-2 border-signal pl-6">
+          <p className="font-display text-[1.5rem] leading-[1.25] font-semibold text-foreground md:text-[1.75rem]">
+            Tecnologia global para competir.
+            <br />
+            Estrutura local para permanecer.
+          </p>
+        </div>
       </div>
     </section>
   );
 }
+
 
 export function GlobalTrust() {
   const brands = ["KFC", "Apple Retail", "7-Eleven", "Starbucks"];
