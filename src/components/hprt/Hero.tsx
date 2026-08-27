@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { heroGallery } from "@/lib/hprt-data";
+import { getProduct } from "@/lib/products";
 import { cn } from "@/lib/utils";
 import { Btn, Eyebrow } from "./ui";
 
@@ -9,17 +9,20 @@ const meta = [
   { value: "80+", label: "países atendidos" },
 ];
 
-const rows = [
-  { name: "M4 Plus", tag: "Coletor Android" },
-  { name: "Apollo", tag: "Etiquetas" },
-  { name: "N130 BT Plus", tag: "Leitor Bluetooth" },
-];
+const showcase = [
+  { slug: "m4-plus", name: "M4 Plus", tag: "Coletor Android" },
+  { slug: "apollo", name: "Apollo", tag: "Etiquetas" },
+  { slug: "n130-bt-plus", name: "N130 BT Plus", tag: "Leitor Bluetooth" },
+].map((item) => ({
+  ...item,
+  img: getProduct(item.slug)?.gallery?.[0] ?? "",
+}));
 
 export function Hero() {
   const [idx, setIdx] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setIdx((i) => (i + 1) % heroGallery.length), 2800);
+    const id = setInterval(() => setIdx((i) => (i + 1) % showcase.length), 2800);
     return () => clearInterval(id);
   }, []);
 
@@ -57,30 +60,44 @@ export function Hero() {
 
         <div className="overflow-hidden rounded-lg border border-border bg-surface px-8 py-10">
           <div className="relative h-[16.25rem] overflow-hidden border-b border-border bg-background">
-            {heroGallery.map((src, i) => (
+            {showcase.map((item, i) => (
               <img
-                key={src}
-                src={src}
-                alt="Equipamento HPRT em operação"
+                key={item.slug}
+                src={item.img}
+                alt={`${item.name} — ${item.tag} HPRT`}
                 loading={i === 0 ? "eager" : "lazy"}
                 className={cn(
-                  "absolute inset-0 size-full object-cover transition-opacity duration-1000",
+                  "absolute inset-0 size-full object-contain p-6 transition-opacity duration-1000",
                   i === idx ? "opacity-100" : "opacity-0",
                 )}
               />
             ))}
           </div>
-          {rows.map((r, i) => (
+          {showcase.map((item, i) => (
             <div
-              key={r.name}
+              key={item.name}
               className={cn(
-                "flex items-center justify-between py-4",
-                i < rows.length - 1 && "border-b border-border",
+                "flex items-center justify-between py-4 transition-colors",
+                i < showcase.length - 1 && "border-b border-border",
               )}
             >
-              <b className="text-[0.9rem] font-semibold text-foreground">{r.name}</b>
-              <span className="rounded-[2px] bg-surface-2 px-2 py-[3px] font-mono text-[0.65rem] tracking-[0.06em] text-muted-foreground">
-                {r.tag}
+              <b
+                className={cn(
+                  "text-[0.9rem] font-semibold transition-colors",
+                  i === idx ? "text-signal" : "text-foreground",
+                )}
+              >
+                {item.name}
+              </b>
+              <span
+                className={cn(
+                  "rounded-[2px] px-2 py-[3px] font-mono text-[0.65rem] tracking-[0.06em] transition-colors",
+                  i === idx
+                    ? "bg-signal/10 text-signal"
+                    : "bg-surface-2 text-muted-foreground",
+                )}
+              >
+                {item.tag}
               </span>
             </div>
           ))}

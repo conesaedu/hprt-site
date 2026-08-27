@@ -49,13 +49,6 @@ export const products: Product[] = [
   { name: "EP-50A", cat: "embaladora", catLabel: "Embaladora Automática", desc: "Embalagem all-in-one para e-commerce.", img: `${U}/2026/03/All-in-One-E-commerce-Packaging-Machine-2-e1783345462569.png` },
 ];
 
-export const heroGallery = [
-  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592051824492.jpg",
-  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592059863971.jpg",
-  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592065422969.jpg",
-  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592074487712.jpg",
-  "https://www.hprt.com/uploads/online_edit_pic/20260304/1772592081867068.jpg",
-];
 
 
 export type SolutionLine = { id: string; label: string };
