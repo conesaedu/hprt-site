@@ -157,10 +157,10 @@ function Highlights({ product }: { product: Product }) {
 
         {withImage.length > 0 ? (
           <div className="flex flex-col gap-px bg-border">
-            {withImage.map(({ h, i }, pos) => (
+            {withImage.map((h, pos) => (
               <HighlightBand
                 key={h.title}
-                index={i}
+                index={numberOf(h) - 1}
                 position={pos}
                 title={h.title}
                 desc={h.desc}
@@ -179,9 +179,8 @@ function Highlights({ product }: { product: Product }) {
               textOnly.length >= 3 ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2",
             )}
           >
-            {textOnly.map(({ h, i }) => (
-              <HighlightNote key={h.title} index={i} title={h.title} desc={h.desc} />
-            ))}
+            {textOnly.map((h) => (
+              <HighlightNote key={h.title} index={numberOf(h) - 1} title={h.title} desc={h.desc} />
           </div>
         ) : null}
       </div>
