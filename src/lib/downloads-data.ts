@@ -4,6 +4,7 @@ import bartender from "@/assets/downloads/HPRT-Label-Designer-BT2016_R6_3141_UL.
 import cpd80Utility from "@/assets/downloads/cpd80-utility.zip.asset.json";
 import posDriver from "@/assets/downloads/HPRT_POS_Printer_Driver_v2.7.4.10.zip.asset.json";
 import posUtility from "@/assets/downloads/HPRTUtilityForPOSSetup_V1.2.4.26.Test09.exe.7z.asset.json";
+import cpd80Driver from "@/assets/downloads/Novo_Driver_HPRT_CP-D80.zip.asset.json";
 
 export type DownloadCategory = "Etiquetas e pulseiras" | "Cartões" | "Cupom / PDV";
 
@@ -90,7 +91,7 @@ export const downloads: DownloadItem[] = [
     kind: "Driver",
     os: "Windows",
     models: ["CP-D80"],
-    file: "https://hprtbrasil.com.br/downloads/Novo%20Driver%20HPRT%20CP-D80.zip",
+    file: cpd80Driver.url,
     format: "ZIP",
   },
   {
