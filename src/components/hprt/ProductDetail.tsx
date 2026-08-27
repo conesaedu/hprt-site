@@ -181,6 +181,7 @@ function Highlights({ product }: { product: Product }) {
           >
             {textOnly.map((h) => (
               <HighlightNote key={h.title} index={numberOf(h) - 1} title={h.title} desc={h.desc} />
+            ))}
           </div>
         ) : null}
       </div>
