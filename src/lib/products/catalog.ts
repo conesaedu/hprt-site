@@ -1755,12 +1755,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Velocidade de Leitura",
-        value: "Tolerância a movimento de até 6 m/s",
+        label: "Sistema",
+        value: "Android 12 · octa-core, 4 GB / 64 GB",
       },
       {
-        label: "Processador (CPU)",
-        value: "MediaTek MTK6762 – Octa-Core (8 núcleos)",
+        label: "Leitura",
+        value: "Imager 2D · até 6 m/s de movimento",
+      },
+      {
+        label: "Robustez",
+        value: "IP67 · queda de 1,2 m",
       },
     ],
     highlights: [
@@ -2254,8 +2258,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Processador (CPU)",
-        value: "MediaTek MTK6762 – Octa-Core até 2.0 GHz",
+        label: "Sistema",
+        value: "Android 14 com GMS · octa-core 2.0 GHz",
+      },
+      {
+        label: "Leitura",
+        value: "Módulo 2D de alto desempenho",
+      },
+      {
+        label: "Robustez",
+        value: "IP65 · queda de 1,5 m",
       },
     ],
     highlights: [
@@ -2476,11 +2488,15 @@ export const productList: Product[] = [
     keySpecs: [
       {
         label: "Velocidade de leitura",
-        value: "Ajuste inteligente até 500 leituras por segundo",
+        value: "Até 500 leituras por segundo",
       },
       {
-        label: "Resolução mínima",
-        value: "CODE39 ≥ 4 mil / 0",
+        label: "Autonomia",
+        value: "Até 20.000 leituras por carga",
+      },
+      {
+        label: "Conexão",
+        value: "Bluetooth 4.2 BLE · HID / GATT",
       },
     ],
     highlights: [
@@ -3673,12 +3689,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Resolução de Impressão",
+        label: "Resolução",
         value: "300 dpi",
       },
       {
-        label: "Largura Máx. de Impressão",
-        value: "210 mm",
+        label: "Formato",
+        value: "A4 · largura de impressão 210 mm",
+      },
+      {
+        label: "Autonomia",
+        value: "Até 200 folhas por carga",
       },
     ],
     highlights: [
@@ -4520,12 +4540,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Velocidade de Impressão",
-        value: "Aproximadamente 1 foto por",
+        label: "Resolução",
+        value: "300 dpi por sublimação",
       },
       {
-        label: "Resolução de Impressão",
-        value: "300 dpi",
+        label: "Formato da foto",
+        value: "100 × 148 mm",
+      },
+      {
+        label: "Rendimento",
+        value: "Até 54 fotos por cartucho",
       },
     ],
     highlights: [
@@ -4688,8 +4712,16 @@ export const productList: Product[] = [
     summary: [],
     keySpecs: [
       {
-        label: "Resolução de Impressão",
-        value: "203 dpi",
+        label: "Produtividade",
+        value: "600 a 1.400 pacotes por hora",
+      },
+      {
+        label: "Resolução",
+        value: "203 dpi · térmica direta",
+      },
+      {
+        label: "Embalagem",
+        value: "200–500 mm de largura",
       },
     ],
     highlights: [
