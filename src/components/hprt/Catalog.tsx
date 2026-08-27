@@ -93,11 +93,23 @@ export function Solutions({ preview = false, hideHead = false }: { preview?: boo
           {solutions.map((s) => (
             <article
               key={s.num}
-              className="rounded-lg border border-border p-8 transition-[transform,border-color] hover:-translate-y-1 hover:border-foreground"
+              className="flex flex-col rounded-lg border border-border p-8 transition-[transform,border-color] hover:-translate-y-1 hover:border-foreground"
             >
               <div className="mb-4 font-mono text-xs text-faint">{s.num}</div>
               <h3 className="mb-2.5 text-[1.1875rem]">{s.title}</h3>
-              <p className="text-sm text-muted-foreground">{s.desc}</p>
+              <p className="mb-6 text-sm text-muted-foreground">{s.desc}</p>
+              <div className="mt-auto flex flex-wrap gap-2">
+                {s.lines.map((l) => (
+                  <Link
+                    key={l.id}
+                    to="/produtos"
+                    search={{ linha: l.id }}
+                    className="rounded-full border border-border-strong bg-background px-3 py-1.5 font-mono text-[0.6875rem] uppercase tracking-[0.04em] text-muted-foreground transition-colors hover:border-foreground hover:text-foreground"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
             </article>
           ))}
         </div>
