@@ -22,7 +22,9 @@ export const Route = createFileRoute("/produtos/$slug")({
       `Conheça a HPRT ${p.name}: especificações, aplicações e suporte técnico no Brasil.`
     ).slice(0, 155);
     const url = `${SITE}/produtos/${params.slug}`;
-    const image = p.gallery[0];
+    const abs = (src: string) => (src.startsWith("http") ? src : `${SITE}${src}`);
+    const image = p.gallery[0] ? abs(p.gallery[0]) : undefined;
+
 
     return {
       meta: [
