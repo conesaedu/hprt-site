@@ -91,7 +91,7 @@ export const downloads: DownloadItem[] = [
     kind: "Driver",
     os: "Windows",
     models: ["CP-D80"],
-    file: "https://hprtbrasil.com.br/downloads/Novo%20Driver%20HPRT%20CP-D80.zip",
+    file: cpd80Driver.url,
     format: "ZIP",
   },
   {
