@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { products } from "@/lib/products";
+import { productSummaries as products } from "@/lib/products/summary";
 
 const SITE = "https://hprtbrasil.lovable.app";
 

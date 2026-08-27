@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import coletorImg from "@/assets/hero-coletor-logistica.jpg";
-import etiquetasImg from "@/assets/hero-etiquetas-varejo.jpg";
-import leitorImg from "@/assets/hero-leitor-pdv.jpg";
+import coletorImg from "@/assets/hero-coletor-logistica.webp";
+import etiquetasImg from "@/assets/hero-etiquetas-varejo.webp";
+import leitorImg from "@/assets/hero-leitor-pdv.webp";
 import { cn } from "@/lib/utils";
 import { Btn, Eyebrow } from "./ui";
 
@@ -82,9 +82,11 @@ export function Hero() {
                 key={item.slug}
                 src={item.img}
                 alt={item.alt}
-                width={1280}
-                height={760}
+                width={1000}
+                height={558}
                 loading={i === 0 ? "eager" : "lazy"}
+                decoding="async"
+                fetchPriority={i === 0 ? "high" : "low"}
                 className={cn(
                   "absolute inset-0 size-full object-cover transition-opacity duration-1000",
                   i === idx ? "opacity-100" : "opacity-0",
