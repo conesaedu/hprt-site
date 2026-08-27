@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
 import { Route as TreinamentosRouteImport } from './routes/treinamentos'
 import { Route as ProdutosIndexRouteImport } from './routes/produtos.index'
 import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const DownloadsRoute = DownloadsRouteImport.update({
   id: '/downloads',
   path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PorQueHprtRoute = PorQueHprtRouteImport.update({
+  id: '/por-que-hprt',
+  path: '/por-que-hprt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TreinamentosRoute = TreinamentosRouteImport.update({
@@ -44,6 +50,7 @@ const ProdutosSlugRoute = ProdutosSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/downloads': typeof DownloadsRoute
+  '/por-que-hprt': typeof PorQueHprtRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos/': typeof ProdutosIndexRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/downloads': typeof DownloadsRoute
+  '/por-que-hprt': typeof PorQueHprtRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos': typeof ProdutosIndexRoute
@@ -59,6 +67,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/downloads': typeof DownloadsRoute
+  '/por-que-hprt': typeof PorQueHprtRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos/': typeof ProdutosIndexRoute
@@ -66,13 +75,25 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/downloads' | '/treinamentos' | '/produtos/$slug' | '/produtos/'
+    | '/'
+    | '/downloads'
+    | '/por-que-hprt'
+    | '/treinamentos'
+    | '/produtos/$slug'
+    | '/produtos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/downloads' | '/treinamentos' | '/produtos/$slug' | '/produtos'
+  to:
+    | '/'
+    | '/downloads'
+    | '/por-que-hprt'
+    | '/treinamentos'
+    | '/produtos/$slug'
+    | '/produtos'
   id:
     | '__root__'
     | '/'
     | '/downloads'
+    | '/por-que-hprt'
     | '/treinamentos'
     | '/produtos/$slug'
     | '/produtos/'
@@ -81,6 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DownloadsRoute: typeof DownloadsRoute
+  PorQueHprtRoute: typeof PorQueHprtRoute
   TreinamentosRoute: typeof TreinamentosRoute
   ProdutosSlugRoute: typeof ProdutosSlugRoute
   ProdutosIndexRoute: typeof ProdutosIndexRoute
@@ -100,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/downloads'
       fullPath: '/downloads'
       preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/por-que-hprt': {
+      id: '/por-que-hprt'
+      path: '/por-que-hprt'
+      fullPath: '/por-que-hprt'
+      preLoaderRoute: typeof PorQueHprtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/treinamentos': {
@@ -129,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DownloadsRoute: DownloadsRoute,
+  PorQueHprtRoute: PorQueHprtRoute,
   TreinamentosRoute: TreinamentosRoute,
   ProdutosSlugRoute: ProdutosSlugRoute,
   ProdutosIndexRoute: ProdutosIndexRoute,
