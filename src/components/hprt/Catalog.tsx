@@ -69,6 +69,7 @@ export function Products({ limit }: { limit?: number } = {}) {
         <div className="mt-9 flex justify-center">
           <Link
             to="/produtos"
+            search={{ linha: "all" }}
             className="inline-flex items-center gap-2 font-mono text-[0.75rem] uppercase tracking-[0.1em] text-foreground transition-colors hover:text-signal"
           >
             Ver todos os {products.length} modelos <ArrowUpRight className="size-3.5" />
