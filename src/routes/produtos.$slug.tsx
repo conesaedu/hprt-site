@@ -53,7 +53,8 @@ export const Route = createFileRoute("/produtos/$slug")({
             description,
             brand: { "@type": "Brand", name: "HPRT" },
             category: p.categoryLabel,
-            image: p.gallery.slice(0, 3),
+            image: p.gallery.slice(0, 3).map(abs),
+
             url,
           }),
         },
