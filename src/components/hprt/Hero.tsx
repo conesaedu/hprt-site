@@ -81,10 +81,12 @@ export function Hero() {
               <img
                 key={item.slug}
                 src={item.img}
-                alt={`${item.name} — ${item.tag} HPRT`}
+                alt={item.alt}
+                width={1280}
+                height={760}
                 loading={i === 0 ? "eager" : "lazy"}
                 className={cn(
-                  "absolute inset-0 size-full object-contain p-6 transition-opacity duration-1000",
+                  "absolute inset-0 size-full object-cover transition-opacity duration-1000",
                   i === idx ? "opacity-100" : "opacity-0",
                 )}
               />
