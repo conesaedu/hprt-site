@@ -1530,7 +1530,28 @@ export const productList: Product[] = [
         image: 3,
       },
     ],
-    applications: [],
+    applications: [
+      {
+        title: "Varejo",
+        desc: "Etiquetas de preço, gôndola e identificação de produtos com custo operacional baixo.",
+      },
+      {
+        title: "Logística",
+        desc: "Etiquetas de expedição e endereçamento em volume, com emulações compatíveis com o sistema já instalado.",
+      },
+      {
+        title: "Manufatura",
+        desc: "Identificação de ordens de produção, processos e rastreabilidade em linha.",
+      },
+      {
+        title: "Saúde",
+        desc: "Identificação de amostras, materiais e medicamentos com ribbon de resina para maior durabilidade.",
+      },
+      {
+        title: "Transporte",
+        desc: "Etiquetagem de cargas e volumes em operações de recebimento e distribuição.",
+      },
+    ],
     specGroups: [
       {
         title: "Impressão e leitura",
@@ -2494,7 +2515,28 @@ export const productList: Product[] = [
         image: null,
       },
     ],
-    applications: [],
+    applications: [
+      {
+        title: "Varejo",
+        desc: "Conferência de preços, recebimento e inventário direto do smartphone, sem coletor dedicado.",
+      },
+      {
+        title: "Logística",
+        desc: "Separação de pedidos e conferência de volumes com leitura contínua e envio de dados em tempo real.",
+      },
+      {
+        title: "Inventário e campo",
+        desc: "Contagens e auditorias fora do balcão, com até 20.000 leituras por carga e modo offline de 256 registros.",
+      },
+      {
+        title: "Saúde",
+        desc: "Leitura de medicamentos, amostras e etiquetas de identificação em rondas hospitalares.",
+      },
+      {
+        title: "Eventos e serviços",
+        desc: "Validação de ingressos, credenciais e vouchers apresentados em tela.",
+      },
+    ],
     specGroups: [
       {
         title: "Geral",
@@ -2643,12 +2685,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Resolução",
-        value: "Módulo imager 2D para leitura de códigos impressos e digitais.",
+        label: "Leitura",
+        value: "Imager 2D · códigos 1D e 2D",
       },
       {
         label: "Conexões",
-        value: "Bluetooth sem fio e USB para recarga e comunicação.",
+        value: "Bluetooth + USB",
+      },
+      {
+        label: "Formato",
+        value: "Portátil com bateria recarregável",
       },
     ],
     highlights: [
@@ -2693,12 +2739,19 @@ export const productList: Product[] = [
     ],
     specGroups: [
       {
-        title: "Geral",
+        title: "Impressão e leitura",
         rows: [
           {
-            label: "Especificação",
-            value:
-              "Leitura omnidirecional de códigos 1D/2D com alta performance e operação sem fio.",
+            label: "Tipo de leitor",
+            value: "Imager 2D omnidirecional",
+          },
+          {
+            label: "Códigos suportados",
+            value: "1D e 2D, impressos ou exibidos em tela",
+          },
+          {
+            label: "Orientação de leitura",
+            value: "Omnidirecional, sem necessidade de alinhamento",
           },
         ],
       },
@@ -2706,17 +2759,16 @@ export const productList: Product[] = [
         title: "Conectividade e software",
         rows: [
           {
-            label: "Conexões",
-            value: "Bluetooth sem fio e USB para recarga e comunicação.",
+            label: "Sem fio",
+            value: "Bluetooth",
           },
-        ],
-      },
-      {
-        title: "Impressão e leitura",
-        rows: [
           {
-            label: "Resolução",
-            value: "Módulo imager 2D para leitura de códigos impressos e digitais.",
+            label: "Cabo",
+            value: "USB para recarga e comunicação",
+          },
+          {
+            label: "Modo offline",
+            value: "Armazena as leituras quando fora do alcance e sincroniza ao reconectar",
           },
         ],
       },
@@ -2724,8 +2776,25 @@ export const productList: Product[] = [
         title: "Hardware",
         rows: [
           {
-            label: "Memória",
-            value: "Buffer interno para processamento eficiente das leituras.",
+            label: "Alimentação",
+            value: "Bateria interna recarregável",
+          },
+          {
+            label: "Sinalização",
+            value: "LED e buzzer de confirmação",
+          },
+        ],
+      },
+      {
+        title: "Geral",
+        rows: [
+          {
+            label: "Aplicação",
+            value: "Varejo, logística, saúde e manufatura",
+          },
+          {
+            label: "Formato",
+            value: "Portátil de mão, uso com ou sem cabo",
           },
         ],
       },
@@ -2755,12 +2824,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Resolução",
-        value: "Módulo imager 2D para leitura de códigos impressos e digitais.",
+        label: "Leitura",
+        value: "Imager 2D · códigos 1D e 2D",
       },
       {
         label: "Conexões",
-        value: "Bluetooth sem fio e USB para recarga e comunicação.",
+        value: "Bluetooth + USB",
+      },
+      {
+        label: "Estrutura",
+        value: "Corpo reforçado para uso intensivo",
       },
     ],
     highlights: [
@@ -2805,12 +2878,19 @@ export const productList: Product[] = [
     ],
     specGroups: [
       {
-        title: "Geral",
+        title: "Impressão e leitura",
         rows: [
           {
-            label: "Especificação",
-            value:
-              "Leitura omnidirecional de códigos 1D/2D com estrutura reforçada para ambientes exigentes.",
+            label: "Tipo de leitor",
+            value: "Imager 2D omnidirecional",
+          },
+          {
+            label: "Códigos suportados",
+            value: "1D e 2D, impressos ou exibidos em tela",
+          },
+          {
+            label: "Orientação de leitura",
+            value: "Omnidirecional, sem necessidade de alinhamento",
           },
         ],
       },
@@ -2818,17 +2898,16 @@ export const productList: Product[] = [
         title: "Conectividade e software",
         rows: [
           {
-            label: "Conexões",
-            value: "Bluetooth sem fio e USB para recarga e comunicação.",
+            label: "Sem fio",
+            value: "Bluetooth",
           },
-        ],
-      },
-      {
-        title: "Impressão e leitura",
-        rows: [
           {
-            label: "Resolução",
-            value: "Módulo imager 2D para leitura de códigos impressos e digitais.",
+            label: "Cabo",
+            value: "USB para recarga e comunicação",
+          },
+          {
+            label: "Modo offline",
+            value: "Armazena as leituras quando fora do alcance e sincroniza ao reconectar",
           },
         ],
       },
@@ -2836,8 +2915,29 @@ export const productList: Product[] = [
         title: "Hardware",
         rows: [
           {
-            label: "Memória",
-            value: "Buffer interno para processamento eficiente das leituras.",
+            label: "Estrutura",
+            value: "Corpo reforçado para uso intensivo e ambientes exigentes",
+          },
+          {
+            label: "Alimentação",
+            value: "Bateria interna recarregável",
+          },
+          {
+            label: "Sinalização",
+            value: "LED e buzzer de confirmação",
+          },
+        ],
+      },
+      {
+        title: "Geral",
+        rows: [
+          {
+            label: "Aplicação",
+            value: "Varejo, logística, saúde e manufatura",
+          },
+          {
+            label: "Formato",
+            value: "Portátil de mão, uso com ou sem cabo",
           },
         ],
       },
@@ -2865,12 +2965,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Resolução",
-        value: "Módulo imager 2D de alta velocidade.",
+        label: "Leitura",
+        value: "Imager 2D de alta velocidade",
       },
       {
         label: "Conexões",
-        value: "USB",
+        value: "USB · RS232 conforme versão",
+      },
+      {
+        label: "Uso",
+        value: "Leitura intensiva e contínua",
       },
     ],
     highlights: [
@@ -2915,11 +3019,19 @@ export const productList: Product[] = [
     ],
     specGroups: [
       {
-        title: "Geral",
+        title: "Impressão e leitura",
         rows: [
           {
-            label: "Especificação",
-            value: "Projetado para leitura intensiva de códigos em linhas de produção e expedição.",
+            label: "Tipo de leitor",
+            value: "Imager 2D de alta velocidade",
+          },
+          {
+            label: "Códigos suportados",
+            value: "1D e 2D, impressos ou exibidos em tela",
+          },
+          {
+            label: "Uso",
+            value: "Leitura intensiva e contínua, com grande volume de itens",
           },
         ],
       },
@@ -2928,16 +3040,11 @@ export const productList: Product[] = [
         rows: [
           {
             label: "Conexões",
-            value: "USB, RS232 ou outras interfaces industriais (conforme versão).",
+            value: "USB; RS232 e outras interfaces conforme versão",
           },
-        ],
-      },
-      {
-        title: "Impressão e leitura",
-        rows: [
           {
-            label: "Resolução",
-            value: "Módulo imager 2D de alta velocidade.",
+            label: "Configuração",
+            value: "Por códigos de programação e utilitário HPRT",
           },
         ],
       },
@@ -2945,8 +3052,25 @@ export const productList: Product[] = [
         title: "Hardware",
         rows: [
           {
-            label: "Memória",
-            value: "Memória para processamento contínuo de grande quantidade de leituras.",
+            label: "Estrutura",
+            value: "Construção robusta para linha de produção e expedição",
+          },
+          {
+            label: "Sinalização",
+            value: "LED e buzzer de confirmação",
+          },
+        ],
+      },
+      {
+        title: "Geral",
+        rows: [
+          {
+            label: "Aplicação",
+            value: "Indústria, armazéns e centros de distribuição",
+          },
+          {
+            label: "Formato",
+            value: "Portátil de mão, com suporte para operação mãos livres",
           },
         ],
       },
@@ -2974,12 +3098,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Resolução",
-        value: "Módulo imager 2D para leitura de códigos impressos e digitais.",
+        label: "Leitura",
+        value: "Imager 2D omnidirecional · 1D e 2D",
       },
       {
         label: "Conexões",
-        value: "Interface USB (outros padrões sob consulta).",
+        value: "USB",
+      },
+      {
+        label: "Formato",
+        value: "Compacto, de mão",
       },
     ],
     highlights: [
@@ -3024,12 +3152,19 @@ export const productList: Product[] = [
     ],
     specGroups: [
       {
-        title: "Geral",
+        title: "Impressão e leitura",
         rows: [
           {
-            label: "Especificação",
-            value:
-              "Leitura omnidirecional de códigos 1D/2D, ideal para aplicações comerciais e corporativas.",
+            label: "Tipo de leitor",
+            value: "Imager 2D omnidirecional",
+          },
+          {
+            label: "Códigos suportados",
+            value: "1D e 2D, impressos ou exibidos em tela",
+          },
+          {
+            label: "Orientação de leitura",
+            value: "Omnidirecional, sem necessidade de alinhamento",
           },
         ],
       },
@@ -3038,16 +3173,11 @@ export const productList: Product[] = [
         rows: [
           {
             label: "Conexões",
-            value: "Interface USB (outros padrões sob consulta).",
+            value: "USB (emulação de teclado); outros padrões sob consulta",
           },
-        ],
-      },
-      {
-        title: "Impressão e leitura",
-        rows: [
           {
-            label: "Resolução",
-            value: "Módulo imager 2D para leitura de códigos impressos e digitais.",
+            label: "Configuração",
+            value: "Por códigos de programação e utilitário HPRT",
           },
         ],
       },
@@ -3055,8 +3185,21 @@ export const productList: Product[] = [
         title: "Hardware",
         rows: [
           {
-            label: "Memória",
-            value: "Buffer interno para processamento das leituras.",
+            label: "Formato",
+            value: "Compacto, de mão, com suporte para operação mãos livres",
+          },
+          {
+            label: "Sinalização",
+            value: "LED e buzzer de confirmação",
+          },
+        ],
+      },
+      {
+        title: "Geral",
+        rows: [
+          {
+            label: "Aplicação",
+            value: "Varejo, logística, saúde e escritórios",
           },
         ],
       },
@@ -3085,7 +3228,20 @@ export const productList: Product[] = [
       "Seu sensor de imagem de alta sensibilidade permite capturar códigos de barras 1D e 2D, tanto impressos quanto exibidos em telas digitais, garantindo grande versatilidade para diferentes aplicações.",
       "Com janela de leitura ampla, tolerância a movimento e detecção automática, o P300 proporciona uma experiência de leitura rápida, estável e intuitiva, reduzindo erros operacionais e aumentando a eficiência no atendimento.",
     ],
-    keySpecs: [],
+    keySpecs: [
+      {
+        label: "Leitura",
+        value: "Imager 2D fixo · 1D e 2D",
+      },
+      {
+        label: "Telas",
+        value: "Lê códigos exibidos em smartphone",
+      },
+      {
+        label: "Conexões",
+        value: "USB",
+      },
+    ],
     highlights: [
       {
         title: "Leitura automática com ampla janela de captura",
@@ -3140,7 +3296,64 @@ export const productList: Product[] = [
         desc: "Validação de ingressos digitais, vouchers e códigos promocionais exibidos em smartphones.",
       },
     ],
-    specGroups: [],
+    specGroups: [
+      {
+        title: "Impressão e leitura",
+        rows: [
+          {
+            label: "Tipo de leitor",
+            value: "Fixo, imager 2D com sensor de imagem de alta sensibilidade",
+          },
+          {
+            label: "Códigos suportados",
+            value: "1D e 2D, impressos em etiqueta ou exibidos em tela de smartphone",
+          },
+          {
+            label: "Janela de leitura",
+            value: "Ampla, com tolerância a movimento e sem necessidade de alinhamento preciso",
+          },
+          {
+            label: "Acionamento",
+            value: "Detecção automática de presença (modo mãos livres) ou por gatilho",
+          },
+        ],
+      },
+      {
+        title: "Conectividade e software",
+        rows: [
+          {
+            label: "Conexões",
+            value: "USB (emulação de teclado, plug and play)",
+          },
+          {
+            label: "Configuração",
+            value: "Por códigos de programação e utilitário HPRT",
+          },
+        ],
+      },
+      {
+        title: "Hardware",
+        rows: [
+          {
+            label: "Formato",
+            value: "Base fixa para balcão, caixa e totem de autoatendimento",
+          },
+          {
+            label: "Sinalização",
+            value: "LED e buzzer de confirmação de leitura",
+          },
+        ],
+      },
+      {
+        title: "Geral",
+        rows: [
+          {
+            label: "Aplicação",
+            value: "Checkout de varejo, food service, autoatendimento e validação de ingressos",
+          },
+        ],
+      },
+    ],
     gallery: [
       "https://hprtbrasil.com.br/wp-content/uploads/2026/03/82-e1783344093291.png",
       "https://hprtbrasil.com.br/wp-content/uploads/2026/03/83.png",
@@ -3166,12 +3379,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Resolução",
-        value: "Resolução padrão para textos e códigos de barras.",
+        label: "Impressão",
+        value: "Térmica direta, sem ribbon",
+      },
+      {
+        label: "Mídia",
+        value: "Papel térmico 80 mm",
       },
       {
         label: "Conexões",
-        value: "USB para conexão direta ao sistema.",
+        value: "USB",
       },
     ],
     highlights: [
@@ -3221,15 +3438,28 @@ export const productList: Product[] = [
     ],
     specGroups: [
       {
-        title: "Geral",
+        title: "Impressão e leitura",
         rows: [
           {
-            label: "Texto Rápido",
-            value: "Impressora térmica direta para cupons e recibos.",
+            label: "Método de impressão",
+            value: "Térmica direta, sem ribbon",
           },
           {
-            label: "Especificação",
-            value: "Alta velocidade de impressão.",
+            label: "Conteúdo impresso",
+            value: "Cupons, recibos, comprovantes, códigos de barras e QR Code",
+          },
+        ],
+      },
+      {
+        title: "Mídia e consumíveis",
+        rows: [
+          {
+            label: "Mídia",
+            value: "Bobina de papel térmico 80 mm",
+          },
+          {
+            label: "Consumível",
+            value: "Apenas o papel — sem cartucho, sem ribbon",
           },
         ],
       },
@@ -3238,16 +3468,11 @@ export const productList: Product[] = [
         rows: [
           {
             label: "Conexões",
-            value: "USB para conexão direta ao sistema.",
+            value: "USB, conexão direta ao sistema de PDV",
           },
-        ],
-      },
-      {
-        title: "Impressão e leitura",
-        rows: [
           {
-            label: "Resolução",
-            value: "Resolução padrão para textos e códigos de barras.",
+            label: "Drivers",
+            value: "Driver HPRT POS para Windows",
           },
         ],
       },
@@ -3255,8 +3480,21 @@ export const productList: Product[] = [
         title: "Hardware",
         rows: [
           {
-            label: "Memória",
-            value: "Memória interna para processamento contínuo.",
+            label: "Carga de papel",
+            value: "Tampa superior com carga direta da bobina",
+          },
+          {
+            label: "Formato",
+            value: "Compacto, para balcão de caixa",
+          },
+        ],
+      },
+      {
+        title: "Geral",
+        rows: [
+          {
+            label: "Aplicação",
+            value: "Varejo, restaurantes, supermercados e serviços",
           },
         ],
       },
@@ -3287,12 +3525,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Resolução",
-        value: "Resolução adequada para textos e gráficos.",
+        label: "Impressão",
+        value: "Térmica direta A4, sem cartucho",
       },
       {
         label: "Conexões",
-        value: "Bluetooth sem fio e USB.",
+        value: "Bluetooth + USB",
+      },
+      {
+        label: "Alimentação",
+        value: "Bateria interna recarregável",
       },
     ],
     highlights: [
@@ -3347,15 +3589,32 @@ export const productList: Product[] = [
     ],
     specGroups: [
       {
-        title: "Geral",
+        title: "Impressão e leitura",
         rows: [
           {
-            label: "Texto Rápido",
-            value: "Impressora portátil A4 para documentos e recibos.",
+            label: "Método de impressão",
+            value: "Térmica direta, sem ribbon nem toner",
           },
           {
-            label: "Especificação",
-            value: "Bateria interna recarregável.",
+            label: "Formato de impressão",
+            value: "A4",
+          },
+          {
+            label: "Conteúdo impresso",
+            value: "Documentos, contratos, ordens de serviço e relatórios",
+          },
+        ],
+      },
+      {
+        title: "Mídia e consumíveis",
+        rows: [
+          {
+            label: "Mídia",
+            value: "Papel térmico A4, em folha ou rolo",
+          },
+          {
+            label: "Consumível",
+            value: "Apenas o papel — sem cartucho de tinta",
           },
         ],
       },
@@ -3363,17 +3622,12 @@ export const productList: Product[] = [
         title: "Conectividade e software",
         rows: [
           {
-            label: "Conexões",
-            value: "Bluetooth sem fio e USB.",
+            label: "Sem fio",
+            value: "Bluetooth, impressão direta de notebook e smartphone",
           },
-        ],
-      },
-      {
-        title: "Impressão e leitura",
-        rows: [
           {
-            label: "Resolução",
-            value: "Resolução adequada para textos e gráficos.",
+            label: "Cabo",
+            value: "USB para recarga e comunicação",
           },
         ],
       },
@@ -3381,8 +3635,21 @@ export const productList: Product[] = [
         title: "Hardware",
         rows: [
           {
-            label: "Memória",
-            value: "Memória interna para processamento de arquivos.",
+            label: "Alimentação",
+            value: "Bateria interna recarregável",
+          },
+          {
+            label: "Formato",
+            value: "Portátil, para uso em veículo e em campo",
+          },
+        ],
+      },
+      {
+        title: "Geral",
+        rows: [
+          {
+            label: "Aplicação",
+            value: "Logística, serviços técnicos, vendas externas e transporte",
           },
         ],
       },
@@ -3649,8 +3916,82 @@ export const productList: Product[] = [
         image: null,
       },
     ],
-    applications: [],
-    specGroups: [],
+    applications: [
+      {
+        title: "Hospitais",
+        desc: "Pulseiras de identificação de pacientes internados, com resistência a água e álcool.",
+      },
+      {
+        title: "Clínicas e laboratórios",
+        desc: "Identificação de pacientes em exames, coletas e procedimentos ambulatoriais.",
+      },
+      {
+        title: "Eventos",
+        desc: "Pulseiras de credenciamento e controle de acesso por setor.",
+      },
+      {
+        title: "Lazer e hotelaria",
+        desc: "Controle de acesso e consumo em parques, clubes e resorts.",
+      },
+    ],
+    specGroups: [
+      {
+        title: "Impressão e leitura",
+        rows: [
+          {
+            label: "Método de impressão",
+            value: "Térmica direta, sem ribbon",
+          },
+          {
+            label: "Conteúdo impresso",
+            value: "Texto, códigos de barras 1D e QR Code para identificação",
+          },
+        ],
+      },
+      {
+        title: "Mídia e consumíveis",
+        rows: [
+          {
+            label: "Mídia",
+            value: "Pulseiras de identificação em rolo",
+          },
+          {
+            label: "Durabilidade",
+            value: "Resistente a água, álcool e abrasão durante o período de uso",
+          },
+          {
+            label: "Consumível",
+            value: "Apenas a pulseira — sem ribbon, sem cartucho",
+          },
+        ],
+      },
+      {
+        title: "Conectividade e software",
+        rows: [
+          {
+            label: "Conexões",
+            value: "USB, conexão direta ao sistema de gestão",
+          },
+          {
+            label: "Drivers",
+            value: "Driver HPRT para Windows",
+          },
+        ],
+      },
+      {
+        title: "Geral",
+        rows: [
+          {
+            label: "Aplicação",
+            value: "Pulseiras de identificação para saúde, eventos e lazer",
+          },
+          {
+            label: "Instalação",
+            value: "Mesa ou balcão, formato compacto para posto de atendimento",
+          },
+        ],
+      },
+    ],
     gallery: [
       "https://hprtbrasil.com.br/wp-content/uploads/2026/02/21-e1783344195304.png",
       "https://hprtbrasil.com.br/wp-content/uploads/2026/02/22.png",
@@ -3896,12 +4237,16 @@ export const productList: Product[] = [
     ],
     keySpecs: [
       {
-        label: "Resolução",
-        value: "Resolução adequada para textos e códigos de barras.",
+        label: "Impressão",
+        value: "Térmica direta, sem ribbon",
+      },
+      {
+        label: "Mídia",
+        value: "Pulseiras hospitalares em rolo",
       },
       {
         label: "Conexões",
-        value: "USB para conexão direta ao sistema.",
+        value: "USB",
       },
     ],
     highlights: [
@@ -3951,15 +4296,32 @@ export const productList: Product[] = [
     ],
     specGroups: [
       {
-        title: "Geral",
+        title: "Impressão e leitura",
         rows: [
           {
-            label: "Texto Rápido",
-            value: "Impressora térmica direta para pulseiras hospitalares.",
+            label: "Método de impressão",
+            value: "Térmica direta, sem ribbon",
           },
           {
-            label: "Especificação",
-            value: "Alta resistência à água, álcool e abrasão.",
+            label: "Conteúdo impresso",
+            value: "Nome, dados do paciente, códigos de barras e QR Code",
+          },
+        ],
+      },
+      {
+        title: "Mídia e consumíveis",
+        rows: [
+          {
+            label: "Mídia",
+            value: "Pulseiras hospitalares em rolo",
+          },
+          {
+            label: "Durabilidade",
+            value: "Resistente a água, álcool e abrasão durante toda a internação",
+          },
+          {
+            label: "Consumível",
+            value: "Apenas a pulseira — sem ribbon, sem cartucho",
           },
         ],
       },
@@ -3968,25 +4330,24 @@ export const productList: Product[] = [
         rows: [
           {
             label: "Conexões",
-            value: "USB para conexão direta ao sistema.",
+            value: "USB, conexão direta ao sistema hospitalar",
+          },
+          {
+            label: "Drivers",
+            value: "Driver HPRT para Windows",
           },
         ],
       },
       {
-        title: "Impressão e leitura",
+        title: "Geral",
         rows: [
           {
-            label: "Resolução",
-            value: "Resolução adequada para textos e códigos de barras.",
+            label: "Aplicação",
+            value: "Identificação de pacientes em hospitais, clínicas e laboratórios",
           },
-        ],
-      },
-      {
-        title: "Hardware",
-        rows: [
           {
-            label: "Memória",
-            value: "Memória interna para processamento contínuo.",
+            label: "Instalação",
+            value: "Compacta, para posto de enfermagem e recepção",
           },
         ],
       },
@@ -4052,14 +4413,87 @@ export const productList: Product[] = [
     applications: [
       {
         title: "Empresas",
-        desc: "Emissão de crachás, cartões de identificação, credenciais de acesso e cartões de fidelidade.",
+        desc: "Crachás de funcionários, credenciais de visitante e controle de acesso.",
       },
       {
-        title: "Escolas",
-        desc: "Emissão de crachás, cartões de identificação, credenciais",
+        title: "Escolas e universidades",
+        desc: "Carteirinhas de estudante com foto, dados variáveis e código de barras.",
+      },
+      {
+        title: "Eventos",
+        desc: "Credenciais de participante, staff e imprensa impressas no local.",
+      },
+      {
+        title: "Academias e clubes",
+        desc: "Cartões de associado e fidelidade em PVC, com acabamento colorido.",
+      },
+      {
+        title: "Clínicas e condomínios",
+        desc: "Identificação de pacientes, moradores e prestadores de serviço.",
       },
     ],
-    specGroups: [],
+    specGroups: [
+      {
+        title: "Impressão e leitura",
+        rows: [
+          {
+            label: "Método de impressão",
+            value: "Transferência térmica por fita (retransfer direto em cartão)",
+          },
+          {
+            label: "Resolução",
+            value: "300 dpi",
+          },
+          {
+            label: "Cores",
+            value: "Colorido com fita YMCKO ou monocromático",
+          },
+          {
+            label: "Área de impressão",
+            value: "Cartão inteiro, com foto, logotipo e dados variáveis",
+          },
+        ],
+      },
+      {
+        title: "Mídia e consumíveis",
+        rows: [
+          {
+            label: "Mídia",
+            value: "Cartões PVC no padrão CR-80",
+          },
+          {
+            label: "Fitas",
+            value: "YMCKO (colorida) e monocromáticas",
+          },
+        ],
+      },
+      {
+        title: "Conectividade e software",
+        rows: [
+          {
+            label: "Conexões",
+            value: "USB",
+          },
+          {
+            label: "Drivers e software",
+            value: "Driver HPRT CP-D80 e utilitário de calibração para Windows",
+          },
+        ],
+      },
+      {
+        title: "Geral",
+        rows: [
+          {
+            label: "Aplicação",
+            value: "Crachás, credenciais de acesso, carteirinhas e cartões de fidelidade",
+          },
+          {
+            label: "Operação",
+            value: "Alimentador de cartões para emissão em lote ou unitária",
+          },
+        ],
+      },
+    ],
     gallery: [
       "https://hprtbrasil.com.br/wp-content/uploads/2026/02/34-e1783344238765.png",
       "https://hprtbrasil.com.br/wp-content/uploads/2026/02/35.png",
@@ -4290,7 +4724,24 @@ export const productList: Product[] = [
         image: null,
       },
     ],
-    applications: [],
+    applications: [
+      {
+        title: "E-commerce e fulfillment",
+        desc: "Embalagem e etiquetagem automática de pedidos, de 600 a 1.400 pacotes por hora.",
+      },
+      {
+        title: "Distribuição",
+        desc: "Expedição de volumes em envelope plástico com etiqueta de transporte já aplicada.",
+      },
+      {
+        title: "Indústria",
+        desc: "Embalagem de peças, kits e componentes com identificação padronizada.",
+      },
+      {
+        title: "Varejo omnichannel",
+        desc: "Preparação de pedidos de retirada e entrega a partir da loja ou do CD.",
+      },
+    ],
     specGroups: [
       {
         title: "Impressão e leitura",
