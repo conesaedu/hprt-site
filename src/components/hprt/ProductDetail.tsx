@@ -137,12 +137,13 @@ function Intro({ product }: { product: Product }) {
 function Highlights({ product }: { product: Product }) {
   /* Cada diferencial só recebe foto quando a imagem realmente mostra o que o
      texto afirma (curadoria em catalog.ts). O resto vira bloco tipográfico. */
-  const withImage = product.highlights
-    .map((h, i) => ({ h, i }))
-    .filter(({ h }) => typeof h.image === "number" && product.gallery[h.image]);
-  const textOnly = product.highlights
-    .map((h, i) => ({ h, i }))
-    .filter(({ h }) => !(typeof h.image === "number" && product.gallery[h.image]));
+  const hasPhoto = (h: (typeof product.highlights)[number]) =>
+    typeof h.image === "number" && Boolean(product.gallery[h.image]);
+  const withImage = product.highlights.filter(hasPhoto);
+  const textOnly = product.highlights.filter((h) => !hasPhoto(h));
+  /* Numeração segue a ordem de leitura da página, não a ordem do dado. */
+  const numberOf = (h: (typeof product.highlights)[number]) =>
+    hasPhoto(h) ? withImage.indexOf(h) + 1 : withImage.length + textOnly.indexOf(h) + 1;
 
   return (
     <section className="border-b border-border bg-surface py-20 md:py-24">
