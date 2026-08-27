@@ -113,7 +113,7 @@ function TrainingList({
               novas datas.
             </p>
             <div className="mt-6">
-              <Btn href="/#trust" variant="ghost">
+              <Btn href="/onde-comprar" variant="ghost">
                 Falar com um especialista
               </Btn>
             </div>
@@ -410,7 +410,7 @@ function Cta() {
               Fale conosco e montamos uma capacitação exclusiva na sua operação ou em nossa sede.
             </p>
           </div>
-          <Btn href="/#trust">Falar com um especialista</Btn>
+          <Btn href="/onde-comprar">Falar com um especialista</Btn>
         </div>
       </div>
     </section>

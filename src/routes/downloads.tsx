@@ -109,7 +109,7 @@ function DownloadsPage() {
                   correto do seu modelo.
                 </p>
                 <div className="mt-6">
-                  <Btn href="/#trust" variant="ghost">
+                  <Btn href="/onde-comprar" variant="ghost">
                     Falar com o suporte
                   </Btn>
                 </div>
@@ -171,7 +171,7 @@ function DownloadsPage() {
                   equipamento.
                 </p>
               </div>
-              <Btn href="/#trust">Falar com o suporte</Btn>
+              <Btn href="/onde-comprar">Falar com o suporte</Btn>
             </div>
           </div>
         </section>

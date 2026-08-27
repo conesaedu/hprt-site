@@ -11,6 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as OndeComprarRouteImport } from './routes/onde-comprar'
+import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as TreinamentosRouteImport } from './routes/treinamentos'
 import { Route as ProdutosIndexRouteImport } from './routes/produtos.index'
 import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
@@ -23,6 +27,26 @@ const IndexRoute = IndexRouteImport.update({
 const DownloadsRoute = DownloadsRouteImport.update({
   id: '/downloads',
   path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OndeComprarRoute = OndeComprarRouteImport.update({
+  id: '/onde-comprar',
+  path: '/onde-comprar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PorQueHprtRoute = PorQueHprtRouteImport.update({
+  id: '/por-que-hprt',
+  path: '/por-que-hprt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolucoesRoute = SolucoesRouteImport.update({
+  id: '/solucoes',
+  path: '/solucoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TreinamentosRoute = TreinamentosRouteImport.update({
@@ -44,6 +68,10 @@ const ProdutosSlugRoute = ProdutosSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/downloads': typeof DownloadsRoute
+  '/onde-comprar': typeof OndeComprarRoute
+  '/por-que-hprt': typeof PorQueHprtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos/': typeof ProdutosIndexRoute
@@ -51,6 +79,10 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/downloads': typeof DownloadsRoute
+  '/onde-comprar': typeof OndeComprarRoute
+  '/por-que-hprt': typeof PorQueHprtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos': typeof ProdutosIndexRoute
@@ -59,6 +91,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/downloads': typeof DownloadsRoute
+  '/onde-comprar': typeof OndeComprarRoute
+  '/por-que-hprt': typeof PorQueHprtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos/': typeof ProdutosIndexRoute
@@ -66,13 +102,34 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/downloads' | '/treinamentos' | '/produtos/$slug' | '/produtos/'
+    | '/'
+    | '/downloads'
+    | '/onde-comprar'
+    | '/por-que-hprt'
+    | '/sitemap.xml'
+    | '/solucoes'
+    | '/treinamentos'
+    | '/produtos/$slug'
+    | '/produtos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/downloads' | '/treinamentos' | '/produtos/$slug' | '/produtos'
+  to:
+    | '/'
+    | '/downloads'
+    | '/onde-comprar'
+    | '/por-que-hprt'
+    | '/sitemap.xml'
+    | '/solucoes'
+    | '/treinamentos'
+    | '/produtos/$slug'
+    | '/produtos'
   id:
     | '__root__'
     | '/'
     | '/downloads'
+    | '/onde-comprar'
+    | '/por-que-hprt'
+    | '/sitemap.xml'
+    | '/solucoes'
     | '/treinamentos'
     | '/produtos/$slug'
     | '/produtos/'
@@ -81,6 +138,10 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DownloadsRoute: typeof DownloadsRoute
+  OndeComprarRoute: typeof OndeComprarRoute
+  PorQueHprtRoute: typeof PorQueHprtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SolucoesRoute: typeof SolucoesRoute
   TreinamentosRoute: typeof TreinamentosRoute
   ProdutosSlugRoute: typeof ProdutosSlugRoute
   ProdutosIndexRoute: typeof ProdutosIndexRoute
@@ -100,6 +161,34 @@ declare module '@tanstack/react-router' {
       path: '/downloads'
       fullPath: '/downloads'
       preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onde-comprar': {
+      id: '/onde-comprar'
+      path: '/onde-comprar'
+      fullPath: '/onde-comprar'
+      preLoaderRoute: typeof OndeComprarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/por-que-hprt': {
+      id: '/por-que-hprt'
+      path: '/por-que-hprt'
+      fullPath: '/por-que-hprt'
+      preLoaderRoute: typeof PorQueHprtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solucoes': {
+      id: '/solucoes'
+      path: '/solucoes'
+      fullPath: '/solucoes'
+      preLoaderRoute: typeof SolucoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/treinamentos': {
@@ -129,6 +218,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DownloadsRoute: DownloadsRoute,
+  OndeComprarRoute: OndeComprarRoute,
+  PorQueHprtRoute: PorQueHprtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SolucoesRoute: SolucoesRoute,
   TreinamentosRoute: TreinamentosRoute,
   ProdutosSlugRoute: ProdutosSlugRoute,
   ProdutosIndexRoute: ProdutosIndexRoute,

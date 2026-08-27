@@ -38,8 +38,8 @@ export function Hero() {
             para o Brasil.
           </p>
           <div className="mb-14 flex flex-wrap gap-3.5">
-            <Btn href="#products">Ver o portfólio completo</Btn>
-            <Btn href="#positioning" variant="ghost">
+            <Btn href="/produtos">Ver o portfólio completo</Btn>
+            <Btn href="/por-que-hprt" variant="ghost">
               Nosso posicionamento
             </Btn>
           </div>

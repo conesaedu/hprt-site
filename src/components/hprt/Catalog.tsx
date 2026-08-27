@@ -5,11 +5,12 @@ import { useReveal } from "@/hooks/use-reveal";
 import { solutions } from "@/lib/hprt-data";
 import { products, productCategories } from "@/lib/products";
 import { cn } from "@/lib/utils";
-import { Btn, Eyebrow, SectionHead } from "./ui";
+import { Btn, Eyebrow, MoreLink, SectionHead } from "./ui";
 
-export function Products() {
+export function Products({ limit }: { limit?: number } = {}) {
   const [active, setActive] = useState("all");
-  const visible = products.filter((p) => active === "all" || p.category === active);
+  const filtered = products.filter((p) => active === "all" || p.category === active);
+  const visible = limit ? filtered.slice(0, limit) : filtered;
   const cats = productCategories.filter(
     (c) => c.id === "all" || products.some((p) => p.category === c.id),
   );
@@ -78,14 +79,16 @@ export function Products() {
   );
 }
 
-export function Solutions() {
+export function Solutions({ preview = false, hideHead = false }: { preview?: boolean; hideHead?: boolean } = {}) {
   return (
     <section id="solutions" className="py-30">
       <div className="wrap">
-        <SectionHead
-          eyebrow="Soluções por setor"
-          title="A mesma marca resolve operações muito diferentes."
-        />
+        {hideHead ? null : (
+          <SectionHead
+            eyebrow="Soluções por setor"
+            title="A mesma marca resolve operações muito diferentes."
+          />
+        )}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {solutions.map((s) => (
             <article
@@ -98,22 +101,31 @@ export function Solutions() {
             </article>
           ))}
         </div>
+        {preview ? (
+          <div className="mt-9 flex justify-center">
+            <MoreLink to="/solucoes">Ver soluções por setor</MoreLink>
+          </div>
+        ) : null}
       </div>
     </section>
   );
 }
 
-export function Trust() {
+export function Trust({ compact = false, hideHead = false }: { compact?: boolean; hideHead?: boolean } = {}) {
   const reveal = useReveal<HTMLDivElement>();
 
   return (
     <section id="trust" className="border-b border-border bg-surface py-28">
       <div ref={reveal.ref} className={`${reveal.className} wrap grid items-center gap-16 lg:grid-cols-2`}>
         <div>
-          <Eyebrow className="mb-4">Presença local</Eyebrow>
-          <h2 className="mb-5 text-[2rem] leading-tight">
-            Fabricado com escala global, entregue com presença local.
-          </h2>
+          {hideHead ? null : (
+            <>
+              <Eyebrow className="mb-4">Presença local</Eyebrow>
+              <h2 className="mb-5 text-[2rem] leading-tight">
+                Fabricado com escala global, entregue com presença local.
+              </h2>
+            </>
+          )}
           <p className="mb-7 text-[0.97rem] text-muted-foreground">
             A operação brasileira da HPRT é conduzida em parceria com a Cogra, distribuidora B2B com
             25 anos de mercado — o que significa estoque físico, suporte técnico e um time comercial
@@ -133,6 +145,17 @@ export function Trust() {
           </ul>
         </div>
 
+        {compact ? (
+          <div className="rounded-lg border border-border bg-background p-9">
+            <div className="mb-2 font-mono text-[0.6875rem] uppercase tracking-[0.08em] text-faint">
+              Centro de distribuição · Brasil
+            </div>
+            <div className="mb-7 text-[0.9375rem] leading-relaxed">
+              Rua Luiz Seraphico Jr., 511 — Jardim Caravelas, São Paulo, SP
+            </div>
+            <MoreLink to="/onde-comprar">Onde comprar e falar com um especialista</MoreLink>
+          </div>
+        ) : (
         <div className="rounded-lg border border-border bg-background p-9 font-mono">
           <img
             src="https://hprtbrasil.com.br/wp-content/uploads/2026/01/company-1024x439.jpg"
@@ -153,6 +176,7 @@ export function Trust() {
             Cogra — distribuidora B2B, 25 anos de mercado
           </div>
         </div>
+        )}
       </div>
     </section>
   );
@@ -166,10 +190,10 @@ export function CtaStrip() {
           Pronto para trocar o fornecedor sem trocar o padrão de operação?
         </h2>
         <div className="flex shrink-0 flex-wrap gap-3.5">
-          <Btn href="#products" variant="ghost">
+          <Btn href="/produtos" variant="ghost">
             Ver portfólio
           </Btn>
-          <Btn href="#trust">Falar com um especialista</Btn>
+          <Btn href="/onde-comprar">Falar com um especialista</Btn>
         </div>
       </div>
     </section>

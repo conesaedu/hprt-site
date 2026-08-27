@@ -1,5 +1,6 @@
 import { useCountUp, useReveal } from "@/hooks/use-reveal";
-import { SectionHead } from "./ui";
+import { MoreLink, SectionHead } from "./ui";
+
 
 function Stat({ value, suffix, label }: { value: number; suffix: string; label: string }) {
   const { ref, text } = useCountUp(value, suffix);
@@ -72,12 +73,14 @@ const pillars = [
   },
 ];
 
-export function Positioning() {
+export function Positioning({ preview = false, hideHead = false }: { preview?: boolean; hideHead?: boolean } = {}) {
   const reveal = useReveal<HTMLDivElement>();
+  const visible = preview ? pillars.slice(0, 3) : pillars;
 
   return (
     <section id="positioning" className="bg-surface py-30">
       <div className="wrap">
+        {hideHead ? null : (
         <SectionHead
           eyebrow="Por que HPRT?"
           title="Tecnologia para entrar na sua operação. Estrutura para permanecer nela."
@@ -87,12 +90,13 @@ export function Positioning() {
           também fazem parte da decisão. A HPRT combina escala industrial global com uma estrutura
           construída no Brasil para sustentar seus projetos.
         </SectionHead>
+        )}
 
         <div
           ref={reveal.ref}
           className={`${reveal.className} grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2 lg:grid-cols-3`}
         >
-          {pillars.map((p) => (
+          {visible.map((p) => (
             <div
               key={p.num}
               className="flex flex-col justify-between bg-background p-8 transition-colors duration-200 hover:bg-surface"
@@ -112,17 +116,24 @@ export function Positioning() {
           ))}
         </div>
 
-        <div className="mt-12 border-l-2 border-signal pl-6">
-          <p className="font-display text-[1.5rem] leading-[1.25] font-semibold text-foreground md:text-[1.75rem]">
-            Tecnologia global para competir.
-            <br />
-            Estrutura local para permanecer.
-          </p>
-        </div>
+        {preview ? (
+          <div className="mt-9 flex justify-center">
+            <MoreLink to="/por-que-hprt">Ver os 6 pilares da estrutura HPRT</MoreLink>
+          </div>
+        ) : (
+          <div className="mt-12 border-l-2 border-signal pl-6">
+            <p className="font-display text-[1.5rem] leading-[1.25] font-semibold text-foreground md:text-[1.75rem]">
+              Tecnologia global para competir.
+              <br />
+              Estrutura local para permanecer.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
 }
+
 
 
 export function GlobalTrust() {

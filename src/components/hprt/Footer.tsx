@@ -14,17 +14,17 @@ const cols = [
   {
     title: "Empresa",
     links: [
-      { label: "Por que HPRT", href: "#positioning" },
-      { label: "Soluções por setor", href: "#solutions" },
+      { label: "Por que HPRT", href: "/por-que-hprt" },
+      { label: "Soluções por setor", href: "/solucoes" },
       { label: "Treinamentos", href: "/treinamentos" },
-      { label: "Onde comprar", href: "#trust" },
+      { label: "Onde comprar", href: "/onde-comprar" },
     ],
   },
   {
     title: "Contato",
     links: [
-      { label: "Falar com um especialista", href: "#trust" },
-      { label: "Suporte técnico", href: "#trust" },
+      { label: "Falar com um especialista", href: "/onde-comprar" },
+      { label: "Suporte técnico", href: "/onde-comprar" },
       { label: "Downloads e drivers", href: "/downloads" },
     ],
   },

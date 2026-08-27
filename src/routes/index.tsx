@@ -1,9 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { CtaStrip, Products, Solutions, Trust } from "@/components/hprt/Catalog";
 import { Footer } from "@/components/hprt/Footer";
 import { Hero } from "@/components/hprt/Hero";
 import { Nav } from "@/components/hprt/Nav";
-import { GlobalTrust, Positioning, Stats } from "@/components/hprt/Sections";
+import { Positioning, Stats } from "@/components/hprt/Sections";
 import { Btn, Eyebrow } from "@/components/hprt/ui";
 
 const title = "HPRT Brasil — Impressão térmica e captura de dados";
@@ -19,10 +20,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://hprtbrasil.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://hprtbrasil.lovable.app/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -44,18 +45,31 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+const hashRedirects: Record<string, string> = {
+  positioning: "/por-que-hprt",
+  solutions: "/solucoes",
+  trust: "/onde-comprar",
+  products: "/produtos",
+};
+
 function Index() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const target = hashRedirects[window.location.hash.replace("#", "")];
+    if (target) navigate({ to: target, replace: true });
+  }, [navigate]);
+
   return (
     <div className="min-h-screen bg-background">
       <Nav />
       <main>
         <Hero />
         <Stats />
-        <Positioning />
-        <GlobalTrust />
-        <Products />
-        <Solutions />
-        <Trust />
+        <Positioning preview />
+        <Products limit={8} />
+        <Solutions preview />
+        <Trust compact />
         <CtaStrip />
         <TrainingCta />
       </main>
