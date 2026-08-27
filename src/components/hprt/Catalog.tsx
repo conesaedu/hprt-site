@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { solutions } from "@/lib/hprt-data";
-import { products, productCategories } from "@/lib/products";
+import { productCategories, productSummaries as products } from "@/lib/products/summary";
 import { cn } from "@/lib/utils";
 import { Btn, Eyebrow, MoreLink, SectionHead } from "./ui";
 
@@ -51,7 +51,7 @@ export function Products({ limit }: { limit?: number } = {}) {
             >
               <div className="mb-1 flex aspect-square w-full items-center justify-center">
                 <img
-                  src={p.gallery[0]}
+                  src={p.thumb}
                   alt={`Produto HPRT ${p.name}`}
                   loading="lazy"
                   className="max-h-[6.25rem] max-w-[85%] object-contain transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-[1.04]"

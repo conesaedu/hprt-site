@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/hprt/Nav";
 import { Footer } from "@/components/hprt/Footer";
-import { ProductCard } from "@/components/hprt/ProductDetail";
+import { ProductCard } from "@/components/hprt/ProductCard";
 import { Eyebrow } from "@/components/hprt/ui";
-import { products, productCategories } from "@/lib/products";
+import { productCategories, productSummaries } from "@/lib/products/summary";
 import { cn } from "@/lib/utils";
 
 const SITE = "https://hprtbrasil.lovable.app";
@@ -33,9 +33,9 @@ export const Route = createFileRoute("/produtos/")({
 function ProductIndex() {
   const { linha } = Route.useSearch();
   const active = productCategories.some((c) => c.id === linha) ? linha : "all";
-  const visible = products.filter((p) => active === "all" || p.category === active);
+  const visible = productSummaries.filter((p) => active === "all" || p.category === active);
   const cats = productCategories.filter(
-    (c) => c.id === "all" || products.some((p) => p.category === c.id),
+    (c) => c.id === "all" || productSummaries.some((p) => p.category === c.id),
   );
 
   return (
@@ -47,7 +47,7 @@ function ProductIndex() {
           <div className="wrap relative">
             <span className="mb-5 inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-on-ink-muted">
               <span className="inline-block size-[7px] rotate-45 rounded-[1px] bg-signal" />
-              Portfólio · {products.length} modelos
+              Portfólio · {productSummaries.length} modelos
             </span>
             <h1 className="mb-6 text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[0.95] text-on-ink">
               Toda a operação de impressão e identificação em uma única marca.

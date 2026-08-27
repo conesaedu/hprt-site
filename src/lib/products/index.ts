@@ -6,19 +6,7 @@ export type { Product, SpecGroup, SpecRow, Highlight } from "./types";
 
 export const products = productList;
 
-export const productCategories: { id: string; label: string }[] = [
-  { id: "all", label: "Tudo" },
-  { id: "etiquetas-industrial", label: "Etiquetas · Industrial" },
-  { id: "etiquetas-entrada", label: "Etiquetas · Entrada" },
-  { id: "coletores", label: "Coletores de dados" },
-  { id: "leitores", label: "Leitores de código de barras" },
-  { id: "cupom", label: "Cupom / PDV" },
-  { id: "a4", label: "Portátil A4" },
-  { id: "pulseiras", label: "Pulseiras" },
-  { id: "cartao", label: "Cartões" },
-  { id: "fotos", label: "Fotos" },
-  { id: "embaladora", label: "Embaladora" },
-];
+export { productCategories, productSummaries, type ProductSummary } from "./summary";
 
 const bySlug = new Map(products.map((p) => [p.slug, p]));
 
