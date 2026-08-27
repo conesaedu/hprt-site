@@ -14,7 +14,7 @@ export function ProductDetail({ product }: { product: Product }) {
 
   return (
     <div className="min-h-screen bg-background">
-      <Nav />
+      <Nav onDark />
       <main>
         <ProductHero product={product} />
         <Intro product={product} />

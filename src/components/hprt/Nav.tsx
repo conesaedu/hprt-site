@@ -35,9 +35,9 @@ export function Nav({ onDark = false }: { onDark?: boolean } = {}) {
       )}
     >
       <div className="wrap flex items-center justify-between">
-        <a href="#hero" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={logo.url} alt="HPRT Brasil" className="h-[26px] w-auto" />
-        </a>
+        </Link>
         <nav className="hidden gap-9 md:flex">
           {links.map((l) =>
             l.href.startsWith("/") ? (

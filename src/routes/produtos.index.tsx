@@ -37,7 +37,7 @@ function ProductIndex() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Nav />
+      <Nav onDark />
       <main>
         <section className="relative overflow-hidden bg-ink pb-16 pt-36 text-on-ink md:pt-40">
           <div className="pointer-events-none absolute inset-0 grid-rule opacity-60" aria-hidden />
