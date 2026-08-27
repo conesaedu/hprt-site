@@ -2895,7 +2895,7 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Leitor avançado com desempenho superior para alto volume",
-        "desc": "",
+        "desc": "Módulo imager 2D de alta velocidade voltado a operações que leem milhares de códigos por turno, com captura imediata a cada acionamento.",
         "image": 1
       },
       {
@@ -3207,27 +3207,27 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Impressora térmica direta para cupons e recibos",
-        "desc": "",
+        "desc": "Impressão térmica direta dispensa tinta, toner e fita: o custo por cupom fica restrito ao papel e a manutenção é praticamente nula no dia a dia do PDV.",
         "image": 1
       },
       {
         "title": "Alta velocidade de impressão",
-        "desc": "",
+        "desc": "Cupons saem em poucos segundos, mantendo a fila do caixa em movimento mesmo nos horários de maior fluxo.",
         "image": null
       },
       {
         "title": "USB para conexão direta ao sistema",
-        "desc": "",
+        "desc": "Conexão USB direta ao PC ou ao terminal de PDV, com instalação simples pelo driver oficial disponível na nossa central de downloads.",
         "image": 2
       },
       {
         "title": "Resolução padrão para textos e códigos de barras",
-        "desc": "",
+        "desc": "Resolução adequada para textos nítidos e códigos de barras legíveis na primeira leitura, evitando reimpressões no balcão.",
         "image": null
       },
       {
         "title": "Memória interna para processamento contínuo",
-        "desc": "",
+        "desc": "A memória interna mantém a fila de impressão fluida durante a operação contínua, sem travar o sistema de vendas.",
         "image": null
       }
     ],
@@ -3328,32 +3328,32 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Impressora portátil A4 para documentos e recibos",
-        "desc": "",
+        "desc": "Formato A4 completo em um corpo que cabe na pasta ou no porta-luvas: ideal para contratos, laudos, ordens de serviço e recibos emitidos fora do escritório.",
         "image": null
       },
       {
         "title": "Bateria interna recarregável",
-        "desc": "",
+        "desc": "Bateria interna recarregável permite imprimir em campo, no veículo ou na casa do cliente, sem depender de tomada.",
         "image": null
       },
       {
         "title": "Conectividade sem fio via Bluetooth",
-        "desc": "",
+        "desc": "Conexão Bluetooth com celular, tablet ou notebook: o documento sai direto do aplicativo, sem cabos e sem intermediários.",
         "image": null
       },
       {
         "title": "USB para conexão direta ao computador",
-        "desc": "",
+        "desc": "Também opera conectada por USB ao computador, atendendo tanto a rotina móvel quanto o uso fixo em escritório.",
         "image": null
       },
       {
         "title": "Resolução adequada para textos e gráficos",
-        "desc": "",
+        "desc": "Resolução adequada para textos, tabelas e gráficos de documentos operacionais, com leitura confortável no papel A4.",
         "image": null
       },
       {
         "title": "Memória interna para processamento de arquivos",
-        "desc": "",
+        "desc": "Memória interna dedicada ao processamento dos arquivos enviados, garantindo impressão estável mesmo em documentos com mais páginas.",
         "image": null
       }
     ],
@@ -3646,31 +3646,44 @@ export const productList: Product[] =  [
       "Produz pulseiras resistentes à água, álcool e desgaste, garantindo legibilidade durante todo o período de uso.",
       "É indicada para hospitais, clínicas, laboratórios, eventos e"
     ],
-    "keySpecs": [],
+    "keySpecs": [
+      {
+        "label": "Aplicação",
+        "value": "Pulseiras de identificação"
+      },
+      {
+        "label": "Método de Impressão",
+        "value": "Térmica direta (sem ribbon)"
+      },
+      {
+        "label": "Conexões",
+        "value": "USB"
+      }
+    ],
     "highlights": [
       {
         "title": "Impressora térmica direta para pulseiras",
-        "desc": "",
+        "desc": "Dedicada à impressão de pulseiras de identificação: térmica direta, sem ribbon, com fluxo simples de emissão no momento do atendimento.",
         "image": 1
       },
       {
         "title": "Alta resistência à água, álcool e abrasão",
-        "desc": "",
+        "desc": "As pulseiras suportam contato com água, álcool e atrito do dia a dia, mantendo dados e código de barras legíveis durante toda a internação ou o evento.",
         "image": null
       },
       {
         "title": "USB para conexão direta ao sistema",
-        "desc": "",
+        "desc": "Conexão USB direta ao sistema de gestão hospitalar, laboratorial ou de eventos, com instalação assistida pelo nosso time técnico.",
         "image": 3
       },
       {
         "title": "Resolução adequada para textos e códigos de barras",
-        "desc": "",
+        "desc": "Resolução adequada para nome, dados do paciente e código de barras em uma área estreita, garantindo leitura na primeira tentativa.",
         "image": null
       },
       {
         "title": "Memória interna para processamento contínuo",
-        "desc": "",
+        "desc": "Memória interna que sustenta emissão contínua em recepções e postos de enfermagem com alto volume de admissões.",
         "image": null
       }
     ],
@@ -3938,27 +3951,27 @@ export const productList: Product[] =  [
     "highlights": [
       {
         "title": "Impressora térmica direta para pulseiras hospitalares",
-        "desc": "",
+        "desc": "Projetada para o fluxo hospitalar: emite pulseiras de identificação do paciente na admissão, em impressão térmica direta e sem consumível adicional.",
         "image": null
       },
       {
         "title": "Alta resistência à água, álcool e abrasão",
-        "desc": "",
+        "desc": "A mídia resiste a higienização com água e álcool e ao atrito do uso contínuo, preservando a identificação do paciente durante toda a internação.",
         "image": null
       },
       {
         "title": "USB para conexão direta ao sistema",
-        "desc": "",
+        "desc": "Conexão USB direta ao prontuário eletrônico ou ao sistema de gestão hospitalar, com driver oficial e suporte de instalação local.",
         "image": null
       },
       {
         "title": "Resolução adequada para textos e códigos de barras",
-        "desc": "",
+        "desc": "Resolução adequada para dados do paciente e código de barras em área estreita, essencial para conferência à beira do leito.",
         "image": null
       },
       {
         "title": "Memória interna para processamento contínuo",
-        "desc": "",
+        "desc": "Memória interna que mantém a emissão estável em recepções e prontos-socorros com admissões simultâneas.",
         "image": null
       }
     ],
@@ -4044,31 +4057,44 @@ export const productList: Product[] =  [
       "Com impressão por fita YMCKO, permite acabamento colorido de boa qualidade para fotos, logotipos e dados variáveis.",
       "É indicada para empresas, escolas, eventos, academias, clínicas e condomínios que desejam controlar acesso e identificar pessoas com segurança."
     ],
-    "keySpecs": [],
+    "keySpecs": [
+      {
+        "label": "Resolução",
+        "value": "300 dpi"
+      },
+      {
+        "label": "Mídia",
+        "value": "Cartões PVC · fitas YMCKO e mono"
+      },
+      {
+        "label": "Conexões",
+        "value": "USB"
+      }
+    ],
     "highlights": [
       {
         "title": "Cartões PVC coloridos",
-        "desc": "",
+        "desc": "Emite cartões PVC coloridos prontos para uso — credenciais, crachás, carteirinhas e cartões de fidelidade — com acabamento profissional na própria operação.",
         "image": 3
       },
       {
         "title": "Impressão em cartões PVC com fitas YMCKO e monocromáticas",
-        "desc": "",
+        "desc": "Compatível com fitas YMCKO para impressão colorida e fitas monocromáticas para tiragens econômicas, permitindo ajustar o custo por cartão ao projeto.",
         "image": null
       },
       {
         "title": "USB (e outras interfaces sob consulta)",
-        "desc": "",
+        "desc": "Conexão USB padrão para integração direta ao sistema de cadastro; outras interfaces disponíveis sob consulta ao nosso time técnico.",
         "image": 2
       },
       {
         "title": "Resolução típica de 300 dpi para cartões",
-        "desc": "",
+        "desc": "Resolução de 300 dpi entrega fotos, textos pequenos e códigos de barras nítidos na área reduzida do cartão.",
         "image": null
       },
       {
         "title": "Memória interna para fila de cartões e processamento de imagens",
-        "desc": "",
+        "desc": "Memória interna dedicada à fila de impressão e ao processamento das imagens, sustentando emissão em lote em eventos e campanhas de credenciamento.",
         "image": null
       }
     ],
