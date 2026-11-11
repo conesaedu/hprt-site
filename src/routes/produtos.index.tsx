@@ -1,7 +1,7 @@
+import { ArrowUpRight } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/hprt/Nav";
 import { Footer } from "@/components/hprt/Footer";
-import { ProductCard } from "@/components/hprt/ProductCard";
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { productCategories, productSummaries } from "@/lib/products/summary";
@@ -128,15 +128,36 @@ function ProductIndex() {
                     {g.items.length} {g.items.length === 1 ? "modelo" : "modelos"}
                   </span>
                 </div>
-                <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3 [&>*]:bg-background">
-                  {g.items.map((p, j) => (
-                    <div key={p.slug} className={cn("flex", j === 0 && (g.items.length - 2) % 3 === 0 && "sm:col-span-2")}>
-                      <div className="flex w-full flex-col [&>a]:flex-1">
-                        <ProductCard product={p} featured={j === 0 && (g.items.length - 2) % 3 === 0} />
-                      </div>
-                    </div>
+                <ul className="divide-y divide-border border-b border-border">
+                  {g.items.map((p) => (
+                    <li key={p.slug}>
+                      <Link
+                        to="/produtos/$slug"
+                        params={{ slug: p.slug }}
+                        className="group grid grid-cols-[96px_1fr_auto] items-center gap-5 py-5 transition-colors hover:bg-surface md:grid-cols-[180px_1.1fr_1fr_1fr_auto] md:gap-8 md:px-4"
+                      >
+                        <div className="flex aspect-[4/3] items-center justify-center bg-surface">
+                          <img src={p.thumb} alt={`HPRT ${p.name} — ${p.tagline}`} loading="lazy" decoding="async" width={180} height={135} className="max-h-[82%] w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+                        </div>
+                        <div>
+                          <h3 className="font-display text-[clamp(1.5rem,2.4vw,2.25rem)] font-semibold uppercase leading-none tracking-tight">{p.name}</h3>
+                          {p.category === "etiquetas-industrial" && (
+                            <span className="mt-2 inline-block text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-signal">Cabeça Kyocera</span>
+                          )}
+                          <p className="mt-2 text-[0.85rem] text-muted-foreground md:hidden">{p.tagline}</p>
+                        </div>
+                        <p className="hidden text-[0.95rem] leading-snug text-muted-foreground md:block">{p.tagline}</p>
+                        <div className="hidden md:block">
+                          <div className="text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-faint">Especificação-chave</div>
+                          <div className="mt-1 text-[0.95rem] font-medium">{p.spec}</div>
+                        </div>
+                        <span className="flex size-10 items-center justify-center border border-border-strong transition-colors group-hover:border-signal group-hover:bg-signal group-hover:text-background">
+                          <ArrowUpRight className="size-4" />
+                        </span>
+                      </Link>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             ))}
           </div>
