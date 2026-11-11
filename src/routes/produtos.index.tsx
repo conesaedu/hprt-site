@@ -128,11 +128,11 @@ function ProductIndex() {
                     {g.items.length} {g.items.length === 1 ? "modelo" : "modelos"}
                   </span>
                 </div>
-                <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3 [&>*]:bg-background">
                   {g.items.map((p, j) => (
-                    <div key={p.slug} className={cn("flex", j === 0 && g.items.length > 2 && "sm:col-span-2")}>
+                    <div key={p.slug} className={cn("flex", j === 0 && (g.items.length - 2) % 3 === 0 && "sm:col-span-2")}>
                       <div className="flex w-full flex-col [&>a]:flex-1">
-                        <ProductCard product={p} featured={j === 0 && g.items.length > 2} />
+                        <ProductCard product={p} featured={j === 0 && (g.items.length - 2) % 3 === 0} />
                       </div>
                     </div>
                   ))}
