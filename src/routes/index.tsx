@@ -3,6 +3,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Footer } from "@/components/hprt/Footer";
 import { HomeCapability, HomeContact, HomeFamilies, HomeFlagship, HomeHero, HomeNetwork, HomeSegments } from "@/components/hprt/home/HomeSections";
 import { Nav } from "@/components/hprt/Nav";
+import coletorImg from "@/assets/hero-coletor-logistica.webp";
 
 const title = "HPRT Brasil — Impressão térmica e captura de dados";
 const description =

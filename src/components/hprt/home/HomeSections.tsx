@@ -17,6 +17,7 @@ export function HomeHero() {
         width={1600}
         height={900}
         fetchPriority="high"
+        decoding="async"
         className="absolute inset-0 size-full object-cover opacity-55"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-transparent" />
