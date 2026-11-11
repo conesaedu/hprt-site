@@ -81,6 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "HPRT Brasil" },
       { name: "description", content: "Alta tecnologia de impressão e captura de dados." },
       { property: "og:site_name", content: "HPRT Brasil" },
+      { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "HPRT Brasil" },
@@ -102,7 +103,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "HPRT Brasil",
+          url: "https://hprtbrasil.lovable.app",
+          description: "Impressoras térmicas, coletores de dados e leitores de código de barras HPRT com estrutura, peças e suporte no Brasil.",
+          areaServed: { "@type": "Country", name: "Brasil" },
+          brand: { "@type": "Brand", name: "HPRT" },
+          contactPoint: { "@type": "ContactPoint", telephone: "+55-11-99542-2785", contactType: "sales", availableLanguage: "Portuguese" },
+        }),
+      },
     ],
   }),
 
@@ -114,7 +129,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
