@@ -42,7 +42,12 @@ export const Route = createFileRoute("/produtos/$slug")({
           : []),
         { name: "twitter:card", content: "summary_large_image" },
       ],
-      links: [{ rel: "canonical", href: url }],
+      links: [
+        { rel: "canonical", href: url },
+        ...(p.gallery[0]
+          ? [{ rel: "preload", as: "image", href: p.gallery[0], fetchpriority: "high" }]
+          : []),
+      ],
       scripts: [
         {
           type: "application/ld+json",

@@ -86,6 +86,9 @@ function ProductHero({ product }: { product: Product }) {
               alt={`Impressora HPRT ${product.name}`}
               width={720}
               height={720}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="product-shadow mx-auto max-h-[26rem] w-auto object-contain"
             />
           </div>

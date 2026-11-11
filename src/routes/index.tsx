@@ -3,6 +3,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Footer } from "@/components/hprt/Footer";
 import { HomeCapability, HomeContact, HomeFamilies, HomeFlagship, HomeHero, HomeNetwork, HomeSegments } from "@/components/hprt/home/HomeSections";
 import { Nav } from "@/components/hprt/Nav";
+import coletorImg from "@/assets/hero-coletor-logistica.webp";
 
 const title = "HPRT Brasil — Impressão térmica e captura de dados";
 const description =
@@ -20,7 +21,10 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://hprtbrasil.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://hprtbrasil.lovable.app/" }],
+    links: [
+      { rel: "canonical", href: "https://hprtbrasil.lovable.app/" },
+      { rel: "preload", as: "image", href: coletorImg, fetchpriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
