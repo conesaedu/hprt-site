@@ -1,11 +1,8 @@
 import { useEffect } from "react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { CtaStrip, Products, Solutions, Trust } from "@/components/hprt/Catalog";
 import { Footer } from "@/components/hprt/Footer";
-import { Hero } from "@/components/hprt/Hero";
+import { HomeCapability, HomeContact, HomeFamilies, HomeFlagship, HomeHero, HomeNetwork, HomeSegments } from "@/components/hprt/home/HomeSections";
 import { Nav } from "@/components/hprt/Nav";
-import { Positioning, Stats } from "@/components/hprt/Sections";
-import { Btn, Eyebrow } from "@/components/hprt/ui";
 
 const title = "HPRT Brasil — Impressão térmica e captura de dados";
 const description =
@@ -62,38 +59,18 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Nav />
+      <Nav onDark />
       <main>
-        <Hero />
-        <Stats />
-        <Positioning preview />
-        <Products limit={8} />
-        <Solutions preview />
-        <Trust compact />
-        <CtaStrip />
-        <TrainingCta />
+        <HomeHero />
+        <HomeFamilies />
+        <HomeSegments />
+        <HomeCapability />
+        <HomeFlagship />
+        <HomeNetwork />
+        <HomeContact />
       </main>
       <Footer />
     </div>
   );
 }
 
-function TrainingCta() {
-  return (
-    <section className="border-y border-border bg-surface py-24">
-      <div className="wrap flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-        <div className="max-w-[36rem]">
-          <Eyebrow className="mb-4">Capacitação</Eyebrow>
-          <h2 className="mb-3 text-[1.75rem] leading-tight font-semibold">
-            Treine sua equipe com quem fabrica a tecnologia.
-          </h2>
-          <p className="text-muted-foreground">
-            Treinamentos técnicos e comerciais HPRT, gratuitos para clientes que compram conosco.
-            Inscreva-se e reserve a vaga da sua equipe.
-          </p>
-        </div>
-        <Btn href="/treinamentos">Ver agenda de treinamentos</Btn>
-      </div>
-    </section>
-  );
-}
