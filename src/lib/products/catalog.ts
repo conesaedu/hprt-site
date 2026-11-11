@@ -1237,8 +1237,8 @@ export const productList: Product[] = [
   {
     slug: "delta",
     name: "DELTA",
-    category: "etiquetas-entrada",
-    categoryLabel: "Etiquetas · Entrada",
+    category: "etiquetas-industrial",
+    categoryLabel: "Etiquetas · Industrial",
     tagline: "Impressora Industrial para Etiquetas Largas",
     body: [
       "A DELTA é uma impressora industrial de etiquetas térmica direta e por transferência térmica, desenvolvida para aplicações que exigem impressão em grande formato, alta robustez e produtividade, como logística, manufatura, indústria química, transporte e agricultura. Construída com estrutura totalmente metálica, é ideal para ambientes industriais de alta demanda.",
