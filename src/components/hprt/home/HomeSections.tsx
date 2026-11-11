@@ -78,8 +78,8 @@ export function HomeFamilies() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {families.map((f) => (
             <Link key={f.linha} to="/produtos" search={{ linha: f.linha }} className="group flex flex-col overflow-hidden rounded-2xl bg-surface p-8 transition-colors hover:bg-surface-2">
-              <div className="mb-8 flex aspect-[4/3] items-center justify-center">
-                <img src={f.img} alt={`HPRT ${f.model}`} loading="lazy" className="max-h-full max-w-[80%] object-contain transition-transform duration-700 group-hover:scale-[1.04]" />
+              <div className="mb-8 flex h-60 items-center justify-center">
+                <img src={f.img} alt={`HPRT ${f.model}`} loading="lazy" className="max-h-full w-auto max-w-[80%] object-contain transition-transform duration-700 group-hover:scale-[1.04]" />
               </div>
               <span className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-faint">{f.model}</span>
               <h3 className="mt-2 text-2xl font-semibold">{f.name}</h3>
