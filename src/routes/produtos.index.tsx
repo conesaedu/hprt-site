@@ -2,7 +2,6 @@ import { ArrowUpRight } from "lucide-react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/hprt/Nav";
 import { Footer } from "@/components/hprt/Footer";
-import { ProductCard } from "@/components/hprt/ProductCard";
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { productCategories, productSummaries } from "@/lib/products/summary";
