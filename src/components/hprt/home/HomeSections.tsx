@@ -75,18 +75,47 @@ export function HomeFamilies() {
             Ver todos os produtos <ArrowUpRight className="size-4" />
           </Link>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {families.map((f) => (
-            <Link key={f.linha} to="/produtos" search={{ linha: f.linha }} className="group flex flex-col overflow-hidden rounded-2xl bg-surface p-8 transition-colors hover:bg-surface-2">
-              <div className="mb-8 flex h-60 items-center justify-center">
-                <img src={f.img} alt={`HPRT ${f.model}`} loading="lazy" className="max-h-full w-auto max-w-[80%] object-contain transition-transform duration-700 group-hover:scale-[1.04]" />
+        {(() => {
+          const [lead, ...rest] = families;
+          return (
+            <>
+              <Link to="/produtos" search={{ linha: lead.linha }} className="group grid items-center gap-10 border-y border-border py-14 md:grid-cols-[1.1fr_1fr]">
+                <div className="flex h-[22rem] items-center justify-center bg-surface">
+                  <img src={lead.img} alt={`HPRT ${lead.model}`} loading="lazy" className="max-h-[80%] w-auto max-w-[70%] object-contain transition-transform duration-700 group-hover:scale-[1.03]" />
+                </div>
+                <div>
+                  <span className="text-sm font-semibold text-signal">01 — {lead.model}</span>
+                  <h3 className="mt-3 text-[clamp(2rem,3.4vw,3rem)] font-semibold leading-[1.05] tracking-[-0.02em]">{lead.name}</h3>
+                  <p className="mt-4 max-w-md text-lg text-muted-foreground">{lead.desc}</p>
+                  <dl className="mt-8 grid max-w-md grid-cols-2 gap-6 border-t border-border pt-6 text-sm">
+                    <div><dt className="text-muted-foreground">Cabeça de impressão</dt><dd className="mt-1 font-semibold">Kyocera</dd></div>
+                    <div><dt className="text-muted-foreground">Regime</dt><dd className="mt-1 font-semibold">Operação contínua</dd></div>
+                  </dl>
+                  <span className="mt-8 inline-flex items-center gap-1.5 font-semibold group-hover:text-signal">Explorar linha <ArrowUpRight className="size-4" /></span>
+                </div>
+              </Link>
+              <div className="divide-y divide-border border-b border-border">
+                {rest.map((f, i) => (
+                  <Link key={f.linha} to="/produtos" search={{ linha: f.linha }} className="group grid items-center gap-6 py-8 sm:grid-cols-[4rem_10rem_1fr_auto]">
+                    <span className="text-sm font-semibold text-faint">{String(i + 2).padStart(2, "0")}</span>
+                    <div className="flex h-24 items-center justify-center"><img src={f.img} alt={`HPRT ${f.model}`} loading="lazy" className="max-h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.06]" /></div>
+                    <div>
+                      <h3 className="text-2xl font-semibold tracking-[-0.01em] group-hover:text-signal">{f.name}</h3>
+                      <p className="mt-1 text-muted-foreground">{f.desc}</p>
+                    </div>
+                    <span className="hidden items-center gap-2 text-sm font-semibold text-muted-foreground sm:inline-flex">{f.model} <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></span>
+                  </Link>
+                ))}
               </div>
-              <span className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-faint">{f.model}</span>
-              <h3 className="mt-2 text-2xl font-semibold">{f.name}</h3>
-              <p className="mt-2 text-[0.95rem] text-muted-foreground">{f.desc}</p>
-            </Link>
-          ))}
-        </div>
+              <div className="mt-16 grid gap-8 bg-ink p-10 text-on-ink md:grid-cols-[auto_1fr] md:items-center md:p-14">
+                <div className="font-display text-[clamp(2.5rem,5vw,4rem)] font-semibold leading-none tracking-tight text-signal">Kyocera</div>
+                <p className="max-w-2xl text-lg text-on-ink-muted">
+                  <span className="font-semibold text-on-ink">As impressoras HPRT usam cabeças de impressão térmica Kyocera</span> — referência mundial em durabilidade e precisão de ponto. O resultado é código de barras e 2D legível na primeira leitura, turno após turno.
+                </p>
+              </div>
+            </>
+          );
+        })()}
       </div>
     </section>
   );

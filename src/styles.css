@@ -7,7 +7,7 @@
 /*
  * HPRT Brasil design system.
  * Signal color sampled from the official HPRT brand file (#EC6C1A).
- * Typography: Barlow (display), IBM Plex Sans (body), IBM Plex Mono (labels).
+ * Typography: Barlow (display), IBM Plex Sans (body), IBM Plex Sans semibold (labels, no monospace).
  */
 
 @theme inline {
@@ -91,7 +91,7 @@
 
   --font-display: "Barlow", ui-sans-serif, system-ui, sans-serif;
   --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
