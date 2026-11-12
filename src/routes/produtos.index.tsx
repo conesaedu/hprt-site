@@ -195,10 +195,10 @@ function ProductIndex() {
                 </Link>
 
                 {rest.length > 0 && (
-                  <div className="mt-px grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="grid border-l border-border sm:grid-cols-2 lg:grid-cols-3">
                     {rest.map((p) => (
                       <Link key={p.slug} to="/produtos/$slug" params={{ slug: p.slug }}
-                        className="group flex flex-col bg-background">
+                        className="group flex flex-col border-r border-b border-border bg-background">
                         <div className="relative aspect-[4/3] overflow-hidden bg-surface">
                           <img src={p.thumb} alt={`HPRT ${p.name} — ${p.tagline}`} loading="lazy" decoding="async" width={360} height={270}
                             className="absolute inset-0 h-full w-full object-contain p-8 transition-transform duration-500 group-hover:scale-105" />
