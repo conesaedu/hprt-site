@@ -32,7 +32,7 @@ export const updateLead = createServerFn({ method: "POST" })
     z.object({ id: z.string().uuid(), status: z.enum(LEAD_STATUSES).optional(), notes: z.string().max(2000).optional() }).parse(i))
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase, context.userId);
-    const patch: Record<string, unknown> = { updated_at: new Date().toISOString() };
+    const patch: { updated_at: string; status?: string; notes?: string } = { updated_at: new Date().toISOString() };
     if (data.status) patch.status = data.status;
     if (data.notes !== undefined) patch.notes = data.notes;
     const { error } = await context.supabase.from("contact_leads").update(patch).eq("id", data.id);
