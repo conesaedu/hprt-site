@@ -11,8 +11,8 @@ export type ProductSummary = {
 };
 
 export const productSummaries: ProductSummary[] = [
-  {"slug":"gala","name":"GALA","category":"etiquetas-industrial","categoryLabel":"Etiquetas · Industrial","tagline":"Impressora Industrial de Etiquetas Intermediária","thumb":"/products/43-e1783344591470.webp","spec":"203 dpi: até 14 ips"},
   {"slug":"grand","name":"GRAND","category":"etiquetas-industrial","categoryLabel":"Etiquetas · Industrial","tagline":"Impressora Industrial de Etiquetas de Alta Performance 24/7","thumb":"/products/1-1-e1783344570445.webp","spec":"203 dpi: até 14 ips"},
+  {"slug":"gala","name":"GALA","category":"etiquetas-industrial","categoryLabel":"Etiquetas · Industrial","tagline":"Impressora Industrial de Etiquetas Intermediária","thumb":"/products/43-e1783344591470.webp","spec":"203 dpi: até 14 ips"},
   {"slug":"neo","name":"NEO","category":"etiquetas-industrial","categoryLabel":"Etiquetas · Industrial","tagline":"Impressora Industrial de Etiquetas Econômica","thumb":"/products/64-e1783344463114.webp","spec":"203 dpi: até 10 ips"},
   {"slug":"apollo","name":"APOLLO","category":"etiquetas-entrada","categoryLabel":"Etiquetas · Entrada","tagline":"Impressora de Etiquetas de Entrada Econômica","thumb":"/products/26-e1783344651149.webp","spec":"203 dpi: até 8 ips"},
   {"slug":"ares","name":"ARES","category":"etiquetas-entrada","categoryLabel":"Etiquetas · Entrada","tagline":"Impressora de Etiquetas de Entrada Econômica","thumb":"/products/30-e1783344629464.webp","spec":"203 dpi: até 8 ips"},
