@@ -169,9 +169,9 @@ function ProductIndex() {
 
                 <Link to="/produtos/$slug" params={{ slug: lead.slug }}
                   className="group grid overflow-hidden border border-border bg-surface lg:grid-cols-[1.4fr_1fr]">
-                  <div className="flex aspect-[16/10] items-center justify-center p-10">
+                  <div className="relative aspect-[16/10] overflow-hidden">
                     <img src={lead.thumb} alt={`HPRT ${lead.name} — ${lead.tagline}`} loading="lazy" decoding="async" width={640} height={400}
-                      className="max-h-full w-auto object-contain transition-transform duration-700 group-hover:scale-[1.04]" />
+                      className="absolute inset-0 h-full w-full object-contain p-10 transition-transform duration-700 group-hover:scale-[1.04]" />
                   </div>
                   <div className="flex flex-col justify-between gap-10 border-t border-border bg-background p-8 lg:border-l lg:border-t-0 lg:p-10">
                     <div>
@@ -199,9 +199,9 @@ function ProductIndex() {
                     {rest.map((p) => (
                       <Link key={p.slug} to="/produtos/$slug" params={{ slug: p.slug }}
                         className="group flex flex-col bg-background">
-                        <div className="flex aspect-[4/3] items-center justify-center bg-surface p-8">
+                        <div className="relative aspect-[4/3] overflow-hidden bg-surface">
                           <img src={p.thumb} alt={`HPRT ${p.name} — ${p.tagline}`} loading="lazy" decoding="async" width={360} height={270}
-                            className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+                            className="absolute inset-0 h-full w-full object-contain p-8 transition-transform duration-500 group-hover:scale-105" />
                         </div>
                         <div className="flex flex-1 flex-col p-6">
                           <div className="flex items-start justify-between gap-4">
