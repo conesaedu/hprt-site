@@ -8,11 +8,17 @@ import { getAdminStatus } from "@/lib/admin.functions";
 const nav = [
   { to: "/admin", label: "Visão geral", ready: true },
   { to: "/admin/leads", label: "Leads", ready: true },
+  { to: "/admin/cotacoes", label: "Cotações", ready: true },
+  { to: "/admin/revendas", label: "Revendas", ready: true },
+  { to: "/admin/treinamentos", label: "Treinamentos", ready: true },
   { to: "/admin/analytics", label: "Analytics", ready: true },
   { to: "/admin/banners", label: "Pop-ups e banners", ready: true },
   { to: "/admin/blog", label: "Blog", ready: true },
+  { to: "/admin/depoimentos", label: "Depoimentos", ready: true },
+  { to: "/admin/midia", label: "Mídia", ready: true },
   { to: "/admin/site", label: "Personalizar site", ready: true },
   { to: "/admin/usuarios", label: "Usuários", ready: true },
+  { to: "/admin/seguranca", label: "Segurança", ready: true },
   { to: "/admin/integracoes", label: "Integrações", ready: true },
 ] as const;
 

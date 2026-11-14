@@ -16,6 +16,7 @@ import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as OndeComprarRouteImport } from './routes/onde-comprar'
 import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
+import { Route as SejaRevendaRouteImport } from './routes/seja-revenda'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as TreinamentosRouteImport } from './routes/treinamentos'
@@ -26,9 +27,15 @@ import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
 import { Route as AuthenticatedAdminAnalyticsRouteImport } from './routes/_authenticated/admin.analytics'
 import { Route as AuthenticatedAdminBannersRouteImport } from './routes/_authenticated/admin.banners'
+import { Route as AuthenticatedAdminCotacoesRouteImport } from './routes/_authenticated/admin.cotacoes'
+import { Route as AuthenticatedAdminDepoimentosRouteImport } from './routes/_authenticated/admin.depoimentos'
 import { Route as AuthenticatedAdminIntegracoesRouteImport } from './routes/_authenticated/admin.integracoes'
 import { Route as AuthenticatedAdminLeadsRouteImport } from './routes/_authenticated/admin.leads'
+import { Route as AuthenticatedAdminMidiaRouteImport } from './routes/_authenticated/admin.midia'
+import { Route as AuthenticatedAdminRevendasRouteImport } from './routes/_authenticated/admin.revendas'
+import { Route as AuthenticatedAdminSegurancaRouteImport } from './routes/_authenticated/admin.seguranca'
 import { Route as AuthenticatedAdminSiteRouteImport } from './routes/_authenticated/admin.site'
+import { Route as AuthenticatedAdminTreinamentosRouteImport } from './routes/_authenticated/admin.treinamentos'
 import { Route as AuthenticatedAdminUsuariosRouteImport } from './routes/_authenticated/admin.usuarios'
 import { Route as AuthenticatedAdminBlogIndexRouteImport } from './routes/_authenticated/admin.blog.index'
 import { Route as AuthenticatedAdminBlogIdRouteImport } from './routes/_authenticated/admin.blog.$id'
@@ -65,6 +72,11 @@ const OndeComprarRoute = OndeComprarRouteImport.update({
 const PorQueHprtRoute = PorQueHprtRouteImport.update({
   id: '/por-que-hprt',
   path: '/por-que-hprt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SejaRevendaRoute = SejaRevendaRouteImport.update({
+  id: '/seja-revenda',
+  path: '/seja-revenda',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -119,6 +131,18 @@ const AuthenticatedAdminBannersRoute =
     path: '/admin/banners',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedAdminCotacoesRoute =
+  AuthenticatedAdminCotacoesRouteImport.update({
+    id: '/admin/cotacoes',
+    path: '/admin/cotacoes',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminDepoimentosRoute =
+  AuthenticatedAdminDepoimentosRouteImport.update({
+    id: '/admin/depoimentos',
+    path: '/admin/depoimentos',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedAdminIntegracoesRoute =
   AuthenticatedAdminIntegracoesRouteImport.update({
     id: '/admin/integracoes',
@@ -130,11 +154,34 @@ const AuthenticatedAdminLeadsRoute = AuthenticatedAdminLeadsRouteImport.update({
   path: '/admin/leads',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedAdminMidiaRoute = AuthenticatedAdminMidiaRouteImport.update({
+  id: '/admin/midia',
+  path: '/admin/midia',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedAdminRevendasRoute =
+  AuthenticatedAdminRevendasRouteImport.update({
+    id: '/admin/revendas',
+    path: '/admin/revendas',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminSegurancaRoute =
+  AuthenticatedAdminSegurancaRouteImport.update({
+    id: '/admin/seguranca',
+    path: '/admin/seguranca',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedAdminSiteRoute = AuthenticatedAdminSiteRouteImport.update({
   id: '/admin/site',
   path: '/admin/site',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedAdminTreinamentosRoute =
+  AuthenticatedAdminTreinamentosRouteImport.update({
+    id: '/admin/treinamentos',
+    path: '/admin/treinamentos',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedAdminUsuariosRoute =
   AuthenticatedAdminUsuariosRouteImport.update({
     id: '/admin/usuarios',
@@ -161,6 +208,7 @@ export interface FileRoutesByFullPath {
   '/llms.txt': typeof LlmsDottxtRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/seja-revenda': typeof SejaRevendaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
@@ -170,9 +218,15 @@ export interface FileRoutesByFullPath {
   '/produtos/': typeof ProdutosIndexRoute
   '/admin/analytics': typeof AuthenticatedAdminAnalyticsRoute
   '/admin/banners': typeof AuthenticatedAdminBannersRoute
+  '/admin/cotacoes': typeof AuthenticatedAdminCotacoesRoute
+  '/admin/depoimentos': typeof AuthenticatedAdminDepoimentosRoute
   '/admin/integracoes': typeof AuthenticatedAdminIntegracoesRoute
   '/admin/leads': typeof AuthenticatedAdminLeadsRoute
+  '/admin/midia': typeof AuthenticatedAdminMidiaRoute
+  '/admin/revendas': typeof AuthenticatedAdminRevendasRoute
+  '/admin/seguranca': typeof AuthenticatedAdminSegurancaRoute
   '/admin/site': typeof AuthenticatedAdminSiteRoute
+  '/admin/treinamentos': typeof AuthenticatedAdminTreinamentosRoute
   '/admin/usuarios': typeof AuthenticatedAdminUsuariosRoute
   '/admin/': typeof AuthenticatedAdminIndexRoute
   '/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
@@ -185,6 +239,7 @@ export interface FileRoutesByTo {
   '/llms.txt': typeof LlmsDottxtRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/seja-revenda': typeof SejaRevendaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
@@ -194,9 +249,15 @@ export interface FileRoutesByTo {
   '/produtos': typeof ProdutosIndexRoute
   '/admin/analytics': typeof AuthenticatedAdminAnalyticsRoute
   '/admin/banners': typeof AuthenticatedAdminBannersRoute
+  '/admin/cotacoes': typeof AuthenticatedAdminCotacoesRoute
+  '/admin/depoimentos': typeof AuthenticatedAdminDepoimentosRoute
   '/admin/integracoes': typeof AuthenticatedAdminIntegracoesRoute
   '/admin/leads': typeof AuthenticatedAdminLeadsRoute
+  '/admin/midia': typeof AuthenticatedAdminMidiaRoute
+  '/admin/revendas': typeof AuthenticatedAdminRevendasRoute
+  '/admin/seguranca': typeof AuthenticatedAdminSegurancaRoute
   '/admin/site': typeof AuthenticatedAdminSiteRoute
+  '/admin/treinamentos': typeof AuthenticatedAdminTreinamentosRoute
   '/admin/usuarios': typeof AuthenticatedAdminUsuariosRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
   '/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
@@ -211,6 +272,7 @@ export interface FileRoutesById {
   '/llms.txt': typeof LlmsDottxtRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/seja-revenda': typeof SejaRevendaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
@@ -220,9 +282,15 @@ export interface FileRoutesById {
   '/produtos/': typeof ProdutosIndexRoute
   '/_authenticated/admin/analytics': typeof AuthenticatedAdminAnalyticsRoute
   '/_authenticated/admin/banners': typeof AuthenticatedAdminBannersRoute
+  '/_authenticated/admin/cotacoes': typeof AuthenticatedAdminCotacoesRoute
+  '/_authenticated/admin/depoimentos': typeof AuthenticatedAdminDepoimentosRoute
   '/_authenticated/admin/integracoes': typeof AuthenticatedAdminIntegracoesRoute
   '/_authenticated/admin/leads': typeof AuthenticatedAdminLeadsRoute
+  '/_authenticated/admin/midia': typeof AuthenticatedAdminMidiaRoute
+  '/_authenticated/admin/revendas': typeof AuthenticatedAdminRevendasRoute
+  '/_authenticated/admin/seguranca': typeof AuthenticatedAdminSegurancaRoute
   '/_authenticated/admin/site': typeof AuthenticatedAdminSiteRoute
+  '/_authenticated/admin/treinamentos': typeof AuthenticatedAdminTreinamentosRoute
   '/_authenticated/admin/usuarios': typeof AuthenticatedAdminUsuariosRoute
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
   '/_authenticated/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
@@ -237,6 +305,7 @@ export interface FileRouteTypes {
     | '/llms.txt'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/seja-revenda'
     | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
@@ -246,9 +315,15 @@ export interface FileRouteTypes {
     | '/produtos/'
     | '/admin/analytics'
     | '/admin/banners'
+    | '/admin/cotacoes'
+    | '/admin/depoimentos'
     | '/admin/integracoes'
     | '/admin/leads'
+    | '/admin/midia'
+    | '/admin/revendas'
+    | '/admin/seguranca'
     | '/admin/site'
+    | '/admin/treinamentos'
     | '/admin/usuarios'
     | '/admin/'
     | '/admin/blog/$id'
@@ -261,6 +336,7 @@ export interface FileRouteTypes {
     | '/llms.txt'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/seja-revenda'
     | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
@@ -270,9 +346,15 @@ export interface FileRouteTypes {
     | '/produtos'
     | '/admin/analytics'
     | '/admin/banners'
+    | '/admin/cotacoes'
+    | '/admin/depoimentos'
     | '/admin/integracoes'
     | '/admin/leads'
+    | '/admin/midia'
+    | '/admin/revendas'
+    | '/admin/seguranca'
     | '/admin/site'
+    | '/admin/treinamentos'
     | '/admin/usuarios'
     | '/admin'
     | '/admin/blog/$id'
@@ -286,6 +368,7 @@ export interface FileRouteTypes {
     | '/llms.txt'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/seja-revenda'
     | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
@@ -295,9 +378,15 @@ export interface FileRouteTypes {
     | '/produtos/'
     | '/_authenticated/admin/analytics'
     | '/_authenticated/admin/banners'
+    | '/_authenticated/admin/cotacoes'
+    | '/_authenticated/admin/depoimentos'
     | '/_authenticated/admin/integracoes'
     | '/_authenticated/admin/leads'
+    | '/_authenticated/admin/midia'
+    | '/_authenticated/admin/revendas'
+    | '/_authenticated/admin/seguranca'
     | '/_authenticated/admin/site'
+    | '/_authenticated/admin/treinamentos'
     | '/_authenticated/admin/usuarios'
     | '/_authenticated/admin/'
     | '/_authenticated/admin/blog/$id'
@@ -312,6 +401,7 @@ export interface RootRouteChildren {
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   OndeComprarRoute: typeof OndeComprarRoute
   PorQueHprtRoute: typeof PorQueHprtRoute
+  SejaRevendaRoute: typeof SejaRevendaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolucoesRoute: typeof SolucoesRoute
   TreinamentosRoute: typeof TreinamentosRoute
@@ -370,6 +460,13 @@ declare module '@tanstack/react-router' {
       path: '/por-que-hprt'
       fullPath: '/por-que-hprt'
       preLoaderRoute: typeof PorQueHprtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seja-revenda': {
+      id: '/seja-revenda'
+      path: '/seja-revenda'
+      fullPath: '/seja-revenda'
+      preLoaderRoute: typeof SejaRevendaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -442,6 +539,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminBannersRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin/cotacoes': {
+      id: '/_authenticated/admin/cotacoes'
+      path: '/admin/cotacoes'
+      fullPath: '/admin/cotacoes'
+      preLoaderRoute: typeof AuthenticatedAdminCotacoesRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/depoimentos': {
+      id: '/_authenticated/admin/depoimentos'
+      path: '/admin/depoimentos'
+      fullPath: '/admin/depoimentos'
+      preLoaderRoute: typeof AuthenticatedAdminDepoimentosRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/admin/integracoes': {
       id: '/_authenticated/admin/integracoes'
       path: '/admin/integracoes'
@@ -456,11 +567,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminLeadsRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin/midia': {
+      id: '/_authenticated/admin/midia'
+      path: '/admin/midia'
+      fullPath: '/admin/midia'
+      preLoaderRoute: typeof AuthenticatedAdminMidiaRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/revendas': {
+      id: '/_authenticated/admin/revendas'
+      path: '/admin/revendas'
+      fullPath: '/admin/revendas'
+      preLoaderRoute: typeof AuthenticatedAdminRevendasRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/seguranca': {
+      id: '/_authenticated/admin/seguranca'
+      path: '/admin/seguranca'
+      fullPath: '/admin/seguranca'
+      preLoaderRoute: typeof AuthenticatedAdminSegurancaRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/admin/site': {
       id: '/_authenticated/admin/site'
       path: '/admin/site'
       fullPath: '/admin/site'
       preLoaderRoute: typeof AuthenticatedAdminSiteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/treinamentos': {
+      id: '/_authenticated/admin/treinamentos'
+      path: '/admin/treinamentos'
+      fullPath: '/admin/treinamentos'
+      preLoaderRoute: typeof AuthenticatedAdminTreinamentosRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/admin/usuarios': {
@@ -490,9 +629,15 @@ declare module '@tanstack/react-router' {
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedAdminAnalyticsRoute: typeof AuthenticatedAdminAnalyticsRoute
   AuthenticatedAdminBannersRoute: typeof AuthenticatedAdminBannersRoute
+  AuthenticatedAdminCotacoesRoute: typeof AuthenticatedAdminCotacoesRoute
+  AuthenticatedAdminDepoimentosRoute: typeof AuthenticatedAdminDepoimentosRoute
   AuthenticatedAdminIntegracoesRoute: typeof AuthenticatedAdminIntegracoesRoute
   AuthenticatedAdminLeadsRoute: typeof AuthenticatedAdminLeadsRoute
+  AuthenticatedAdminMidiaRoute: typeof AuthenticatedAdminMidiaRoute
+  AuthenticatedAdminRevendasRoute: typeof AuthenticatedAdminRevendasRoute
+  AuthenticatedAdminSegurancaRoute: typeof AuthenticatedAdminSegurancaRoute
   AuthenticatedAdminSiteRoute: typeof AuthenticatedAdminSiteRoute
+  AuthenticatedAdminTreinamentosRoute: typeof AuthenticatedAdminTreinamentosRoute
   AuthenticatedAdminUsuariosRoute: typeof AuthenticatedAdminUsuariosRoute
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
   AuthenticatedAdminBlogIdRoute: typeof AuthenticatedAdminBlogIdRoute
@@ -502,9 +647,15 @@ interface AuthenticatedRouteRouteChildren {
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedAdminAnalyticsRoute: AuthenticatedAdminAnalyticsRoute,
   AuthenticatedAdminBannersRoute: AuthenticatedAdminBannersRoute,
+  AuthenticatedAdminCotacoesRoute: AuthenticatedAdminCotacoesRoute,
+  AuthenticatedAdminDepoimentosRoute: AuthenticatedAdminDepoimentosRoute,
   AuthenticatedAdminIntegracoesRoute: AuthenticatedAdminIntegracoesRoute,
   AuthenticatedAdminLeadsRoute: AuthenticatedAdminLeadsRoute,
+  AuthenticatedAdminMidiaRoute: AuthenticatedAdminMidiaRoute,
+  AuthenticatedAdminRevendasRoute: AuthenticatedAdminRevendasRoute,
+  AuthenticatedAdminSegurancaRoute: AuthenticatedAdminSegurancaRoute,
   AuthenticatedAdminSiteRoute: AuthenticatedAdminSiteRoute,
+  AuthenticatedAdminTreinamentosRoute: AuthenticatedAdminTreinamentosRoute,
   AuthenticatedAdminUsuariosRoute: AuthenticatedAdminUsuariosRoute,
   AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
   AuthenticatedAdminBlogIdRoute: AuthenticatedAdminBlogIdRoute,
@@ -522,6 +673,7 @@ const rootRouteChildren: RootRouteChildren = {
   LlmsDottxtRoute: LlmsDottxtRoute,
   OndeComprarRoute: OndeComprarRoute,
   PorQueHprtRoute: PorQueHprtRoute,
+  SejaRevendaRoute: SejaRevendaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolucoesRoute: SolucoesRoute,
   TreinamentosRoute: TreinamentosRoute,

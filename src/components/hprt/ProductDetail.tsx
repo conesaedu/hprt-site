@@ -1,3 +1,4 @@
+import { QuoteButton } from "@/components/hprt/QuoteDialog";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Download, ArrowRight, ArrowUpRight, GraduationCap, Check } from "lucide-react";
@@ -64,13 +65,14 @@ function ProductHero({ product }: { product: Product }) {
             ) : null}
 
             <div className="flex flex-wrap gap-3">
-              <a
-                href="/onde-comprar"
+              <QuoteButton
+                slug={product.slug}
+                name={product.name}
                 className="inline-flex items-center gap-2 rounded-sm bg-signal px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-[transform,background-color] hover:-translate-y-px hover:bg-signal-soft"
               >
                 Solicitar orçamento
                 <ArrowRight className="size-4" />
-              </a>
+              </QuoteButton>
               <a
                 href="#especificacoes"
                 className="inline-flex items-center gap-2 rounded-sm border border-on-ink/25 px-6 py-3.5 text-sm font-semibold text-on-ink transition-colors hover:border-on-ink"

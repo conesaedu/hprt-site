@@ -10,3 +10,5 @@
 <!-- LOVABLE:END -->
 - Admin CMS pages (banners, blog, settings, analytics) talk to the DB via the browser Supabase client and rely on RLS `has_role(admin)`; user management uses server fns with supabaseAdmin. Why: RLS is the single gate, privileged auth work stays server-side.
 - Public analytics/pop-ups/announcement bar live in `SiteRuntime` mounted once in __root; Supabase query builders are lazy, so fire-and-forget inserts must call `.then()`.
+- Public site assistant calls Lovable AI via a server fn (`src/lib/assistant.functions.ts`) with the product summary as context. Why: keeps the API key server-side and answers grounded in the real catalog.
+- Lead-like inboxes (reseller applications, quote requests) share `InboxPage`; admin-table changes are audited by the `log_admin_change` trigger into `audit_log`. Why: one pattern for status/notes/WhatsApp, and a change history without app code.

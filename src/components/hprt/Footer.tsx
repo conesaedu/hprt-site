@@ -18,6 +18,7 @@ const cols = [
       { label: "Soluções por setor", href: "/solucoes" },
       { label: "Treinamentos", href: "/treinamentos" },
       { label: "Onde comprar", href: "/onde-comprar" },
+      { label: "Seja revenda", href: "/seja-revenda" },
     ],
   },
   {
