@@ -15,6 +15,13 @@
       "when": 1794616776836,
       "tag": "0001_first_user_admin",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794617448916,
+      "tag": "0002_admin_portal_modules",
+      "breakpoints": true
     }
   ]
 }

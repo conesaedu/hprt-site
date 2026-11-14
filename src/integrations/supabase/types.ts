@@ -14,6 +14,105 @@ export type Database = {
   }
   public: {
     Tables: {
+      banners: {
+        Row: {
+          created_at: string
+          cta_label: string | null
+          cta_url: string | null
+          end_at: string | null
+          frequency: string
+          id: string
+          image_url: string | null
+          is_active: boolean
+          pages: string[]
+          sort_order: number
+          start_at: string | null
+          subtitle: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          cta_label?: string | null
+          cta_url?: string | null
+          end_at?: string | null
+          frequency?: string
+          id?: string
+          image_url?: string | null
+          is_active?: boolean
+          pages?: string[]
+          sort_order?: number
+          start_at?: string | null
+          subtitle?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          cta_label?: string | null
+          cta_url?: string | null
+          end_at?: string | null
+          frequency?: string
+          id?: string
+          image_url?: string | null
+          is_active?: boolean
+          pages?: string[]
+          sort_order?: number
+          start_at?: string | null
+          subtitle?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      blog_posts: {
+        Row: {
+          category: string | null
+          content: string
+          cover_url: string | null
+          created_at: string
+          excerpt: string | null
+          id: string
+          published_at: string | null
+          seo_description: string | null
+          seo_title: string | null
+          slug: string
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string | null
+          content?: string
+          cover_url?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          published_at?: string | null
+          seo_description?: string | null
+          seo_title?: string | null
+          slug: string
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string | null
+          content?: string
+          cover_url?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          published_at?: string | null
+          seo_description?: string | null
+          seo_title?: string | null
+          slug?: string
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       contact_leads: {
         Row: {
           company: string
@@ -65,6 +164,57 @@ export type Database = {
           status?: string
           updated_at?: string
           volume?: string | null
+        }
+        Relationships: []
+      }
+      site_events: {
+        Row: {
+          created_at: string
+          device: string | null
+          event: string
+          id: number
+          label: string | null
+          path: string | null
+          referrer: string | null
+          session_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          device?: string | null
+          event: string
+          id?: never
+          label?: string | null
+          path?: string | null
+          referrer?: string | null
+          session_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          device?: string | null
+          event?: string
+          id?: never
+          label?: string | null
+          path?: string | null
+          referrer?: string | null
+          session_id?: string | null
+        }
+        Relationships: []
+      }
+      site_settings: {
+        Row: {
+          key: string
+          updated_at: string
+          value: Json
+        }
+        Insert: {
+          key: string
+          updated_at?: string
+          value?: Json
+        }
+        Update: {
+          key?: string
+          updated_at?: string
+          value?: Json
         }
         Relationships: []
       }

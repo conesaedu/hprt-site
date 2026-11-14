@@ -8,8 +8,13 @@ import { getAdminStatus } from "@/lib/admin.functions";
 const nav = [
   { to: "/admin", label: "Visão geral", ready: true },
   { to: "/admin/leads", label: "Leads", ready: true },
+  { to: "/admin/analytics", label: "Analytics", ready: true },
+  { to: "/admin/banners", label: "Pop-ups e banners", ready: true },
+  { to: "/admin/blog", label: "Blog", ready: true },
+  { to: "/admin/site", label: "Personalizar site", ready: true },
+  { to: "/admin/usuarios", label: "Usuários", ready: true },
+  { to: "/admin/integracoes", label: "Integrações", ready: true },
 ] as const;
-const soon = ["Banners e pop-ups", "Blog", "Analytics", "Integrações (RVOPS)"];
 
 export function AdminShell({ children }: { children: ReactNode }) {
   const fetchStatus = useServerFn(getAdminStatus);
@@ -31,14 +36,13 @@ export function AdminShell({ children }: { children: ReactNode }) {
         </div>
         <nav className="flex-1 p-3 space-y-1">
           {nav.map((n) => (
-            <Link key={n.to} to={n.to} activeOptions={{ exact: true }}
+            <Link key={n.to} to={n.to} activeOptions={{ exact: n.to === "/admin" }}
               className="block px-3 py-2 text-sm hover:bg-background/10"
               activeProps={{ className: "block px-3 py-2 text-sm bg-primary text-primary-foreground" }}>
               {n.label}
             </Link>
           ))}
-          <p className="px-3 pt-5 pb-1 text-xs uppercase tracking-wider text-background/50">Em breve</p>
-          {soon.map((s) => <p key={s} className="px-3 py-2 text-sm text-background/40">{s}</p>)}
+          <a href="/" target="_blank" rel="noreferrer" className="mt-5 block px-3 py-2 text-sm text-background/60 hover:text-background">Ver site ↗</a>
         </nav>
         <div className="p-4 border-t border-background/10 text-xs space-y-2">
           <p className="truncate text-background/60">{status.data?.email}</p>

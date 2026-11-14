@@ -11,6 +11,7 @@ const staticPaths = [
   "/onde-comprar",
   "/treinamentos",
   "/downloads",
+  "/blog",
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
