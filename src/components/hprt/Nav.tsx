@@ -10,6 +10,7 @@ const links = [
   { href: "/solucoes", label: "Soluções" },
   { href: "/treinamentos", label: "Treinamentos" },
   { href: "/downloads", label: "Downloads" },
+  { href: "/blog", label: "Blog" },
   { href: "/onde-comprar", label: "Onde comprar" },
 ];
 
