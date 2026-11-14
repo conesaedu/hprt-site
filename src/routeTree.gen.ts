@@ -16,6 +16,7 @@ import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as OndeComprarRouteImport } from './routes/onde-comprar'
 import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
+import { Route as SejaRevendaRouteImport } from './routes/seja-revenda'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as TreinamentosRouteImport } from './routes/treinamentos'
@@ -71,6 +72,11 @@ const OndeComprarRoute = OndeComprarRouteImport.update({
 const PorQueHprtRoute = PorQueHprtRouteImport.update({
   id: '/por-que-hprt',
   path: '/por-que-hprt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SejaRevendaRoute = SejaRevendaRouteImport.update({
+  id: '/seja-revenda',
+  path: '/seja-revenda',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -202,6 +208,7 @@ export interface FileRoutesByFullPath {
   '/llms.txt': typeof LlmsDottxtRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/seja-revenda': typeof SejaRevendaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
@@ -232,6 +239,7 @@ export interface FileRoutesByTo {
   '/llms.txt': typeof LlmsDottxtRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/seja-revenda': typeof SejaRevendaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
@@ -264,6 +272,7 @@ export interface FileRoutesById {
   '/llms.txt': typeof LlmsDottxtRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/seja-revenda': typeof SejaRevendaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
@@ -296,6 +305,7 @@ export interface FileRouteTypes {
     | '/llms.txt'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/seja-revenda'
     | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
@@ -326,6 +336,7 @@ export interface FileRouteTypes {
     | '/llms.txt'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/seja-revenda'
     | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
@@ -357,6 +368,7 @@ export interface FileRouteTypes {
     | '/llms.txt'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/seja-revenda'
     | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
@@ -389,6 +401,7 @@ export interface RootRouteChildren {
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   OndeComprarRoute: typeof OndeComprarRoute
   PorQueHprtRoute: typeof PorQueHprtRoute
+  SejaRevendaRoute: typeof SejaRevendaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolucoesRoute: typeof SolucoesRoute
   TreinamentosRoute: typeof TreinamentosRoute
@@ -447,6 +460,13 @@ declare module '@tanstack/react-router' {
       path: '/por-que-hprt'
       fullPath: '/por-que-hprt'
       preLoaderRoute: typeof PorQueHprtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seja-revenda': {
+      id: '/seja-revenda'
+      path: '/seja-revenda'
+      fullPath: '/seja-revenda'
+      preLoaderRoute: typeof SejaRevendaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -653,6 +673,7 @@ const rootRouteChildren: RootRouteChildren = {
   LlmsDottxtRoute: LlmsDottxtRoute,
   OndeComprarRoute: OndeComprarRoute,
   PorQueHprtRoute: PorQueHprtRoute,
+  SejaRevendaRoute: SejaRevendaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolucoesRoute: SolucoesRoute,
   TreinamentosRoute: TreinamentosRoute,
