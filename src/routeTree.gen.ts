@@ -22,7 +22,10 @@ import { Route as TreinamentosRouteImport } from './routes/treinamentos'
 import { Route as ProdutosIndexRouteImport } from './routes/produtos.index'
 import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
+import { Route as AuthenticatedAdminBannersRouteImport } from './routes/_authenticated/admin.banners'
 import { Route as AuthenticatedAdminLeadsRouteImport } from './routes/_authenticated/admin.leads'
+import { Route as AuthenticatedAdminBlogIndexRouteImport } from './routes/_authenticated/admin.blog.index'
+import { Route as AuthenticatedAdminBlogIdRouteImport } from './routes/_authenticated/admin.blog.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -88,11 +91,29 @@ const AuthenticatedAdminIndexRoute = AuthenticatedAdminIndexRouteImport.update({
   path: '/admin/',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedAdminBannersRoute =
+  AuthenticatedAdminBannersRouteImport.update({
+    id: '/admin/banners',
+    path: '/admin/banners',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedAdminLeadsRoute = AuthenticatedAdminLeadsRouteImport.update({
   id: '/admin/leads',
   path: '/admin/leads',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedAdminBlogIndexRoute =
+  AuthenticatedAdminBlogIndexRouteImport.update({
+    id: '/admin/blog/',
+    path: '/admin/blog/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminBlogIdRoute =
+  AuthenticatedAdminBlogIdRouteImport.update({
+    id: '/admin/blog/$id',
+    path: '/admin/blog/$id',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -106,8 +127,11 @@ export interface FileRoutesByFullPath {
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos/': typeof ProdutosIndexRoute
+  '/admin/banners': typeof AuthenticatedAdminBannersRoute
   '/admin/leads': typeof AuthenticatedAdminLeadsRoute
   '/admin/': typeof AuthenticatedAdminIndexRoute
+  '/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
+  '/admin/blog/': typeof AuthenticatedAdminBlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -121,8 +145,11 @@ export interface FileRoutesByTo {
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos': typeof ProdutosIndexRoute
+  '/admin/banners': typeof AuthenticatedAdminBannersRoute
   '/admin/leads': typeof AuthenticatedAdminLeadsRoute
   '/admin': typeof AuthenticatedAdminIndexRoute
+  '/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
+  '/admin/blog': typeof AuthenticatedAdminBlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -138,8 +165,11 @@ export interface FileRoutesById {
   '/treinamentos': typeof TreinamentosRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/produtos/': typeof ProdutosIndexRoute
+  '/_authenticated/admin/banners': typeof AuthenticatedAdminBannersRoute
   '/_authenticated/admin/leads': typeof AuthenticatedAdminLeadsRoute
   '/_authenticated/admin/': typeof AuthenticatedAdminIndexRoute
+  '/_authenticated/admin/blog/$id': typeof AuthenticatedAdminBlogIdRoute
+  '/_authenticated/admin/blog/': typeof AuthenticatedAdminBlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -155,8 +185,11 @@ export interface FileRouteTypes {
     | '/treinamentos'
     | '/produtos/$slug'
     | '/produtos/'
+    | '/admin/banners'
     | '/admin/leads'
     | '/admin/'
+    | '/admin/blog/$id'
+    | '/admin/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -170,8 +203,11 @@ export interface FileRouteTypes {
     | '/treinamentos'
     | '/produtos/$slug'
     | '/produtos'
+    | '/admin/banners'
     | '/admin/leads'
     | '/admin'
+    | '/admin/blog/$id'
+    | '/admin/blog'
   id:
     | '__root__'
     | '/'
@@ -186,8 +222,11 @@ export interface FileRouteTypes {
     | '/treinamentos'
     | '/produtos/$slug'
     | '/produtos/'
+    | '/_authenticated/admin/banners'
     | '/_authenticated/admin/leads'
     | '/_authenticated/admin/'
+    | '/_authenticated/admin/blog/$id'
+    | '/_authenticated/admin/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -298,6 +337,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin/banners': {
+      id: '/_authenticated/admin/banners'
+      path: '/admin/banners'
+      fullPath: '/admin/banners'
+      preLoaderRoute: typeof AuthenticatedAdminBannersRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/admin/leads': {
       id: '/_authenticated/admin/leads'
       path: '/admin/leads'
@@ -305,17 +351,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminLeadsRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin/blog/': {
+      id: '/_authenticated/admin/blog/'
+      path: '/admin/blog'
+      fullPath: '/admin/blog/'
+      preLoaderRoute: typeof AuthenticatedAdminBlogIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/blog/$id': {
+      id: '/_authenticated/admin/blog/$id'
+      path: '/admin/blog/$id'
+      fullPath: '/admin/blog/$id'
+      preLoaderRoute: typeof AuthenticatedAdminBlogIdRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
 interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminBannersRoute: typeof AuthenticatedAdminBannersRoute
   AuthenticatedAdminLeadsRoute: typeof AuthenticatedAdminLeadsRoute
   AuthenticatedAdminIndexRoute: typeof AuthenticatedAdminIndexRoute
+  AuthenticatedAdminBlogIdRoute: typeof AuthenticatedAdminBlogIdRoute
+  AuthenticatedAdminBlogIndexRoute: typeof AuthenticatedAdminBlogIndexRoute
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminBannersRoute: AuthenticatedAdminBannersRoute,
   AuthenticatedAdminLeadsRoute: AuthenticatedAdminLeadsRoute,
   AuthenticatedAdminIndexRoute: AuthenticatedAdminIndexRoute,
+  AuthenticatedAdminBlogIdRoute: AuthenticatedAdminBlogIdRoute,
+  AuthenticatedAdminBlogIndexRoute: AuthenticatedAdminBlogIndexRoute,
 }
 
 const AuthenticatedRouteRouteWithChildren =

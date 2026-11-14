@@ -85,7 +85,7 @@ function Editor() {
             <Field label={`Descrição SEO (${seoD.length}/160)`}><textarea rows={3} className={field} value={f.seo_description} onChange={(e) => set({ seo_description: e.target.value })} placeholder={f.excerpt} /></Field>
             <div className="border border-border p-3">
               <p className="text-xs text-muted-foreground">hprtbrasil.com.br › blog › {slugify(f.slug || f.title)}</p>
-              <p className="truncate text-base text-[color:var(--color-primary)]">{seoT.slice(0, 60)}</p>
+              <p className="truncate text-base text-primary">{seoT.slice(0, 60)}</p>
               <p className="line-clamp-2 text-xs text-muted-foreground">{seoD.slice(0, 160) || "Sem descrição."}</p>
             </div>
           </div>
