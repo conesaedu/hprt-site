@@ -8,6 +8,13 @@
       "when": 1794519508036,
       "tag": "0000_admin_roles_leads",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794616776836,
+      "tag": "0001_first_user_admin",
+      "breakpoints": true
     }
   ]
 }
