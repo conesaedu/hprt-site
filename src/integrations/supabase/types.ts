@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      audit_log: {
+        Row: {
+          action: string
+          created_at: string
+          id: string
+          record_id: string | null
+          table_name: string
+          user_id: string | null
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          id?: string
+          record_id?: string | null
+          table_name: string
+          user_id?: string | null
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          id?: string
+          record_id?: string | null
+          table_name?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       banners: {
         Row: {
           created_at: string
@@ -167,6 +194,108 @@ export type Database = {
         }
         Relationships: []
       }
+      quote_requests: {
+        Row: {
+          company: string
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          name: string
+          notes: string | null
+          phone: string
+          product_name: string | null
+          product_slug: string | null
+          quantity: number | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          name: string
+          notes?: string | null
+          phone: string
+          product_name?: string | null
+          product_slug?: string | null
+          quantity?: number | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          name?: string
+          notes?: string | null
+          phone?: string
+          product_name?: string | null
+          product_slug?: string | null
+          quantity?: number | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      reseller_applications: {
+        Row: {
+          city: string | null
+          cnpj: string | null
+          company: string
+          contact_name: string
+          created_at: string
+          email: string
+          id: string
+          message: string | null
+          monthly_volume: string | null
+          notes: string | null
+          phone: string
+          segment: string | null
+          state: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          city?: string | null
+          cnpj?: string | null
+          company: string
+          contact_name: string
+          created_at?: string
+          email: string
+          id?: string
+          message?: string | null
+          monthly_volume?: string | null
+          notes?: string | null
+          phone: string
+          segment?: string | null
+          state?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          city?: string | null
+          cnpj?: string | null
+          company?: string
+          contact_name?: string
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string | null
+          monthly_volume?: string | null
+          notes?: string | null
+          phone?: string
+          segment?: string | null
+          state?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       site_events: {
         Row: {
           created_at: string
@@ -215,6 +344,42 @@ export type Database = {
           key?: string
           updated_at?: string
           value?: Json
+        }
+        Relationships: []
+      }
+      testimonials: {
+        Row: {
+          author: string
+          company: string
+          created_at: string
+          id: string
+          is_active: boolean
+          logo_url: string | null
+          quote: string
+          role: string | null
+          sort_order: number
+        }
+        Insert: {
+          author: string
+          company: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          logo_url?: string | null
+          quote: string
+          role?: string | null
+          sort_order?: number
+        }
+        Update: {
+          author?: string
+          company?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          logo_url?: string | null
+          quote?: string
+          role?: string | null
+          sort_order?: number
         }
         Relationships: []
       }
