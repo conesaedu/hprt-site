@@ -19,6 +19,8 @@ import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as TreinamentosRouteImport } from './routes/treinamentos'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ProdutosIndexRouteImport } from './routes/produtos.index'
 import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
@@ -78,6 +80,16 @@ const SolucoesRoute = SolucoesRouteImport.update({
 const TreinamentosRoute = TreinamentosRouteImport.update({
   id: '/treinamentos',
   path: '/treinamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProdutosIndexRoute = ProdutosIndexRouteImport.update({
@@ -152,7 +164,9 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
+  '/blog/': typeof BlogIndexRoute
   '/produtos/': typeof ProdutosIndexRoute
   '/admin/analytics': typeof AuthenticatedAdminAnalyticsRoute
   '/admin/banners': typeof AuthenticatedAdminBannersRoute
@@ -174,7 +188,9 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
+  '/blog': typeof BlogIndexRoute
   '/produtos': typeof ProdutosIndexRoute
   '/admin/analytics': typeof AuthenticatedAdminAnalyticsRoute
   '/admin/banners': typeof AuthenticatedAdminBannersRoute
@@ -198,7 +214,9 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
   '/treinamentos': typeof TreinamentosRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
+  '/blog/': typeof BlogIndexRoute
   '/produtos/': typeof ProdutosIndexRoute
   '/_authenticated/admin/analytics': typeof AuthenticatedAdminAnalyticsRoute
   '/_authenticated/admin/banners': typeof AuthenticatedAdminBannersRoute
@@ -222,7 +240,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
+    | '/blog/$slug'
     | '/produtos/$slug'
+    | '/blog/'
     | '/produtos/'
     | '/admin/analytics'
     | '/admin/banners'
@@ -244,7 +264,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
+    | '/blog/$slug'
     | '/produtos/$slug'
+    | '/blog'
     | '/produtos'
     | '/admin/analytics'
     | '/admin/banners'
@@ -267,7 +289,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/solucoes'
     | '/treinamentos'
+    | '/blog/$slug'
     | '/produtos/$slug'
+    | '/blog/'
     | '/produtos/'
     | '/_authenticated/admin/analytics'
     | '/_authenticated/admin/banners'
@@ -291,7 +315,9 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolucoesRoute: typeof SolucoesRoute
   TreinamentosRoute: typeof TreinamentosRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   ProdutosSlugRoute: typeof ProdutosSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   ProdutosIndexRoute: typeof ProdutosIndexRoute
 }
 
@@ -365,6 +391,20 @@ declare module '@tanstack/react-router' {
       path: '/treinamentos'
       fullPath: '/treinamentos'
       preLoaderRoute: typeof TreinamentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/produtos/': {
@@ -485,7 +525,9 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolucoesRoute: SolucoesRoute,
   TreinamentosRoute: TreinamentosRoute,
+  BlogSlugRoute: BlogSlugRoute,
   ProdutosSlugRoute: ProdutosSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
   ProdutosIndexRoute: ProdutosIndexRoute,
 }
 export const routeTree = rootRouteImport
