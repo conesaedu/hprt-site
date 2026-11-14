@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
 export const INBOX_STATUS: Record<string, string> = { novo: "Novo", em_contato: "Em contato", qualificado: "Qualificado", fechado: "Fechado", perdido: "Perdido" };
@@ -58,7 +58,7 @@ export function InboxPage({ table, title, intro, columns }: {
             {open === r.id && (
               <div className="mt-4 grid gap-4 md:grid-cols-2">
                 <dl className="grid grid-cols-[9rem_1fr] gap-1 text-sm">
-                  {columns.map((c) => <><dt key={c.key + "l"} className="text-muted-foreground">{c.label}</dt><dd key={c.key}>{String(r[c.key] ?? "—")}</dd></>)}
+                  {columns.map((c) => <Fragment key={c.key}><dt className="text-muted-foreground">{c.label}</dt><dd>{String(r[c.key] ?? "—")}</dd></Fragment>)}
                 </dl>
                 <textarea defaultValue={r.notes ?? ""} placeholder="Anotações internas" onBlur={(e) => e.target.value !== (r.notes ?? "") && upd.mutate({ id: r.id, patch: { notes: e.target.value } })}
                   className="min-h-28 border border-input bg-background p-3 text-sm" />
