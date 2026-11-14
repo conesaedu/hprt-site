@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouterState } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { Assistant } from "@/components/site/Assistant";
 
 type Banner = { id: string; title: string; subtitle: string | null; image_url: string | null; cta_label: string | null; cta_url: string | null; pages: string[]; frequency: string };
 type Bar = { enabled?: boolean; text?: string; link?: string };
@@ -76,6 +77,7 @@ export function SiteRuntime() {
   if (isPrivate) return null;
   return (
     <>
+      <Assistant />
       {bar?.enabled && bar.text && !barClosed && (
         <div className="fixed inset-x-0 bottom-0 z-40 bg-foreground text-background">
           <div className="wrap flex items-center justify-between gap-4 py-3 text-sm">

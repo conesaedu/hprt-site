@@ -1,0 +1,27 @@
+import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
+import { productSummaries } from "@/lib/products/summary";
+
+const input = z.object({ messages: z.array(z.object({ role: z.enum(["user", "assistant"]), content: z.string().min(1).max(2000) })).min(1).max(20) });
+
+const SYSTEM = `Você é o assistente técnico-comercial da HPRT Brasil (distribuição oficial pela Cogra). Responda em português do Brasil, de forma objetiva, B2B e respeitosa, em até 120 palavras.
+Ajude a escolher o equipamento certo pela aplicação (volume, ambiente, largura de etiqueta, mobilidade). Recomende só modelos da lista abaixo e sempre inclua o link /produtos/<slug>.
+Não invente preços, prazos ou especificações que não estejam na lista; para preço, estoque ou proposta, direcione para /onde-comprar ou WhatsApp (11) 99542-2785. Revendas: /seja-revenda. Drivers: /downloads. Treinamentos: /treinamentos.
+Catálogo:
+${productSummaries.map((p) => `- ${p.name} (/produtos/${p.slug}) · ${p.categoryLabel} · ${p.tagline} · ${p.spec}`).join("\n")}`;
+
+/** Public product assistant backed by Lovable AI. */
+export const askAssistant = createServerFn({ method: "POST" })
+  .inputValidator((d: unknown) => input.parse(d))
+  .handler(async ({ data }) => {
+    const key = process.env.LOVABLE_API_KEY;
+    if (!key) return { reply: "O assistente está indisponível agora. Fale com um especialista em /onde-comprar." };
+    const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+      method: "POST", headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "google/gemini-3-flash-preview", messages: [{ role: "system", content: SYSTEM }, ...data.messages] }),
+    });
+    if (res.status === 429) return { reply: "Muitas perguntas em sequência. Tente de novo em alguns segundos." };
+    if (!res.ok) return { reply: "Não consegui responder agora. Fale com um especialista em /onde-comprar." };
+    const j = (await res.json()) as { choices?: { message?: { content?: string } }[] };
+    return { reply: j.choices?.[0]?.message?.content?.trim() || "Pode reformular a pergunta?" };
+  });
