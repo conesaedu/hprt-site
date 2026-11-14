@@ -16,10 +16,26 @@ export const askAssistant = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const key = process.env.LOVABLE_API_KEY;
     if (!key) return { reply: "O assistente está indisponível agora. Fale com um especialista em /onde-comprar." };
-    const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-      method: "POST", headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ model: "google/gemini-3-flash-preview", messages: [{ role: "system", content: SYSTEM }, ...data.messages] }),
+    const res = await fetch("https://ai.gateway.lovable.dev/v1/responses", {
+      method: "POST",
+      headers: { "Lovable-API-Key": key, Authorization: `Bearer ${key}`, "X-Lovable-AIG-SDK": "fetch", "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "openai/gpt-6-astra", instructions: SYSTEM, input: data.messages, reasoning: { effort: "low" }, store: false, stream: true }),
     });
+    if (res.status === 429) return { reply: "Muitas perguntas em sequência. Tente de novo em alguns segundos." };
+    if (!res.ok || !res.body) return { reply: "Não consegui responder agora. Fale com um especialista em /onde-comprar." };
+    // Consume the SSE stream and accumulate the answer text.
+    const reader = res.body.getReader(); const dec = new TextDecoder(); let buf = ""; let out = "";
+    for (;;) {
+      const { done, value } = await reader.read(); if (done) break;
+      buf += dec.decode(value, { stream: true });
+      const lines = buf.split("\n"); buf = lines.pop() ?? "";
+      for (const l of lines) {
+        if (!l.startsWith("data:")) continue;
+        try { const ev = JSON.parse(l.slice(5).trim()); if (ev.type === "response.output_text.delta") out += ev.delta; } catch { /* ignore non-JSON lines */ }
+      }
+    }
+    return { reply: out.trim() || "Pode reformular a pergunta?" };
+  });
     if (res.status === 429) return { reply: "Muitas perguntas em sequência. Tente de novo em alguns segundos." };
     if (!res.ok) return { reply: "Não consegui responder agora. Fale com um especialista em /onde-comprar." };
     const j = (await res.json()) as { choices?: { message?: { content?: string } }[] };
