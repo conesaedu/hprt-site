@@ -1,3 +1,4 @@
+import { Testimonials } from "@/components/hprt/Testimonials";
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/hprt/Nav";
 import { Footer } from "@/components/hprt/Footer";
@@ -57,6 +58,7 @@ function WhyPage() {
         <Stats />
         <Positioning hideHead />
         <GlobalTrust />
+        <Testimonials />
         <CtaStrip />
       </main>
       <Footer />
