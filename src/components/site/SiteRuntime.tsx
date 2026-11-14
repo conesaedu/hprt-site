@@ -18,7 +18,7 @@ export function track(event: string, label?: string) {
   void supabase.from("site_events").insert({
     event, label: label?.slice(0, 200) ?? null, path: location.pathname.slice(0, 300),
     session_id: sessionId(), referrer: document.referrer.slice(0, 300) || null, device: device(),
-  });
+  }).then(() => undefined); // query builders are lazy: .then() sends it
 }
 
 function canShow(b: Banner) {
