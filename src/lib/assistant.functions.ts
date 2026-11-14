@@ -36,8 +36,3 @@ export const askAssistant = createServerFn({ method: "POST" })
     }
     return { reply: out.trim() || "Pode reformular a pergunta?" };
   });
-    if (res.status === 429) return { reply: "Muitas perguntas em sequência. Tente de novo em alguns segundos." };
-    if (!res.ok) return { reply: "Não consegui responder agora. Fale com um especialista em /onde-comprar." };
-    const j = (await res.json()) as { choices?: { message?: { content?: string } }[] };
-    return { reply: j.choices?.[0]?.message?.content?.trim() || "Pode reformular a pergunta?" };
-  });
