@@ -1,6 +1,10 @@
 # Roadmap — HPRT Brasil
 
 ## Em aberto
+- [ ] Migração para a Hostinger — pacote pronto e testado (zip + passo a passo)
+  - Confirmar o plano da Hostinger: precisa de VPS (KVM / Cloud VPS); hospedagem de site comum não roda Node
+  - Subir o pacote, ligar o domínio hprtbrasil.com.br e o HTTPS
+  - Depois disso: adicionar o novo endereço como URL de redirecionamento permitida no login
 - [ ] Onboarding do time de marketing no portal (anunciado, ainda não iniciado)
   - Papel de **editor** (hoje só existe admin)
   - Fluxo de **aprovação de mudanças** (editor propõe, admin aprova) — modelo da Cogra
