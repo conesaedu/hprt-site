@@ -101,12 +101,13 @@ export const registerForTraining = createServerFn({ method: "POST" })
 
     if (insertError) throw insertError;
 
-    const { error: updateError } = await supabase
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { error: updateError } = await supabaseAdmin
       .from("trainings")
       .update({ spots: training.spots - 1 })
       .eq("id", data.trainingId);
 
-    if (updateError) throw updateError;
+    if (updateError) console.error("spots update failed", updateError);
 
     return { success: true };
   });
