@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/hprt-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 import { Btn } from "./ui";
 
@@ -38,7 +37,7 @@ export function Nav({ onDark = false }: { onDark?: boolean } = {}) {
     >
       <div className="wrap flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={logo.url} alt="HPRT Brasil" className="h-[26px] w-auto" />
+          <img src="/brand/hprt-logo.png" alt="HPRT Brasil" className="h-[26px] w-auto" />
         </Link>
         <nav className="hidden gap-9 md:flex">
           {links.map((l) => (

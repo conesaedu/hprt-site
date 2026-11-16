@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/hprt-logo.png.asset.json";
 
 const cols = [
   {
@@ -37,7 +36,7 @@ export function Footer() {
       <div className="wrap">
         <div className="mb-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <img src={logo.url} alt="HPRT Brasil" className="mb-3.5 h-6 w-auto" />
+            <img src="/brand/hprt-logo.png" alt="HPRT Brasil" className="mb-3.5 h-6 w-auto" />
             <p className="text-[0.84rem] leading-relaxed text-faint">
               Distribuição oficial HPRT no Brasil, operada por Cogra. Impressão térmica, captura de
               dados e identificação para operações de qualquer porte.
