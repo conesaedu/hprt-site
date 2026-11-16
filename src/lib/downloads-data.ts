@@ -6,6 +6,13 @@ import posDriver from "@/assets/downloads/HPRT_POS_Printer_Driver_v2.7.4.10.zip.
 import posUtility from "@/assets/downloads/HPRTUtilityForPOSSetup_V1.2.4.26.Test09.exe.7z.asset.json";
 import cpd80Driver from "@/assets/downloads/Novo_Driver_HPRT_CP-D80.zip.asset.json";
 
+/**
+ * Os arquivos de driver ficam guardados no Lovable. Aqui eles são apontados
+ * pelo endereço completo, para que o botão continue funcionando quando o site
+ * for servido por outro servidor (ex.: Hostinger).
+ */
+const ASSET_ORIGIN = "https://hprtbrasil.lovable.app";
+
 export type DownloadCategory = "Etiquetas e pulseiras" | "Cartões" | "Cupom / PDV";
 
 export type DownloadKind = "Driver" | "Utilitário" | "Software" | "Firmware";
@@ -52,7 +59,7 @@ export const downloads: DownloadItem[] = [
     kind: "Driver",
     os: "Windows",
     models: labelModels,
-    file: seagullDriver.url,
+    file: ASSET_ORIGIN + seagullDriver.url,
     format: "EXE",
     version: "12.0",
   },
@@ -65,7 +72,7 @@ export const downloads: DownloadItem[] = [
     kind: "Utilitário",
     os: "Windows",
     models: labelModels,
-    file: printerUtility.url,
+    file: ASSET_ORIGIN + printerUtility.url,
     format: "RAR",
     version: "1.0.0.32",
   },
@@ -78,7 +85,7 @@ export const downloads: DownloadItem[] = [
     kind: "Software",
     os: "Windows",
     models: labelModels,
-    file: bartender.url,
+    file: ASSET_ORIGIN + bartender.url,
     format: "ZIP",
     version: "BT2016_R6_3141_UL",
   },
@@ -91,7 +98,7 @@ export const downloads: DownloadItem[] = [
     kind: "Driver",
     os: "Windows",
     models: ["CP-D80"],
-    file: cpd80Driver.url,
+    file: ASSET_ORIGIN + cpd80Driver.url,
     format: "ZIP",
   },
   {
@@ -103,7 +110,7 @@ export const downloads: DownloadItem[] = [
     kind: "Utilitário",
     os: "Windows",
     models: ["CP-D80"],
-    file: cpd80Utility.url,
+    file: ASSET_ORIGIN + cpd80Utility.url,
     format: "ZIP",
   },
   {
@@ -115,7 +122,7 @@ export const downloads: DownloadItem[] = [
     kind: "Driver",
     os: "Windows",
     models: ["TP80K"],
-    file: posDriver.url,
+    file: ASSET_ORIGIN + posDriver.url,
     format: "ZIP",
     version: "2.7.4.10",
   },
@@ -128,7 +135,7 @@ export const downloads: DownloadItem[] = [
     kind: "Utilitário",
     os: "Windows",
     models: ["TP80K"],
-    file: posUtility.url,
+    file: ASSET_ORIGIN + posUtility.url,
     format: "7Z",
     version: "1.2.4.26",
   },
