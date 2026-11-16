@@ -16,6 +16,7 @@ const trainingSchema = z.object({
   spots: z.number().int().min(0),
   description: z.string().min(1),
   is_active: z.boolean(),
+  registrations_closed: z.boolean().default(false),
   image_url: z.string().nullable().optional(),
   form_fields: z.unknown().transform((v): FormFields => normalizeFormFields(v)),
   created_at: z.string().datetime({ offset: true }),
@@ -80,13 +81,17 @@ export const registerForTraining = createServerFn({ method: "POST" })
 
     const { data: training, error: trainingError } = await supabase
       .from("trainings")
-      .select("spots, form_fields")
+      .select("spots, form_fields, registrations_closed")
       .eq("id", data.trainingId)
       .eq("is_active", true)
       .single();
 
     if (trainingError || !training) {
       throw new Error("Treinamento não encontrado ou inativo.");
+    }
+
+    if (training.registrations_closed) {
+      throw new Error("As inscrições para esta turma estão encerradas.");
     }
 
     if (training.spots <= 0) {
