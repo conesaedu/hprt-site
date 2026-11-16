@@ -43,6 +43,13 @@
       "when": 1794851311699,
       "tag": "0005_training_config_fields",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1794854190270,
+      "tag": "0006_training_registrations_closed",
+      "breakpoints": true
     }
   ]
 }
