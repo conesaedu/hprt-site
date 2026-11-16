@@ -50,6 +50,13 @@
       "when": 1794854190270,
       "tag": "0006_training_registrations_closed",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1794855152823,
+      "tag": "0007_restrict_media_reads",
+      "breakpoints": true
     }
   ]
 }
