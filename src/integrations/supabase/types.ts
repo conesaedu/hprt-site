@@ -445,6 +445,7 @@ export type Database = {
           image_url: string | null
           is_active: boolean
           location: string
+          registrations_closed: boolean
           seats: number
           spots: number
           title: string
@@ -462,6 +463,7 @@ export type Database = {
           image_url?: string | null
           is_active?: boolean
           location: string
+          registrations_closed?: boolean
           seats: number
           spots: number
           title: string
@@ -479,6 +481,7 @@ export type Database = {
           image_url?: string | null
           is_active?: boolean
           location?: string
+          registrations_closed?: boolean
           seats?: number
           spots?: number
           title?: string

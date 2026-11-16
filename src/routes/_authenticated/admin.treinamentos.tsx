@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import type React from "react";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { supabase } from "@/integrations/supabase/client";
 import { ImageUpload } from "@/components/admin/ImageUpload";
@@ -13,16 +14,21 @@ export const Route = createFileRoute("/_authenticated/admin/treinamentos")({
 type F = { id?: string; title: string; type: string; audience: string; date: string; format: string; location: string; seats: number; spots: number; description: string; is_active: boolean; image_url: string; form_fields: FormFields };
 const empty: F = { title: "", type: "técnico", audience: "", date: "", format: "online", location: "", seats: 20, spots: 20, description: "", is_active: true, image_url: "", form_fields: DEFAULT_FORM_FIELDS };
 const inp = "h-10 w-full border border-input bg-background px-3 text-sm";
-const RS: Record<string, string> = { pending: "Pendente", confirmed: "Confirmada", cancelled: "Cancelada" };
+const RS: Record<string, string> = { pending: "Pendente", confirmed: "Confirmada", attended: "Presente", cancelled: "Cancelada" };
 function Trainings() {
   const qc = useQueryClient(); const [f, setF] = useState<F | null>(null); const [view, setView] = useState<string | null>(null);
-  const { data = [] } = useQuery({ queryKey: ["adm-trainings"], queryFn: async () => { const { data, error } = await supabase.from("trainings").select("*, training_registrations(count)").order("date", { ascending: false }); if (error) throw error; return data; } });
+  const { data = [] } = useQuery({ queryKey: ["adm-trainings"], queryFn: async () => { const { data, error } = await supabase.from("trainings").select("*, training_registrations(status)").order("date", { ascending: false }); if (error) throw error; return data; } });
   const regs = useQuery({ queryKey: ["adm-regs", view], enabled: !!view, queryFn: async () => { const { data, error } = await supabase.from("training_registrations").select("*").eq("training_id", view!).order("created_at"); if (error) throw error; return data; } });
   const inv = () => { qc.invalidateQueries({ queryKey: ["adm-trainings"] }); qc.invalidateQueries({ queryKey: ["adm-regs"] }); };
   const save = useMutation({ mutationFn: async (x: F) => { const { id, ...rest } = { ...x, date: new Date(x.date).toISOString() }; const row = { ...rest, image_url: rest.image_url || null, form_fields: rest.form_fields as never };
     const { error } = id ? await supabase.from("trainings").update(row).eq("id", id) : await supabase.from("trainings").insert(row); if (error) throw error; }, onSuccess: () => { setF(null); inv(); } });
   const del = useMutation({ mutationFn: async (id: string) => { const { error } = await supabase.from("trainings").delete().eq("id", id); if (error) throw error; }, onSuccess: inv });
-  const setReg = useMutation({ mutationFn: async ({ id, status }: { id: string; status: string }) => { const { error } = await supabase.from("training_registrations").update({ status }).eq("id", id); if (error) throw error; }, onSuccess: inv });
+  const setReg = useMutation({ mutationFn: async ({ id, status, prev, t }: { id: string; status: string; prev: string; t: { id: string; spots: number; seats: number } }) => {
+    const { error } = await supabase.from("training_registrations").update({ status }).eq("id", id); if (error) throw error;
+    const delta = prev !== "cancelled" && status === "cancelled" ? 1 : prev === "cancelled" && status !== "cancelled" ? -1 : 0;
+    if (delta) { const spots = Math.max(0, Math.min(t.seats, t.spots + delta)); const { error: e2 } = await supabase.from("trainings").update({ spots }).eq("id", t.id); if (e2) throw e2; }
+  }, onSuccess: inv });
+  const toggleClosed = useMutation({ mutationFn: async ({ id, closed }: { id: string; closed: boolean }) => { const { error } = await supabase.from("trainings").update({ registrations_closed: closed }).eq("id", id); if (error) throw error; }, onSuccess: inv });
   const s = (k: keyof F) => (e: { target: { value: string } }) => setF({ ...f!, [k]: typeof empty[k] === "number" ? Number(e.target.value) : e.target.value });
   return (
     <div className="space-y-6">
@@ -47,19 +53,24 @@ function Trainings() {
         {save.error && <p className="text-sm text-destructive md:col-span-3">{(save.error as Error).message}</p>}
       </form>}
       <div className="border border-border bg-background">{data.length === 0 ? <p className="p-6 text-sm text-muted-foreground">Nenhum treinamento cadastrado.</p> : data.map((t) => (
-        <div key={t.id} className="border-b border-border p-4 last:border-0">
+        <TrainingRow key={t.id} t={t}>{(c) => (<>
           <div className="flex flex-wrap items-center gap-4">
-            <div className="flex-1"><p className="font-semibold">{t.title}</p><p className="text-xs text-muted-foreground">{new Date(t.date).toLocaleString("pt-BR")} · {t.format} · {t.spots}/{t.seats} vagas · {t.is_active ? "Publicado" : "Oculto"}</p></div>
-            <button className="text-sm underline" onClick={() => setView(view === t.id ? null : t.id)}>Inscrições ({(t.training_registrations as unknown as { count: number }[])?.[0]?.count ?? 0})</button>
+            <div className="flex-1"><p className="font-semibold">{t.title} {t.registrations_closed && <span className="ml-2 bg-foreground px-2 py-0.5 text-[0.65rem] uppercase tracking-wider text-background">Vagas encerradas</span>}</p><p className="text-xs text-muted-foreground">{new Date(t.date).toLocaleString("pt-BR")} · {t.format} · {t.is_active ? "Publicado" : "Oculto"}</p></div>
+            <button onClick={() => toggleClosed.mutate({ id: t.id, closed: !t.registrations_closed })} className={t.registrations_closed ? "border border-border px-3 py-1.5 text-sm font-semibold" : "bg-foreground px-3 py-1.5 text-sm font-semibold text-background"}>{t.registrations_closed ? "Reabrir vagas" : "Encerrar vagas"}</button>
+            <button className="text-sm underline" onClick={() => setView(view === t.id ? null : t.id)}>Inscrições ({c.total})</button>
             <button className="text-sm underline" onClick={() => setF({ id: t.id, title: t.title, type: t.type, audience: t.audience, date: new Date(t.date).toISOString().slice(0, 16), format: t.format, location: t.location, seats: t.seats, spots: t.spots, description: t.description, is_active: t.is_active, image_url: t.image_url ?? "", form_fields: normalizeFormFields(t.form_fields) })}>Editar</button>
             <button className="text-sm text-destructive underline" onClick={() => confirm("Excluir treinamento e inscrições?") && del.mutate(t.id)}>Excluir</button>
           </div>
+          <div className="mt-3 grid grid-cols-2 gap-px border border-border bg-border text-center text-xs md:grid-cols-4">
+            {[["Vagas totais", t.seats], ["Confirmadas", c.confirmed], ["Pendentes", c.pending], ["Restantes", t.spots]].map(([l, v]) => <div key={l as string} className="bg-background p-2"><p className="text-lg font-bold">{v}</p><p className="text-muted-foreground">{l}</p></div>)}
+          </div>
+          {c.confirmed >= t.seats && !t.registrations_closed && <div className="mt-2 flex flex-wrap items-center gap-3 border border-primary bg-primary/10 p-2 text-sm"><span className="flex-1">Turma lotada: as confirmadas já atingiram o total de vagas.</span><button onClick={() => toggleClosed.mutate({ id: t.id, closed: true })} className="bg-primary px-3 py-1 text-sm font-semibold text-primary-foreground">Encerrar vagas agora</button></div>}
           {view === t.id && <div className="mt-3 bg-muted/40 p-3 text-sm">{(regs.data ?? []).length === 0 ? <p className="text-muted-foreground">Sem inscrições.</p> : regs.data!.map((r) => (
             <div key={r.id} className="flex flex-wrap items-center gap-3 border-b border-border py-2 last:border-0">
               <span className="flex-1">{r.name} · {r.company} · {r.email}{r.phone ? ` · ${r.phone}` : ""}{r.is_client ? " · cliente" : ""}{Object.entries((r.answers ?? {}) as Record<string, string>).map(([k, v]) => <span key={k} className="block text-xs text-muted-foreground">{FIELD_LABELS[k as keyof typeof FIELD_LABELS] ?? k}: {v}</span>)}</span>
-              <select value={r.status} onChange={(e) => setReg.mutate({ id: r.id, status: e.target.value })} className="h-8 border border-input bg-background px-2">{Object.entries(RS).map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select>
+              <select value={r.status} onChange={(e) => setReg.mutate({ id: r.id, status: e.target.value, prev: r.status, t: { id: t.id, spots: t.spots, seats: t.seats } })} className="h-8 border border-input bg-background px-2">{Object.entries(RS).map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select>
             </div>))}</div>}
-        </div>))}</div>
+        </>)}</TrainingRow>))}</div>
     </div>
   );
 }
@@ -95,4 +106,11 @@ function FormFieldsEditor({ value, onChange }: { value: FormFields; onChange: (v
       </div>
     </fieldset>
   );
+}
+
+type Counts = { total: number; confirmed: number; pending: number };
+function TrainingRow({ t, children }: { t: { training_registrations: unknown }; children: (c: Counts) => React.ReactNode }) {
+  const list = (t.training_registrations as { status: string }[] | null) ?? [];
+  const c = { total: list.length, confirmed: list.filter((r) => r.status === "confirmed" || r.status === "attended").length, pending: list.filter((r) => r.status === "pending").length };
+  return <div className="border-b border-border p-4 last:border-0">{children(c)}</div>;
 }

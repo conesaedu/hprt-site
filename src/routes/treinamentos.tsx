@@ -71,7 +71,7 @@ export const Route = createFileRoute("/treinamentos")({
                     price: "0",
                     priceCurrency: "BRL",
                     availability:
-                      t.spots > 0
+                      t.spots > 0 && !t.registrations_closed
                         ? "https://schema.org/InStock"
                         : "https://schema.org/SoldOut",
                     url: `${SITE}/treinamentos`,
@@ -182,10 +182,12 @@ function TrainingList({
 
 function TrainingCard({ training, onRegister }: { training: Training; onRegister: () => void }) {
   const date = new Date(training.date);
-  const isFull = training.spots <= 0;
+  const isClosed = training.registrations_closed;
+  const isFull = isClosed || training.spots <= 0;
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-lg border border-border bg-surface p-6 transition-colors hover:border-border-strong">
+    <article className="relative flex flex-col overflow-hidden rounded-lg border border-border bg-surface p-6 transition-colors hover:border-border-strong">
+      {isClosed && <div className="-mx-6 -mt-6 mb-5 bg-foreground px-6 py-2 text-center text-xs font-semibold uppercase tracking-[0.12em] text-background">Vagas encerradas</div>}
       {training.image_url && (
         <img src={training.image_url} alt={training.title} loading="lazy" className="-mx-6 -mt-6 mb-5 aspect-[16/9] w-[calc(100%+3rem)] max-w-none object-cover" />
       )}
@@ -202,7 +204,7 @@ function TrainingCard({ training, onRegister }: { training: Training; onRegister
         </span>
         <span className="inline-flex items-center gap-1 font-mono text-[0.75rem] text-muted-foreground">
           <Users className="size-3.5" />
-          {isFull ? "Esgotado" : `${training.spots} vagas`}
+          {isClosed ? "Vagas encerradas" : isFull ? "Esgotado" : `${training.spots} vagas`}
         </span>
       </div>
 
@@ -235,7 +237,7 @@ function TrainingCard({ training, onRegister }: { training: Training; onRegister
             : "bg-signal text-primary-foreground hover:-translate-y-px hover:bg-signal-soft",
         )}
       >
-        {isFull ? "Vagas esgotadas" : "Inscrever-se"}
+        {isClosed ? "Inscrições encerradas para esta turma" : isFull ? "Vagas esgotadas" : "Inscrever-se"}
       </button>
     </article>
   );
