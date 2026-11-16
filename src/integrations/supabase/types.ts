@@ -385,6 +385,7 @@ export type Database = {
       }
       training_registrations: {
         Row: {
+          answers: Json
           company: string
           created_at: string
           email: string
@@ -397,7 +398,8 @@ export type Database = {
           updated_at: string
         }
         Insert: {
-          company: string
+          answers?: Json
+          company?: string
           created_at?: string
           email: string
           id?: string
@@ -409,6 +411,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          answers?: Json
           company?: string
           created_at?: string
           email?: string
@@ -436,8 +439,10 @@ export type Database = {
           created_at: string
           date: string
           description: string
+          form_fields: Json
           format: string
           id: string
+          image_url: string | null
           is_active: boolean
           location: string
           seats: number
@@ -451,8 +456,10 @@ export type Database = {
           created_at?: string
           date: string
           description: string
+          form_fields?: Json
           format: string
           id?: string
+          image_url?: string | null
           is_active?: boolean
           location: string
           seats: number
@@ -466,8 +473,10 @@ export type Database = {
           created_at?: string
           date?: string
           description?: string
+          form_fields?: Json
           format?: string
           id?: string
+          image_url?: string | null
           is_active?: boolean
           location?: string
           seats?: number
