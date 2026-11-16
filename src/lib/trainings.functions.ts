@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
+import { normalizeFormFields, validateAnswers, type FormFields } from "@/lib/training-form";
 
 const trainingSchema = z.object({
   id: z.string().uuid(),
@@ -15,6 +16,8 @@ const trainingSchema = z.object({
   spots: z.number().int().min(0),
   description: z.string().min(1),
   is_active: z.boolean(),
+  image_url: z.string().nullable().optional(),
+  form_fields: z.unknown().transform((v): FormFields => normalizeFormFields(v)),
   created_at: z.string().datetime({ offset: true }),
   updated_at: z.string().datetime({ offset: true }),
 });
@@ -64,9 +67,10 @@ const registerSchema = z.object({
   trainingId: z.string().uuid(),
   name: z.string().min(2).max(100),
   email: z.string().email().max(255),
-  company: z.string().min(2).max(150),
+  company: z.string().max(150).optional(),
   phone: z.string().max(50).optional(),
   isClient: z.boolean().default(false),
+  answers: z.record(z.string().max(200), z.string().max(1000)).default({}),
 });
 
 export const registerForTraining = createServerFn({ method: "POST" })
@@ -76,7 +80,7 @@ export const registerForTraining = createServerFn({ method: "POST" })
 
     const { data: training, error: trainingError } = await supabase
       .from("trainings")
-      .select("spots")
+      .select("spots, form_fields")
       .eq("id", data.trainingId)
       .eq("is_active", true)
       .single();
@@ -89,13 +93,20 @@ export const registerForTraining = createServerFn({ method: "POST" })
       throw new Error("Não há mais vagas disponíveis para este treinamento.");
     }
 
+    const ff = normalizeFormFields(training.form_fields);
+    const err = validateAnswers(ff, { company: data.company, phone: data.phone, answers: data.answers });
+    if (err) throw new Error(err);
+    const allowed = new Set([...(["cnpj", "role", "city"] as const).filter((k) => ff[k] !== "off"), ...ff.custom.map((q) => q.label)]);
+    const answers = Object.fromEntries(Object.entries(data.answers).filter(([k, v]) => allowed.has(k) && v.trim()));
+
     const { error: insertError } = await supabase.from("training_registrations").insert({
       training_id: data.trainingId,
       name: data.name,
       email: data.email,
-      company: data.company,
-      phone: data.phone ?? null,
-      is_client: data.isClient,
+      company: ff.company === "off" ? "" : (data.company ?? "").trim(),
+      phone: ff.phone === "off" ? null : data.phone?.trim() || null,
+      is_client: ff.is_client ? data.isClient : false,
+      answers,
       status: "pending",
     });
 
