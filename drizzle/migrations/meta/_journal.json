@@ -29,6 +29,13 @@
       "when": 1794618145701,
       "tag": "0003_portal_parity_cogra",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794837207771,
+      "tag": "0004_tighten_contact_leads_insert",
+      "breakpoints": true
     }
   ]
 }
