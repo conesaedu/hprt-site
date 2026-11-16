@@ -7,6 +7,7 @@ import { Nav } from "@/components/hprt/Nav";
 import { Footer } from "@/components/hprt/Footer";
 import { Eyebrow, Btn, SectionHead } from "@/components/hprt/ui";
 import { cn } from "@/lib/utils";
+import { FIELD_LABELS } from "@/lib/training-form";
 import { Calendar, CheckCircle, MapPin, Monitor, Users, X } from "lucide-react";
 
 const title = "Treinamentos HPRT Brasil — Capacitação técnica e comercial";
@@ -184,7 +185,10 @@ function TrainingCard({ training, onRegister }: { training: Training; onRegister
   const isFull = training.spots <= 0;
 
   return (
-    <article className="flex flex-col rounded-lg border border-border bg-surface p-6 transition-colors hover:border-border-strong">
+    <article className="flex flex-col overflow-hidden rounded-lg border border-border bg-surface p-6 transition-colors hover:border-border-strong">
+      {training.image_url && (
+        <img src={training.image_url} alt={training.title} loading="lazy" className="-mx-6 -mt-6 mb-5 aspect-[16/9] w-[calc(100%+3rem)] max-w-none object-cover" />
+      )}
       <div className="mb-4 flex items-start justify-between gap-3">
         <span
           className={cn(
@@ -253,6 +257,8 @@ function RegistrationModal({
     phone: "",
     isClient: false,
   });
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const ff = training.form_fields;
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -272,6 +278,7 @@ function RegistrationModal({
           company: form.company,
           phone: form.phone,
           isClient: form.isClient,
+          answers,
         },
       });
       setStatus("success");
@@ -348,33 +355,34 @@ function RegistrationModal({
                   placeholder="voce@empresa.com.br"
                 />
               </div>
-              <div>
-                <label htmlFor="company" className="mb-1 block text-sm font-medium text-foreground">
-                  Empresa
-                </label>
-                <input
-                  id="company"
-                  type="text"
-                  required
-                  value={form.company}
-                  onChange={(e) => setForm((f) => ({ ...f, company: e.target.value }))}
-                  className="w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-1 focus:ring-ring"
-                  placeholder="Nome da empresa"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="mb-1 block text-sm font-medium text-foreground">
-                  Telefone <span className="text-faint">(opcional)</span>
-                </label>
-                <input
-                  id="phone"
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                  className="w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-1 focus:ring-ring"
-                  placeholder="(11) 99999-9999"
-                />
-              </div>
+              {(["company", "phone"] as const).filter((k) => ff[k] !== "off").map((k) => (
+                <div key={k}>
+                  <label htmlFor={k} className="mb-1 block text-sm font-medium text-foreground">
+                    {FIELD_LABELS[k]} {ff[k] === "optional" && <span className="text-faint">(opcional)</span>}
+                  </label>
+                  <input id={k} type={k === "phone" ? "tel" : "text"} required={ff[k] === "required"} value={form[k]}
+                    onChange={(e) => setForm((f) => ({ ...f, [k]: e.target.value }))} className={fieldCls} />
+                </div>
+              ))}
+              {(["cnpj", "role", "city"] as const).filter((k) => ff[k] !== "off").map((k) => (
+                <div key={k}>
+                  <label htmlFor={k} className="mb-1 block text-sm font-medium text-foreground">
+                    {FIELD_LABELS[k]} {ff[k] === "optional" && <span className="text-faint">(opcional)</span>}
+                  </label>
+                  <input id={k} required={ff[k] === "required"} value={answers[k] ?? ""}
+                    onChange={(e) => setAnswers((a) => ({ ...a, [k]: e.target.value }))} className={fieldCls} />
+                </div>
+              ))}
+              {ff.custom.map((q, i) => (
+                <div key={i}>
+                  <label htmlFor={`q${i}`} className="mb-1 block text-sm font-medium text-foreground">
+                    {q.label} {!q.required && <span className="text-faint">(opcional)</span>}
+                  </label>
+                  <textarea id={`q${i}`} required={q.required} value={answers[q.label] ?? ""} rows={2}
+                    onChange={(e) => setAnswers((a) => ({ ...a, [q.label]: e.target.value }))} className={fieldCls} />
+                </div>
+              ))}
+              {ff.is_client && (
               <label className="flex cursor-pointer items-start gap-3">
                 <input
                   type="checkbox"
@@ -386,6 +394,7 @@ function RegistrationModal({
                   Já sou cliente HPRT Brasil (treinamento sem custo para clientes ativos).
                 </span>
               </label>
+              )}
 
               {errorMsg && (
                 <div className="rounded-sm border border-destructive/20 bg-destructive/10 px-3 py-2 text-sm text-destructive">
@@ -477,3 +486,5 @@ function formatDateTime(date: Date) {
     timeZone: "America/Sao_Paulo",
   });
 }
+
+const fieldCls = "w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-1 focus:ring-ring";
