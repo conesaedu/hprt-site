@@ -12,6 +12,7 @@ const staticPaths = [
   "/treinamentos",
   "/downloads",
   "/garantia",
+  "/suporte",
   "/blog",
   "/seja-revenda",
 ];
