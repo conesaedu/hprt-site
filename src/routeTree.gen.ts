@@ -12,18 +12,27 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as FaleConoscoRouteImport } from './routes/fale-conosco'
 import { Route as GarantiaRouteImport } from './routes/garantia'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as LojaRouteImport } from './routes/loja'
 import { Route as OndeComprarRouteImport } from './routes/onde-comprar'
 import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
+import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as SejaRevendaRouteImport } from './routes/seja-revenda'
+import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
 import { Route as SuporteRouteImport } from './routes/suporte'
+import { Route as SuporteTecnicoRouteImport } from './routes/suporte-tecnico'
 import { Route as TreinamentosRouteImport } from './routes/treinamentos'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ProdutoCategoriaSplatRouteImport } from './routes/produto-categoria.$'
+import { Route as ProdutoSplatRouteImport } from './routes/produto.$'
 import { Route as ProdutosIndexRouteImport } from './routes/produtos.index'
 import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
@@ -57,9 +66,19 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DownloadsRoute = DownloadsRouteImport.update({
   id: '/downloads',
   path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaleConoscoRoute = FaleConoscoRouteImport.update({
+  id: '/fale-conosco',
+  path: '/fale-conosco',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GarantiaRoute = GarantiaRouteImport.update({
@@ -72,6 +91,11 @@ const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LojaRoute = LojaRouteImport.update({
+  id: '/loja',
+  path: '/loja',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OndeComprarRoute = OndeComprarRouteImport.update({
   id: '/onde-comprar',
   path: '/onde-comprar',
@@ -82,14 +106,29 @@ const PorQueHprtRoute = PorQueHprtRouteImport.update({
   path: '/por-que-hprt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuemSomosRoute = QuemSomosRouteImport.update({
+  id: '/quem-somos',
+  path: '/quem-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SejaRevendaRoute = SejaRevendaRouteImport.update({
   id: '/seja-revenda',
   path: '/seja-revenda',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolucoesRoute = SolucoesRouteImport.update({
@@ -100,6 +139,11 @@ const SolucoesRoute = SolucoesRouteImport.update({
 const SuporteRoute = SuporteRouteImport.update({
   id: '/suporte',
   path: '/suporte',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SuporteTecnicoRoute = SuporteTecnicoRouteImport.update({
+  id: '/suporte-tecnico',
+  path: '/suporte-tecnico',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TreinamentosRoute = TreinamentosRouteImport.update({
@@ -115,6 +159,16 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutoCategoriaSplatRoute = ProdutoCategoriaSplatRouteImport.update({
+  id: '/produto-categoria/$',
+  path: '/produto-categoria/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutoSplatRoute = ProdutoSplatRouteImport.update({
+  id: '/produto/$',
+  path: '/produto/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProdutosIndexRoute = ProdutosIndexRouteImport.update({
@@ -223,17 +277,26 @@ const AuthenticatedAdminBlogIdRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/contato': typeof ContatoRoute
   '/downloads': typeof DownloadsRoute
+  '/fale-conosco': typeof FaleConoscoRoute
   '/garantia': typeof GarantiaRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/loja': typeof LojaRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/quem-somos': typeof QuemSomosRoute
   '/seja-revenda': typeof SejaRevendaRoute
+  '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
   '/suporte': typeof SuporteRoute
+  '/suporte-tecnico': typeof SuporteTecnicoRoute
   '/treinamentos': typeof TreinamentosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/produto-categoria/$': typeof ProdutoCategoriaSplatRoute
+  '/produto/$': typeof ProdutoSplatRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/produtos/': typeof ProdutosIndexRoute
@@ -257,17 +320,26 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/contato': typeof ContatoRoute
   '/downloads': typeof DownloadsRoute
+  '/fale-conosco': typeof FaleConoscoRoute
   '/garantia': typeof GarantiaRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/loja': typeof LojaRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/quem-somos': typeof QuemSomosRoute
   '/seja-revenda': typeof SejaRevendaRoute
+  '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
   '/suporte': typeof SuporteRoute
+  '/suporte-tecnico': typeof SuporteTecnicoRoute
   '/treinamentos': typeof TreinamentosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/produto-categoria/$': typeof ProdutoCategoriaSplatRoute
+  '/produto/$': typeof ProdutoSplatRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/blog': typeof BlogIndexRoute
   '/produtos': typeof ProdutosIndexRoute
@@ -293,17 +365,26 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/contato': typeof ContatoRoute
   '/downloads': typeof DownloadsRoute
+  '/fale-conosco': typeof FaleConoscoRoute
   '/garantia': typeof GarantiaRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/loja': typeof LojaRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/quem-somos': typeof QuemSomosRoute
   '/seja-revenda': typeof SejaRevendaRoute
+  '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
   '/solucoes': typeof SolucoesRoute
   '/suporte': typeof SuporteRoute
+  '/suporte-tecnico': typeof SuporteTecnicoRoute
   '/treinamentos': typeof TreinamentosRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/produto-categoria/$': typeof ProdutoCategoriaSplatRoute
+  '/produto/$': typeof ProdutoSplatRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/produtos/': typeof ProdutosIndexRoute
@@ -329,17 +410,26 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/contato'
     | '/downloads'
+    | '/fale-conosco'
     | '/garantia'
     | '/llms.txt'
+    | '/loja'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/quem-somos'
     | '/seja-revenda'
+    | '/shop'
     | '/sitemap.xml'
+    | '/sobre'
     | '/solucoes'
     | '/suporte'
+    | '/suporte-tecnico'
     | '/treinamentos'
     | '/blog/$slug'
+    | '/produto-categoria/$'
+    | '/produto/$'
     | '/produtos/$slug'
     | '/blog/'
     | '/produtos/'
@@ -363,17 +453,26 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/auth'
+    | '/contato'
     | '/downloads'
+    | '/fale-conosco'
     | '/garantia'
     | '/llms.txt'
+    | '/loja'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/quem-somos'
     | '/seja-revenda'
+    | '/shop'
     | '/sitemap.xml'
+    | '/sobre'
     | '/solucoes'
     | '/suporte'
+    | '/suporte-tecnico'
     | '/treinamentos'
     | '/blog/$slug'
+    | '/produto-categoria/$'
+    | '/produto/$'
     | '/produtos/$slug'
     | '/blog'
     | '/produtos'
@@ -398,17 +497,26 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/contato'
     | '/downloads'
+    | '/fale-conosco'
     | '/garantia'
     | '/llms.txt'
+    | '/loja'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/quem-somos'
     | '/seja-revenda'
+    | '/shop'
     | '/sitemap.xml'
+    | '/sobre'
     | '/solucoes'
     | '/suporte'
+    | '/suporte-tecnico'
     | '/treinamentos'
     | '/blog/$slug'
+    | '/produto-categoria/$'
+    | '/produto/$'
     | '/produtos/$slug'
     | '/blog/'
     | '/produtos/'
@@ -434,17 +542,26 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  ContatoRoute: typeof ContatoRoute
   DownloadsRoute: typeof DownloadsRoute
+  FaleConoscoRoute: typeof FaleConoscoRoute
   GarantiaRoute: typeof GarantiaRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  LojaRoute: typeof LojaRoute
   OndeComprarRoute: typeof OndeComprarRoute
   PorQueHprtRoute: typeof PorQueHprtRoute
+  QuemSomosRoute: typeof QuemSomosRoute
   SejaRevendaRoute: typeof SejaRevendaRoute
+  ShopRoute: typeof ShopRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SobreRoute: typeof SobreRoute
   SolucoesRoute: typeof SolucoesRoute
   SuporteRoute: typeof SuporteRoute
+  SuporteTecnicoRoute: typeof SuporteTecnicoRoute
   TreinamentosRoute: typeof TreinamentosRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  ProdutoCategoriaSplatRoute: typeof ProdutoCategoriaSplatRoute
+  ProdutoSplatRoute: typeof ProdutoSplatRoute
   ProdutosSlugRoute: typeof ProdutosSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ProdutosIndexRoute: typeof ProdutosIndexRoute
@@ -473,11 +590,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/downloads': {
       id: '/downloads'
       path: '/downloads'
       fullPath: '/downloads'
       preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fale-conosco': {
+      id: '/fale-conosco'
+      path: '/fale-conosco'
+      fullPath: '/fale-conosco'
+      preLoaderRoute: typeof FaleConoscoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/garantia': {
@@ -494,6 +625,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/loja': {
+      id: '/loja'
+      path: '/loja'
+      fullPath: '/loja'
+      preLoaderRoute: typeof LojaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onde-comprar': {
       id: '/onde-comprar'
       path: '/onde-comprar'
@@ -508,6 +646,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PorQueHprtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quem-somos': {
+      id: '/quem-somos'
+      path: '/quem-somos'
+      fullPath: '/quem-somos'
+      preLoaderRoute: typeof QuemSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/seja-revenda': {
       id: '/seja-revenda'
       path: '/seja-revenda'
@@ -515,11 +660,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SejaRevendaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solucoes': {
@@ -534,6 +693,13 @@ declare module '@tanstack/react-router' {
       path: '/suporte'
       fullPath: '/suporte'
       preLoaderRoute: typeof SuporteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/suporte-tecnico': {
+      id: '/suporte-tecnico'
+      path: '/suporte-tecnico'
+      fullPath: '/suporte-tecnico'
+      preLoaderRoute: typeof SuporteTecnicoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/treinamentos': {
@@ -555,6 +721,20 @@ declare module '@tanstack/react-router' {
       path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produto-categoria/$': {
+      id: '/produto-categoria/$'
+      path: '/produto-categoria/$'
+      fullPath: '/produto-categoria/$'
+      preLoaderRoute: typeof ProdutoCategoriaSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produto/$': {
+      id: '/produto/$'
+      path: '/produto/$'
+      fullPath: '/produto/$'
+      preLoaderRoute: typeof ProdutoSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/produtos/': {
@@ -731,17 +911,26 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  ContatoRoute: ContatoRoute,
   DownloadsRoute: DownloadsRoute,
+  FaleConoscoRoute: FaleConoscoRoute,
   GarantiaRoute: GarantiaRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  LojaRoute: LojaRoute,
   OndeComprarRoute: OndeComprarRoute,
   PorQueHprtRoute: PorQueHprtRoute,
+  QuemSomosRoute: QuemSomosRoute,
   SejaRevendaRoute: SejaRevendaRoute,
+  ShopRoute: ShopRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SobreRoute: SobreRoute,
   SolucoesRoute: SolucoesRoute,
   SuporteRoute: SuporteRoute,
+  SuporteTecnicoRoute: SuporteTecnicoRoute,
   TreinamentosRoute: TreinamentosRoute,
   BlogSlugRoute: BlogSlugRoute,
+  ProdutoCategoriaSplatRoute: ProdutoCategoriaSplatRoute,
+  ProdutoSplatRoute: ProdutoSplatRoute,
   ProdutosSlugRoute: ProdutosSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   ProdutosIndexRoute: ProdutosIndexRoute,
