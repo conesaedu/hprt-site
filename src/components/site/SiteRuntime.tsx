@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { MessageCircle } from "lucide-react";
 import { whatsappFor } from "@/components/hprt/ContactForm";
-import { getProductSummary } from "@/lib/products/summary";
+import { productSummaries } from "@/lib/products/summary";
 
 type Banner = { id: string; title: string; subtitle: string | null; image_url: string | null; cta_label: string | null; cta_url: string | null; pages: string[]; frequency: string };
 type Bar = { enabled?: boolean; text?: string; link?: string };
@@ -38,7 +38,7 @@ function markShown(b: Banner) {
 
 function productName(path: string) {
   const m = path.match(/^\/produtos\/([^/]+)/);
-  return m ? getProductSummary(m[1])?.name : undefined;
+  return m ? productSummaries.find((p) => p.slug === m[1])?.name : undefined;
 }
 
 /** Analytics, pop-ups and announcement bar for the public site. */
