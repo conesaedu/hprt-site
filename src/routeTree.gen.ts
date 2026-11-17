@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as GarantiaRouteImport } from './routes/garantia'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as OndeComprarRouteImport } from './routes/onde-comprar'
 import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
@@ -57,6 +58,11 @@ const AuthRoute = AuthRouteImport.update({
 const DownloadsRoute = DownloadsRouteImport.update({
   id: '/downloads',
   path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GarantiaRoute = GarantiaRouteImport.update({
+  id: '/garantia',
+  path: '/garantia',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
@@ -205,6 +211,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/downloads': typeof DownloadsRoute
+  '/garantia': typeof GarantiaRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
@@ -236,6 +243,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/downloads': typeof DownloadsRoute
+  '/garantia': typeof GarantiaRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
@@ -269,6 +277,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/downloads': typeof DownloadsRoute
+  '/garantia': typeof GarantiaRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
@@ -302,6 +311,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/downloads'
+    | '/garantia'
     | '/llms.txt'
     | '/onde-comprar'
     | '/por-que-hprt'
@@ -333,6 +343,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/downloads'
+    | '/garantia'
     | '/llms.txt'
     | '/onde-comprar'
     | '/por-que-hprt'
@@ -365,6 +376,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/downloads'
+    | '/garantia'
     | '/llms.txt'
     | '/onde-comprar'
     | '/por-que-hprt'
@@ -398,6 +410,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   DownloadsRoute: typeof DownloadsRoute
+  GarantiaRoute: typeof GarantiaRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   OndeComprarRoute: typeof OndeComprarRoute
   PorQueHprtRoute: typeof PorQueHprtRoute
@@ -439,6 +452,13 @@ declare module '@tanstack/react-router' {
       path: '/downloads'
       fullPath: '/downloads'
       preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/garantia': {
+      id: '/garantia'
+      path: '/garantia'
+      fullPath: '/garantia'
+      preLoaderRoute: typeof GarantiaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/llms.txt': {
@@ -670,6 +690,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   DownloadsRoute: DownloadsRoute,
+  GarantiaRoute: GarantiaRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   OndeComprarRoute: OndeComprarRoute,
   PorQueHprtRoute: PorQueHprtRoute,
