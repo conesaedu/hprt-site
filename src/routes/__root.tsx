@@ -116,7 +116,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           description: "Impressoras térmicas, coletores de dados e leitores de código de barras HPRT com estrutura, peças e suporte no Brasil.",
           areaServed: { "@type": "Country", name: "Brasil" },
           brand: { "@type": "Brand", name: "HPRT" },
-          contactPoint: { "@type": "ContactPoint", telephone: "+55-11-99542-2785", contactType: "sales", availableLanguage: "Portuguese" },
+          contactPoint: { "@type": "ContactPoint", telephone: "+55-11-93429-4095", contactType: "sales", availableLanguage: "Portuguese" },
         }),
       },
     ],
