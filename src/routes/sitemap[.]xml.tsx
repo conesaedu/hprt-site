@@ -11,6 +11,7 @@ const staticPaths = [
   "/onde-comprar",
   "/treinamentos",
   "/downloads",
+  "/garantia",
   "/blog",
   "/seja-revenda",
 ];
