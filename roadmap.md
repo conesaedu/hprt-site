@@ -12,7 +12,7 @@
   - Fluxo de **aprovação de mudanças** (editor propõe, admin aprova) — modelo da Cogra
   - Acesso a Blog, Banners/Pop-ups, Mídia e Analytics; sem acesso a Leads/Usuários/Integrações
 - [ ] Ligação com o RVOPS (CRM) — camada pronta e desligada; definir como separar os dois sites no CRM
-- [ ] Google Search Console — precisa autorização do dono do domínio
+- [ ] Google Search Console — conta conectada; publicar confirmação e sitemap corrigido, verificar propriedade e enviar sitemap
 - [ ] Medição real de velocidade após publicar (mín. ~30 leituras por página)
 
 ## Concluído

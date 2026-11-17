@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { productSummaries as products } from "@/lib/products/summary";
 
-const SITE = "https://hprtbrasil.lovable.app";
+const SITE = "https://hprtbrasil.com.br";
 
 const staticPaths = [
   "/",
