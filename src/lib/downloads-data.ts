@@ -11,7 +11,7 @@ import cpd80Driver from "@/assets/downloads/Novo_Driver_HPRT_CP-D80.zip.asset.js
  * pelo endereço completo, para que o botão continue funcionando quando o site
  * for servido por outro servidor (ex.: Hostinger).
  */
-const ASSET_ORIGIN = "https://hprtbrasil.lovable.app";
+const ASSET_ORIGIN = "https://hprtbrasil.com.br";
 
 export type DownloadCategory = "Etiquetas e pulseiras" | "Cartões" | "Cupom / PDV";
 
