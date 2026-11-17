@@ -51,6 +51,7 @@ function Leads() {
             <option value="all">Todos os status</option>
             {LEAD_STATUSES.map((s) => <option key={s} value={s}>{LABEL[s]}</option>)}
           </select>
+          <button onClick={() => exportCsv(rows)} className="border border-input bg-background px-3 py-2 text-sm font-semibold">Exportar planilha</button>
           <select value={days} onChange={(e) => setDays(e.target.value)} className="border border-input bg-background px-3 py-2 text-sm">
             <option value="all">Todo o período</option><option value="7">7 dias</option><option value="30">30 dias</option><option value="90">90 dias</option>
           </select>
@@ -106,4 +107,12 @@ function NotesEditor({ initial, onSave }: { initial: string; onSave: (v: string)
       <button onClick={() => onSave(v)} className="bg-foreground px-4 text-background text-sm font-semibold">Salvar</button>
     </div>
   );
+}
+
+function exportCsv(rows: Record<string, any>[]) {
+  const cols: [string, string][] = [["created_at", "Data"], ["name", "Nome"], ["company", "Empresa"], ["email", "E-mail"], ["phone", "Telefone"], ["role", "Cargo"], ["segment", "Segmento"], ["need", "Necessidade"], ["volume", "Volume"], ["message", "Mensagem"], ["source", "Origem"], ["status", "Status"], ["notes", "Anotações"]];
+  const esc = (v: unknown) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  const lines = [cols.map((c) => esc(c[1])).join(";"), ...rows.map((r) => cols.map(([k]) => esc(k === "created_at" ? new Date(r[k]).toLocaleString("pt-BR") : k === "status" ? LABEL[r[k]] ?? r[k] : r[k])).join(";"))];
+  const blob = new Blob(["\ufeff" + lines.join("\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `leads-hprt-${new Date().toISOString().slice(0, 10)}.csv`; a.click();
 }

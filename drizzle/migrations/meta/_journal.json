@@ -64,6 +64,20 @@
       "when": 1794925391381,
       "tag": "0008_restrict_public_site_settings",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1794928120461,
+      "tag": "0009_add_editor_viewer_roles",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1794928156206,
+      "tag": "0010_staff_roles_policies_and_documents",
+      "breakpoints": true
     }
   ]
 }

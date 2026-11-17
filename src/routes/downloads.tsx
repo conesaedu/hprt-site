@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 import {
   downloadCategories,
   downloads,
@@ -35,10 +37,19 @@ export const Route = createFileRoute("/downloads")({
 function DownloadsPage() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<DownloadCategory | "todos">("todos");
+  // Arquivos cadastrados pelo painel somam-se aos arquivos originais do site.
+  const { data: managed = [] } = useQuery({
+    queryKey: ["public-downloads"],
+    queryFn: async () => {
+      const { data } = await supabase.from("downloads").select("*").eq("is_active", true).order("sort_order");
+      return (data ?? []).map((d): DownloadItem => ({ id: d.id, title: d.title, description: d.description, category: d.category as DownloadCategory, kind: d.kind as DownloadItem["kind"], os: d.os, models: d.models, file: d.file_url, format: d.format, version: d.version ?? undefined }));
+    },
+  });
+  const all = useMemo(() => [...managed, ...downloads], [managed]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return downloads.filter((d) => {
+    return all.filter((d) => {
       if (category !== "todos" && d.category !== category) return false;
       if (!q) return true;
       return (
@@ -48,7 +59,7 @@ function DownloadsPage() {
         d.models.some((m) => m.toLowerCase().includes(q))
       );
     });
-  }, [query, category]);
+  }, [query, category, all]);
 
   return (
     <div className="min-h-screen bg-background">

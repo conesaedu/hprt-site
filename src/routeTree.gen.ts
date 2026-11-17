@@ -31,6 +31,7 @@ import { Route as AuthenticatedAdminAnalyticsRouteImport } from './routes/_authe
 import { Route as AuthenticatedAdminBannersRouteImport } from './routes/_authenticated/admin.banners'
 import { Route as AuthenticatedAdminCotacoesRouteImport } from './routes/_authenticated/admin.cotacoes'
 import { Route as AuthenticatedAdminDepoimentosRouteImport } from './routes/_authenticated/admin.depoimentos'
+import { Route as AuthenticatedAdminDownloadsRouteImport } from './routes/_authenticated/admin.downloads'
 import { Route as AuthenticatedAdminIntegracoesRouteImport } from './routes/_authenticated/admin.integracoes'
 import { Route as AuthenticatedAdminLeadsRouteImport } from './routes/_authenticated/admin.leads'
 import { Route as AuthenticatedAdminMidiaRouteImport } from './routes/_authenticated/admin.midia'
@@ -155,6 +156,12 @@ const AuthenticatedAdminDepoimentosRoute =
     path: '/admin/depoimentos',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedAdminDownloadsRoute =
+  AuthenticatedAdminDownloadsRouteImport.update({
+    id: '/admin/downloads',
+    path: '/admin/downloads',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedAdminIntegracoesRoute =
   AuthenticatedAdminIntegracoesRouteImport.update({
     id: '/admin/integracoes',
@@ -234,6 +241,7 @@ export interface FileRoutesByFullPath {
   '/admin/banners': typeof AuthenticatedAdminBannersRoute
   '/admin/cotacoes': typeof AuthenticatedAdminCotacoesRoute
   '/admin/depoimentos': typeof AuthenticatedAdminDepoimentosRoute
+  '/admin/downloads': typeof AuthenticatedAdminDownloadsRoute
   '/admin/integracoes': typeof AuthenticatedAdminIntegracoesRoute
   '/admin/leads': typeof AuthenticatedAdminLeadsRoute
   '/admin/midia': typeof AuthenticatedAdminMidiaRoute
@@ -267,6 +275,7 @@ export interface FileRoutesByTo {
   '/admin/banners': typeof AuthenticatedAdminBannersRoute
   '/admin/cotacoes': typeof AuthenticatedAdminCotacoesRoute
   '/admin/depoimentos': typeof AuthenticatedAdminDepoimentosRoute
+  '/admin/downloads': typeof AuthenticatedAdminDownloadsRoute
   '/admin/integracoes': typeof AuthenticatedAdminIntegracoesRoute
   '/admin/leads': typeof AuthenticatedAdminLeadsRoute
   '/admin/midia': typeof AuthenticatedAdminMidiaRoute
@@ -302,6 +311,7 @@ export interface FileRoutesById {
   '/_authenticated/admin/banners': typeof AuthenticatedAdminBannersRoute
   '/_authenticated/admin/cotacoes': typeof AuthenticatedAdminCotacoesRoute
   '/_authenticated/admin/depoimentos': typeof AuthenticatedAdminDepoimentosRoute
+  '/_authenticated/admin/downloads': typeof AuthenticatedAdminDownloadsRoute
   '/_authenticated/admin/integracoes': typeof AuthenticatedAdminIntegracoesRoute
   '/_authenticated/admin/leads': typeof AuthenticatedAdminLeadsRoute
   '/_authenticated/admin/midia': typeof AuthenticatedAdminMidiaRoute
@@ -337,6 +347,7 @@ export interface FileRouteTypes {
     | '/admin/banners'
     | '/admin/cotacoes'
     | '/admin/depoimentos'
+    | '/admin/downloads'
     | '/admin/integracoes'
     | '/admin/leads'
     | '/admin/midia'
@@ -370,6 +381,7 @@ export interface FileRouteTypes {
     | '/admin/banners'
     | '/admin/cotacoes'
     | '/admin/depoimentos'
+    | '/admin/downloads'
     | '/admin/integracoes'
     | '/admin/leads'
     | '/admin/midia'
@@ -404,6 +416,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin/banners'
     | '/_authenticated/admin/cotacoes'
     | '/_authenticated/admin/depoimentos'
+    | '/_authenticated/admin/downloads'
     | '/_authenticated/admin/integracoes'
     | '/_authenticated/admin/leads'
     | '/_authenticated/admin/midia'
@@ -593,6 +606,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminDepoimentosRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin/downloads': {
+      id: '/_authenticated/admin/downloads'
+      path: '/admin/downloads'
+      fullPath: '/admin/downloads'
+      preLoaderRoute: typeof AuthenticatedAdminDownloadsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/admin/integracoes': {
       id: '/_authenticated/admin/integracoes'
       path: '/admin/integracoes'
@@ -671,6 +691,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedAdminBannersRoute: typeof AuthenticatedAdminBannersRoute
   AuthenticatedAdminCotacoesRoute: typeof AuthenticatedAdminCotacoesRoute
   AuthenticatedAdminDepoimentosRoute: typeof AuthenticatedAdminDepoimentosRoute
+  AuthenticatedAdminDownloadsRoute: typeof AuthenticatedAdminDownloadsRoute
   AuthenticatedAdminIntegracoesRoute: typeof AuthenticatedAdminIntegracoesRoute
   AuthenticatedAdminLeadsRoute: typeof AuthenticatedAdminLeadsRoute
   AuthenticatedAdminMidiaRoute: typeof AuthenticatedAdminMidiaRoute
@@ -689,6 +710,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedAdminBannersRoute: AuthenticatedAdminBannersRoute,
   AuthenticatedAdminCotacoesRoute: AuthenticatedAdminCotacoesRoute,
   AuthenticatedAdminDepoimentosRoute: AuthenticatedAdminDepoimentosRoute,
+  AuthenticatedAdminDownloadsRoute: AuthenticatedAdminDownloadsRoute,
   AuthenticatedAdminIntegracoesRoute: AuthenticatedAdminIntegracoesRoute,
   AuthenticatedAdminLeadsRoute: AuthenticatedAdminLeadsRoute,
   AuthenticatedAdminMidiaRoute: AuthenticatedAdminMidiaRoute,

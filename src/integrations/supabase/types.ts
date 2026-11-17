@@ -194,6 +194,57 @@ export type Database = {
         }
         Relationships: []
       }
+      downloads: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          file_url: string
+          format: string
+          id: string
+          is_active: boolean
+          kind: string
+          models: string[]
+          os: string
+          sort_order: number
+          title: string
+          updated_at: string
+          version: string | null
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string
+          file_url?: string
+          format?: string
+          id?: string
+          is_active?: boolean
+          kind?: string
+          models?: string[]
+          os?: string
+          sort_order?: number
+          title: string
+          updated_at?: string
+          version?: string | null
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          file_url?: string
+          format?: string
+          id?: string
+          is_active?: boolean
+          kind?: string
+          models?: string[]
+          os?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+          version?: string | null
+        }
+        Relationships: []
+      }
       quote_requests: {
         Row: {
           company: string
@@ -516,6 +567,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      can_edit_content: { Args: { _user_id: string }; Returns: boolean }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -523,9 +575,10 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_staff: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
-      app_role: "admin" | "user"
+      app_role: "admin" | "user" | "editor" | "viewer"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -653,7 +706,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "user"],
+      app_role: ["admin", "user", "editor", "viewer"],
     },
   },
 } as const

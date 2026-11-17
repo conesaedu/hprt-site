@@ -72,6 +72,7 @@ function Editor() {
           ) : <Markdown source={f.content} />}
         </div>
         <aside className="space-y-5">
+          <SeoChecklist title={seoT} description={seoD ?? ""} content={f.content} cover={f.cover_url} slug={slugify(f.slug || f.title)} />
           <div className="space-y-4 border border-border bg-background p-5">
             <Field label="Endereço" hint={`/blog/${slugify(f.slug || f.title)}`}><div className="flex gap-2"><input className={field} value={f.slug} onChange={(e) => set({ slug: e.target.value })} /><button type="button" onClick={() => set({ slug: slugify(f.title) })} className="border border-input px-2 text-xs">Do título</button></div></Field>
             <Field label="Categoria"><input className={field} list="cats" value={f.category} onChange={(e) => set({ category: e.target.value })} />
@@ -91,6 +92,26 @@ function Editor() {
           </div>
         </aside>
       </div>
+    </div>
+  );
+}
+
+function SeoChecklist({ title, description, content, cover, slug }: { title: string; description: string; content: string; cover: string; slug: string }) {
+  const words = content.trim() ? content.trim().split(/\s+/).length : 0;
+  const checks: [boolean, string][] = [
+    [title.length >= 30 && title.length <= 60, `Título para o Google entre 30 e 60 caracteres (${title.length})`],
+    [description.length >= 120 && description.length <= 160, `Descrição entre 120 e 160 caracteres (${description.length})`],
+    [words >= 300, `Texto com pelo menos 300 palavras (${words})`],
+    [/^## /m.test(content), "Usa subtítulos (##)"],
+    [/\]\(\//.test(content) || /hprtbrasil\.com\.br/.test(content), "Tem link para outra página do site"],
+    [!!cover, "Tem imagem de capa"],
+    [slug.length > 0 && slug.length <= 60, "Endereço curto (até 60 caracteres)"],
+  ];
+  const ok = checks.filter((c) => c[0]).length;
+  return (
+    <div className="space-y-3 border border-border bg-background p-5">
+      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Checklist de SEO · {ok}/{checks.length}</p>
+      <ul className="space-y-1.5 text-sm">{checks.map(([pass, label]) => <li key={label} className={pass ? "text-foreground" : "text-muted-foreground"}>{pass ? "✓" : "○"} {label}</li>)}</ul>
     </div>
   );
 }
