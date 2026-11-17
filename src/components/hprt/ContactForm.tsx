@@ -12,6 +12,14 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
   "Olá! Vim pelo site da HPRT Brasil e quero falar com um especialista.",
 )}`;
 
+/** WhatsApp link with a message naming the product the visitor is looking at. */
+export function whatsappFor(product?: string) {
+  const msg = product
+    ? `Olá! Estou avaliando a impressora HPRT ${product} no site e gostaria de falar com um especialista sobre aplicação e cotação.`
+    : "Olá! Vim pelo site da HPRT Brasil e quero falar com um especialista.";
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+}
+
 const segments = ["Varejo / PDV", "Logística", "Saúde", "Alimentação", "Indústria", "Outro"];
 const needs = [
   "Etiquetas e códigos",

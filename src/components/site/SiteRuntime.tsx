@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useRouterState } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { Assistant } from "@/components/site/Assistant";
+import { MessageCircle } from "lucide-react";
+import { whatsappFor } from "@/components/hprt/ContactForm";
+import { getProductSummary } from "@/lib/products/summary";
 
 type Banner = { id: string; title: string; subtitle: string | null; image_url: string | null; cta_label: string | null; cta_url: string | null; pages: string[]; frequency: string };
 type Bar = { enabled?: boolean; text?: string; link?: string };
@@ -32,6 +34,11 @@ function canShow(b: Banner) {
 function markShown(b: Banner) {
   const key = `hprt_banner_${b.id}`;
   sessionStorage.setItem(key, "1"); localStorage.setItem(key, String(Date.now()));
+}
+
+function productName(path: string) {
+  const m = path.match(/^\/produtos\/([^/]+)/);
+  return m ? getProductSummary(m[1])?.name : undefined;
 }
 
 /** Analytics, pop-ups and announcement bar for the public site. */
@@ -77,7 +84,10 @@ export function SiteRuntime() {
   if (isPrivate) return null;
   return (
     <>
-      <Assistant />
+      <a href={whatsappFor(productName(path))} target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp"
+        className={`fixed right-5 z-50 flex items-center gap-2 rounded-full bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-xl transition-transform hover:-translate-y-0.5 ${bar?.enabled && bar.text && !barClosed ? "bottom-20" : "bottom-5"}`}>
+        <MessageCircle className="size-4" /> Falar no WhatsApp
+      </a>
       {bar?.enabled && bar.text && !barClosed && (
         <div className="fixed inset-x-0 bottom-0 z-40 bg-foreground text-background">
           <div className="wrap flex items-center justify-between gap-4 py-3 text-sm">
