@@ -107,10 +107,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
     scripts: [
-      { src: "https://www.googletagmanager.com/gtm.js?id=GTM-WWR58WTN", async: true },
+      { src: "https://www.googletagmanager.com/gtag/js?id=GTM-WWR58WTN", async: true },
       {
         children:
-          "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} window.gtag = gtag; gtag('js', new Date()); dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});",
+          "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} window.gtag = gtag; gtag('js', new Date()); gtag('config', 'GTM-WWR58WTN');",
       },
       {
         type: "application/ld+json",
