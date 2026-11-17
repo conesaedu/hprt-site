@@ -20,3 +20,6 @@
 - [x] Site público: Home industrial, portfólio em 4 famílias, páginas de produto, soluções, por que HPRT, onde comprar, blog, downloads, treinamentos, assistente de IA
 - [x] Conversão: formulário B2B com WhatsApp, pedido de orçamento, cadastro de revenda
 - [x] SEO e robôs de IA: sitemap, robots, llms.txt, JSON-LD, idioma pt-BR
+
+- [x] Google Ads: conta HPRT Brasil conectada, tag instalada, conversões de lead (formulário + WhatsApp) criadas e ligadas
+- [ ] Publicar o site para a tag e as conversões valerem no domínio oficial
