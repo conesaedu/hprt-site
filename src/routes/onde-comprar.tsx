@@ -6,7 +6,7 @@ import { Trust } from "@/components/hprt/Catalog";
 import { ContactForm, WHATSAPP_LABEL, WHATSAPP_URL } from "@/components/hprt/ContactForm";
 
 
-const SITE = "https://hprtbrasil.lovable.app";
+const SITE = "https://hprtbrasil.com.br";
 const TITLE = "Onde comprar HPRT no Brasil — distribuição oficial Cogra";
 const DESCRIPTION =
   "Distribuição oficial HPRT no Brasil operada pela Cogra: estoque em São Paulo, suporte técnico local e atendimento comercial para projetos de qualquer porte.";

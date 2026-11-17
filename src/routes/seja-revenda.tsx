@@ -13,7 +13,7 @@ export const Route = createFileRoute("/seja-revenda")({
   head: () => ({
     meta: [{ title }, { name: "description", content: description }, { property: "og:title", content: title }, { property: "og:description", content: description },
       { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }],
-    links: [{ rel: "canonical", href: "https://hprtbrasil.lovable.app/seja-revenda" }],
+    links: [{ rel: "canonical", href: "https://hprtbrasil.com.br/seja-revenda" }],
   }),
   component: ResellerPage,
 });

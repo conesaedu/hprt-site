@@ -7,7 +7,7 @@ import { Search } from "lucide-react";
 import { productSummaries } from "@/lib/products/summary";
 import { cn } from "@/lib/utils";
 
-const SITE = "https://hprtbrasil.lovable.app";
+const SITE = "https://hprtbrasil.com.br";
 const TITLE = "Portfólio HPRT — 25 modelos de impressão e identificação";
 const DESCRIPTION =
   "Impressoras de etiquetas, cupom, cartões, pulseiras, coletores e leitores HPRT. Especificações completas, drivers e suporte técnico no Brasil.";

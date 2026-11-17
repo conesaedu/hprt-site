@@ -20,7 +20,7 @@ const trainingsQueryOptions = queryOptions({
   staleTime: 1000 * 60 * 5,
 });
 
-const SITE = "https://hprtbrasil.lovable.app";
+const SITE = "https://hprtbrasil.com.br";
 
 export const Route = createFileRoute("/treinamentos")({
   component: TrainingsPage,

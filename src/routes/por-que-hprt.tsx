@@ -6,7 +6,7 @@ import { PageHero } from "@/components/hprt/PageHero";
 import { CtaStrip } from "@/components/hprt/Catalog";
 import { GlobalTrust, Positioning, Stats } from "@/components/hprt/Sections";
 
-const SITE = "https://hprtbrasil.lovable.app";
+const SITE = "https://hprtbrasil.com.br";
 const TITLE = "Por que HPRT — tecnologia global com estrutura no Brasil";
 const DESCRIPTION =
   "Engenharia própria, 56 linhas de produção, estoque de peças e suporte técnico no Brasil: os pilares que sustentam a HPRT dentro de operações críticas.";

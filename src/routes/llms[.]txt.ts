@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { productSummaries } from "@/lib/products/summary";
 
-const BASE = "https://hprtbrasil.lovable.app";
+const BASE = "https://hprtbrasil.com.br";
 
 export const Route = createFileRoute("/llms.txt")({
   server: {

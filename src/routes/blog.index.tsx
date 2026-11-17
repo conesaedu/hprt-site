@@ -14,7 +14,7 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:title", content: title }, { property: "og:description", content: description },
       { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://hprtbrasil.lovable.app/blog" }],
+    links: [{ rel: "canonical", href: "https://hprtbrasil.com.br/blog" }],
   }),
   component: BlogIndex,
 });

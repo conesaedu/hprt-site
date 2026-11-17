@@ -2,7 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getProduct } from "@/lib/products";
 import { ProductDetail } from "@/components/hprt/ProductDetail";
 
-const SITE = "https://hprtbrasil.lovable.app";
+const SITE = "https://hprtbrasil.com.br";
 
 export const Route = createFileRoute("/produtos/$slug")({
   loader: ({ params }) => {

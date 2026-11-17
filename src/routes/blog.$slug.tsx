@@ -22,7 +22,7 @@ export const Route = createFileRoute("/blog/$slug")({
     ];
     return {
       meta,
-      links: [{ rel: "canonical", href: `https://hprtbrasil.lovable.app/blog/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://hprtbrasil.com.br/blog/${params.slug}` }],
       scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "BlogPosting", headline: p.title, description: d, datePublished: p.published_at, dateModified: p.updated_at, image: p.cover_url ?? undefined, publisher: { "@type": "Organization", name: "HPRT Brasil" } }) }],
     };
   },

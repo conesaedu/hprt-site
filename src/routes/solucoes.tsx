@@ -4,7 +4,7 @@ import { Footer } from "@/components/hprt/Footer";
 import { PageHero } from "@/components/hprt/PageHero";
 import { CtaStrip, Solutions } from "@/components/hprt/Catalog";
 
-const SITE = "https://hprtbrasil.lovable.app";
+const SITE = "https://hprtbrasil.com.br";
 const TITLE = "Soluções HPRT por setor — varejo, logística, saúde e food";
 const DESCRIPTION =
   "Impressão térmica, etiquetagem e captura de dados HPRT aplicadas a varejo, logística, saúde e alimentação, com suporte técnico e estoque no Brasil.";
