@@ -5,6 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { MessageCircle } from "lucide-react";
 import { whatsappFor } from "@/components/hprt/ContactForm";
 import { productSummaries } from "@/lib/products/summary";
+import { reportAdsConversion } from "@/lib/ads-conversions";
 
 type Banner = { id: string; title: string; subtitle: string | null; image_url: string | null; cta_label: string | null; cta_url: string | null; pages: string[]; frequency: string };
 type Bar = { enabled?: boolean; text?: string; link?: string };
@@ -18,6 +19,7 @@ const device = () => (window.innerWidth < 768 ? "mobile" : window.innerWidth < 1
 
 export function track(event: string, label?: string) {
   if (typeof window === "undefined" || location.pathname.startsWith("/admin") || location.pathname.startsWith("/auth")) return;
+  reportAdsConversion(event);
   void supabase.from("site_events").insert({
     event, label: label?.slice(0, 200) ?? null, path: location.pathname.slice(0, 300),
     session_id: sessionId(), referrer: document.referrer.slice(0, 300) || null, device: device(),
