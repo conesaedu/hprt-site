@@ -1,4 +1,6 @@
 import { QuoteButton } from "@/components/hprt/QuoteDialog";
+import { whatsappFor } from "@/components/hprt/ContactForm";
+import { MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Download, ArrowRight, ArrowUpRight, GraduationCap, Check } from "lucide-react";
@@ -73,6 +75,15 @@ function ProductHero({ product }: { product: Product }) {
                 Solicitar orçamento
                 <ArrowRight className="size-4" />
               </QuoteButton>
+              <a
+                href={whatsappFor(product.name)}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-sm border border-on-ink/25 px-6 py-3.5 text-sm font-semibold text-on-ink transition-colors hover:border-on-ink"
+              >
+                <MessageCircle className="size-4" />
+                WhatsApp sobre a {product.name}
+              </a>
               <a
                 href="#especificacoes"
                 className="inline-flex items-center gap-2 rounded-sm border border-on-ink/25 px-6 py-3.5 text-sm font-semibold text-on-ink transition-colors hover:border-on-ink"

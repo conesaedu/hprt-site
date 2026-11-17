@@ -2,6 +2,7 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { track } from "@/components/site/SiteRuntime";
+import { whatsappFor } from "@/components/hprt/ContactForm";
 
 const inp = "h-11 w-full rounded-sm border border-border bg-background px-3 text-sm text-foreground";
 
@@ -35,6 +36,7 @@ export function QuoteButton({ slug, name, className, children }: { slug: string;
                 <textarea name="message" maxLength={2000} placeholder="Aplicação / observações (opcional)" className="min-h-20 rounded-sm border border-border bg-background p-3 text-sm" />
                 {err && <p className="text-sm text-destructive">{err}</p>}
                 <button disabled={busy} className="mt-1 rounded-sm bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground">{busy ? "Enviando…" : "Enviar pedido"}</button>
+                <a href={whatsappFor(name)} target="_blank" rel="noreferrer" className="text-center text-sm font-semibold text-primary underline-offset-4 hover:underline">Prefere falar agora? Chamar no WhatsApp</a>
               </form>)}
           </div>
         </div>
