@@ -1,4 +1,11 @@
 import { Link } from "@tanstack/react-router";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
+
+const socials = [
+  { label: "Instagram da HPRT Brasil", href: "https://www.instagram.com/hprt_brasil/", Icon: Instagram },
+  { label: "LinkedIn da HPRT Brasil", href: "https://www.linkedin.com/company/hanin-hprt-brasil", Icon: Linkedin },
+  { label: "YouTube da HPRT Brasil", href: "https://www.youtube.com/@HPRT_Brasil", Icon: Youtube },
+];
 
 const cols = [
   {
@@ -43,6 +50,20 @@ export function Footer() {
               Distribuição oficial HPRT no Brasil, operada por Cogra. Impressão térmica, captura de
               dados e identificação para operações de qualquer porte.
             </p>
+            <div className="mt-5 flex gap-2">
+              {socials.map(({ label, href, Icon }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-9 w-9 items-center justify-center border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
           {cols.map((col) => (
             <div key={col.title}>
