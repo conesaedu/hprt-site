@@ -6,8 +6,8 @@ import { leadSchema, type LeadInput } from "@/lib/leads-schema";
 import { SectionHead } from "./ui";
 import { cn } from "@/lib/utils";
 
-export const WHATSAPP_NUMBER = "5511995422785";
-export const WHATSAPP_LABEL = "+55 11 99542-2785";
+export const WHATSAPP_NUMBER = "5511934294095";
+export const WHATSAPP_LABEL = "+55 11 93429-4095";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   "Olá! Vim pelo site da HPRT Brasil e quero falar com um especialista.",
 )}`;
