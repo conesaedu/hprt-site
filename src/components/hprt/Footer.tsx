@@ -27,6 +27,7 @@ const cols = [
       { label: "Suporte técnico", href: "/onde-comprar" },
       { label: "Downloads e drivers", href: "/downloads" },
       { label: "Garantia", href: "/garantia" },
+      { label: "Suporte técnico", href: "/suporte" },
     ],
   },
 ];

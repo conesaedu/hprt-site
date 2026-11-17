@@ -20,6 +20,7 @@ import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
 import { Route as SejaRevendaRouteImport } from './routes/seja-revenda'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SolucoesRouteImport } from './routes/solucoes'
+import { Route as SuporteRouteImport } from './routes/suporte'
 import { Route as TreinamentosRouteImport } from './routes/treinamentos'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -93,6 +94,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const SolucoesRoute = SolucoesRouteImport.update({
   id: '/solucoes',
   path: '/solucoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SuporteRoute = SuporteRouteImport.update({
+  id: '/suporte',
+  path: '/suporte',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TreinamentosRoute = TreinamentosRouteImport.update({
@@ -218,6 +224,7 @@ export interface FileRoutesByFullPath {
   '/seja-revenda': typeof SejaRevendaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
+  '/suporte': typeof SuporteRoute
   '/treinamentos': typeof TreinamentosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
@@ -250,6 +257,7 @@ export interface FileRoutesByTo {
   '/seja-revenda': typeof SejaRevendaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
+  '/suporte': typeof SuporteRoute
   '/treinamentos': typeof TreinamentosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
@@ -284,6 +292,7 @@ export interface FileRoutesById {
   '/seja-revenda': typeof SejaRevendaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solucoes': typeof SolucoesRoute
+  '/suporte': typeof SuporteRoute
   '/treinamentos': typeof TreinamentosRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
@@ -318,6 +327,7 @@ export interface FileRouteTypes {
     | '/seja-revenda'
     | '/sitemap.xml'
     | '/solucoes'
+    | '/suporte'
     | '/treinamentos'
     | '/blog/$slug'
     | '/produtos/$slug'
@@ -350,6 +360,7 @@ export interface FileRouteTypes {
     | '/seja-revenda'
     | '/sitemap.xml'
     | '/solucoes'
+    | '/suporte'
     | '/treinamentos'
     | '/blog/$slug'
     | '/produtos/$slug'
@@ -383,6 +394,7 @@ export interface FileRouteTypes {
     | '/seja-revenda'
     | '/sitemap.xml'
     | '/solucoes'
+    | '/suporte'
     | '/treinamentos'
     | '/blog/$slug'
     | '/produtos/$slug'
@@ -417,6 +429,7 @@ export interface RootRouteChildren {
   SejaRevendaRoute: typeof SejaRevendaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolucoesRoute: typeof SolucoesRoute
+  SuporteRoute: typeof SuporteRoute
   TreinamentosRoute: typeof TreinamentosRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ProdutosSlugRoute: typeof ProdutosSlugRoute
@@ -501,6 +514,13 @@ declare module '@tanstack/react-router' {
       path: '/solucoes'
       fullPath: '/solucoes'
       preLoaderRoute: typeof SolucoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/suporte': {
+      id: '/suporte'
+      path: '/suporte'
+      fullPath: '/suporte'
+      preLoaderRoute: typeof SuporteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/treinamentos': {
@@ -697,6 +717,7 @@ const rootRouteChildren: RootRouteChildren = {
   SejaRevendaRoute: SejaRevendaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolucoesRoute: SolucoesRoute,
+  SuporteRoute: SuporteRoute,
   TreinamentosRoute: TreinamentosRoute,
   BlogSlugRoute: BlogSlugRoute,
   ProdutosSlugRoute: ProdutosSlugRoute,
