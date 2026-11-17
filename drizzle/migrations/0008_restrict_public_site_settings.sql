@@ -1,0 +1,2 @@
+DROP POLICY IF EXISTS "Public reads settings" ON public.site_settings;
+CREATE POLICY "Public reads public settings" ON public.site_settings FOR SELECT TO anon, authenticated USING (key = ANY (ARRAY['announcement'::text]));

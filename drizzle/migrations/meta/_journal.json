@@ -57,6 +57,13 @@
       "when": 1794855152823,
       "tag": "0007_restrict_media_reads",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1794925391381,
+      "tag": "0008_restrict_public_site_settings",
+      "breakpoints": true
     }
   ]
 }
