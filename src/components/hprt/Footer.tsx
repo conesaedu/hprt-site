@@ -95,7 +95,13 @@ export function Footer() {
           ))}
         </div>
         <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-7 font-mono text-[0.78rem] text-faint">
-          <span>© HPRT Brasil</span>
+          <span className="flex flex-wrap items-center gap-4">
+            <span>© HPRT Brasil</span>
+            <Link to="/privacidade" className="transition-colors hover:text-foreground">Privacidade e cookies</Link>
+            <button type="button" onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))} className="transition-colors hover:text-foreground">
+              Configurações de cookies
+            </button>
+          </span>
           <span>Distribuição: Cogra</span>
         </div>
       </div>

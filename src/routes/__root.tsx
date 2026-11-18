@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import { SiteRuntime } from "@/components/site/SiteRuntime";
 import appCss from "../styles.css?url";
+import consentDefaults from "../lib/consent-defaults.js?raw";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -107,6 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
     scripts: [
+      { children: consentDefaults },
       { src: "https://www.googletagmanager.com/gtag/js?id=GTM-WWR58WTN", async: true },
       {
         children:

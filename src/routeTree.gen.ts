@@ -20,6 +20,7 @@ import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as LojaRouteImport } from './routes/loja'
 import { Route as OndeComprarRouteImport } from './routes/onde-comprar'
 import { Route as PorQueHprtRouteImport } from './routes/por-que-hprt'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as SejaRevendaRouteImport } from './routes/seja-revenda'
 import { Route as ShopRouteImport } from './routes/shop'
@@ -106,6 +107,11 @@ const OndeComprarRoute = OndeComprarRouteImport.update({
 const PorQueHprtRoute = PorQueHprtRouteImport.update({
   id: '/por-que-hprt',
   path: '/por-que-hprt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QuemSomosRoute = QuemSomosRouteImport.update({
@@ -299,6 +305,7 @@ export interface FileRoutesByFullPath {
   '/loja': typeof LojaRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/quem-somos': typeof QuemSomosRoute
   '/seja-revenda': typeof SejaRevendaRoute
   '/shop': typeof ShopRoute
@@ -344,6 +351,7 @@ export interface FileRoutesByTo {
   '/loja': typeof LojaRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/quem-somos': typeof QuemSomosRoute
   '/seja-revenda': typeof SejaRevendaRoute
   '/shop': typeof ShopRoute
@@ -391,6 +399,7 @@ export interface FileRoutesById {
   '/loja': typeof LojaRoute
   '/onde-comprar': typeof OndeComprarRoute
   '/por-que-hprt': typeof PorQueHprtRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/quem-somos': typeof QuemSomosRoute
   '/seja-revenda': typeof SejaRevendaRoute
   '/shop': typeof ShopRoute
@@ -438,6 +447,7 @@ export interface FileRouteTypes {
     | '/loja'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/privacidade'
     | '/quem-somos'
     | '/seja-revenda'
     | '/shop'
@@ -483,6 +493,7 @@ export interface FileRouteTypes {
     | '/loja'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/privacidade'
     | '/quem-somos'
     | '/seja-revenda'
     | '/shop'
@@ -529,6 +540,7 @@ export interface FileRouteTypes {
     | '/loja'
     | '/onde-comprar'
     | '/por-que-hprt'
+    | '/privacidade'
     | '/quem-somos'
     | '/seja-revenda'
     | '/shop'
@@ -576,6 +588,7 @@ export interface RootRouteChildren {
   LojaRoute: typeof LojaRoute
   OndeComprarRoute: typeof OndeComprarRoute
   PorQueHprtRoute: typeof PorQueHprtRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   QuemSomosRoute: typeof QuemSomosRoute
   SejaRevendaRoute: typeof SejaRevendaRoute
   ShopRoute: typeof ShopRoute
@@ -670,6 +683,13 @@ declare module '@tanstack/react-router' {
       path: '/por-que-hprt'
       fullPath: '/por-que-hprt'
       preLoaderRoute: typeof PorQueHprtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quem-somos': {
@@ -963,6 +983,7 @@ const rootRouteChildren: RootRouteChildren = {
   LojaRoute: LojaRoute,
   OndeComprarRoute: OndeComprarRoute,
   PorQueHprtRoute: PorQueHprtRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   QuemSomosRoute: QuemSomosRoute,
   SejaRevendaRoute: SejaRevendaRoute,
   ShopRoute: ShopRoute,

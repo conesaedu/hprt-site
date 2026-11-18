@@ -14,3 +14,5 @@
 - Lead-like inboxes (reseller applications, quote requests) share `InboxPage`; admin-table changes are audited by the `log_admin_change` trigger into `audit_log`. Why: one pattern for status/notes/WhatsApp, and a change history without app code.
 - Password recovery stays in the auth page using the browser auth client and PASSWORD_RECOVERY events; email links return to the official site's auth page so passwords are set only through a verified recovery session.
 - Admin panel roles are admin/editor/viewer; section access lives in `src/lib/admin-access.ts` (menu + page gate) and DB writes are gated by `can_edit_content()` / `is_staff()` RLS helpers. Why: one map for UI, RLS stays the real gate.
+
+- Cookie consent: `src/lib/consent.ts` (skill module, BR added to consent regions for LGPD) is the only reader/writer of consent; first-party visitor id and persistent session id are stored only after analytics consent. Why: one gate for Google Consent Mode and own tracking.

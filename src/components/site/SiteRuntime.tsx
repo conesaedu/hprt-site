@@ -7,11 +7,16 @@ import { whatsappFor } from "@/components/hprt/ContactForm";
 import { productSummaries } from "@/lib/products/summary";
 import { reportAdsConversion } from "@/lib/ads-conversions";
 import { getUtm, getVisitorId } from "@/lib/attribution";
+import { readChoice } from "@/lib/consent";
+import { CookieConsent } from "@/components/site/CookieConsent";
 
 type Banner = { id: string; title: string; subtitle: string | null; image_url: string | null; cta_label: string | null; cta_url: string | null; pages: string[]; frequency: string };
 type Bar = { enabled?: boolean; text?: string; link?: string };
 
+let memorySid: string | null = null;
 function sessionId() {
+  // Without analytics consent nothing is stored on the device: the id lives only for this page load.
+  if (readChoice("analytics") !== "granted") return (memorySid ??= crypto.randomUUID());
   let s = sessionStorage.getItem("hprt_sid");
   if (!s) { s = crypto.randomUUID(); sessionStorage.setItem("hprt_sid", s); }
   return s;
@@ -23,7 +28,7 @@ export function track(event: string, label?: string) {
   reportAdsConversion(event);
   void supabase.from("site_events").insert({
     event, label: label?.slice(0, 200) ?? null, path: location.pathname.slice(0, 300),
-    session_id: sessionId(), visitor_id: getVisitorId(), utm: getUtm(), referrer: document.referrer.slice(0, 300) || null, device: device(),
+    session_id: sessionId(), visitor_id: readChoice("analytics") === "granted" ? getVisitorId() : null, utm: getUtm(), referrer: document.referrer.slice(0, 300) || null, device: device(),
   }).then(() => undefined); // query builders are lazy: .then() sends it
 }
 
@@ -87,6 +92,7 @@ export function SiteRuntime() {
   if (isPrivate) return null;
   return (
     <>
+      <CookieConsent />
       <a href={whatsappFor(productName(path))} target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp"
         className={`fixed right-5 z-50 flex items-center gap-2 rounded-full bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-xl transition-transform hover:-translate-y-0.5 ${bar?.enabled && bar.text && !barClosed ? "bottom-20" : "bottom-5"}`}>
         <MessageCircle className="size-4" /> Falar no WhatsApp
