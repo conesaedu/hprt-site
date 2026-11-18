@@ -3,8 +3,8 @@ import type { StaffRole } from "@/lib/admin.functions";
 /** Which admin sections each role can open. Admin sees everything. */
 export const ROLE_SECTIONS: Record<StaffRole, string[] | "all"> = {
   admin: "all",
-  editor: ["/admin", "/admin/treinamentos", "/admin/analytics", "/admin/banners", "/admin/blog", "/admin/depoimentos", "/admin/midia", "/admin/downloads", "/admin/seguranca"],
-  viewer: ["/admin", "/admin/leads", "/admin/cotacoes", "/admin/revendas", "/admin/treinamentos", "/admin/analytics", "/admin/seguranca"],
+  editor: ["/admin", "/admin/treinamentos", "/admin/analytics", "/admin/campanhas", "/admin/jornadas", "/admin/banners", "/admin/blog", "/admin/depoimentos", "/admin/midia", "/admin/downloads", "/admin/seguranca"],
+  viewer: ["/admin", "/admin/leads", "/admin/cotacoes", "/admin/revendas", "/admin/treinamentos", "/admin/analytics", "/admin/campanhas", "/admin/jornadas", "/admin/seguranca"],
 };
 
 export function canOpen(role: StaffRole | null | undefined, path: string) {

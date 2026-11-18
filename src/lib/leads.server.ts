@@ -38,6 +38,7 @@ export async function insertLead(data: LeadInput) {
     volume: data.volume || null,
     message: data.message || null,
     source: "onde-comprar",
+    visitor_id: data.visitor_id ?? null,
   });
 
   if (error) throw new Error("Não foi possível registrar seu contato. Tente novamente.");

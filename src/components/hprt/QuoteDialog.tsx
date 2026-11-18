@@ -1,3 +1,4 @@
+import { getVisitorId } from "@/lib/attribution";
 import { useState } from "react";
 import { X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -13,7 +14,7 @@ export function QuoteButton({ slug, name, className, children }: { slug: string;
     e.preventDefault(); const d = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>;
     setBusy(true); setErr("");
     const { error } = await supabase.from("quote_requests").insert({ product_slug: slug, product_name: name, quantity: d.quantity ? Number(d.quantity) : null,
-      name: d.name.slice(0, 150), company: d.company.slice(0, 150), email: d.email.slice(0, 150), phone: d.phone.slice(0, 30), message: d.message?.slice(0, 2000) || null });
+      name: d.name.slice(0, 150), company: d.company.slice(0, 150), email: d.email.slice(0, 150), phone: d.phone.slice(0, 30), message: d.message?.slice(0, 2000) || null, visitor_id: getVisitorId() });
     setBusy(false);
     if (error) { setErr("Não foi possível enviar. Tente pelo WhatsApp."); return; }
     track("quote_request", name); setSent(true);

@@ -38,10 +38,12 @@ import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
 import { Route as AuthenticatedAdminIndexRouteImport } from './routes/_authenticated/admin.index'
 import { Route as AuthenticatedAdminAnalyticsRouteImport } from './routes/_authenticated/admin.analytics'
 import { Route as AuthenticatedAdminBannersRouteImport } from './routes/_authenticated/admin.banners'
+import { Route as AuthenticatedAdminCampanhasRouteImport } from './routes/_authenticated/admin.campanhas'
 import { Route as AuthenticatedAdminCotacoesRouteImport } from './routes/_authenticated/admin.cotacoes'
 import { Route as AuthenticatedAdminDepoimentosRouteImport } from './routes/_authenticated/admin.depoimentos'
 import { Route as AuthenticatedAdminDownloadsRouteImport } from './routes/_authenticated/admin.downloads'
 import { Route as AuthenticatedAdminIntegracoesRouteImport } from './routes/_authenticated/admin.integracoes'
+import { Route as AuthenticatedAdminJornadasRouteImport } from './routes/_authenticated/admin.jornadas'
 import { Route as AuthenticatedAdminLeadsRouteImport } from './routes/_authenticated/admin.leads'
 import { Route as AuthenticatedAdminMidiaRouteImport } from './routes/_authenticated/admin.midia'
 import { Route as AuthenticatedAdminRevendasRouteImport } from './routes/_authenticated/admin.revendas'
@@ -198,6 +200,12 @@ const AuthenticatedAdminBannersRoute =
     path: '/admin/banners',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedAdminCampanhasRoute =
+  AuthenticatedAdminCampanhasRouteImport.update({
+    id: '/admin/campanhas',
+    path: '/admin/campanhas',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedAdminCotacoesRoute =
   AuthenticatedAdminCotacoesRouteImport.update({
     id: '/admin/cotacoes',
@@ -220,6 +228,12 @@ const AuthenticatedAdminIntegracoesRoute =
   AuthenticatedAdminIntegracoesRouteImport.update({
     id: '/admin/integracoes',
     path: '/admin/integracoes',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedAdminJornadasRoute =
+  AuthenticatedAdminJornadasRouteImport.update({
+    id: '/admin/jornadas',
+    path: '/admin/jornadas',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedAdminLeadsRoute = AuthenticatedAdminLeadsRouteImport.update({
@@ -302,10 +316,12 @@ export interface FileRoutesByFullPath {
   '/produtos/': typeof ProdutosIndexRoute
   '/admin/analytics': typeof AuthenticatedAdminAnalyticsRoute
   '/admin/banners': typeof AuthenticatedAdminBannersRoute
+  '/admin/campanhas': typeof AuthenticatedAdminCampanhasRoute
   '/admin/cotacoes': typeof AuthenticatedAdminCotacoesRoute
   '/admin/depoimentos': typeof AuthenticatedAdminDepoimentosRoute
   '/admin/downloads': typeof AuthenticatedAdminDownloadsRoute
   '/admin/integracoes': typeof AuthenticatedAdminIntegracoesRoute
+  '/admin/jornadas': typeof AuthenticatedAdminJornadasRoute
   '/admin/leads': typeof AuthenticatedAdminLeadsRoute
   '/admin/midia': typeof AuthenticatedAdminMidiaRoute
   '/admin/revendas': typeof AuthenticatedAdminRevendasRoute
@@ -345,10 +361,12 @@ export interface FileRoutesByTo {
   '/produtos': typeof ProdutosIndexRoute
   '/admin/analytics': typeof AuthenticatedAdminAnalyticsRoute
   '/admin/banners': typeof AuthenticatedAdminBannersRoute
+  '/admin/campanhas': typeof AuthenticatedAdminCampanhasRoute
   '/admin/cotacoes': typeof AuthenticatedAdminCotacoesRoute
   '/admin/depoimentos': typeof AuthenticatedAdminDepoimentosRoute
   '/admin/downloads': typeof AuthenticatedAdminDownloadsRoute
   '/admin/integracoes': typeof AuthenticatedAdminIntegracoesRoute
+  '/admin/jornadas': typeof AuthenticatedAdminJornadasRoute
   '/admin/leads': typeof AuthenticatedAdminLeadsRoute
   '/admin/midia': typeof AuthenticatedAdminMidiaRoute
   '/admin/revendas': typeof AuthenticatedAdminRevendasRoute
@@ -390,10 +408,12 @@ export interface FileRoutesById {
   '/produtos/': typeof ProdutosIndexRoute
   '/_authenticated/admin/analytics': typeof AuthenticatedAdminAnalyticsRoute
   '/_authenticated/admin/banners': typeof AuthenticatedAdminBannersRoute
+  '/_authenticated/admin/campanhas': typeof AuthenticatedAdminCampanhasRoute
   '/_authenticated/admin/cotacoes': typeof AuthenticatedAdminCotacoesRoute
   '/_authenticated/admin/depoimentos': typeof AuthenticatedAdminDepoimentosRoute
   '/_authenticated/admin/downloads': typeof AuthenticatedAdminDownloadsRoute
   '/_authenticated/admin/integracoes': typeof AuthenticatedAdminIntegracoesRoute
+  '/_authenticated/admin/jornadas': typeof AuthenticatedAdminJornadasRoute
   '/_authenticated/admin/leads': typeof AuthenticatedAdminLeadsRoute
   '/_authenticated/admin/midia': typeof AuthenticatedAdminMidiaRoute
   '/_authenticated/admin/revendas': typeof AuthenticatedAdminRevendasRoute
@@ -435,10 +455,12 @@ export interface FileRouteTypes {
     | '/produtos/'
     | '/admin/analytics'
     | '/admin/banners'
+    | '/admin/campanhas'
     | '/admin/cotacoes'
     | '/admin/depoimentos'
     | '/admin/downloads'
     | '/admin/integracoes'
+    | '/admin/jornadas'
     | '/admin/leads'
     | '/admin/midia'
     | '/admin/revendas'
@@ -478,10 +500,12 @@ export interface FileRouteTypes {
     | '/produtos'
     | '/admin/analytics'
     | '/admin/banners'
+    | '/admin/campanhas'
     | '/admin/cotacoes'
     | '/admin/depoimentos'
     | '/admin/downloads'
     | '/admin/integracoes'
+    | '/admin/jornadas'
     | '/admin/leads'
     | '/admin/midia'
     | '/admin/revendas'
@@ -522,10 +546,12 @@ export interface FileRouteTypes {
     | '/produtos/'
     | '/_authenticated/admin/analytics'
     | '/_authenticated/admin/banners'
+    | '/_authenticated/admin/campanhas'
     | '/_authenticated/admin/cotacoes'
     | '/_authenticated/admin/depoimentos'
     | '/_authenticated/admin/downloads'
     | '/_authenticated/admin/integracoes'
+    | '/_authenticated/admin/jornadas'
     | '/_authenticated/admin/leads'
     | '/_authenticated/admin/midia'
     | '/_authenticated/admin/revendas'
@@ -772,6 +798,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminBannersRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/admin/campanhas': {
+      id: '/_authenticated/admin/campanhas'
+      path: '/admin/campanhas'
+      fullPath: '/admin/campanhas'
+      preLoaderRoute: typeof AuthenticatedAdminCampanhasRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/admin/cotacoes': {
       id: '/_authenticated/admin/cotacoes'
       path: '/admin/cotacoes'
@@ -798,6 +831,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/integracoes'
       fullPath: '/admin/integracoes'
       preLoaderRoute: typeof AuthenticatedAdminIntegracoesRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/admin/jornadas': {
+      id: '/_authenticated/admin/jornadas'
+      path: '/admin/jornadas'
+      fullPath: '/admin/jornadas'
+      preLoaderRoute: typeof AuthenticatedAdminJornadasRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/admin/leads': {
@@ -869,10 +909,12 @@ declare module '@tanstack/react-router' {
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedAdminAnalyticsRoute: typeof AuthenticatedAdminAnalyticsRoute
   AuthenticatedAdminBannersRoute: typeof AuthenticatedAdminBannersRoute
+  AuthenticatedAdminCampanhasRoute: typeof AuthenticatedAdminCampanhasRoute
   AuthenticatedAdminCotacoesRoute: typeof AuthenticatedAdminCotacoesRoute
   AuthenticatedAdminDepoimentosRoute: typeof AuthenticatedAdminDepoimentosRoute
   AuthenticatedAdminDownloadsRoute: typeof AuthenticatedAdminDownloadsRoute
   AuthenticatedAdminIntegracoesRoute: typeof AuthenticatedAdminIntegracoesRoute
+  AuthenticatedAdminJornadasRoute: typeof AuthenticatedAdminJornadasRoute
   AuthenticatedAdminLeadsRoute: typeof AuthenticatedAdminLeadsRoute
   AuthenticatedAdminMidiaRoute: typeof AuthenticatedAdminMidiaRoute
   AuthenticatedAdminRevendasRoute: typeof AuthenticatedAdminRevendasRoute
@@ -888,10 +930,12 @@ interface AuthenticatedRouteRouteChildren {
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedAdminAnalyticsRoute: AuthenticatedAdminAnalyticsRoute,
   AuthenticatedAdminBannersRoute: AuthenticatedAdminBannersRoute,
+  AuthenticatedAdminCampanhasRoute: AuthenticatedAdminCampanhasRoute,
   AuthenticatedAdminCotacoesRoute: AuthenticatedAdminCotacoesRoute,
   AuthenticatedAdminDepoimentosRoute: AuthenticatedAdminDepoimentosRoute,
   AuthenticatedAdminDownloadsRoute: AuthenticatedAdminDownloadsRoute,
   AuthenticatedAdminIntegracoesRoute: AuthenticatedAdminIntegracoesRoute,
+  AuthenticatedAdminJornadasRoute: AuthenticatedAdminJornadasRoute,
   AuthenticatedAdminLeadsRoute: AuthenticatedAdminLeadsRoute,
   AuthenticatedAdminMidiaRoute: AuthenticatedAdminMidiaRoute,
   AuthenticatedAdminRevendasRoute: AuthenticatedAdminRevendasRoute,

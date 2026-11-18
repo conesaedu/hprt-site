@@ -156,6 +156,7 @@ export type Database = {
           source: string
           status: string
           updated_at: string
+          visitor_id: string | null
           volume: string | null
         }
         Insert: {
@@ -173,6 +174,7 @@ export type Database = {
           source?: string
           status?: string
           updated_at?: string
+          visitor_id?: string | null
           volume?: string | null
         }
         Update: {
@@ -190,6 +192,7 @@ export type Database = {
           source?: string
           status?: string
           updated_at?: string
+          visitor_id?: string | null
           volume?: string | null
         }
         Relationships: []
@@ -260,6 +263,7 @@ export type Database = {
           quantity: number | null
           status: string
           updated_at: string
+          visitor_id: string | null
         }
         Insert: {
           company: string
@@ -275,6 +279,7 @@ export type Database = {
           quantity?: number | null
           status?: string
           updated_at?: string
+          visitor_id?: string | null
         }
         Update: {
           company?: string
@@ -290,6 +295,7 @@ export type Database = {
           quantity?: number | null
           status?: string
           updated_at?: string
+          visitor_id?: string | null
         }
         Relationships: []
       }
@@ -310,6 +316,7 @@ export type Database = {
           state: string | null
           status: string
           updated_at: string
+          visitor_id: string | null
         }
         Insert: {
           city?: string | null
@@ -327,6 +334,7 @@ export type Database = {
           state?: string | null
           status?: string
           updated_at?: string
+          visitor_id?: string | null
         }
         Update: {
           city?: string | null
@@ -344,6 +352,7 @@ export type Database = {
           state?: string | null
           status?: string
           updated_at?: string
+          visitor_id?: string | null
         }
         Relationships: []
       }
@@ -357,6 +366,8 @@ export type Database = {
           path: string | null
           referrer: string | null
           session_id: string | null
+          utm: Json | null
+          visitor_id: string | null
         }
         Insert: {
           created_at?: string
@@ -367,6 +378,8 @@ export type Database = {
           path?: string | null
           referrer?: string | null
           session_id?: string | null
+          utm?: Json | null
+          visitor_id?: string | null
         }
         Update: {
           created_at?: string
@@ -377,6 +390,8 @@ export type Database = {
           path?: string | null
           referrer?: string | null
           session_id?: string | null
+          utm?: Json | null
+          visitor_id?: string | null
         }
         Relationships: []
       }

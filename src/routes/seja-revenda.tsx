@@ -1,3 +1,4 @@
+import { getVisitorId } from "@/lib/attribution";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Nav } from "@/components/hprt/Nav";
@@ -33,7 +34,7 @@ function ResellerPage() {
     setBusy(true); setErr("");
     const cut = (v: string | undefined, n = 150) => (v ? v.slice(0, n) : null);
     const { error } = await supabase.from("reseller_applications").insert({ company: d.company.slice(0, 150), cnpj: cut(d.cnpj, 30), contact_name: d.contact_name.slice(0, 150),
-      email: d.email.slice(0, 150), phone: d.phone.slice(0, 30), city: cut(d.city), state: cut(d.state, 2), segment: cut(d.segment), monthly_volume: cut(d.monthly_volume), message: cut(d.message, 2000) });
+      email: d.email.slice(0, 150), phone: d.phone.slice(0, 30), city: cut(d.city), state: cut(d.state, 2), segment: cut(d.segment), monthly_volume: cut(d.monthly_volume), message: cut(d.message, 2000), visitor_id: getVisitorId() });
     setBusy(false);
     if (error) { setErr("Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp."); return; }
     track("reseller_application", d.company); setSent(true);

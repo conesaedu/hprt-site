@@ -13,6 +13,8 @@ const nav = [
   { to: "/admin/revendas", label: "Revendas", ready: true },
   { to: "/admin/treinamentos", label: "Treinamentos", ready: true },
   { to: "/admin/analytics", label: "Analytics", ready: true },
+  { to: "/admin/campanhas", label: "Campanhas", ready: true },
+  { to: "/admin/jornadas", label: "Origens e jornadas", ready: true },
   { to: "/admin/banners", label: "Pop-ups e banners", ready: true },
   { to: "/admin/blog", label: "Blog", ready: true },
   { to: "/admin/depoimentos", label: "Depoimentos", ready: true },

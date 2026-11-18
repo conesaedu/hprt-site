@@ -10,6 +10,7 @@ export const leadSchema = z.object({
   need: z.string().trim().max(60).optional().or(z.literal("")),
   volume: z.string().trim().max(60).optional().or(z.literal("")),
   message: z.string().trim().max(1200).optional().or(z.literal("")),
+  visitor_id: z.string().max(64).optional(),
 });
 
 export type LeadInput = z.infer<typeof leadSchema>;

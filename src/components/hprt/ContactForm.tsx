@@ -1,3 +1,5 @@
+import { getVisitorId } from "@/lib/attribution";
+import { track } from "@/components/site/SiteRuntime";
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { CheckCircle, MessageCircle } from "lucide-react";
@@ -5,7 +7,6 @@ import { submitLead } from "@/lib/leads.functions";
 import { leadSchema, type LeadInput } from "@/lib/leads-schema";
 import { SectionHead } from "./ui";
 import { cn } from "@/lib/utils";
-import { reportAdsConversion } from "@/lib/ads-conversions";
 
 export const WHATSAPP_NUMBER = "5511934294095";
 export const WHATSAPP_LABEL = "+55 11 93429-4095";
@@ -69,8 +70,8 @@ export function ContactForm() {
     setErrors({});
     setStatus("sending");
     try {
-      await send({ data: parsed.data });
-      reportAdsConversion("contact_lead");
+      await send({ data: { ...parsed.data, visitor_id: getVisitorId() ?? undefined } });
+      track("contact_lead", parsed.data.company);
       setStatus("done");
       setForm(empty);
     } catch {
