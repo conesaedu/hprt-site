@@ -1,3 +1,4 @@
+import { setAdsUserData } from "@/lib/ads-conversions";
 import { getVisitorId } from "@/lib/attribution";
 import { track } from "@/components/site/SiteRuntime";
 import { useState } from "react";
@@ -71,6 +72,7 @@ export function ContactForm() {
     setStatus("sending");
     try {
       await send({ data: { ...parsed.data, visitor_id: getVisitorId() ?? undefined } });
+      setAdsUserData(parsed.data.email, parsed.data.phone);
       track("contact_lead", parsed.data.company);
       setStatus("done");
       setForm(empty);

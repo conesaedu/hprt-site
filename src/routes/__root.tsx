@@ -112,7 +112,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { src: "https://www.googletagmanager.com/gtag/js?id=GTM-WWR58WTN", async: true },
       {
         children:
-          "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} window.gtag = gtag; gtag('js', new Date()); gtag('config', 'GTM-WWR58WTN');",
+          "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} window.gtag = gtag; gtag('js', new Date()); gtag('config', 'GTM-WWR58WTN'); gtag('config', 'AW-18565923658', { allow_enhanced_conversions: true });",
       },
       {
         type: "application/ld+json",

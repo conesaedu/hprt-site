@@ -1,3 +1,4 @@
+import { setAdsUserData } from "@/lib/ads-conversions";
 import { getVisitorId } from "@/lib/attribution";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
@@ -37,7 +38,7 @@ function ResellerPage() {
       email: d.email.slice(0, 150), phone: d.phone.slice(0, 30), city: cut(d.city), state: cut(d.state, 2), segment: cut(d.segment), monthly_volume: cut(d.monthly_volume), message: cut(d.message, 2000), visitor_id: getVisitorId() });
     setBusy(false);
     if (error) { setErr("Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp."); return; }
-    track("reseller_application", d.company); setSent(true);
+    setAdsUserData(d.email, d.phone); track("reseller_application", d.company); setSent(true);
   }
   return (
     <div className="min-h-screen bg-background">

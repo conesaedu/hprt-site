@@ -1,3 +1,4 @@
+import { setAdsUserData } from "@/lib/ads-conversions";
 import { getVisitorId } from "@/lib/attribution";
 import { useState } from "react";
 import { X } from "lucide-react";
@@ -17,7 +18,7 @@ export function QuoteButton({ slug, name, className, children }: { slug: string;
       name: d.name.slice(0, 150), company: d.company.slice(0, 150), email: d.email.slice(0, 150), phone: d.phone.slice(0, 30), message: d.message?.slice(0, 2000) || null, visitor_id: getVisitorId() });
     setBusy(false);
     if (error) { setErr("Não foi possível enviar. Tente pelo WhatsApp."); return; }
-    track("quote_request", name); setSent(true);
+    setAdsUserData(d.email, d.phone); track("quote_request", name); setSent(true);
   }
   return (
     <>
